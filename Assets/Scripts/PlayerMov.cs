@@ -9,18 +9,20 @@ public class PlayerMov : MonoBehaviour
     public float walkSpeed;
     public float runSpeed;
     private float moveSpeed;
+    public float rollForce;
     public float turnTime;
     public Camera cam;
+    public Vector3 camForward;
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         float camRot = cam.transform.rotation.eulerAngles.y;
-        Vector3 camForward = Quaternion.Euler(0, camRot, 0) * Vector3.forward;
+        camForward = Quaternion.Euler(0, camRot, 0) * Vector3.forward;
 
         if(Input.GetKey(KeyCode.LeftShift)){
             moveSpeed = runSpeed;
@@ -43,11 +45,19 @@ public class PlayerMov : MonoBehaviour
         }
         rb.velocity = vel;
         Vector3 movementDir = vel.normalized;
-        // Debug.Log(camForward);
+        
         if(movementDir != Vector3.zero){
             float angle = Vector3.SignedAngle(Vector3.forward, movementDir, Vector3.up);
-            Debug.Log(angle);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
         }
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Roll();
+        }
+    }
+
+    private void Roll(){
+        Vector3 movementDir = rb.velocity.normalized;
+        rb.velocity = movementDir * rollForce;
     }
 }

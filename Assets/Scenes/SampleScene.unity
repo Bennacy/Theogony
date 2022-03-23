@@ -312,7 +312,7 @@ Transform:
   m_GameObject: {fileID: 372920460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.65, y: 5.65, z: 5.65}
+  m_LocalScale: {x: 24.999998, y: 24.999998, z: 24.999998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -450,8 +450,10 @@ MonoBehaviour:
   rb: {fileID: 620037180}
   walkSpeed: 5
   runSpeed: 10
+  rollForce: 15
   turnTime: 10
   cam: {fileID: 963194227}
+  camForward: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
