@@ -331,8 +331,9 @@ GameObject:
   - component: {fileID: 620037182}
   - component: {fileID: 620037181}
   - component: {fileID: 620037180}
-  - component: {fileID: 620037185}
+  - component: {fileID: 620037187}
   - component: {fileID: 620037186}
+  - component: {fileID: 620037185}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -525,6 +526,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 364966ef-22cd-43e6-8d05-7199437a5b40
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 620037186}
+        m_TargetAssemblyTypeName: PlayerInputTest, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fdef5244-ea49-472c-a012-d619ce8817dc
+    m_ActionName: Player/Run/Dodge[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -540,6 +557,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742b2c7496fb70743ae0f98f4ccf7ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 620037180}
+  walkSpeed: 5
+  runSpeed: 10
+  backstepSpeed: 150
+  rollForce: 50
+  turnTime: 10
+  canMove: 0
+  cam: {fileID: 963194227}
+  camForward: {x: 0, y: 0, z: 0}
+--- !u!114 &620037187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620037179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5077ff7e967f71548bacb180779eb3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 620037180}

@@ -43,16 +43,18 @@ public class PlayerMov : MonoBehaviour
         if(Input.GetKey(KeyCode.A)){
             vel += (Quaternion.Euler(0, -90, 0) * camForward * moveSpeed);
         }
-        rb.velocity = vel;
-        Vector3 movementDir = vel.normalized;
-        
-        if(movementDir != Vector3.zero){
-            float angle = Vector3.SignedAngle(Vector3.forward, movementDir, Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
-        }
+        if(vel != Vector3.zero){
+            rb.velocity = vel;
+            Vector3 movementDir = vel.normalized;
+            
+            if(movementDir != Vector3.zero){
+                float angle = Vector3.SignedAngle(Vector3.forward, movementDir, Vector3.up);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
+            }
 
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Roll();
+            if(Input.GetKeyDown(KeyCode.Space)){
+                Roll();
+            }
         }
     }
 
