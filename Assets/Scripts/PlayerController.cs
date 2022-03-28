@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour
                 if(!playerManager.UpdateStamina(runCost * Time.deltaTime)){
                     running = false;
                     moveSpeed = walkSpeed;
+                    playerManager.staminaSpent = false;
+                }else{
+                    playerManager.staminaSpent = true;
                 }
             }
             
