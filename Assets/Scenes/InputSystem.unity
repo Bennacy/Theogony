@@ -331,7 +331,6 @@ GameObject:
   - component: {fileID: 620037182}
   - component: {fileID: 620037181}
   - component: {fileID: 620037180}
-  - component: {fileID: 620037187}
   - component: {fileID: 620037186}
   - component: {fileID: 620037185}
   m_Layer: 0
@@ -480,14 +479,6 @@ MonoBehaviour:
     m_ActionName: Player/Move[/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 2a0a494d-f21f-4e76-b17a-22e1062c3ee6
-    m_ActionName: Player/Look[/XInputControllerWindows/rightStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f2dbe218-ab4b-499d-bac8-8a706d296522
-    m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 4eeee45d-0960-4900-84a8-439aa0671a58
     m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad]
   - m_PersistentCalls:
@@ -543,12 +534,24 @@ MonoBehaviour:
     m_ActionId: fdef5244-ea49-472c-a012-d619ce8817dc
     m_ActionName: Player/Run/Dodge[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: deecc608-453e-473d-9a1d-8cf03a49b334
-    m_ActionName: Player/CMov
+      m_Calls:
+      - m_Target: {fileID: 620037186}
+        m_TargetAssemblyTypeName: PlayerInputTest, Assembly-CSharp
+        m_MethodName: Roll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 19bcb72f-0ab0-4e42-a9ee-a39b6c74226e
+    m_ActionName: Movement/Dodge[/Keyboard/leftShift,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 963194227}
 --- !u!114 &620037186
@@ -566,31 +569,13 @@ MonoBehaviour:
   rb: {fileID: 620037180}
   walkSpeed: 5
   runSpeed: 10
-  backstepSpeed: 150
-  rollForce: 50
+  backstepSpeed: -20
+  rollSpeed: 0
+  backstepTime: 2
   turnTime: 10
   canMove: 1
   cam: {fileID: 963194227}
-  camForward: {x: 0, y: 0, z: 0}
---- !u!114 &620037187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620037179}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5077ff7e967f71548bacb180779eb3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 620037180}
-  walkSpeed: 5
-  runSpeed: 10
-  rollForce: 50
-  turnTime: 10
-  cam: {fileID: 963194227}
-  camForward: {x: 0, y: 0, z: 0}
+  camForward: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
