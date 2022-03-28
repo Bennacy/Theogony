@@ -62,6 +62,7 @@ public class PlayerInputTest : MonoBehaviour
             stoppedMove = true;
             movementVector = Vector3.zero;
         }
+        Debug.Log(inputVector2);
     }
 
     public void Run(InputAction.CallbackContext context){

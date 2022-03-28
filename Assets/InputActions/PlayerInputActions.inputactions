@@ -40,15 +40,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "CMov",
-                    "type": "PassThrough",
-                    "id": "deecc608-453e-473d-9a1d-8cf03a49b334",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -291,17 +282,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Run/Dodge",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "64ee5c36-d37a-4ba3-a0f3-79d342bb2344",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CMov",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

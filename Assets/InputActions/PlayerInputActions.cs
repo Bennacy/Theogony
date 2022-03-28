@@ -62,15 +62,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""CMov"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""deecc608-453e-473d-9a1d-8cf03a49b334"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -313,17 +304,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Run/Dodge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64ee5c36-d37a-4ba3-a0f3-79d342bb2344"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CMov"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -915,7 +895,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_RunDodge = m_Player.FindAction("Run/Dodge", throwIfNotFound: true);
-        m_Player_CMov = m_Player.FindAction("CMov", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -991,7 +970,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_RunDodge;
-    private readonly InputAction m_Player_CMov;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1000,7 +978,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @RunDodge => m_Wrapper.m_Player_RunDodge;
-        public InputAction @CMov => m_Wrapper.m_Player_CMov;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1022,9 +999,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @RunDodge.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRunDodge;
                 @RunDodge.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRunDodge;
                 @RunDodge.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRunDodge;
-                @CMov.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCMov;
-                @CMov.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCMov;
-                @CMov.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCMov;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1041,9 +1015,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @RunDodge.started += instance.OnRunDodge;
                 @RunDodge.performed += instance.OnRunDodge;
                 @RunDodge.canceled += instance.OnRunDodge;
-                @CMov.started += instance.OnCMov;
-                @CMov.performed += instance.OnCMov;
-                @CMov.canceled += instance.OnCMov;
             }
         }
     }
@@ -1204,7 +1175,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnRunDodge(InputAction.CallbackContext context);
-        void OnCMov(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
