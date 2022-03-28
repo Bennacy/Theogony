@@ -542,6 +542,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fdef5244-ea49-472c-a012-d619ce8817dc
     m_ActionName: Player/Run/Dodge[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: deecc608-453e-473d-9a1d-8cf03a49b334
+    m_ActionName: Player/CMov
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -565,7 +569,7 @@ MonoBehaviour:
   backstepSpeed: 150
   rollForce: 50
   turnTime: 10
-  canMove: 0
+  canMove: 1
   cam: {fileID: 963194227}
   camForward: {x: 0, y: 0, z: 0}
 --- !u!114 &620037187
@@ -575,7 +579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620037179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5077ff7e967f71548bacb180779eb3d6, type: 3}
   m_Name: 
