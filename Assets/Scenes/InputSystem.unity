@@ -414,7 +414,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   staminaFront: {fileID: 1634491645}
   staminaTrans: {fileID: 1940216710}
-  decreaseSpeed: 15
+  decreaseSpeed: 25
 --- !u!1 &372920460
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 620037187}
+  coll: {fileID: 620037181}
   rb: {fileID: 620037180}
   cam: {fileID: 963194227}
   camForward: {x: 0, y: 0, z: 0, w: 0}

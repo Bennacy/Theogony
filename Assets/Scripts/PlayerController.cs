@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     public PlayerManager playerManager;
+    public CapsuleCollider coll;
     public Rigidbody rb;
     public Camera cam;
     public Quaternion camForward;
     private Vector3 movementVector;
+    public MeshRenderer meshRenderer;
     [Space]
     
     [Space]
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         moveSpeed = walkSpeed;
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -101,14 +104,18 @@ public class PlayerController : MonoBehaviour
     }
 
     private IEnumerator RollTime(float wait){
+        coll.enabled = false;
+        meshRenderer.material.color = Color.red;
         Debug.Log("Rolling");
         canMove = false;
         playerManager.staminaSpent = true;
         yield return new WaitForSeconds(wait);
+        coll.enabled = true;
         rb.velocity = Vector3.zero;
         moveSpeed = walkSpeed;
         Debug.Log("Stopped");
         canMove = true;
+        meshRenderer.material.color = Color.white;
         StartCoroutine(playerManager.RechargeStamina());
     }
 }
