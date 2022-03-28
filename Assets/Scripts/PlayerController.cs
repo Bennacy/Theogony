@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
                     moveSpeed = walkSpeed;
                     playerManager.staminaSpent = false;
                 }else{
-                    playerManager.staminaSpent = true;
+                    StartCoroutine(playerManager.RechargeStamina());
                 }
             }
             
@@ -103,10 +103,12 @@ public class PlayerController : MonoBehaviour
     private IEnumerator RollTime(float wait){
         Debug.Log("Rolling");
         canMove = false;
+        playerManager.staminaSpent = true;
         yield return new WaitForSeconds(wait);
         rb.velocity = Vector3.zero;
         moveSpeed = walkSpeed;
         Debug.Log("Stopped");
         canMove = true;
+        StartCoroutine(playerManager.RechargeStamina());
     }
 }

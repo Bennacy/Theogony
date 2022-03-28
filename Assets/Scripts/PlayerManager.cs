@@ -28,7 +28,6 @@ public class PlayerManager : MonoBehaviour
     public bool UpdateStamina(float changeBy){
         if(currStamina - changeBy >= 0){
             currStamina -= changeBy;
-            StartCoroutine(RechargeStamina());
             return true;
         }else{
             return false;
