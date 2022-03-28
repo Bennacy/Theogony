@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 620037182}
   - component: {fileID: 620037181}
   - component: {fileID: 620037180}
+  - component: {fileID: 620037187}
   - component: {fileID: 620037186}
   - component: {fileID: 620037185}
   m_Layer: 0
@@ -566,16 +567,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742b2c7496fb70743ae0f98f4ccf7ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 620037187}
   rb: {fileID: 620037180}
-  walkSpeed: 5
-  runSpeed: 10
-  backstepSpeed: -20
-  rollSpeed: 0
-  backstepTime: 2
-  turnTime: 10
-  canMove: 1
   cam: {fileID: 963194227}
   camForward: {x: 0, y: 0, z: 0, w: 0}
+  walkSpeed: 5
+  runSpeed: 10
+  backstepSpeed: -15
+  rollSpeed: 3
+  backstepTime: 0.15
+  rollTime: 1
+  turnTime: 10
+  rollCost: 15
+  backstepCost: 10
+  runCost: 2
+  canMove: 1
+  running: 0
+--- !u!114 &620037187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620037179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18fec92e892b774c9d149410655f561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  maxStamina: 100
+  currHealth: 0
+  currStamina: 0
+  levels: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

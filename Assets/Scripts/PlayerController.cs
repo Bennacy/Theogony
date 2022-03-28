@@ -4,22 +4,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputTest : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("References")]
+    public PlayerManager playerManager;
     public Rigidbody rb;
-    public float walkSpeed;
-    public float runSpeed;
-    public float backstepSpeed;
-    private float moveSpeed;
-    public float rollSpeed;
-    public float backstepTime;
-    public float rollTime;
-    public float turnTime;
-    private bool stoppedMove;
-    public bool canMove;
     public Camera cam;
     public Quaternion camForward;
     private Vector3 movementVector;
+    [Space]
+    
+    [Space]
+    [Header("Movement Values")]
+    public float walkSpeed;
+    public float runSpeed;
+    public float backstepSpeed;
+    public float rollSpeed;
+    private float moveSpeed;
+    public float backstepTime;
+    public float rollTime;
+    public float turnTime;
+    public float rollCost;
+    public float backstepCost;
+    public float runCost;
+    [Space]
+
+    [Space]
+    [Header("Booleans")]
+    public bool canMove;
+    private bool stoppedMove;
+    public bool running;
+
 
     void Start()
     {
@@ -33,6 +48,12 @@ public class PlayerInputTest : MonoBehaviour
         if((movementVector != Vector3.zero || stoppedMove) && canMove){
             stoppedMove = false;
             Vector3 vel = Vector3.zero;
+            if(running){
+                if(!playerManager.UpdateStamina(runCost * Time.deltaTime)){
+                    running = false;
+                    moveSpeed = walkSpeed;
+                }
+            }
             
             vel += camForward * movementVector * moveSpeed;
             rb.velocity = vel;
@@ -53,24 +74,22 @@ public class PlayerInputTest : MonoBehaviour
 
     public void Run(InputAction.CallbackContext context){
         float value = context.ReadValue<float>();
-        if(context.performed && canMove){
+        if(context.performed){
             moveSpeed = runSpeed;
-            // pressedTimer = 0;
-            // pressedRoll = true;
+            running = true;
         }else if(context.canceled){
             moveSpeed = walkSpeed;
-            // pressedTimer = 0;
-            // pressedRoll = false;
+            running = false;
         }
     }
 
     public void Roll(InputAction.CallbackContext context){
-        if(context.performed){
-            if(movementVector == Vector3.zero){
+        if(context.performed && canMove){
+            if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
                 moveSpeed = backstepSpeed;
                 rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
                 StartCoroutine(RollTime(backstepTime));
-            }else{
+            }else if(playerManager.UpdateStamina(rollCost)){
                 moveSpeed = rollSpeed;
                 rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
                 StartCoroutine(RollTime(rollTime));
