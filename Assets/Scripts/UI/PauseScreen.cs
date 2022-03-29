@@ -8,6 +8,8 @@ public class PauseScreen : MonoBehaviour
 {
     [Header("References")]
     public GameObject backgroundImg;
+    public GlobalInfo globalInfo;
+    public Text menuHeader;
     public Image[] menuTabs;
     [Space]
 
@@ -24,6 +26,7 @@ public class PauseScreen : MonoBehaviour
     
     void Start()
     {
+        globalInfo = GlobalInfo.GetGlobalInfo();
         backgroundImg.SetActive(paused);
         unselectedC = new Color(1, 1, 1, .75f);
         Debug.Log(unselectedC);
@@ -55,9 +58,17 @@ public class PauseScreen : MonoBehaviour
     }
 
     public void TogglePause(InputAction.CallbackContext context){
-        Debug.Log("Pause " + context.phase);
         paused = !paused;
         backgroundImg.SetActive(paused);
+        globalInfo.paused = paused;
+    }
+
+    public void Back(InputAction.CallbackContext context){
+        if(context.canceled){
+            backgroundImg.SetActive(false);
+            globalInfo.paused = false;
+            paused = false;
+        }
     }
 
     public void SwapMenu(InputAction.CallbackContext context){

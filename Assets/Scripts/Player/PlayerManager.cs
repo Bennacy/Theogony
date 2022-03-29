@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GlobalInfo globalInfo;
     public float maxHealth;
     public float maxStamina;
     public float currHealth;
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        globalInfo = GlobalInfo.GetGlobalInfo();
         currHealth = maxHealth;
         currStamina = maxStamina;
     }

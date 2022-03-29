@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
+    public GlobalInfo globalInfo;
     public PlayerManager playerManager;
     public CapsuleCollider coll;
     public Rigidbody rb;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        globalInfo = GlobalInfo.GetGlobalInfo();
         moveSpeed = walkSpeed;
         meshRenderer = GetComponent<MeshRenderer>();
     }
@@ -79,26 +81,30 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Run(InputAction.CallbackContext context){
-        float value = context.ReadValue<float>();
-        if(context.performed){
-            moveSpeed = runSpeed;
-            running = true;
-        }else if(context.canceled){
-            moveSpeed = walkSpeed;
-            running = false;
+        if(!globalInfo.paused){
+            float value = context.ReadValue<float>();
+            if(context.performed){
+                moveSpeed = runSpeed;
+                running = true;
+            }else if(context.canceled){
+                moveSpeed = walkSpeed;
+                running = false;
+            }
         }
     }
 
     public void Roll(InputAction.CallbackContext context){
-        if(context.performed && canMove){
-            if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
-                moveSpeed = backstepSpeed;
-                rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
-                StartCoroutine(RollTime(backstepTime));
-            }else if(playerManager.UpdateStamina(rollCost)){
-                moveSpeed = rollSpeed;
-                rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
-                StartCoroutine(RollTime(rollTime));
+        if(!globalInfo.paused){
+            if(context.performed && canMove){
+                if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
+                    moveSpeed = backstepSpeed;
+                    rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
+                    StartCoroutine(RollTime(backstepTime));
+                }else if(playerManager.UpdateStamina(rollCost)){
+                    moveSpeed = rollSpeed;
+                    rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
+                    StartCoroutine(RollTime(rollTime));
+                }
             }
         }
     }

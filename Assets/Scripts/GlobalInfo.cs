@@ -11,6 +11,11 @@ public class GlobalInfo : MonoBehaviour
     [Space]
     [Header("Values")]
     public int currency;
+    [Space]
+
+    [Space]
+    [Header("Bools")]
+    public bool paused;
     
     public static GlobalInfo GetGlobalInfo(){
         return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
