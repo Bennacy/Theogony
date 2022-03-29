@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int playerStrength, playerDexterity;
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         

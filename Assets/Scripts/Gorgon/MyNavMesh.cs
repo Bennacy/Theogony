@@ -24,9 +24,15 @@ public class MyNavMesh : MonoBehaviour
 
 
     }
-    
+    public void FacePlayer()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 100f);
+    }
     public void GoToTarget()
     {
+       FacePlayer();
        agent.SetDestination(target.position - new Vector3(1, 0, 1));
     }
     

@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     public float damage;
-    public float scaling;
-    //add requirments to upgrade
+    public float scaleDexterity;
+    public float scaleStrenght;
+    public WeaponClass weaponClass;
     public WeaponType weaponType;
 }
