@@ -8,13 +8,13 @@ namespace Theogony
     {
         InputHandler inputHandler;
 
-        CameraHandler cameraHandler;
+        public CameraHandler cameraHandler;
         PlayerLocomotaion playerLocomotion;
 
 
         private void Awake()
         {
-            cameraHandler = CameraHandler.singleton;
+            
         }
 
         void Start()
