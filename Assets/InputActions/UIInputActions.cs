@@ -35,6 +35,24 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MenuRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""a50db668-8910-400c-9692-21d7f3b86f1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MenuLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a9a6d40-2c3f-4581-b5ac-90b46aeeaf8f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,6 +88,28 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1bf18f14-9a1a-4c4a-9928-b132a478d97e"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6f7fc5c-cb8c-4947-bb2b-592c07ec539d"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -79,6 +119,8 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
+        m_UI_MenuRight = m_UI.FindAction("MenuRight", throwIfNotFound: true);
+        m_UI_MenuLeft = m_UI.FindAction("MenuLeft", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,11 +181,15 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_Pause;
+    private readonly InputAction m_UI_MenuRight;
+    private readonly InputAction m_UI_MenuLeft;
     public struct UIActions
     {
         private @UIInputActions m_Wrapper;
         public UIActions(@UIInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
+        public InputAction @MenuRight => m_Wrapper.m_UI_MenuRight;
+        public InputAction @MenuLeft => m_Wrapper.m_UI_MenuLeft;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -156,6 +202,12 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPause;
+                @MenuRight.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuRight;
+                @MenuRight.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuRight;
+                @MenuRight.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuRight;
+                @MenuLeft.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuLeft;
+                @MenuLeft.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuLeft;
+                @MenuLeft.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuLeft;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -163,6 +215,12 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @MenuRight.started += instance.OnMenuRight;
+                @MenuRight.performed += instance.OnMenuRight;
+                @MenuRight.canceled += instance.OnMenuRight;
+                @MenuLeft.started += instance.OnMenuLeft;
+                @MenuLeft.performed += instance.OnMenuLeft;
+                @MenuLeft.canceled += instance.OnMenuLeft;
             }
         }
     }
@@ -170,5 +228,7 @@ public partial class @UIInputActions : IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnPause(InputAction.CallbackContext context);
+        void OnMenuRight(InputAction.CallbackContext context);
+        void OnMenuLeft(InputAction.CallbackContext context);
     }
 }
