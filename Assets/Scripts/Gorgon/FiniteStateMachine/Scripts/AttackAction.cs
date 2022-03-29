@@ -9,7 +9,7 @@ public class AttackAction : Action
     private float cooldowntimer = 0f;
     public override void Act(GorgonFiniteStateMachine fsm)
     {
-        //fsm.GetAgent().SteeringAttack();
+       
         int i = Random.Range(1, 3);
         if (cooldowntimer < 0)
         {
