@@ -6,39 +6,56 @@ using UnityEngine.UI;
 public class CurrencyDisplay : MonoBehaviour
 {
     public GlobalInfo globalInfo;
-    public Text changeNums;
-    public Text txt;
+    public Text currencyText;
+    public Text changeText;
     public float changeTime;
+    private float changeTimer;
     private int currency;
     private int oldCurrency;
+    private int currencyTarget;
     private float changeAmount;
     private bool changing;
 
     void Start()
     {
         globalInfo = GlobalInfo.GetGlobalInfo();
-        currency = globalInfo.currency;
-        oldCurrency = currency;
+        changing = false;
+        currency = oldCurrency = globalInfo.currency;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
         if(!changing){
             currency = globalInfo.currency;
-        }else{
-            currency += Mathf.RoundToInt((Time.deltaTime * changeAmount) / changeTime);
         }
-        txt.text = currency.ToString();
 
         if(oldCurrency != currency && !changing){
-            changeAmount = currency - oldCurrency;
-            CurrChange(changeAmount);
+            changing = true;
+            currencyTarget = currency;
+            Debug.Log("Currency Target: " + currencyTarget);
+            currency = oldCurrency;
+            CurrChange(currencyTarget - currency);
         }
-        if(!changing)
-            oldCurrency = currency;
 
+        if(changing){
+            int change = Mathf.CeilToInt(Time.deltaTime * (currencyTarget - oldCurrency) / changeTime);
+            if(change <= 0 && currencyTarget > oldCurrency){
+                change = 1;
+            }else if(change >= 0 && currencyTarget < oldCurrency){
+                change = -1;
+            }
+            currency += change;
+            if(Mathf.Abs(currencyTarget - currency) <= Mathf.CeilToInt(Mathf.Abs(currencyTarget - oldCurrency))/10){
+                currency = currencyTarget;
+                changing = false;
+            }
+        }
+
+        if(!changing){
+            oldCurrency = currency;
+        }
+
+        currencyText.text = currency.ToString();
     }
 
     void CurrChange(float changed){
@@ -49,17 +66,14 @@ public class CurrencyDisplay : MonoBehaviour
         }
 
         toDisplay += changed.ToString();
-        changeNums.text = toDisplay;
+        changeText.text = toDisplay;
 
         StartCoroutine(ChangeNums());
     }
 
     IEnumerator ChangeNums(){
-        changing = true;
-        changeNums.gameObject.SetActive(true);
+        changeText.gameObject.SetActive(true);
         yield return new WaitForSeconds(changeTime);
-        changeNums.gameObject.SetActive(false);
-        changing = false;
-        currency = globalInfo.currency;
+        changeText.gameObject.SetActive(false);
     }
 }

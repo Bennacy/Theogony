@@ -1696,8 +1696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalInfo: {fileID: 0}
-  changeNums: {fileID: 3808543}
-  txt: {fileID: 1052277837}
+  currencyText: {fileID: 1052277837}
+  changeText: {fileID: 3808543}
   changeTime: 1
 --- !u!1 &816694751
 GameObject:
