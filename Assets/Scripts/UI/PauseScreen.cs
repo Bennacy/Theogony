@@ -25,10 +25,9 @@ public class PauseScreen : MonoBehaviour
     void Start()
     {
         backgroundImg.SetActive(paused);
-        unselectedC = new Color();
-        unselectedC.r = 0;
+        unselectedC = new Color(1, 1, 1, .75f);
         Debug.Log(unselectedC);
-        selectedC = new Color(175, 175, 175, 100);
+        selectedC = new Color(.75f, .75f, .75f, .75f);
     }
 
     void Update()
