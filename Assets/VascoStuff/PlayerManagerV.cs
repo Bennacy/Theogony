@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Theogony
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManagerV : MonoBehaviour
     {
         InputHandler inputHandler;
 
