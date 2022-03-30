@@ -31,7 +31,8 @@ public class AttackAction : Action
                         fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.blue;
                         Debug.Log("Second Attack");
                         cooldowntimer = 2;
-                        fsm.gorgonAnimator.Play("Attack1");
+                        fsm.gorgonAnimator.Play("Attack2");
+                        fsm.GetAgent().RotateGorgon();
 
                         break;
                     }
@@ -41,5 +42,5 @@ public class AttackAction : Action
         cooldowntimer -= Time.deltaTime;
 
     }
-   
+    
 }

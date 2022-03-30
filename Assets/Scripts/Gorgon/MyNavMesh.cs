@@ -33,7 +33,7 @@ public class MyNavMesh : MonoBehaviour
     public void GoToTarget()
     {
        FacePlayer();
-       agent.SetDestination(target.position - new Vector3(1, 0, 1));
+       agent.SetDestination(target.position - new Vector3(1f, 0, 1f));
     }
     
     public float GetHealth()
@@ -46,9 +46,15 @@ public class MyNavMesh : MonoBehaviour
         agent.isStopped = true;
         agent.ResetPath();
     }
+    public void RotateGorgon()
+    {
+       
+            transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
+        
+    }
 
-   
-    
+
+
 
 
 }
