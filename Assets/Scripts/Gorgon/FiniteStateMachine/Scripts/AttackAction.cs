@@ -12,14 +12,14 @@ public class AttackAction : Action
     {
         fsm.GetAgent().FacePlayer();
 
-        int i = Random.Range(1, 3);
+        int i = Random.Range(1, 4);
         if (cooldowntimer < 0)
         {
             switch (i)
             {
                 case 1:
                     {
-                        fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.red;
+                        
                         Debug.Log("First Attack");
                         cooldowntimer = 2;
                         fsm.gorgonAnimator.Play("Attack1");
@@ -28,11 +28,20 @@ public class AttackAction : Action
                     }
                 case 2:
                     {
-                        fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.blue;
+                       
                         Debug.Log("Second Attack");
                         cooldowntimer = 2;
                         fsm.gorgonAnimator.Play("Attack2");
                        // fsm.GetAgent().RotateGorgon();
+
+                        break;
+                    }
+                case 3:
+                    {
+
+                        Debug.Log("Third Attack");
+                        cooldowntimer = 2;
+                        fsm.gorgonAnimator.Play("Attack3");
 
                         break;
                     }
