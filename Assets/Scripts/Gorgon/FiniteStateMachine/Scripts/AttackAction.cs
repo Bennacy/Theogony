@@ -32,7 +32,7 @@ public class AttackAction : Action
                         Debug.Log("Second Attack");
                         cooldowntimer = 2;
                         fsm.gorgonAnimator.Play("Attack2");
-                        fsm.GetAgent().RotateGorgon();
+                       // fsm.GetAgent().RotateGorgon();
 
                         break;
                     }
