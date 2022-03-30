@@ -38,7 +38,7 @@ public class GridControl : MonoBehaviour
     }
 
     public void NextRow(InputAction.CallbackContext context){
-        if(context.performed){
+        if(context.performed && gameObject.activeSelf){
             currRow ++;
             if(currRow >= totalRows){
                 currRow = 0;
@@ -48,7 +48,7 @@ public class GridControl : MonoBehaviour
     }
 
     public void PrevRow(InputAction.CallbackContext context){
-        if(context.performed){
+        if(context.performed && gameObject.activeSelf){
             currRow --;
             if(currRow < 0){
                 currRow = totalRows - 1;
@@ -58,7 +58,7 @@ public class GridControl : MonoBehaviour
     }
 
     public void NextCol(InputAction.CallbackContext context){
-        if(context.performed){
+        if(context.performed && gameObject.activeSelf){
             currCol ++;
             if(currCol >= totalCols){
                 currCol = 0;
@@ -68,7 +68,7 @@ public class GridControl : MonoBehaviour
     }
 
     public void PrevCol(InputAction.CallbackContext context){
-        if(context.performed){
+        if(context.performed && gameObject.activeSelf){
             currCol --;
             if(currCol < 0){
                 currCol = totalCols - 1;

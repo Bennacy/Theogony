@@ -11,6 +11,7 @@ public class PauseScreen : MonoBehaviour
     public GlobalInfo globalInfo;
     public Text menuHeader;
     public Image[] menuTabs;
+    public GameObject[] menuWindows;
     [Space]
 
     [Space]
@@ -35,9 +36,11 @@ public class PauseScreen : MonoBehaviour
     void Update()
     {
         if(paused){
-            foreach(Image tab in menuTabs){
-                tab.color = unselectedC;
+            for(int i = 0; i < menuTabs.Length; i++){
+                menuTabs[i].color = unselectedC;
+                menuWindows[i].SetActive(false);
             }
+            menuWindows[menuIndex].SetActive(true);
             menuTabs[menuIndex].color = selectedC;
 
             switch(menuIndex){
