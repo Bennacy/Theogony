@@ -7,8 +7,10 @@ public class GorgonFiniteStateMachine : MonoBehaviour
     public State initialState;
     public State currentState;
     private MyNavMesh agent;
+    public Animator gorgonAnimator;
     void Start()
     {
+        gorgonAnimator = GetComponentInChildren<Animator>();
         currentState = initialState;
         agent = GetComponent<MyNavMesh>();
 

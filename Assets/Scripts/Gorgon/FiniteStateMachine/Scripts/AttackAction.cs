@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AttackAction : Action
 {
-    private float cooldowntimer = 0f;
+    private float cooldowntimer = 0.2f;
     
     public override void Act(GorgonFiniteStateMachine fsm)
     {
@@ -21,7 +21,8 @@ public class AttackAction : Action
                     {
                         fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.red;
                         Debug.Log("First Attack");
-                        cooldowntimer = 1;
+                        cooldowntimer = 2;
+                        fsm.gorgonAnimator.Play("Attack1");
 
                         break;
                     }
@@ -29,7 +30,9 @@ public class AttackAction : Action
                     {
                         fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.blue;
                         Debug.Log("Second Attack");
-                        cooldowntimer = 1;
+                        cooldowntimer = 2;
+                        fsm.gorgonAnimator.Play("Attack1");
+
                         break;
                     }
 

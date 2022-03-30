@@ -8,6 +8,7 @@ public class ChaseAction : Action
     public override void Act(GorgonFiniteStateMachine fsm)
     {
         Debug.Log("Chase");
+        fsm.gorgonAnimator.Play("Chase");
         fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.green;
         fsm.GetAgent().GoToTarget();
         
