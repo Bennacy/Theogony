@@ -8,7 +8,8 @@ public class GorgonFiniteStateMachine : MonoBehaviour
     public State currentState;
     private MyNavMesh agent;
     public Animator gorgonAnimator;
-    public float cooldowntimer = 1f;
+
+   
     void Start()
     {
         gorgonAnimator = GetComponentInChildren<Animator>();
@@ -53,7 +54,6 @@ public class GorgonFiniteStateMachine : MonoBehaviour
             {
                 if (action)
                 {
-                    cooldowntimer = 1f;
                     action.Act(this);
                 }
             }
