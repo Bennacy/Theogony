@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class AttackAction : Action
 {
-    private float cooldowntimer = 0.2f;
+    private float cooldowntimer = 0.1f;
     
     public override void Act(GorgonFiniteStateMachine fsm)
     {
         
-        fsm.GetAgent().FacePlayer();
+       
        
      
         int i = Random.Range(1, 4);
         if (cooldowntimer < 0)
         {
+            fsm.GetAgent().FacePlayer();
             switch (i)
             {
                 case 1:
@@ -34,7 +35,7 @@ public class AttackAction : Action
                         Debug.Log("Second Attack");
                         cooldowntimer = 2;
                         fsm.gorgonAnimator.Play("Attack2");
-                       // fsm.GetAgent().RotateGorgon();
+                        fsm.GetAgent().RotateGorgon();
 
                         break;
                     }

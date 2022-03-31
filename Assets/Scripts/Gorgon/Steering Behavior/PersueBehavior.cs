@@ -26,7 +26,7 @@ public class PersueBehavior : Steering
                 prediction = distance / speedAgent;
             }
             Vector3 futureDirection = target.position + (target.GetComponent<Rigidbody>().velocity * prediction);
-            steeringData.linear = Vector3.Normalize(futureDirection - transform.position - new Vector3(1f,0f,1f));
+            steeringData.linear = Vector3.Normalize(futureDirection - (transform.position - new Vector3(1f,0f,1f)));
             steeringData.linear *= steeringbase.maxAcceleration;
 
             return steeringData;

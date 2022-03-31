@@ -49,7 +49,13 @@ public class MyNavMesh : MonoBehaviour
     }
     public void RotateGorgon()
     {
-        transform.rotation = Quaternion.AngleAxis(30, Vector3.up);
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        Vector3 angle = lookRotation.eulerAngles;
+        angle.y += 90;
+        lookRotation = Quaternion.Euler(angle);
+        transform.rotation = lookRotation;
+       
     }
 
 

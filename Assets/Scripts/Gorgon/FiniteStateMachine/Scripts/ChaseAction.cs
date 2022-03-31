@@ -9,6 +9,7 @@ public class ChaseAction : Action
     {
         Debug.Log("Chase");
         fsm.gorgonAnimator.Play("Chase");
+        fsm.GetAgent().FacePlayer();
        // fsm.GetAgent().GoToTarget();
         
     }
