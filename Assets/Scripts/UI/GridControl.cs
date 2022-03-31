@@ -5,74 +5,76 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class GridControl : MonoBehaviour
-{
-    [Serializable]
-    public class GridRow{
-        public Image[] img;
-    }
-    public GridRow[] grid;
-    public PauseScreen pauseScreen;
-    public Color unselectedC;
-    public Color selectedC;
-    public int totalCols;
-    public int totalRows;
-    public int currCol;
-    public int currRow;
-
-    void Start()
+namespace Theogony{
+    public class GridControl : MonoBehaviour
     {
-        unselectedC = new Color(1, 1, 1, .75f);
-        selectedC = new Color(.75f, .75f, .75f, .75f);
-        grid = new GridRow[totalCols];
-        for(int i = 0; i < totalCols; i++){
-            grid[i] = new GridRow();
-            grid[i].img = new Image[totalRows];
+        [Serializable]
+        public class GridRow{
+            public Image[] img;
         }
-    }
+        public GridRow[] grid;
+        public PauseScreen pauseScreen;
+        public Color unselectedC;
+        public Color selectedC;
+        public int totalCols;
+        public int totalRows;
+        public int currCol;
+        public int currRow;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void NextRow(InputAction.CallbackContext context){
-        if(context.performed && gameObject.activeSelf){
-            currRow ++;
-            if(currRow >= totalRows){
-                currRow = 0;
-                NextCol(context);
+        void Start()
+        {
+            unselectedC = new Color(1, 1, 1, .75f);
+            selectedC = new Color(.75f, .75f, .75f, .75f);
+            grid = new GridRow[totalCols];
+            for(int i = 0; i < totalCols; i++){
+                grid[i] = new GridRow();
+                grid[i].img = new Image[totalRows];
             }
         }
-    }
 
-    public void PrevRow(InputAction.CallbackContext context){
-        if(context.performed && gameObject.activeSelf){
-            currRow --;
-            if(currRow < 0){
-                currRow = totalRows - 1;
-                PrevCol(context);
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
+
+        public void NextRow(InputAction.CallbackContext context){
+            if(context.performed && gameObject.activeSelf){
+                currRow ++;
+                if(currRow >= totalRows){
+                    currRow = 0;
+                    NextCol(context);
+                }
             }
         }
-    }
 
-    public void NextCol(InputAction.CallbackContext context){
-        if(context.performed && gameObject.activeSelf){
-            currCol ++;
-            if(currCol >= totalCols){
-                currCol = 0;
-                NextRow(context);
+        public void PrevRow(InputAction.CallbackContext context){
+            if(context.performed && gameObject.activeSelf){
+                currRow --;
+                if(currRow < 0){
+                    currRow = totalRows - 1;
+                    PrevCol(context);
+                }
             }
         }
-    }
 
-    public void PrevCol(InputAction.CallbackContext context){
-        if(context.performed && gameObject.activeSelf){
-            currCol --;
-            if(currCol < 0){
-                currCol = totalCols - 1;
-                PrevRow(context);
+        public void NextCol(InputAction.CallbackContext context){
+            if(context.performed && gameObject.activeSelf){
+                currCol ++;
+                if(currCol >= totalCols){
+                    currCol = 0;
+                    NextRow(context);
+                }
+            }
+        }
+
+        public void PrevCol(InputAction.CallbackContext context){
+            if(context.performed && gameObject.activeSelf){
+                currCol --;
+                if(currCol < 0){
+                    currCol = totalCols - 1;
+                    PrevRow(context);
+                }
             }
         }
     }

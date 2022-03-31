@@ -2,47 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalInfo : MonoBehaviour
-{
-    [Header("References")]
-    public static GlobalInfo self;
-    [Space]
-
-    [Space]
-    [Header("Values")]
-    public int currency;
-    [Space]
-
-    [Space]
-    [Header("Bools")]
-    public bool paused;
-    
-    public static GlobalInfo GetGlobalInfo(){
-        return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
-    }
-    
-    void Awake()
+namespace Theogony{
+    public class GlobalInfo : MonoBehaviour
     {
-        DontDestroyOnLoad(gameObject);
+        [Header("References")]
+        public static GlobalInfo self;
+        public UpdateBar health;
+        [Space]
 
-        if(self == null){
-            self = this;
-        }else{
-            Destroy(gameObject);
-        }
-    }
+        [Space]
+        [Header("Values")]
+        public int currency;
+        public int vit;
+        public int end;
+        public int str;
+        public int dex;
+        [Space]
 
-    void Update()
-    {
+        [Space]
+        [Header("Bools")]
+        public bool paused;
         
-    }
-
-    public bool AlterCurrency(int valueToAdd){
-        if(currency + valueToAdd >= 0){
-            currency += valueToAdd;
-            return true;
-        }else{
-            return false;
+        public static GlobalInfo GetGlobalInfo(){
+            return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
         }
-    }
+        
+        void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+
+            if(self == null){
+                self = this;
+            }else{
+                Destroy(gameObject);
+            }
+        }
+
+        void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha1)){
+                IncreaseVit();
+            }
+        }
+
+        public void IncreaseVit(){
+            vit++;
+            health.UpdateBarWidth(health.origMax + (10 * vit));
+        }
+
+        public bool AlterCurrency(int valueToAdd){
+            if(currency + valueToAdd >= 0){
+                currency += valueToAdd;
+                return true;
+            }else{
+                return false;
+            }
+        }
+}
 }
