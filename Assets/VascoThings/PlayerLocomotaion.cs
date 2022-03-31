@@ -22,8 +22,6 @@ namespace Theogony
         [SerializeField]
         float movementSpeed = 5;
         [SerializeField]
-        float sprintSpeed = 7;
-        [SerializeField]
         float rotationSpeed = 10;
 
         void Start()
