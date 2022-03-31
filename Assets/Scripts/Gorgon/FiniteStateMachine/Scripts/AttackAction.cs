@@ -10,8 +10,10 @@ public class AttackAction : Action
     
     public override void Act(GorgonFiniteStateMachine fsm)
     {
+        
         fsm.GetAgent().FacePlayer();
-
+       
+     
         int i = Random.Range(1, 4);
         if (cooldowntimer < 0)
         {
@@ -48,6 +50,8 @@ public class AttackAction : Action
 
             }
         }
+       
+        
         cooldowntimer -= Time.deltaTime;
 
     }

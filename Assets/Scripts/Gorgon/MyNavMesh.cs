@@ -35,11 +35,12 @@ public class MyNavMesh : MonoBehaviour
        FacePlayer();
        agent.SetDestination(target.position - new Vector3(1f, 0, 1f));
     }
-    
+   
     public float GetHealth()
     {
         return health;
     }
+   
    
     public void StopAction()
     {

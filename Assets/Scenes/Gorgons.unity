@@ -713,6 +713,7 @@ MonoBehaviour:
   initialState: {fileID: 11400000, guid: 51d088496ae8e62489e8139ba2dc1746, type: 2}
   currentState: {fileID: 0}
   gorgonAnimator: {fileID: 0}
+  cooldowntimer: 1
 --- !u!114 &757577494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,10 +776,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.3194132
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.017036557, y: 0, z: 0}
 --- !u!23 &757577499
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -895,10 +896,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.24562067
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0083985925, y: 0, z: 0}
 --- !u!23 &1351251747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -906,7 +907,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351251743}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -958,7 +959,7 @@ Transform:
   m_GameObject: {fileID: 1351251743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.49, y: 1, z: 4.41}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 418998865}
@@ -991,6 +992,10 @@ PrefabInstance:
     - target: {fileID: 1566049822020886, guid: 9d2d21ead9f817446aa6c299b76f7e89, type: 3}
       propertyPath: m_Name
       value: Character_DarkElf_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566049822020886, guid: 9d2d21ead9f817446aa6c299b76f7e89, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4283388011225748, guid: 9d2d21ead9f817446aa6c299b76f7e89, type: 3}
       propertyPath: m_RootOrder
