@@ -59,7 +59,6 @@ namespace Theogony{
 
         public void TestDelta(InputAction.CallbackContext context){
             Vector2 value = context.ReadValue<Vector2>();
-            // Debug.Log(value);
             mouseX = value.x;
             mouseY = value.y;
         }

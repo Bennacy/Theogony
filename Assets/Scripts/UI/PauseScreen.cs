@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PauseScreen : MonoBehaviour
 {
     [Header("References")]
+    public PlayerInput input;
     public GameObject backgroundImg;
     public GlobalInfo globalInfo;
     public Text menuHeader;
@@ -61,6 +62,7 @@ public class PauseScreen : MonoBehaviour
 
     public void TogglePause(InputAction.CallbackContext context){
         paused = !paused;
+        // input.enabled = paused;
         backgroundImg.SetActive(paused);
         globalInfo.paused = paused;
     }

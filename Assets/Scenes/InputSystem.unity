@@ -545,12 +545,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323426576}
+  - component: {fileID: 323426578}
   - component: {fileID: 323426575}
   - component: {fileID: 323426574}
   - component: {fileID: 323426573}
   - component: {fileID: 323426579}
-  - component: {fileID: 323426577}
-  - component: {fileID: 323426578}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -641,22 +640,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &323426577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323426572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ed408bed4f7504085dd33cfc969b83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
-  staminaFront: {fileID: 1634491645}
-  staminaTrans: {fileID: 1940216710}
-  decreaseSpeed: 25
 --- !u!114 &323426578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,7 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 92176c12b2fdde246a773ec8268cb70a, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 39c4a0d0ad24e4942b83c01a31115dee, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -684,16 +667,24 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: bbd14aa9-068f-4696-9ba2-278b5e9abd9d
+    m_ActionId: 0828e57a-0712-4f89-bc3b-a51eae6d0889
     m_ActionName: Movement/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: b3987431-3a83-4357-b0b9-f9110eafc65c
+    m_ActionId: fdef5244-ea49-472c-a012-d619ce8817dc
     m_ActionName: Movement/Run[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: ec0360b9-6d50-4467-8a51-a1eb3d9bc958
+    m_ActionId: 19bcb72f-0ab0-4e42-a9ee-a39b6c74226e
     m_ActionName: Movement/Dodge[/Keyboard/leftShift,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63f0437d-0814-4c4e-b16a-48a987b37daa
+    m_ActionName: Movement/Camera[/Mouse/delta,/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 300067be-c8e6-4b90-aff9-58cde9c52fee
+    m_ActionName: Movement/Pause[/XInputControllerWindows/start,/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 323426579}
@@ -708,7 +699,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: e6b5b16a-b71c-472b-a1ce-170bd9e0624a
+    m_ActionId: fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733
     m_ActionName: UI/Pause[/XInputControllerWindows/start,/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
@@ -724,7 +715,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: a50db668-8910-400c-9692-21d7f3b86f1b
+    m_ActionId: 83c0897e-a572-4263-a6fe-e00e1865e1b0
     m_ActionName: UI/MenuRight[/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
       m_Calls:
@@ -740,7 +731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 9a9a6d40-2c3f-4581-b5ac-90b46aeeaf8f
+    m_ActionId: ca231ed7-fd03-4472-8a94-25cfaad8f7ee
     m_ActionName: UI/MenuLeft[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
       m_Calls:
@@ -756,216 +747,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 6b69d86c-14b7-4d54-9135-73fdf5c29d5b
+    m_ActionId: 2765c5e4-7a69-4473-8501-17bd0296029f
     m_ActionName: UI/Back[/XInputControllerWindows/buttonEast,/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1272027635}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: PrevCol
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: eba7d7e5-73bd-4798-a749-a82f397e1430
-    m_ActionName: UI/Left[/XInputControllerWindows/dpad/left]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1272027635}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: NextCol
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 28abd007-5e98-4a86-b52c-2edb6fc1c509
-    m_ActionName: UI/Right[/XInputControllerWindows/dpad/right]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1272027635}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: PrevRow
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 72de8c82-b1dc-4c8c-9130-a1906703c199
-    m_ActionName: UI/Up[/XInputControllerWindows/dpad/up]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1272027635}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: NextRow
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GridControl, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2ed4f0a4-b1a3-42d3-b5b3-7d8ee6ee9a7a
-    m_ActionName: UI/Down[/XInputControllerWindows/dpad/down]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -983,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533aba280c218a446956873181b18572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 323426578}
   backgroundImg: {fileID: 487785851}
   globalInfo: {fileID: 0}
   menuHeader: {fileID: 0}
@@ -1282,7 +1066,7 @@ MonoBehaviour:
   followSpeed: 0.1
   pivotSpeed: 0.03
   minimumPivot: -35
-  maximumPivot: 35
+  maximumPivot: 40
   cameraSpheresRadius: 0.2
   cameraCollisionOffset: 0.2
   minimumCollisionOffset: 0.2
@@ -1373,6 +1157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534139467}
+  - component: {fileID: 534139468}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -1403,6 +1188,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &534139468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534139466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ed408bed4f7504085dd33cfc969b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
+  barFront: {fileID: 1634491645}
+  barTrans: {fileID: 1940216710}
+  barBackground: {fileID: 1244672689}
+  decreaseSpeed: 25
+  origWidth: 800
+  origMax: 100
+  barType: 0
 --- !u!1 &538301326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562916393}
+  - component: {fileID: 562916394}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -1500,6 +1306,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &562916394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562916392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ed408bed4f7504085dd33cfc969b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
+  barFront: {fileID: 1942409650}
+  barTrans: {fileID: 318379088}
+  barBackground: {fileID: 1970745486}
+  decreaseSpeed: 50
+  origWidth: 800
+  origMax: 100
+  barType: 1
 --- !u!1 &610861125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,13 +1495,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 620037184}
+  - component: {fileID: 620037185}
   - component: {fileID: 620037183}
   - component: {fileID: 620037182}
   - component: {fileID: 620037181}
   - component: {fileID: 620037180}
   - component: {fileID: 620037187}
   - component: {fileID: 620037186}
-  - component: {fileID: 620037185}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1807,7 +1633,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 620037186}
-        m_TargetAssemblyTypeName: PlayerInputTest, Assembly-CSharp
+        m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1819,11 +1645,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 0828e57a-0712-4f89-bc3b-a51eae6d0889
-    m_ActionName: Player/Move[/XInputControllerWindows/leftStick]
+    m_ActionName: Movement/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 620037186}
-        m_TargetAssemblyTypeName: PlayerInputTest, Assembly-CSharp
+        m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: Run
         m_Mode: 0
         m_Arguments:
@@ -1835,11 +1661,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: fdef5244-ea49-472c-a012-d619ce8817dc
-    m_ActionName: Player/Run/Dodge[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
+    m_ActionName: Movement/Run[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 620037186}
-        m_TargetAssemblyTypeName: PlayerInputTest, Assembly-CSharp
+        m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: Roll
         m_Mode: 0
         m_Arguments:
@@ -1852,18 +1678,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 19bcb72f-0ab0-4e42-a9ee-a39b6c74226e
     m_ActionName: Movement/Dodge[/Keyboard/leftShift,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733
-    m_ActionName: UI/Pause[/XInputControllerWindows/start,/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 83c0897e-a572-4263-a6fe-e00e1865e1b0
-    m_ActionName: UI/MenuRight[/XInputControllerWindows/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ca231ed7-fd03-4472-8a94-25cfaad8f7ee
-    m_ActionName: UI/MenuLeft[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 620037187}
@@ -1880,6 +1694,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 63f0437d-0814-4c4e-b16a-48a987b37daa
     m_ActionName: Movement/Camera[/Mouse/delta,/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 300067be-c8e6-4b90-aff9-58cde9c52fee
+    m_ActionName: Movement/Pause[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733
+    m_ActionName: UI/Pause[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 83c0897e-a572-4263-a6fe-e00e1865e1b0
+    m_ActionName: UI/MenuRight[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca231ed7-fd03-4472-8a94-25cfaad8f7ee
+    m_ActionName: UI/MenuLeft[/XInputControllerWindows/leftShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
