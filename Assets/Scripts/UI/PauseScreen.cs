@@ -8,7 +8,7 @@ namespace Theogony{
     public class PauseScreen : MonoBehaviour
     {
         [Header("References")]
-        public PlayerInput input;
+        public PlayerInput inputAction;
         public GameObject backgroundImg;
         public GlobalInfo globalInfo;
         public Text menuHeader;
@@ -62,10 +62,18 @@ namespace Theogony{
         }
 
         public void TogglePause(InputAction.CallbackContext context){
-            paused = !paused;
-            // input.enabled = paused;
-            backgroundImg.SetActive(paused);
-            globalInfo.paused = paused;
+            if(context.performed){
+                paused = !paused;
+                Debug.Log(paused);
+                // input.enabled = paused;
+                backgroundImg.SetActive(paused);
+                globalInfo.paused = paused;
+                if(paused){
+                    inputAction.SwitchCurrentActionMap("UI");
+                }else{
+                    inputAction.SwitchCurrentActionMap("Movement");
+                }
+            }
         }
 
         public void Back(InputAction.CallbackContext context){
@@ -73,6 +81,7 @@ namespace Theogony{
                 backgroundImg.SetActive(false);
                 globalInfo.paused = false;
                 paused = false;
+                inputAction.SwitchCurrentActionMap("Movement");
             }
         }
 

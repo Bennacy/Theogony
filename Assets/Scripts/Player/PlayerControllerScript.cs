@@ -75,6 +75,7 @@ namespace Theogony{
         public void Move(InputAction.CallbackContext context){
             Vector2 inputVector2 = context.action.ReadValue<Vector2>();
             movementVector = new Vector3(inputVector2.x, 0, inputVector2.y);
+            Debug.Log(movementVector);
             if(context.canceled){
                 stoppedMove = true;
                 movementVector = Vector3.zero;
