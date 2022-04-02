@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 90049246}
   - component: {fileID: 90049249}
   - component: {fileID: 90049250}
+  - component: {fileID: 90049251}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -304,6 +305,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: 1890039a17c960e42a7a9e852c2bfc43, type: 2}
   leftWeapon: {fileID: 11400000, guid: 8c3a5526cae05d14e965b443bd78894a, type: 2}
+--- !u!114 &90049251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90049241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc0a463d9b5482499a555bda9773e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &296061940
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,13 +468,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372920460}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.0251079, y: -1.005, z: 2.1075}
-  m_LocalScale: {x: 6.2499995, y: 6.2499995, z: 6.2499995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1761978349}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &456044335
 PrefabInstance:
@@ -887,6 +900,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9513742, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a23675e71e2dfcd42b6286866f166279, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
 --- !u!4 &987930809 stripped
@@ -960,7 +977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1761978346
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1037,7 +1054,6 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 372920464}
   - {fileID: 1752061197}
   m_Father: {fileID: 0}
   m_RootOrder: 3

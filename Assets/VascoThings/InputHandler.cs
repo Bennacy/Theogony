@@ -12,10 +12,21 @@ namespace Theogony
         public float mouseX;
         public float mouseY;
 
+        public bool l_Input;
+        public bool h_Input;
+
         PlayerController inputActions;
+        PlayerAttacker playerAttacker;
+        PlayerInventory playerInventory;
 
         Vector2 movementInput;
         Vector2 cameraInput;
+
+        private void Awake()
+        {
+            playerAttacker = GetComponent<PlayerAttacker>();
+            playerInventory = GetComponent<PlayerInventory>();
+        }
 
         public void OnEnable()
         {
@@ -37,6 +48,7 @@ namespace Theogony
         public void TickInput(float delta)
         {
             MoveInput(delta);
+            AttackInput(delta);
 
         }
 
@@ -49,6 +61,22 @@ namespace Theogony
             mouseY = cameraInput.y;
         }
 
-      
+      private void AttackInput(float delta)
+      {
+            inputActions.PlayerActions.LightAttack.performed += inputActions => l_Input = true;
+            inputActions.PlayerActions.HeavyAttack.performed += inputActions => h_Input = true;
+
+            if (l_Input)
+            {
+                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+               
+            }
+
+            if (h_Input)
+            {
+                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                Debug.Log("heavy attack");
+            }
+        }
     }
 }

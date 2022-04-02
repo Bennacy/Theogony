@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334275e7514869d46a3b45b50aea1353, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
   itemName: sword
   weaponPrefab: {fileID: 4189712685836114373, guid: 8493fe4f5d78f564c88cd711b36af11e, type: 3}
   isUnarmed: 0
+  lightAttack:
+  - LightAttack_1
+  - LightAttack_2
+  - LightAttack_3
+  heavyAttack: HeavyAttack

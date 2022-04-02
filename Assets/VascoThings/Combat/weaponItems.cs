@@ -9,6 +9,8 @@ namespace Theogony
     {
 
         public GameObject weaponPrefab;
-        public bool isUnarmed; 
+        public bool isUnarmed;
+        public string[] lightAttack;
+        public string heavyAttack;
     }
 }

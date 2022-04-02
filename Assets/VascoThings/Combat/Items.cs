@@ -8,7 +8,7 @@ namespace Theogony
     public class Items : ScriptableObject
     {
         [Header("Item Info")]
-        public Sprite itemIcon;
+       
         public string itemName;
 
     }

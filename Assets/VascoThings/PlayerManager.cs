@@ -10,6 +10,7 @@ namespace Theogony
 
         public CameraHandler cameraHandler;
         PlayerLocomotaion playerLocomotion;
+        public bool isInteracting; 
 
 
         private void Awake()
@@ -30,6 +31,11 @@ namespace Theogony
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
            
+        }
+        private void LateUpdate()
+        {
+            inputHandler.l_Input = false;
+            inputHandler.h_Input = false;
         }
 
         private void FixedUpdate()
