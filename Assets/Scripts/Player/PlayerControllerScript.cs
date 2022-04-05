@@ -15,7 +15,6 @@ namespace Theogony{
         public GameObject cam;
         public Quaternion camForward;
         private Vector3 movementVector;
-        public MeshRenderer meshRenderer;
         [Space]
         
         [Space]
@@ -44,7 +43,6 @@ namespace Theogony{
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
             moveSpeed = walkSpeed;
-            meshRenderer = GetComponent<MeshRenderer>();
         }
 
         void Update()
@@ -113,16 +111,12 @@ namespace Theogony{
         }
 
         private IEnumerator RollTime(float wait){
-            coll.enabled = false;
-            meshRenderer.material.color = Color.red;
             canMove = false;
             playerManager.staminaSpent = true;
             yield return new WaitForSeconds(wait);
-            coll.enabled = true;
             rb.velocity = Vector3.zero;
             moveSpeed = walkSpeed;
             canMove = true;
-            meshRenderer.material.color = Color.white;
             StartCoroutine(playerManager.RechargeStamina());
         }
 }

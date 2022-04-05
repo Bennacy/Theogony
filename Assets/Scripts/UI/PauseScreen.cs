@@ -72,7 +72,7 @@ namespace Theogony{
                 if(paused){
                     inputAction.SwitchCurrentActionMap("UI");
                 }else{
-                    inputAction.SwitchCurrentActionMap("Movement");
+                    inputAction.SwitchCurrentActionMap("InGame");
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace Theogony{
                 backgroundImg.SetActive(false);
                 globalInfo.paused = false;
                 paused = false;
-                inputAction.SwitchCurrentActionMap("Movement");
+                inputAction.SwitchCurrentActionMap("InGame");
             }
         }
 

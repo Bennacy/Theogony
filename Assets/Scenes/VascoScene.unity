@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 90049242}
   - component: {fileID: 90049246}
   - component: {fileID: 90049254}
-  - component: {fileID: 90049253}
+  - component: {fileID: 90049255}
   - component: {fileID: 90049250}
   - component: {fileID: 90049251}
   m_Layer: 0
@@ -183,7 +183,7 @@ Transform:
   m_Children:
   - {fileID: 987930809}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &90049246
 Rigidbody:
@@ -199,7 +199,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &90049250
 MonoBehaviour:
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90049253}
+      - m_Target: {fileID: 90049255}
         m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
     m_ActionName: Movement/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90049253}
+      - m_Target: {fileID: 90049255}
         m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: Run
         m_Mode: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
     m_ActionName: Movement/Run[/XInputControllerWindows/buttonEast,/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90049253}
+      - m_Target: {fileID: 90049255}
         m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: Roll
         m_Mode: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
     m_ActionName: UI/MenuNavigation[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90049253}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: LightAttack
         m_Mode: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
     m_ActionName: InGame/LightAttack[/XInputControllerWindows/rightShoulder,/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90049253}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Theogony.PlayerControllerScript, Assembly-CSharp
         m_MethodName: HeavyAttack
         m_Mode: 0
@@ -385,35 +385,6 @@ MonoBehaviour:
   m_DefaultActionMap: InGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &90049253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90049241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498ad082cb1b5984fa6fc8b728498cdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerManager: {fileID: 90049254}
-  coll: {fileID: 90049242}
-  rb: {fileID: 90049246}
-  cam: {fileID: 820765740}
-  camForward: {x: 0, y: 0, z: 0, w: 0}
-  walkSpeed: 5
-  runSpeed: 10
-  backstepSpeed: -15
-  rollSpeed: 5
-  backstepTime: 0.1
-  rollTime: 0.75
-  turnTime: 10
-  rollCost: 0
-  backstepCost: 0
-  runCost: 0
-  canMove: 1
-  running: 0
 --- !u!114 &90049254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18fec92e892b774c9d149410655f561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalInfo: {fileID: 0}
   cameraHandler: {fileID: 296061942}
   mouseX: 0
   mouseY: 0
@@ -436,6 +408,36 @@ MonoBehaviour:
   staminaRecharge: 0
   levels: 
   staminaSpent: 0
+--- !u!114 &90049255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90049241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742b2c7496fb70743ae0f98f4ccf7ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalInfo: {fileID: 0}
+  playerManager: {fileID: 90049254}
+  coll: {fileID: 90049242}
+  rb: {fileID: 90049246}
+  cam: {fileID: 820765740}
+  camForward: {x: 0, y: 0, z: 0, w: 0}
+  walkSpeed: 5
+  runSpeed: 10
+  backstepSpeed: -15
+  rollSpeed: 3
+  backstepTime: 0.15
+  rollTime: 1
+  turnTime: 10
+  rollCost: 0
+  backstepCost: 0
+  runCost: 0
+  canMove: 1
+  running: 0
 --- !u!1 &296061940
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +469,7 @@ Transform:
   m_Children:
   - {fileID: 820765741}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &296061942
 MonoBehaviour:
@@ -593,7 +595,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &456044335
 PrefabInstance:
@@ -800,7 +802,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &820765740
 GameObject:
@@ -882,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615360315754548, guid: 9984be23625843a48a44d88aae5669f2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4615360315754548, guid: 9984be23625843a48a44d88aae5669f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1152,6 +1154,57 @@ MonoBehaviour:
   isLeftHandSlot: 1
   isRightHandSlot: 0
   currentWeaponModel: {fileID: 0}
+--- !u!1 &1649123317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649123318}
+  - component: {fileID: 1649123319}
+  m_Layer: 0
+  m_Name: GlobalInfo
+  m_TagString: GlobalInfo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649123318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649123317}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.1194572, y: -5.5724945, z: 51.721107}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649123319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649123317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3d501028063e948a487b5e58eda42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  currency: 0
+  vit: 0
+  end: 0
+  str: 0
+  dex: 0
+  paused: 0
 --- !u!4 &1752061197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4155741821396558, guid: 3c9c85e47d53d1f4aaa97330d98c0680, type: 3}
@@ -1254,7 +1307,7 @@ Transform:
   m_Children:
   - {fileID: 1752061197}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1772716601
 PrefabInstance:
