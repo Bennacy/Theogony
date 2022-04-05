@@ -11,10 +11,14 @@ namespace Theogony {
         DamageCollider rightWeaponCollider;
         DamageCollider LeftWeaponCollider;
 
+        Animator animHandler;
 
+        private PlayerInventory playerInventory;
 
         private void Awake()
         {
+            playerInventory = GetComponentInParent<PlayerInventory>();
+            animHandler = GetComponent<Animator>();
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
             {
@@ -56,7 +60,7 @@ namespace Theogony {
         }
         #endregion
 
-
+        #region Animation Events
         public void EnableRightCollider()
         {
             rightWeaponCollider.EnableCollider();
@@ -72,8 +76,36 @@ namespace Theogony {
         }
         public void DisableLeftCollider()
         {
-            LeftWeaponCollider.DisableCollider();
+            // LeftWeaponCollider.DisableCollider();
         }
 
+
+        public void EnableCanMove()
+        {
+            GetComponentInParent<PlayerControllerScript>().canMove = true;
+        }
+
+        public void CanCombo()
+        {
+            animHandler.SetBool("Combo", true);
+            playerInventory.rightWeapon.currattack++;
+        }
+        public void CanNotCombo()
+        {
+            animHandler.SetBool("Combo", false);
+            playerInventory.rightWeapon.currattack = 0;
+
+        }
+
+        public void ResetEvents()
+        {
+            CanNotCombo();
+            EnableCanMove();
+            DisableLeftCollider();
+            DisableRightCollider();
+
+        }
+
+        #endregion
     }
 }

@@ -28,7 +28,7 @@ namespace Theogony {
 
         private void OnTriggerEnter(Collider collision)
         {
-            Debug.Log("Hit");
+        
             if (collision.tag == "Enemy")
             {
                 //create function to take damage
