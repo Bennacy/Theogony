@@ -1,27 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Theogony
 {
     public class CameraHandler : MonoBehaviour
     {
-        public Transform targetTransform;
+        public PlayerControllerScript player;
         public Transform cameraTransform;
         public Transform cameraPivotTransform;
         private Transform myTransform;
         private Vector3 cameraTransformPosition;
         private LayerMask ignoreLayers;
+        public LayerMask enemyLayer;
 
         public static CameraHandler singleton;
 
+        public Transform lockOnTarget;
+        public Collider[] colliders;
+        public GameObject lockOnIndicator;
+        private bool stoppedMove = true;
+        public float lockOnRange;
         public float lookSpeed = 0.1f;
         public float followSpeed = 0.1f;
         public float pivotSpeed = 0.03f;
+        private float mouseXInput;
+        private float mouseYInput;
 
         private float targetPosition;
         private float defaultPosition;
-        private float lookAngle;
+        public float lookAngle;
         private float pivotAngle;
         public float minimumPivot = -35;
         public float maximumPivot = 35;
@@ -43,12 +52,12 @@ namespace Theogony
 
         public void FollowTarget(float delta)
         {
-            Vector3 targetPosition = Vector3.Lerp(myTransform.position, targetTransform.position, delta / followSpeed);
+            Vector3 targetPosition = Vector3.Lerp(myTransform.position, player.transform.position, delta / followSpeed);
             myTransform.position = targetPosition;
             HandleCameraCollisions(delta);
         }
 
-        public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
+        public void HandleCameraRotation(float delta)
         {
             lookAngle += (mouseXInput * lookSpeed) / delta;
             pivotAngle -= (mouseYInput * pivotSpeed) / delta;
@@ -85,6 +94,86 @@ namespace Theogony
             cameraTransform.localPosition = cameraTransformPosition;
         }
 
+        public void MoveCamera(InputAction.CallbackContext context){
+            Vector2 value = context.ReadValue<Vector2>();
+            if(context.performed){
+                if(lockOnTarget == null){
+                    mouseXInput = value.x;
+                    mouseYInput = value.y;
+                }else{
+                    if(stoppedMove){
+                        colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
+                        int index = 0;
+                        for(int i = 0; i < colliders.Length; i++){
+                            if(colliders[i] == lockOnTarget){
+                                index = i;
+                            }
+                        }
+
+                        if(value.x > 0.5f){
+                            index++;
+                            if(index >= colliders.Length){
+                                index = 0;
+                            }
+                        }else if(value.x < -0.5f){
+                            index--;
+                            if(index < 0){
+                                index = colliders.Length - 1;
+                            }
+                        }
+                        stoppedMove = false;
+                        lockOnTarget = colliders[index].transform;
+                    }
+
+                    if(value.x == 0){
+                        stoppedMove = true;
+                    }
+                }
+            }
+        }
+
+        void LateUpdate()
+        {
+            lockOnIndicator.SetActive(lockOnTarget != null);
+            
+            if(lockOnTarget != null){
+                Vector3 direction = lockOnTarget.position - player.transform.position;
+                
+                lockOnIndicator.transform.position = player.transform.position + (direction * .9f);
+                lockOnIndicator.transform.position = new Vector3(lockOnIndicator.transform.position.x, lockOnIndicator.transform.position.y + 1, lockOnIndicator.transform.position.z);
+
+                Vector3.Normalize(direction);
+                Debug.Log(direction);
+                lookAngle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
+                
+                if(Vector3.Distance(player.transform.position, lockOnTarget.position) > lockOnRange){
+                    lockOnTarget = null;
+                }
+            }
+        }
+
+        public void LockOn(InputAction.CallbackContext context){
+            if(context.performed){
+                colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
+                if(lockOnTarget != null){
+                    lockOnTarget = null;
+                    return;
+                }
+
+                if(colliders.Length > 0){
+                    lockOnTarget = colliders[0].transform;
+                }else{
+                    Quaternion angle = player.rb.rotation;
+                    transform.rotation = angle;
+                    lookAngle = angle.eulerAngles.y;
+                }
+            }
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
+        }
     }
 
 }

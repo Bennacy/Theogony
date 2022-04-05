@@ -15,6 +15,9 @@ namespace Theogony{
         public GameObject cam;
         public Quaternion camForward;
         private Vector3 movementVector;
+        private Animator animator;
+        private PlayerAttacker playerAttacker;
+        private PlayerInventory playerInventory;
         [Space]
         
         [Space]
@@ -34,15 +37,17 @@ namespace Theogony{
 
         [Space]
         [Header("Booleans")]
-        public bool canMove;
+        public bool canMove = true;
         private bool stoppedMove;
         public bool running;
 
 
         void Start()
         {
-            globalInfo = GlobalInfo.GetGlobalInfo();
             moveSpeed = walkSpeed;
+            globalInfo = GlobalInfo.GetGlobalInfo();
+            playerAttacker = GetComponent<PlayerAttacker>();
+            playerInventory = GetComponent<PlayerInventory>();
         }
 
         void Update()
@@ -107,6 +112,20 @@ namespace Theogony{
                         StartCoroutine(RollTime(rollTime));
                     }
                 }
+            }
+        }
+
+        public void LightAttack(InputAction.CallbackContext context){
+            if(context.performed){
+                canMove = false;
+                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+            }
+        }
+
+        public void HeavyAttack(InputAction.CallbackContext context){
+            if(context.performed){
+                canMove = false;
+                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
         }
 
