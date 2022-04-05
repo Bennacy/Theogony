@@ -20,3 +20,4 @@ MonoBehaviour:
   - LightAttack_2
   - LightAttack_3
   heavyAttack: HeavyAttack
+  currattack: 3

@@ -16,8 +16,17 @@ namespace Theogony
         }
         public void HandleLightAttack(weaponItems weaponItem)
         {
-            animHandler.Play(weaponItem.lightAttack[0]);
-            Debug.Log("light attack");
+            if (animHandler.GetBool("Combo") == true)
+                return;
+
+            if (weaponItem.currattack == weaponItem.lightAttack.Length)
+            {
+                weaponItem.currattack = 0;
+            }
+            animHandler.Play(weaponItem.lightAttack[weaponItem.currattack]);
+
+             weaponItem.currattack++;          
+
         }
 
         public void HandleHeavyAttack(weaponItems weaponItem)

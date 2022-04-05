@@ -12,5 +12,7 @@ namespace Theogony
         public bool isUnarmed;
         public string[] lightAttack;
         public string heavyAttack;
+        public int currattack = 0;
+
     }
 }
