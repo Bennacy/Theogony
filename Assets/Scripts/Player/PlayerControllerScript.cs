@@ -75,7 +75,6 @@ namespace Theogony{
         public void Move(InputAction.CallbackContext context){
             Vector2 inputVector2 = context.action.ReadValue<Vector2>();
             movementVector = new Vector3(inputVector2.x, 0, inputVector2.y);
-            Debug.Log(movementVector);
             if(context.canceled){
                 stoppedMove = true;
                 movementVector = Vector3.zero;
@@ -114,14 +113,12 @@ namespace Theogony{
         private IEnumerator RollTime(float wait){
             coll.enabled = false;
             meshRenderer.material.color = Color.red;
-            Debug.Log("Rolling");
             canMove = false;
             playerManager.staminaSpent = true;
             yield return new WaitForSeconds(wait);
             coll.enabled = true;
             rb.velocity = Vector3.zero;
             moveSpeed = walkSpeed;
-            Debug.Log("Stopped");
             canMove = true;
             meshRenderer.material.color = Color.white;
             StartCoroutine(playerManager.RechargeStamina());
