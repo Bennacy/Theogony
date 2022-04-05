@@ -38,42 +38,38 @@ namespace Theogony{
             
         }
 
-        public void NextRow(InputAction.CallbackContext context){
-            if(context.performed && gameObject.activeSelf){
+        public void NextRow(){
+            if(gameObject.activeSelf){
                 currRow ++;
                 if(currRow >= totalRows){
                     currRow = 0;
-                    NextCol(context);
                 }
             }
         }
 
-        public void PrevRow(InputAction.CallbackContext context){
-            if(context.performed && gameObject.activeSelf){
+        public void PrevRow(){
+            if(gameObject.activeSelf){
                 currRow --;
                 if(currRow < 0){
                     currRow = totalRows - 1;
-                    PrevCol(context);
                 }
             }
         }
 
-        public void NextCol(InputAction.CallbackContext context){
-            if(context.performed && gameObject.activeSelf){
+        public void NextCol(){
+            if(gameObject.activeSelf){
                 currCol ++;
                 if(currCol >= totalCols){
                     currCol = 0;
-                    NextRow(context);
                 }
             }
         }
 
-        public void PrevCol(InputAction.CallbackContext context){
-            if(context.performed && gameObject.activeSelf){
+        public void PrevCol(){
+            if(gameObject.activeSelf){
                 currCol --;
                 if(currCol < 0){
                     currCol = totalCols - 1;
-                    PrevRow(context);
                 }
             }
         }

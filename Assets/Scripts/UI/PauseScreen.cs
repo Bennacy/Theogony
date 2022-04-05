@@ -13,7 +13,8 @@ namespace Theogony{
         public GlobalInfo globalInfo;
         public Text menuHeader;
         public Image[] menuTabs;
-        public GameObject[] menuWindows;
+        public GridControl[] menuWindows;
+        public Button highlightedBtn;
         [Space]
 
         [Space]
@@ -40,9 +41,9 @@ namespace Theogony{
             if(paused){
                 for(int i = 0; i < menuTabs.Length; i++){
                     menuTabs[i].color = unselectedC;
-                    menuWindows[i].SetActive(false);
+                    menuWindows[i].gameObject.SetActive(false);
                 }
-                menuWindows[menuIndex].SetActive(true);
+                menuWindows[menuIndex].gameObject.SetActive(true);
                 menuTabs[menuIndex].color = selectedC;
 
                 switch(menuIndex){
@@ -82,6 +83,29 @@ namespace Theogony{
                 globalInfo.paused = false;
                 paused = false;
                 inputAction.SwitchCurrentActionMap("Movement");
+            }
+        }
+
+        public void Accept(InputAction.CallbackContext context){
+            if(context.performed){
+                // highlightedBtn.OnSubmit();
+                Debug.Log("accept");
+            }
+        }
+
+        public void NavigateMenu(InputAction.CallbackContext context){
+            Vector2 navigate = context.ReadValue<Vector2>();
+            if(context.performed){
+                Debug.Log(navigate);
+                if(navigate.x == -1){
+                    menuWindows[menuIndex].PrevCol();
+                }else if(navigate.x == 1){
+                    menuWindows[menuIndex].NextCol();
+                }else if(navigate.y == -1){
+                    menuWindows[menuIndex].PrevRow();
+                }else if(navigate.y == 1){
+                    menuWindows[menuIndex].NextRow();
+                }
             }
         }
 

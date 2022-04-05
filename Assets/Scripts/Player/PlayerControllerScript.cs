@@ -103,7 +103,9 @@ namespace Theogony{
                         StartCoroutine(RollTime(backstepTime));
                     }else if(playerManager.UpdateStamina(rollCost)){
                         moveSpeed = rollSpeed;
-                        rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
+                        float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
+                        transform.rotation = Quaternion.Euler(0, angle, 0);
+                        rb.velocity += ((movementVector.normalized) * moveSpeed);
                         StartCoroutine(RollTime(rollTime));
                     }
                 }
