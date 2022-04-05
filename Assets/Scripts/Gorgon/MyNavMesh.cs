@@ -33,7 +33,7 @@ public class MyNavMesh : MonoBehaviour
     public void GoToTarget()
     {
        FacePlayer();
-       agent.SetDestination(target.position - new Vector3(1f, 0, 1f));
+       agent.SetDestination(target.position - new Vector3(0.1f, 0, 0.1f));
     }
    
     public float GetHealth()
