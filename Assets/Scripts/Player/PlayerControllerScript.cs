@@ -105,7 +105,7 @@ namespace Theogony{
                         moveSpeed = rollSpeed;
                         float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
                         transform.rotation = Quaternion.Euler(0, angle, 0);
-                        rb.velocity += ((movementVector.normalized) * moveSpeed);
+                        rb.velocity += (rb.rotation * Vector3.forward * moveSpeed);
                         StartCoroutine(RollTime(rollTime));
                     }
                 }

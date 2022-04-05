@@ -2,7 +2,7 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "Movement",
+            "name": "InGame",
             "id": "26419ba7-ee24-4014-bd7f-e5f98e15440f",
             "actions": [
                 {
@@ -45,6 +45,33 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "300067be-c8e6-4b90-aff9-58cde9c52fee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LightAttack",
+                    "type": "Button",
+                    "id": "f5f20bec-c8f5-4906-8f8e-e434fe7add3f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Button",
+                    "id": "0d103ca3-2b2c-4125-adee-aa53c5647c27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "afdc5f3b-1c7f-41c5-9f9f-911a88a6420b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -175,6 +202,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1133f258-687f-42fb-9902-d51b366d4a79",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ad6c1b95-c2f5-467b-bde0-7a248044e32d",
                     "path": "<XInputController>/start",
                     "interactions": "",
@@ -208,12 +246,56 @@
                 },
                 {
                     "name": "",
-                    "id": "1133f258-687f-42fb-9902-d51b366d4a79",
-                    "path": "<Mouse>/delta",
+                    "id": "ce8569f0-0194-4b62-892f-bc787720f4db",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Camera",
+                    "groups": "",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d707ed46-d224-4e97-b779-706fd28c3f27",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "341b7a7f-2f58-4ec1-bd88-6b0e1a99cdc2",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ad7aa0f-aad5-4801-979d-bf9b21fc08f5",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5446a95f-6918-44d3-a371-4c847d425f11",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

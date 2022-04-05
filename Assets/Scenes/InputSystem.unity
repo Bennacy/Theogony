@@ -1784,9 +1784,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a6cf27f4-e1c2-40bc-96a2-7f92ab7a0cb7
     m_ActionName: UI/MenuNavigation[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f5f20bec-c8f5-4906-8f8e-e434fe7add3f
+    m_ActionName: InGame/LightAttack[/XInputControllerWindows/rightShoulder,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d103ca3-2b2c-4125-adee-aa53c5647c27
+    m_ActionName: InGame/HeavyAttack[/XInputControllerWindows/rightTrigger,/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: afdc5f3b-1c7f-41c5-9f9f-911a88a6420b
+    m_ActionName: InGame/New action
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: Movement
+  m_DefaultActionMap: InGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 963194227}
 --- !u!114 &620037186
@@ -1836,8 +1848,8 @@ MonoBehaviour:
   cameraHandler: {fileID: 463202968}
   mouseX: 0
   mouseY: 0
-  maxHealth: 100
-  maxStamina: 100
+  maxHealth: 1000000
+  maxStamina: 1000000
   currHealth: 0
   currStamina: 0
   staminaRecharge: 10

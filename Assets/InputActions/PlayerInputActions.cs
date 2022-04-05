@@ -24,7 +24,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Movement"",
+            ""name"": ""InGame"",
             ""id"": ""26419ba7-ee24-4014-bd7f-e5f98e15440f"",
             ""actions"": [
                 {
@@ -67,6 +67,33 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""300067be-c8e6-4b90-aff9-58cde9c52fee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LightAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5f20bec-c8f5-4906-8f8e-e434fe7add3f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HeavyAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d103ca3-2b2c-4125-adee-aa53c5647c27"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""afdc5f3b-1c7f-41c5-9f9f-911a88a6420b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -197,6 +224,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""1133f258-687f-42fb-9902-d51b366d4a79"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ad6c1b95-c2f5-467b-bde0-7a248044e32d"",
                     ""path"": ""<XInputController>/start"",
                     ""interactions"": """",
@@ -230,12 +268,56 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1133f258-687f-42fb-9902-d51b366d4a79"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""id"": ""ce8569f0-0194-4b62-892f-bc787720f4db"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Camera"",
+                    ""groups"": """",
+                    ""action"": ""LightAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d707ed46-d224-4e97-b779-706fd28c3f27"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LightAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""341b7a7f-2f58-4ec1-bd88-6b0e1a99cdc2"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ad7aa0f-aad5-4801-979d-bf9b21fc08f5"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5446a95f-6918-44d3-a371-4c847d425f11"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -640,13 +722,16 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // Movement
-        m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
-        m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
-        m_Movement_Run = m_Movement.FindAction("Run", throwIfNotFound: true);
-        m_Movement_Dodge = m_Movement.FindAction("Dodge", throwIfNotFound: true);
-        m_Movement_Camera = m_Movement.FindAction("Camera", throwIfNotFound: true);
-        m_Movement_Pause = m_Movement.FindAction("Pause", throwIfNotFound: true);
+        // InGame
+        m_InGame = asset.FindActionMap("InGame", throwIfNotFound: true);
+        m_InGame_Move = m_InGame.FindAction("Move", throwIfNotFound: true);
+        m_InGame_Run = m_InGame.FindAction("Run", throwIfNotFound: true);
+        m_InGame_Dodge = m_InGame.FindAction("Dodge", throwIfNotFound: true);
+        m_InGame_Camera = m_InGame.FindAction("Camera", throwIfNotFound: true);
+        m_InGame_Pause = m_InGame.FindAction("Pause", throwIfNotFound: true);
+        m_InGame_LightAttack = m_InGame.FindAction("LightAttack", throwIfNotFound: true);
+        m_InGame_HeavyAttack = m_InGame.FindAction("HeavyAttack", throwIfNotFound: true);
+        m_InGame_Newaction = m_InGame.FindAction("New action", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -712,49 +797,64 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Movement
-    private readonly InputActionMap m_Movement;
-    private IMovementActions m_MovementActionsCallbackInterface;
-    private readonly InputAction m_Movement_Move;
-    private readonly InputAction m_Movement_Run;
-    private readonly InputAction m_Movement_Dodge;
-    private readonly InputAction m_Movement_Camera;
-    private readonly InputAction m_Movement_Pause;
-    public struct MovementActions
+    // InGame
+    private readonly InputActionMap m_InGame;
+    private IInGameActions m_InGameActionsCallbackInterface;
+    private readonly InputAction m_InGame_Move;
+    private readonly InputAction m_InGame_Run;
+    private readonly InputAction m_InGame_Dodge;
+    private readonly InputAction m_InGame_Camera;
+    private readonly InputAction m_InGame_Pause;
+    private readonly InputAction m_InGame_LightAttack;
+    private readonly InputAction m_InGame_HeavyAttack;
+    private readonly InputAction m_InGame_Newaction;
+    public struct InGameActions
     {
         private @PlayerInputActions m_Wrapper;
-        public MovementActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Movement_Move;
-        public InputAction @Run => m_Wrapper.m_Movement_Run;
-        public InputAction @Dodge => m_Wrapper.m_Movement_Dodge;
-        public InputAction @Camera => m_Wrapper.m_Movement_Camera;
-        public InputAction @Pause => m_Wrapper.m_Movement_Pause;
-        public InputActionMap Get() { return m_Wrapper.m_Movement; }
+        public InGameActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_InGame_Move;
+        public InputAction @Run => m_Wrapper.m_InGame_Run;
+        public InputAction @Dodge => m_Wrapper.m_InGame_Dodge;
+        public InputAction @Camera => m_Wrapper.m_InGame_Camera;
+        public InputAction @Pause => m_Wrapper.m_InGame_Pause;
+        public InputAction @LightAttack => m_Wrapper.m_InGame_LightAttack;
+        public InputAction @HeavyAttack => m_Wrapper.m_InGame_HeavyAttack;
+        public InputAction @Newaction => m_Wrapper.m_InGame_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
-        public void SetCallbacks(IMovementActions instance)
+        public static implicit operator InputActionMap(InGameActions set) { return set.Get(); }
+        public void SetCallbacks(IInGameActions instance)
         {
-            if (m_Wrapper.m_MovementActionsCallbackInterface != null)
+            if (m_Wrapper.m_InGameActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
-                @Run.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnRun;
-                @Run.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnRun;
-                @Run.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnRun;
-                @Dodge.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnDodge;
-                @Dodge.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnDodge;
-                @Dodge.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnDodge;
-                @Camera.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnCamera;
-                @Camera.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnCamera;
-                @Camera.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnCamera;
-                @Pause.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnPause;
-                @Pause.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnPause;
-                @Pause.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnPause;
+                @Move.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnMove;
+                @Run.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnRun;
+                @Run.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnRun;
+                @Run.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnRun;
+                @Dodge.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnDodge;
+                @Dodge.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnDodge;
+                @Dodge.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnDodge;
+                @Camera.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnCamera;
+                @Camera.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnCamera;
+                @Camera.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnCamera;
+                @Pause.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnPause;
+                @LightAttack.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnLightAttack;
+                @LightAttack.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnLightAttack;
+                @LightAttack.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnLightAttack;
+                @HeavyAttack.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeavyAttack;
+                @HeavyAttack.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeavyAttack;
+                @HeavyAttack.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeavyAttack;
+                @Newaction.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnNewaction;
             }
-            m_Wrapper.m_MovementActionsCallbackInterface = instance;
+            m_Wrapper.m_InGameActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
@@ -772,10 +872,19 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @LightAttack.started += instance.OnLightAttack;
+                @LightAttack.performed += instance.OnLightAttack;
+                @LightAttack.canceled += instance.OnLightAttack;
+                @HeavyAttack.started += instance.OnHeavyAttack;
+                @HeavyAttack.performed += instance.OnHeavyAttack;
+                @HeavyAttack.canceled += instance.OnHeavyAttack;
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
             }
         }
     }
-    public MovementActions @Movement => new MovementActions(this);
+    public InGameActions @InGame => new InGameActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -875,13 +984,16 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    public interface IMovementActions
+    public interface IInGameActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLightAttack(InputAction.CallbackContext context);
+        void OnHeavyAttack(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
