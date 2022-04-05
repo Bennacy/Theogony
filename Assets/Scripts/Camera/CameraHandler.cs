@@ -22,12 +22,14 @@ namespace Theogony
         public Transform lockOnTarget;
         public GameObject lockOnIndicator;
         public float lockOnSpeed;
-        private bool stoppedMove = true;
+        public bool stoppedMove = true;
         public float lockOnRange;
         public Collider[] colliders;
         [Space]
 
         [Space]
+        public float targetAngle;
+        private bool resetCam;
         public float lookSpeed = 0.1f;
         public float followSpeed = 0.1f;
         public float pivotSpeed = 0.03f;
@@ -77,6 +79,12 @@ namespace Theogony
             rotation = Vector3.zero;
             rotation.x = pivotAngle;
 
+            // if(lookAngle != targetAngle){
+            //     lookAngle = Mathf.Lerp(lookAngle, targetAngle, lookSpeed);
+            // }else{
+
+            // }
+
             targetRotation = Quaternion.Euler(rotation);
             cameraPivotTransform.localRotation = targetRotation;
         }
@@ -111,8 +119,7 @@ namespace Theogony
                 lockOnIndicator.transform.position = new Vector3(lockOnIndicator.transform.position.x, lockOnIndicator.transform.position.y + 1, lockOnIndicator.transform.position.z);
 
                 Vector3.Normalize(direction);
-                Debug.Log(direction);
-                float targetAngle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
+                targetAngle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
                 
                 if(lookAngle != targetAngle){
                     lookAngle = Mathf.Lerp(lookAngle, targetAngle, lookSpeed);
@@ -134,13 +141,16 @@ namespace Theogony
                         colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
                         int index = 0;
                         for(int i = 0; i < colliders.Length; i++){
-                            if(colliders[i] == lockOnTarget){
+                            if(colliders[i].transform == lockOnTarget){
                                 index = i;
                             }
                         }
 
                         if(value.x > 0.5f){
                             index++;
+                            if(index < 0){
+                                index = colliders.Length - 1;
+                            }
                             if(index >= colliders.Length){
                                 index = 0;
                             }
@@ -150,6 +160,9 @@ namespace Theogony
                             index--;
                             if(index < 0){
                                 index = colliders.Length - 1;
+                            }
+                            if(index >= colliders.Length){
+                                index = 0;
                             }
                             stoppedMove = false;
                             lockOnTarget = colliders[index].transform;

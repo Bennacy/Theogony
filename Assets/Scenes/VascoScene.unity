@@ -593,6 +593,7 @@ MonoBehaviour:
   lockOnTarget: {fileID: 0}
   lockOnIndicator: {fileID: 1187580349}
   lockOnSpeed: 1
+  stoppedMove: 1
   lockOnRange: 10
   colliders: []
   lookSpeed: 0.1
