@@ -397,7 +397,7 @@ MonoBehaviour:
     m_ActionId: 8b34cd83-8f57-4331-9362-5cea014f0031
     m_ActionName: InGame/LockOn[/XInputControllerWindows/rightStickPress,/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Gamepad
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: InGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -436,9 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742b2c7496fb70743ae0f98f4ccf7ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalInfo: {fileID: 0}
   playerManager: {fileID: 90049254}
-  cameraHandler: {fileID: 296061942}
   coll: {fileID: 90049242}
   rb: {fileID: 90049246}
   cam: {fileID: 820765740}
@@ -596,6 +594,8 @@ MonoBehaviour:
   stoppedMove: 1
   lockOnRange: 10
   colliders: []
+  targetAngle: 0
+  mouseSens: 500
   lookSpeed: 0.1
   followSpeed: 0.1
   pivotSpeed: 0.03

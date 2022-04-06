@@ -213,6 +213,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ed064b53-d673-496d-ade9-614267145727",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ad6c1b95-c2f5-467b-bde0-7a248044e32d",
                     "path": "<XInputController>/start",
                     "interactions": "",
@@ -303,6 +314,17 @@
                     "name": "",
                     "id": "42af7a78-9fc2-4379-af30-ea55e1038f2c",
                     "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LockOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7519735-c25e-4ed6-bf29-e8b86adf7072",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
