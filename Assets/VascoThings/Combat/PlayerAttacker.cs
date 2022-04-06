@@ -7,6 +7,7 @@ namespace Theogony
 {
     public class PlayerAttacker : MonoBehaviour
     {
+        public PlayerManager playerManager;
         Animator animHandler;
 
         public void Awake()
@@ -22,6 +23,7 @@ namespace Theogony
                 weaponItem.currattack = 0;
             }
             animHandler.Play(weaponItem.lightAttack[weaponItem.currattack]);
+            Debug.Log("Test");
 
             // weaponItem.currattack++;          
 

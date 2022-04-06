@@ -25,6 +25,7 @@ namespace Theogony
         public float lockOnSpeed;
         public bool stoppedMove = true;
         public float lockOnRange;
+        public bool previouslyLocked;
         public Collider[] colliders;
         [Space]
 
@@ -126,6 +127,8 @@ namespace Theogony
             lockOnIndicator.SetActive(lockOnTarget != null);
             
             if(lockOnTarget != null){
+                targetAngleY = 19;
+                
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
                 lockOnIndicator.transform.position = player.transform.position + (direction * .9f);
@@ -139,7 +142,10 @@ namespace Theogony
                 }
                 if(Vector3.Distance(player.transform.position, lockOnTarget.position) > lockOnRange){
                     lockOnTarget = null;
+                    previouslyLocked = false;
                 }
+            }else if(previouslyLocked){
+                lockOnTarget = GetClosestEnemy();
             }
         }
 
@@ -209,20 +215,42 @@ namespace Theogony
 
         public void LockOn(InputAction.CallbackContext context){
             if(context.performed){
-                colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
+                GetClosestEnemy();
+
                 if(lockOnTarget != null){
+                    previouslyLocked = false;
                     lockOnTarget = null;
                     return;
                 }
 
                 if(colliders.Length > 0){
-                    lockOnTarget = colliders[0].transform;
+                    previouslyLocked = true;
+                    lockOnTarget = GetClosestEnemy();
                 }else{
                     Quaternion angle = player.rb.rotation;
-                    // transform.rotation = angle;
                     targetAngleX = angle.eulerAngles.y;
                 }
             }
+        }
+
+        private Transform GetClosestEnemy(){
+            colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
+
+            if(colliders.Length > 0){
+                float smallestDist = Mathf.Infinity;
+                Transform closest = null;
+                foreach(Collider coll in colliders){
+                    float dist = Vector3.Distance(player.transform.position, coll.transform.position);
+                    if(dist < smallestDist){
+                        smallestDist = dist;
+                        closest = coll.transform;
+                    }
+                }
+            
+                return closest;
+            }
+
+            return null;
         }
 
         void OnDrawGizmosSelected()

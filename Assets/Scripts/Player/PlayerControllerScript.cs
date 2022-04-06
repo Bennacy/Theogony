@@ -99,7 +99,7 @@ namespace Theogony{
             if(context.performed){
                 canMove = false;
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-                Debug.Log("Clicked");
+                playerManager.UpdateStamina(15);
             }
         }
 
@@ -107,6 +107,7 @@ namespace Theogony{
             if(context.performed){
                 canMove = false;
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                playerManager.UpdateStamina(30);
             }
         }
 
