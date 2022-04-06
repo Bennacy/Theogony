@@ -8,9 +8,8 @@ namespace Theogony{
     public class PlayerControllerScript : MonoBehaviour
     {
         [Header("References")]
-        public GlobalInfo globalInfo;
+        // public GlobalInfo globalInfo;
         public PlayerManager playerManager;
-        public CameraHandler cameraHandler;
         public CapsuleCollider coll;
         public Rigidbody rb;
         public GameObject cam;
@@ -38,15 +37,16 @@ namespace Theogony{
 
         [Space]
         [Header("Booleans")]
-        public bool canMove = true;
+        public bool canMove;
         private bool stoppedMove;
         public bool running;
 
 
         void Start()
         {
+            // globalInfo = GlobalInfo.GetGlobalInfo();
             moveSpeed = walkSpeed;
-            globalInfo = GlobalInfo.GetGlobalInfo();
+            animator = GetComponentInChildren<Animator>();
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
         }
@@ -70,14 +70,8 @@ namespace Theogony{
                 
                 vel += camForward * movementVector * moveSpeed;
                 rb.velocity = vel;
-                float angle;
-                if(cameraHandler.lockOnTarget != null){
-                    Vector3 direction = cameraHandler.lockOnTarget.position - transform.position;
-                    Vector3.Normalize(direction);
-                    angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
-                }else{
-                    angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
-                }
+                
+                float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
             }
         }
@@ -85,14 +79,30 @@ namespace Theogony{
         public void Move(InputAction.CallbackContext context){
             Vector2 inputVector2 = context.action.ReadValue<Vector2>();
             movementVector = new Vector3(inputVector2.x, 0, inputVector2.y);
+           
             if(context.canceled){
                 stoppedMove = true;
                 movementVector = Vector3.zero;
             }
         }
 
+        public void LightAttack(InputAction.CallbackContext context){
+            if(context.performed){
+                canMove = false;
+                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                Debug.Log("Clicked");
+            }
+        }
+
+        public void HeavyAttack(InputAction.CallbackContext context){
+            if(context.performed){
+                canMove = false;
+                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
+        }
+
         public void Run(InputAction.CallbackContext context){
-            if(!globalInfo.paused){
+            if(true){
                 float value = context.ReadValue<float>();
                 if(context.performed){
                     moveSpeed = runSpeed;
@@ -105,7 +115,7 @@ namespace Theogony{
         }
 
         public void Roll(InputAction.CallbackContext context){
-            if(!globalInfo.paused){
+            if(true){
                 if(context.performed && canMove){
                     if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
                         moveSpeed = backstepSpeed;
@@ -115,31 +125,19 @@ namespace Theogony{
                         moveSpeed = rollSpeed;
                         float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
                         transform.rotation = Quaternion.Euler(0, angle, 0);
-                        rb.velocity += (movementVector * moveSpeed);
+                        rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
                         StartCoroutine(RollTime(rollTime));
                     }
                 }
             }
         }
 
-        public void LightAttack(InputAction.CallbackContext context){
-            if(context.performed){
-                canMove = false;
-                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-            }
-        }
-
-        public void HeavyAttack(InputAction.CallbackContext context){
-            if(context.performed){
-                canMove = false;
-                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
-            }
-        }
-
         private IEnumerator RollTime(float wait){
+            // coll.enabled = false;
             canMove = false;
             playerManager.staminaSpent = true;
             yield return new WaitForSeconds(wait);
+            coll.enabled = true;
             rb.velocity = Vector3.zero;
             moveSpeed = walkSpeed;
             canMove = true;
