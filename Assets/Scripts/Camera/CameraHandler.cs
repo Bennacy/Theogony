@@ -79,7 +79,6 @@ namespace Theogony
                 targetAngleX += 360;
             }
             
-            Debug.Log(mouseYInput);
             targetAngleY -= (mouseYInput * pivotSpeed) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
@@ -150,7 +149,6 @@ namespace Theogony
             
             if(context.performed){
                 if(playerInput.currentControlScheme == "Keyboard"){
-                    // Debug.Log(value);
                     Cursor.lockState = CursorLockMode.Locked;
                 }else{
                     Cursor.lockState = CursorLockMode.None;
@@ -160,12 +158,15 @@ namespace Theogony
                     mouseXInput = value.x;
                     mouseYInput = value.y;
                 }else{
-                    if(playerInput.currentControlScheme == "Keyboard"){
-                        float temp = value.x;
-                        value.x = value.y;
-                        value.y = temp;
-                    }
                     if(stoppedMove){
+                        if(playerInput.currentControlScheme == "Keyboard"){
+                            float temp = value.x;
+                            value.x = value.y;
+                            value.y = temp;
+                            if(Mathf.Abs(value.x) < 50f){
+                                value.x = 0;
+                            }
+                        }
                         colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
                         int index = 0;
                         for(int i = 0; i < colliders.Length; i++){
