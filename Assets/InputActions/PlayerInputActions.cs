@@ -440,6 +440,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangeTab"",
+                    ""type"": ""Value"",
+                    ""id"": ""1237e0c5-8c12-4b26-851c-729454803f11"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -805,6 +814,72 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""LockOn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""b82702a7-153e-4b09-b200-d583b035a93f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeTab"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""534be1eb-791f-402a-9f42-ead5b66ab0b5"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""fb8ebfef-fc00-4e02-8f14-e88f9ee2d083"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""5db110a3-67d3-4dc2-b71f-7edb87777615"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeTab"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""af3c021c-b500-4ef4-a748-2f00f8510e5d"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""031c6a83-c81c-4bce-854f-8aa9179d62d9"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -860,6 +935,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
         m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
         m_UI_MenuNavigation = m_UI.FindAction("MenuNavigation", throwIfNotFound: true);
+        m_UI_ChangeTab = m_UI.FindAction("ChangeTab", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1017,6 +1093,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Back;
     private readonly InputAction m_UI_Accept;
     private readonly InputAction m_UI_MenuNavigation;
+    private readonly InputAction m_UI_ChangeTab;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1030,6 +1107,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Back => m_Wrapper.m_UI_Back;
         public InputAction @Accept => m_Wrapper.m_UI_Accept;
         public InputAction @MenuNavigation => m_Wrapper.m_UI_MenuNavigation;
+        public InputAction @ChangeTab => m_Wrapper.m_UI_ChangeTab;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1066,6 +1144,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @MenuNavigation.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuNavigation;
                 @MenuNavigation.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuNavigation;
                 @MenuNavigation.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuNavigation;
+                @ChangeTab.started -= m_Wrapper.m_UIActionsCallbackInterface.OnChangeTab;
+                @ChangeTab.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnChangeTab;
+                @ChangeTab.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnChangeTab;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1097,6 +1178,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @MenuNavigation.started += instance.OnMenuNavigation;
                 @MenuNavigation.performed += instance.OnMenuNavigation;
                 @MenuNavigation.canceled += instance.OnMenuNavigation;
+                @ChangeTab.started += instance.OnChangeTab;
+                @ChangeTab.performed += instance.OnChangeTab;
+                @ChangeTab.canceled += instance.OnChangeTab;
             }
         }
     }
@@ -1141,5 +1225,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnBack(InputAction.CallbackContext context);
         void OnAccept(InputAction.CallbackContext context);
         void OnMenuNavigation(InputAction.CallbackContext context);
+        void OnChangeTab(InputAction.CallbackContext context);
     }
 }

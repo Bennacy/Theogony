@@ -367,35 +367,11 @@ MonoBehaviour:
     m_ActionId: fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733
     m_ActionName: UI/Pause[/XInputControllerWindows/start,/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1722737025}
-        m_TargetAssemblyTypeName: Theogony.PauseScreen, Assembly-CSharp
-        m_MethodName: SwapMenu
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 83c0897e-a572-4263-a6fe-e00e1865e1b0
     m_ActionName: UI/TabRight[/XInputControllerWindows/rightShoulder,/Keyboard/x]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1722737025}
-        m_TargetAssemblyTypeName: Theogony.PauseScreen, Assembly-CSharp
-        m_MethodName: SwapMenu
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: ca231ed7-fd03-4472-8a94-25cfaad8f7ee
     m_ActionName: UI/TabLeft[/XInputControllerWindows/leftShoulder,/Keyboard/z]
   - m_PersistentCalls:
@@ -526,6 +502,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 497125c8-3b7b-4846-a1b5-5f9ecdd126d8
     m_ActionName: UI/LockOn[/XInputControllerWindows/rightStickPress,/Mouse/middleButton,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1722737025}
+        m_TargetAssemblyTypeName: Theogony.PauseScreen, Assembly-CSharp
+        m_MethodName: SwapTab
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1237e0c5-8c12-4b26-851c-729454803f11
+    m_ActionName: UI/ChangeTab[/Keyboard/z,/Keyboard/x,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: InGame
@@ -4435,19 +4427,12 @@ MonoBehaviour:
   inputAction: {fileID: 90049252}
   backgroundImg: {fileID: 806995093}
   globalInfo: {fileID: 1649123319}
-  menuHeader: {fileID: 0}
-  menuTabs:
-  - {fileID: 1298058404}
-  - {fileID: 1057670843}
-  - {fileID: 918739753}
-  - {fileID: 169772366}
   menuWindows:
   - {fileID: 515328311}
   - {fileID: 547343590}
   - {fileID: 1685099211}
   - {fileID: 976365985}
   highlightedBtn: {fileID: 489403605}
-  menuIndex: 0
   unselectedC: {r: 255, g: 255, b: 255, a: 100}
   selectedC: {r: 175, g: 175, b: 175, a: 100}
   paused: 0
