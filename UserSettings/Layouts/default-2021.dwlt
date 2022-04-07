@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 60
+  controlID: 24
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 61
+  controlID: 25
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 62
+  controlID: 26
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 63
+  controlID: 27
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -213,8 +213,8 @@ MonoBehaviour:
     y: 0
     width: 287.2
     height: 454.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -586,6 +586,11 @@ MonoBehaviour:
       \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
       \"action\": \"Camera\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"ed064b53-d673-496d-ade9-614267145727\",\n                   
+      \"path\": \"<Mouse>/scroll\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
+      \"action\": \"Camera\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
       \"name\": \"\",\n                    \"id\": \"ad6c1b95-c2f5-467b-bde0-7a248044e32d\",\n                   
       \"path\": \"<XInputController>/start\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
@@ -633,16 +638,21 @@ MonoBehaviour:
       \"path\": \"<Mouse>/middleButton\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"\",\n                    \"action\": \"LockOn\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                }\n           
-      ]\n        },\n        {\n            \"name\": \"UI\",\n            \"id\":
-      \"64a9523f-8af0-4a4d-9540-95dd9f30ce63\",\n            \"actions\": [\n               
-      {\n                    \"name\": \"Move\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"e2e3e73f-f1f0-4a4f-b64f-6d8caf159833\",\n                    \"expectedControlType\":
-      \"Vector2\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Pause\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      false,\n                    \"isPartOfComposite\": false\n                },\n               
+      {\n                    \"name\": \"\",\n                    \"id\": \"d7519735-c25e-4ed6-bf29-e8b86adf7072\",\n                   
+      \"path\": \"<Keyboard>/q\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"LockOn\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
+      {\n            \"name\": \"UI\",\n            \"id\": \"64a9523f-8af0-4a4d-9540-95dd9f30ce63\",\n           
+      \"actions\": [\n                {\n                    \"name\": \"Move\",\n                   
+      \"type\": \"Value\",\n                    \"id\": \"e2e3e73f-f1f0-4a4f-b64f-6d8caf159833\",\n                   
+      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
+      true\n                },\n                {\n                    \"name\":
+      \"Pause\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       },\n                {\n                    \"name\": \"TabRight\",\n                   
       \"type\": \"Button\",\n                    \"id\": \"83c0897e-a572-4263-a6fe-e00e1865e1b0\",\n                   
@@ -904,23 +914,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1e9b0100
-      m_LastClickedID: 105246
-      m_ExpandedIDs: 8691feffb4b3feff8c1fffff4c2dffffba2fffffa8b6ffff30b8ffff7abfffff7ac1ffff7ec9ffff82c9ffff8ec9ffff92c9ffffd6cbffffdacbffffe6cbffff1eccffff22ccffff26ccffff2accffff2eccffff32ccffff76ccffff7accffff8cccffff3acdffff02fbffff14be000024be000036be00003abe000088c70000b2c7000006c8000040c80000d2120100ea1201001e9b01003c9b0100429b0100
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: aef4ffff38fbffffde5b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: lockOnTest3
+        m_OriginalName: lockOnTest3
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 23618
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1155,9 +1165,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.0987339, y: -0.72290885, z: -1.2561541}
+    m_Target: {x: 4.1987615, y: -2.0183477, z: -4.667844}
     speed: 2
-    m_Value: {x: 1.0987339, y: -0.72290885, z: -1.2561541}
+    m_Value: {x: 4.1987615, y: -2.0183477, z: -4.667844}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1208,9 +1218,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.28137925, y: 0.29998004, z: -0.09309001, w: 0.906737}
   m_Size:
-    m_Target: 2.864839
+    m_Target: 6.5058575
     speed: 2
-    m_Value: 2.864839
+    m_Value: 6.5058575
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1383,7 +1393,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 72.600006}
     m_SelectedIDs: 1e620000
     m_LastClickedID: 25118
-    m_ExpandedIDs: 00000000e45c000018620000fea6000038a7000078a70000
+    m_ExpandedIDs: 000000008c6000008e6000009060000092600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1411,7 +1421,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e45c0000e65c0000
+    m_ExpandedIDs: 000000008c6000008e6000009060000092600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1495,8 +1505,9 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_ObjectsLockedBeforeSerialization: []
-  m_InstanceIDsLockedBeforeSerialization: 
+  m_ObjectsLockedBeforeSerialization:
+  - {fileID: 0}
+  m_InstanceIDsLockedBeforeSerialization: de5b0000
   m_PreviewResizer:
     m_CachedPref: 160
     m_ControlHash: -371814159
@@ -1506,5 +1517,5 @@ MonoBehaviour:
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
-    m_IsLocked: 0
+    m_IsLocked: 1
   m_PreviewWindow: {fileID: 0}
