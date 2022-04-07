@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Theogony { 
+namespace Theogony {
     public class WeaponSlotManager : MonoBehaviour
     {
         WeaponHolderSlot leftHandSlot;
@@ -12,11 +12,14 @@ namespace Theogony {
         DamageCollider LeftWeaponCollider;
 
         Animator animHandler;
+        public bool rotateAttack;
 
         private PlayerInventory playerInventory;
+        public Transform pos;
 
         private void Awake()
         {
+            pos = GetComponentInParent<Transform>();
             playerInventory = GetComponentInParent<PlayerInventory>();
             animHandler = GetComponent<Animator>();
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
@@ -25,12 +28,12 @@ namespace Theogony {
                 if (weaponSlot.isLeftHandSlot)
                 {
                     leftHandSlot = weaponSlot;
-                    
+
                 }
                 else if (weaponSlot.isRightHandSlot)
                 {
                     rightHandSlot = weaponSlot;
-                    
+
                 }
             }
         }
@@ -103,9 +106,62 @@ namespace Theogony {
             EnableCanMove();
             DisableLeftCollider();
             DisableRightCollider();
+            IsNotOccupied();
+            rotateAttack = false;
+            transform.rotation = Quaternion.identity;
+        }
 
+
+        public void IsOccupied()
+        {
+            animHandler.SetBool("Occupied", true);
+        }
+        public void IsNotOccupied()
+        {
+            animHandler.SetBool("Occupied", false);
         }
 
         #endregion
+
+
+        public void RotateInAttacks()
+        {
+            rotateAttack = true;
+            accely = 100;
+        }
+        public void ResetInAttacks()
+        {
+            accely = -100;
+        }
+        public void StopRotateInAttacks()
+        {
+            rotateAttack = false;
+            accely = 0;
+           
+            Debug.Log(transform.rotation);
+        }
+
+        float accelx, accelz = 0;
+        float accely = 0;
+   
+
+        void Update()
+        {
+
+
+            if (rotateAttack == true)
+            {
+                accelx = Input.acceleration.x;
+                accelz = Input.acceleration.z;
+                transform.Rotate(accelx * Time.deltaTime, accely * Time.deltaTime, accelz * Time.deltaTime);
+            }
+            else if (transform.rotation.y != 0)
+            {
+              //  transform.rotation = Quaternion.identity;
+            }
+            
+           
+        }
+       
     }
 }
