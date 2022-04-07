@@ -114,6 +114,7 @@ namespace Theogony {
 
         public void IsOccupied()
         {
+            Debug.Log("AAA");
             animHandler.SetBool("Occupied", true);
         }
         public void IsNotOccupied()
@@ -137,8 +138,6 @@ namespace Theogony {
         {
             rotateAttack = false;
             accely = 0;
-           
-            Debug.Log(transform.rotation);
         }
 
         float accelx, accelz = 0;

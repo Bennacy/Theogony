@@ -370,6 +370,24 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Camera"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""154f00c2-c54c-4020-863b-46faa9a355a1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LockOn"",
+                    ""type"": ""Button"",
+                    ""id"": ""497125c8-3b7b-4846-a1b5-5f9ecdd126d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""fb8c5c66-d8e8-4e7f-b2cd-4cfb45fa8733"",
@@ -721,6 +739,72 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fc94630-64bc-43a3-94e2-8e32011b5c4f"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9508af2e-334d-477c-b7b6-596c9715ad70"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e4b7529-2c4e-4bc2-b82f-a0e8f864db51"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e181c793-ae01-42fc-b01c-36476fa71b7a"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LockOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd222dc5-c37f-4525-b58e-794a8fbded56"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LockOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2f2cd18-9f43-4f60-be83-ec02204f5017"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LockOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -768,6 +852,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
+        m_UI_Camera = m_UI.FindAction("Camera", throwIfNotFound: true);
+        m_UI_LockOn = m_UI.FindAction("LockOn", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_TabRight = m_UI.FindAction("TabRight", throwIfNotFound: true);
         m_UI_TabLeft = m_UI.FindAction("TabLeft", throwIfNotFound: true);
@@ -923,6 +1009,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_Move;
+    private readonly InputAction m_UI_Camera;
+    private readonly InputAction m_UI_LockOn;
     private readonly InputAction m_UI_Pause;
     private readonly InputAction m_UI_TabRight;
     private readonly InputAction m_UI_TabLeft;
@@ -934,6 +1022,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         private @PlayerInputActions m_Wrapper;
         public UIActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_UI_Move;
+        public InputAction @Camera => m_Wrapper.m_UI_Camera;
+        public InputAction @LockOn => m_Wrapper.m_UI_LockOn;
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputAction @TabRight => m_Wrapper.m_UI_TabRight;
         public InputAction @TabLeft => m_Wrapper.m_UI_TabLeft;
@@ -952,6 +1042,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMove;
+                @Camera.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCamera;
+                @Camera.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCamera;
+                @Camera.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCamera;
+                @LockOn.started -= m_Wrapper.m_UIActionsCallbackInterface.OnLockOn;
+                @LockOn.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnLockOn;
+                @LockOn.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnLockOn;
                 @Pause.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPause;
@@ -977,6 +1073,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Camera.started += instance.OnCamera;
+                @Camera.performed += instance.OnCamera;
+                @Camera.canceled += instance.OnCamera;
+                @LockOn.started += instance.OnLockOn;
+                @LockOn.performed += instance.OnLockOn;
+                @LockOn.canceled += instance.OnLockOn;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -1031,6 +1133,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnCamera(InputAction.CallbackContext context);
+        void OnLockOn(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnTabRight(InputAction.CallbackContext context);
         void OnTabLeft(InputAction.CallbackContext context);

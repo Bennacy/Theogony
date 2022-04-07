@@ -88,8 +88,7 @@ namespace Theogony{
 
         public void Accept(InputAction.CallbackContext context){
             if(context.performed){
-                // highlightedBtn.OnSubmit();
-                Debug.Log("accept");
+                highlightedBtn.onClick.Invoke();
             }
         }
 

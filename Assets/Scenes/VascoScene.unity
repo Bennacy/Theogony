@@ -227,7 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc0a463d9b5482499a555bda9773e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  lightAttackCost: 15
+  heavyAttackCost: 25
 --- !u!114 &90049252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +386,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1722737025}
         m_TargetAssemblyTypeName: Theogony.PauseScreen, Assembly-CSharp
-        m_MethodName: NavigateMenu
+        m_MethodName: SwapMenu
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -493,6 +494,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8b34cd83-8f57-4331-9362-5cea014f0031
     m_ActionName: InGame/LockOn[/XInputControllerWindows/rightStickPress,/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 296061942}
+        m_TargetAssemblyTypeName: Theogony.CameraHandler, Assembly-CSharp
+        m_MethodName: MoveCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 154f00c2-c54c-4020-863b-46faa9a355a1
+    m_ActionName: UI/Camera[/XInputControllerWindows/rightStick,/Mouse/delta,/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 296061942}
+        m_TargetAssemblyTypeName: Theogony.CameraHandler, Assembly-CSharp
+        m_MethodName: LockOn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 497125c8-3b7b-4846-a1b5-5f9ecdd126d8
+    m_ActionName: UI/LockOn[/XInputControllerWindows/rightStickPress,/Mouse/middleButton,/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: InGame
@@ -549,7 +582,7 @@ MonoBehaviour:
   turnTime: 10
   rollCost: 15
   backstepCost: 10
-  runCost: 5
+  runCost: 10
   canMove: 1
   running: 0
 --- !u!1 &167457058
@@ -4154,6 +4187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6679f75b33d5d61418dd88239d685554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateAttack: 0
+  pos: {fileID: 0}
 --- !u!1 &1459930358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 132096, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
@@ -4411,7 +4446,7 @@ MonoBehaviour:
   - {fileID: 547343590}
   - {fileID: 1685099211}
   - {fileID: 976365985}
-  highlightedBtn: {fileID: 0}
+  highlightedBtn: {fileID: 489403605}
   menuIndex: 0
   unselectedC: {r: 255, g: 255, b: 255, a: 100}
   selectedC: {r: 175, g: 175, b: 175, a: 100}

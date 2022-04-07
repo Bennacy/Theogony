@@ -14,6 +14,7 @@ namespace Theogony
         private Vector3 cameraTransformPosition;
         private LayerMask ignoreLayers;
         private PlayerInput playerInput;
+        private GlobalInfo globalInfo;
 
         public static CameraHandler singleton;
 
@@ -62,6 +63,7 @@ namespace Theogony
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
+            globalInfo = GlobalInfo.GetGlobalInfo();
         }
 
         public void FollowTarget(float delta)
@@ -156,7 +158,7 @@ namespace Theogony
             Vector2 value = context.ReadValue<Vector2>();
             value *= Time.deltaTime * mouseSens;
             
-            if(context.performed){
+            if(context.performed && !(playerInput.currentControlScheme == "Keyboard" && globalInfo.paused)){
                 if(playerInput.currentControlScheme == "Keyboard"){
                     Cursor.lockState = CursorLockMode.Locked;
                 }else{

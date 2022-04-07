@@ -100,22 +100,15 @@ namespace Theogony{
 
         public void LightAttack(InputAction.CallbackContext context){
             if(context.performed){
-
-
                 canMove = false;
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-                playerManager.UpdateStamina(15);
             }
         }
 
         public void HeavyAttack(InputAction.CallbackContext context){
             if(context.performed){
-
-               
-
                 canMove = false;
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
-                playerManager.UpdateStamina(30);
             }
         }
 
@@ -151,7 +144,6 @@ namespace Theogony{
         }
 
         private IEnumerator RollTime(float wait){
-            // coll.enabled = false;
             canMove = false;
             playerManager.staminaSpent = true;
             yield return new WaitForSeconds(wait);
