@@ -7,21 +7,23 @@ namespace Theogony
 {
     public class PlayerAttacker : MonoBehaviour
     {
-        Animator animHandler;
+        Animator animator;
 
         public void Awake()
         {
-            animHandler = GetComponentInChildren<Animator>();
+            animator = GetComponentInChildren<Animator>();
 
         }
         public void HandleLightAttack(weaponItems weaponItem)
         {
-            
+
+          
+
             if (weaponItem.currattack == weaponItem.lightAttack.Length)
             {
                 weaponItem.currattack = 0;
             }
-            animHandler.Play(weaponItem.lightAttack[weaponItem.currattack]);
+            animator.Play(weaponItem.lightAttack[weaponItem.currattack]);
 
             // weaponItem.currattack++;          
 
@@ -29,7 +31,10 @@ namespace Theogony
 
         public void HandleHeavyAttack(weaponItems weaponItem)
         {
-            animHandler.Play(weaponItem.heavyAttack);
+            if (animator.GetBool("Occupied") == true)
+                return;
+
+            animator.Play(weaponItem.heavyAttack);
         }
     }
 }

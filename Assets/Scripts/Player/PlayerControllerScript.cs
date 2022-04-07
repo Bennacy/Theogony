@@ -41,6 +41,9 @@ namespace Theogony{
         private bool stoppedMove;
         public bool running;
 
+  
+
+
 
         void Start()
         {
@@ -88,6 +91,8 @@ namespace Theogony{
 
         public void LightAttack(InputAction.CallbackContext context){
             if(context.performed){
+
+
                 canMove = false;
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
                 Debug.Log("Clicked");
@@ -96,6 +101,9 @@ namespace Theogony{
 
         public void HeavyAttack(InputAction.CallbackContext context){
             if(context.performed){
+
+               
+
                 canMove = false;
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
