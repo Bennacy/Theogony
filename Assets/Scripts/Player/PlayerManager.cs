@@ -38,7 +38,7 @@ namespace Theogony{
             {
                 float delta = Time.deltaTime;
                 cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
+                cameraHandler.HandleCameraRotation(delta);
             }
         }
 

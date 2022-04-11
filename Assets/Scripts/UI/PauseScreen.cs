@@ -11,7 +11,7 @@ namespace Theogony{
         public PlayerInput inputAction;
         public GameObject backgroundImg;
         public GlobalInfo globalInfo;
-        public GridControl[] menuWindows;
+     //   public GridControl[] menuWindows;
         public Button highlightedBtn;
         [Space]
 
