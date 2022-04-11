@@ -5,15 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - GlobalInfo
-  - Enemy
+  - Canvas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
-  - Enemy
+  - 
   - 
   - 
   - 
