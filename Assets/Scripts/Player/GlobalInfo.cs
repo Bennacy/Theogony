@@ -7,7 +7,7 @@ namespace Theogony{
     {
         [Header("References")]
         public static GlobalInfo self;
-        public UpdateBar health;
+        // public UpdateBar health;
         [Space]
 
         [Space]
@@ -23,9 +23,9 @@ namespace Theogony{
         [Header("Bools")]
         public bool paused;
         
-        public static GlobalInfo GetGlobalInfo(){
-            return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
-        }
+        // public static GlobalInfo GetGlobalInfo(){
+        //     return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
+        // }
         
         void Awake()
         {
@@ -47,7 +47,7 @@ namespace Theogony{
 
         public void IncreaseVit(){
             vit++;
-            health.UpdateBarWidth(health.origMax + (10 * vit));
+            // health.UpdateBarWidth(health.origMax + (10 * vit));
         }
 
         public bool AlterCurrency(int valueToAdd){

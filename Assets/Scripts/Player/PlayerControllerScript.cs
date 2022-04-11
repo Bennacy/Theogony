@@ -13,9 +13,8 @@ namespace Theogony{
         public CapsuleCollider coll;
         public Rigidbody rb;
         public GameObject cam;
-        public CameraHandler cameraHandler;
         public Quaternion camForward;
-        public Vector3 movementVector;
+        private Vector3 movementVector;
         private Animator animator;
         private PlayerAttacker playerAttacker;
         private PlayerInventory playerInventory;
@@ -53,7 +52,6 @@ namespace Theogony{
             animator = GetComponentInChildren<Animator>();
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
-            cameraHandler = playerManager.cameraHandler;
         }
 
         void Update()
@@ -76,14 +74,7 @@ namespace Theogony{
                 vel += camForward * movementVector * moveSpeed;
                 rb.velocity = vel;
                 
-                float angle;
-                if(cameraHandler.lockOnTarget != null && canMove){
-                    Vector3 direction = cameraHandler.lockOnTarget.position - transform.position;
-                    Vector3.Normalize(direction);
-                    angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
-                }else{
-                    angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
-                }
+                float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
             }
         }
@@ -104,7 +95,7 @@ namespace Theogony{
 
                 canMove = false;
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-                playerManager.UpdateStamina(15);
+                Debug.Log("Clicked");
             }
         }
 
@@ -115,7 +106,6 @@ namespace Theogony{
 
                 canMove = false;
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
-                playerManager.UpdateStamina(30);
             }
         }
 
@@ -143,7 +133,7 @@ namespace Theogony{
                         moveSpeed = rollSpeed;
                         float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
                         transform.rotation = Quaternion.Euler(0, angle, 0);
-                        rb.velocity += (camForward * movementVector * moveSpeed);
+                        rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
                         StartCoroutine(RollTime(rollTime));
                     }
                 }

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 namespace Theogony{
     public class PlayerManager : MonoBehaviour
     {
-        public GlobalInfo globalInfo;
+        // public GlobalInfo globalInfo;
         public CameraHandler cameraHandler;
         public float mouseX;
         public float mouseY;
@@ -20,7 +20,7 @@ namespace Theogony{
 
         void Start()
         {
-            globalInfo = GlobalInfo.GetGlobalInfo();
+            // globalInfo = GlobalInfo.GetGlobalInfo();
             currHealth = maxHealth;
             currStamina = maxStamina;
         }
@@ -38,7 +38,7 @@ namespace Theogony{
             {
                 float delta = Time.deltaTime;
                 cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta);
+                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
             }
         }
 
