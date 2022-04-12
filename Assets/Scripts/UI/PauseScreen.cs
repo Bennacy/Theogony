@@ -65,7 +65,6 @@ namespace Theogony{
                         menuInfo.currIndex = buttonIndex = 0;
                         OpenMenu(menuInfo.previousMenu);
                     }
-                    // OpenMenu(menuInfo.previousMenu);
                 }
             }
         }
@@ -103,6 +102,7 @@ namespace Theogony{
 
         public void OpenMenu(GameObject menu){
             menu.SetActive(true);
+            // highlightedBtn = menuInfo.gameObject.GetComponent<Button>();
             menuInfo.gameObject.SetActive(false);
             if(!menu.GetComponent<MenuInfo>().saveIndex){
                 menuInfo.currIndex = 0;

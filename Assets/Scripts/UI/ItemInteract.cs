@@ -6,9 +6,9 @@ namespace Theogony{
 public class ItemInteract : MonoBehaviour
     {
         public PauseScreen pauseScreen;
+        private MenuInfo menuInfo;
         void Start()
         {
-            
         }
 
         void Update()
@@ -18,6 +18,13 @@ public class ItemInteract : MonoBehaviour
 
         void OnEnable()
         {
+            menuInfo = GetComponent<MenuInfo>();
+            foreach(Transform child in transform.parent){
+                GameObject obj = child.gameObject;
+                if(obj != gameObject && obj.activeSelf){
+                    menuInfo.previousMenu = obj;
+                }
+            }
             transform.position = pauseScreen.highlightedBtn.transform.position;
         }
     }
