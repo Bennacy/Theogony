@@ -88,6 +88,11 @@ namespace Theogony {
             GetComponentInParent<PlayerControllerScript>().canMove = true;
         }
 
+        public void FinishRoll()
+        {
+            GetComponentInParent<PlayerControllerScript>().FinishRoll();
+        }
+
         public void CanCombo()
         {
             animHandler.SetBool("Combo", true);
