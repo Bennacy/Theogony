@@ -18,10 +18,10 @@ namespace Theogony{
         void Update()
         {
             string finalString = "";
-            finalString += "Vitality:\t\t" + globalInfo.vit+1;
-            finalString += "\nEndurance:\t\t" + globalInfo.end+1;
-            finalString += "\nStrength:\t\t" + globalInfo.str+1;
-            finalString += "\nDexterity:\t\t" + globalInfo.dex+1;
+            finalString += "Vitality:\t\t" + (globalInfo.vit+1).ToString();
+            finalString += "\nEndurance:\t\t" + (globalInfo.end+1).ToString();
+            finalString += "\nStrength:\t\t" + (globalInfo.str+1).ToString();
+            finalString += "\nDexterity:\t\t" + (globalInfo.dex+1).ToString();
 
             statText.text = finalString;
         }
