@@ -69,6 +69,7 @@ namespace Theogony{
             }
         }
 
+        #region Menu Navigation
         public void SwapTab(InputAction.CallbackContext context){
             if(context.performed){
                 Vector2 value = context.ReadValue<Vector2>();
@@ -144,6 +145,46 @@ namespace Theogony{
                 }
                 menuInfo.currIndex = buttonIndex;
                 highlightedBtn = menuButtons[buttonIndex];
+            }
+        }
+        #endregion
+
+        public void IncreaseLevel(int statIndex){
+            switch(statIndex){
+                case 0: //Vitality
+                    globalInfo.AlterVit(1);
+                    break;
+                
+                case 1: //Endurance
+                    globalInfo.AlterEnd(1);
+                    break;
+                
+                case 2: //Strength
+                    globalInfo.AlterStr(1);
+                    break;
+                
+                case 3: //Dexterity
+                    globalInfo.AlterDex(1);
+                    break;
+            }
+        }
+        public void DecreaseLevel(int statIndex){
+            switch(statIndex){
+                case 0: //Vitality
+                    globalInfo.AlterVit(-1);
+                    break;
+                
+                case 1: //Endurance
+                    globalInfo.AlterEnd(-1);
+                    break;
+                
+                case 2: //Strength
+                    globalInfo.AlterStr(-1);
+                    break;
+                
+                case 3: //Dexterity
+                    globalInfo.AlterDex(-1);
+                    break;
             }
         }
     }

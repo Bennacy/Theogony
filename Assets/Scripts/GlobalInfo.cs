@@ -8,6 +8,7 @@ namespace Theogony{
         [Header("References")]
         public static GlobalInfo self;
         public UpdateBar health;
+        public UpdateBar stamina;
         [Space]
 
         [Space]
@@ -40,14 +41,27 @@ namespace Theogony{
 
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Alpha1)){
-                IncreaseVit();
-            }
+            // if(Input.GetKeyDown(KeyCode.Alpha1)){
+            //     IncreaseVit();
+            // }
         }
 
-        public void IncreaseVit(){
-            vit++;
+        public void AlterVit(int change){
+            vit += change;
             health.UpdateBarWidth(health.origMax + (10 * vit));
+        }
+
+        public void AlterEnd(int change){
+            end += change;
+            stamina.UpdateBarWidth(stamina.origMax + (5 * end));
+        }
+
+        public void AlterStr(int change){
+            str += change;
+        }
+
+        public void AlterDex(int change){
+            dex += change;
         }
 
         public bool AlterCurrency(int valueToAdd){
