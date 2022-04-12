@@ -57,10 +57,12 @@ namespace Theogony{
                 backgroundImg.SetActive(paused);
                 globalInfo.paused = paused;
                 if(paused){
+                    highlightedBtn = menuButtons[buttonIndex];
                     inputAction.SwitchCurrentActionMap("UI");
                 }else{
                     inputAction.SwitchCurrentActionMap("InGame");
                     while(menuInfo.previousMenu != null){
+                        menuInfo.currIndex = buttonIndex = 0;
                         OpenMenu(menuInfo.previousMenu);
                     }
                     // OpenMenu(menuInfo.previousMenu);
@@ -82,6 +84,7 @@ namespace Theogony{
         public void Back(InputAction.CallbackContext context){
             if(context.canceled){
                 if(menuInfo.previousMenu == null){
+                    menuInfo.currIndex = buttonIndex = 0;
                     backgroundImg.SetActive(false);
                     globalInfo.paused = false;
                     paused = false;
@@ -99,9 +102,15 @@ namespace Theogony{
         }
 
         public void OpenMenu(GameObject menu){
-            menuInfo.gameObject.SetActive(false);
             menu.SetActive(true);
+            menuInfo.gameObject.SetActive(false);
+            if(!menu.GetComponent<MenuInfo>().saveIndex){
+                menuInfo.currIndex = 0;
+            }
             menuInfo = menu.GetComponent<MenuInfo>();
+            if(!menuInfo.closesPrevious){
+                menuInfo.previousMenu.gameObject.SetActive(true);
+            }
             menuButtons = menuInfo.buttons;
             buttonIndex = menuInfo.currIndex;
             highlightedBtn = menuButtons[menuInfo.currIndex];
@@ -133,6 +142,7 @@ namespace Theogony{
                     }
                     buttonIndex = futureIndex;
                 }
+                menuInfo.currIndex = buttonIndex;
                 highlightedBtn = menuButtons[buttonIndex];
             }
         }
