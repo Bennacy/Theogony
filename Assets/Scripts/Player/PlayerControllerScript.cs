@@ -87,7 +87,7 @@ namespace Theogony{
 
                 animator.SetFloat("Speed", rb.velocity.magnitude);
                 if(canMove && rb.velocity.magnitude > 0.1f){
-                    animator.speed = rb.velocity.magnitude / moveSpeed;
+                    // animator.speed = rb.velocity.magnitude / moveSpeed;
                 }
             }
         }
@@ -133,7 +133,9 @@ namespace Theogony{
                     if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
                         moveSpeed = backstepSpeed;
                         rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
-                        StartCoroutine(RollTime(backstepTime));
+                        animator.Play("Backstep");
+                        canMove = false;
+                        playerManager.staminaSpent = true;
                     }else if(playerManager.UpdateStamina(rollCost)){ //Roll
                         moveSpeed = rollSpeed;
                         float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
@@ -141,7 +143,6 @@ namespace Theogony{
                         rb.velocity += (camForward * movementVector * moveSpeed);
                         animator.Play("Roll");
                         animator.speed = 1.5f;
-                        // StartCoroutine(RollTime(rollTime));
                         canMove = false;
                         playerManager.staminaSpent = true;
                     }
@@ -151,21 +152,11 @@ namespace Theogony{
 
         public void FinishRoll(){
             coll.enabled = true;
+            Debug.Log("A");
             rb.velocity = Vector3.zero;
             moveSpeed = walkSpeed;
             canMove = true;
             StartCoroutine(playerManager.RechargeStamina());
         }
-
-        private IEnumerator RollTime(float wait){
-            canMove = false;
-            playerManager.staminaSpent = true;
-            yield return new WaitForSeconds(wait);
-            coll.enabled = true;
-            rb.velocity = Vector3.zero;
-            moveSpeed = walkSpeed;
-            canMove = true;
-            StartCoroutine(playerManager.RechargeStamina());
-        }
-}
+    }
 }
