@@ -89,6 +89,10 @@ namespace Theogony{
             }
         }
 
+        public void Rest(){
+            globalInfo.lastCheckpoint.Rest();
+        }
+
         private void GetButtons(){
             menuButtons = menuInfo.buttons;
             highlightedBtn = menuButtons[buttonIndex];

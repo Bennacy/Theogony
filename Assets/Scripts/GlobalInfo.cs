@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Theogony{
     public class GlobalInfo : MonoBehaviour
@@ -26,28 +27,37 @@ namespace Theogony{
         [Space]
         [Header("Booleans")]
         public bool paused;
+        public bool refreshedScene;
         
         public static GlobalInfo GetGlobalInfo(){
             return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
         }
         
-        void Awake()
+        void Start()
         {
             DontDestroyOnLoad(gameObject);
-
             if(self == null){
                 self = this;
             }else{
                 Destroy(gameObject);
             }
+            StartCoroutine(StartFunctions());
+        }
+
+        private IEnumerator StartFunctions(){
+            yield return new WaitForSeconds(0.1f);
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+            refreshedScene = false;
         }
 
         void Update()
         {
-            // if(Input.GetKeyDown(KeyCode.Alpha1)){
-            //     IncreaseVit();
-            // }
+            if(refreshedScene){
+                StartCoroutine(StartFunctions());
+            }
+            if(Input.GetKeyDown(KeyCode.R)){
+                ReloadLevel();
+            }
         }
 
         public void AlterVit(int change){
@@ -77,14 +87,25 @@ namespace Theogony{
             }
         }
 
-        public void TravelTo(Checkpoint destination){
-            if(destination != lastCheckpoint){
+        public IEnumerator TravelTo(Checkpoint destination){
+            yield return new WaitForSeconds(0.15f);
+            // if(destination != lastCheckpoint){
+                Debug.Log("Travel");
+                playerControllerScript.animator.Play("JumpToSit");
                 CameraHandler cam = playerControllerScript.cameraHandler;
                 cam.transform.position = destination.teleportPosition;
                 playerControllerScript.transform.position = destination.teleportPosition;
                 playerControllerScript.transform.LookAt(destination.transform.position, Vector3.up);
                 lastCheckpoint = destination;
-            }
+            // }
         }
-}
+
+        public void ReloadLevel(){
+            refreshedScene = true;
+            paused = false;
+            string currScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currScene);
+            StartCoroutine(TravelTo(lastCheckpoint));
+        }
+    }
 }

@@ -42,7 +42,6 @@ namespace Theogony{
 
         void Update()
         {
-            // Debug.Log(input.currentControlScheme);
             switch(input.currentControlScheme){
                 case "Keyboard":
                     inputType = 0;
@@ -57,6 +56,7 @@ namespace Theogony{
             promptText.text = prompts[0].actionText[action];
             promptImage.sprite = prompts[inputType].images[action];
             inRange = Physics.OverlapSphere(player.transform.position, interactRadius, interactLayer);
+            
             if(inRange.Length > 0 && !globalInfo.paused){
                 interactScript = inRange[0].GetComponent<Interactable>();
                 action = interactScript.action + 2;

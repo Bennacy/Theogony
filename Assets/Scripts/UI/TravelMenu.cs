@@ -59,7 +59,7 @@ namespace Theogony{
                 TextMeshProUGUI text = newButton.transform.GetComponentInChildren<TextMeshProUGUI>();
                 text.text = checkpointReference.locationName;
 
-                newButton.GetComponent<Button>().onClick.AddListener(delegate{globalInfo.TravelTo(checkpointReference);});
+                newButton.GetComponent<Button>().onClick.AddListener(delegate{StartCoroutine(globalInfo.TravelTo(checkpointReference));});
                 menuInfo.buttons[index] = newButton.GetComponent<Button>();
         }
     }

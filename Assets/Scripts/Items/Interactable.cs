@@ -35,7 +35,7 @@ namespace Theogony{
                     break;
                 case 2:
                     Checkpoint checkpoint = GetComponent<Checkpoint>();
-                    checkpoint.Rest();
+                    checkpoint.Sit();
                     break;
             }
         }

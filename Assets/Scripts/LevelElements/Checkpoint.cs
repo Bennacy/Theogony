@@ -15,13 +15,34 @@ namespace Theogony{
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
+
+            DontDestroyOnLoad(gameObject);
+            if(globalInfo.checkpoints[sortingOrder] == null){
+                globalInfo.checkpoints[sortingOrder] = this;
+            }else{
+                Destroy(gameObject);
+            }
+
+            StartCoroutine(StartFunctions());
+        }
+
+        void Update()
+        {
+            if(globalInfo.refreshedScene){
+                StartCoroutine(StartFunctions());
+            }
+        }
+
+        private IEnumerator StartFunctions(){
+            yield return new WaitForSeconds(0.1f);
+            Debug.Log("Start");
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
             teleportPosition = transform.position;
             teleportPosition.x += 2;
         }
 
-        public void Rest(){
+        public void Sit(){
             playerControllerScript.animator.Play("SitDown");
             playerControllerScript.canMove = false;
             Vector3 checkpointDirection = (playerControllerScript.transform.position - transform.position).normalized;
@@ -36,6 +57,10 @@ namespace Theogony{
             if(globalInfo.checkpoints[sortingOrder] == null){
                 UnlockCheckpoint();
             }
+        }
+
+        public void Rest(){
+            globalInfo.ReloadLevel();
         }
         private void UnlockCheckpoint(){
             globalInfo.checkpoints[sortingOrder] = this;
