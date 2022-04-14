@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Theogony
-{
+namespace Theogony{
     public class GlobalInfo : MonoBehaviour
     {
         [Header("References")]
         public static GlobalInfo self;
-       // public UpdateBar health;
+        public PlayerControllerScript playerControllerScript;
+        public UpdateBar health;
+        public UpdateBar stamina;
         [Space]
 
         [Space]
@@ -18,56 +19,72 @@ namespace Theogony
         public int end;
         public int str;
         public int dex;
+        public Checkpoint lastCheckpoint;
+        public Checkpoint[] checkpoints;
         [Space]
 
         [Space]
-        [Header("Bools")]
+        [Header("Booleans")]
         public bool paused;
-
-        public static GlobalInfo GetGlobalInfo()
-        {
-            return (GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
+        
+        public static GlobalInfo GetGlobalInfo(){
+            return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
         }
-
+        
         void Awake()
         {
             DontDestroyOnLoad(gameObject);
 
-            if (self == null)
-            {
+            if(self == null){
                 self = this;
-            }
-            else
-            {
+            }else{
                 Destroy(gameObject);
             }
+            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
         }
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                IncreaseVit();
-            }
+            // if(Input.GetKeyDown(KeyCode.Alpha1)){
+            //     IncreaseVit();
+            // }
         }
 
-        public void IncreaseVit()
-        {
-            vit++;
-           // health.UpdateBarWidth(health.origMax + (10 * vit));
+        public void AlterVit(int change){
+            vit += change;
+            health.UpdateBarWidth(health.origMax + (10 * vit));
         }
 
-        public bool AlterCurrency(int valueToAdd)
-        {
-            if (currency + valueToAdd >= 0)
-            {
+        public void AlterEnd(int change){
+            end += change;
+            stamina.UpdateBarWidth(stamina.origMax + (5 * end));
+        }
+
+        public void AlterStr(int change){
+            str += change;
+        }
+
+        public void AlterDex(int change){
+            dex += change;
+        }
+
+        public bool AlterCurrency(int valueToAdd){
+            if(currency + valueToAdd >= 0){
                 currency += valueToAdd;
                 return true;
-            }
-            else
-            {
+            }else{
                 return false;
             }
         }
-    }
+
+        public void TravelTo(Checkpoint destination){
+            if(destination != lastCheckpoint){
+                CameraHandler cam = playerControllerScript.cameraHandler;
+                cam.transform.position = destination.teleportPosition;
+                playerControllerScript.transform.position = destination.teleportPosition;
+                playerControllerScript.transform.LookAt(destination.transform.position, Vector3.up);
+                lastCheckpoint = destination;
+            }
+        }
+}
 }

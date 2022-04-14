@@ -88,6 +88,15 @@ namespace Theogony {
             GetComponentInParent<PlayerControllerScript>().canMove = true;
         }
 
+        public void StopMove(){
+            GetComponentInParent<PlayerControllerScript>().rb.velocity = Vector3.zero;
+        }
+
+        public void FinishRoll()
+        {
+            GetComponentInParent<PlayerControllerScript>().FinishRoll();
+        }
+
         public void CanCombo()
         {
             animHandler.SetBool("Combo", true);
@@ -114,7 +123,6 @@ namespace Theogony {
 
         public void IsOccupied()
         {
-            Debug.Log("AAA");
             animHandler.SetBool("Occupied", true);
         }
         public void IsNotOccupied()
