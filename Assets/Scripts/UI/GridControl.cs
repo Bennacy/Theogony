@@ -13,7 +13,7 @@ namespace Theogony{
             public Image[] img;
         }
         public GridRow[] grid;
-        public PauseScreen pauseScreen;
+        public UIController pauseScreen;
         public Color unselectedC;
         public Color selectedC;
         public int totalCols;

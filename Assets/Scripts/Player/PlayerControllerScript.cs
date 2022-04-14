@@ -16,7 +16,7 @@ namespace Theogony{
         public CameraHandler cameraHandler;
         public Quaternion camForward;
         public Vector3 movementVector;
-        private Animator animator;
+        public Animator animator;
         private PlayerAttacker playerAttacker;
         private PlayerInventory playerInventory;
         [Space]

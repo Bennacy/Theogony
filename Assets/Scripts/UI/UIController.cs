@@ -5,13 +5,16 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Theogony{
-    public class PauseScreen : MonoBehaviour
+    public class UIController : MonoBehaviour
     {
         [Header("References")]
         public PlayerInput inputAction;
+        public PlayerControllerScript playerControllerScript;
         public GameObject pauseBackground;
+        public GameObject restBackground;
         public GlobalInfo globalInfo;
         public Button highlightedBtn;
+        public MenuInfo[] menus;
         public MenuInfo menuInfo;
         public Button[] menuButtons;
         public int buttonIndex;
@@ -29,13 +32,11 @@ namespace Theogony{
         
         void Start()
         {
+            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             globalInfo = GlobalInfo.GetGlobalInfo();
             pauseBackground.SetActive(paused);
             // unselectedC = new Color(1, 1, 1, .75f);
             // selectedC = new Color(.75f, .75f, .75f, .75f);
-            menuButtons = menuInfo.buttons;
-            highlightedBtn = menuButtons[buttonIndex];
-            menuInfo.gameObject.SetActive(true);
         }
 
         void Update()
@@ -57,6 +58,9 @@ namespace Theogony{
                 pauseBackground.SetActive(paused);
                 globalInfo.paused = paused;
                 if(paused){
+                    menuInfo = menus[0];
+                    menuInfo.gameObject.SetActive(true);
+                    GetButtons();
                     highlightedBtn = menuButtons[buttonIndex];
                     inputAction.SwitchCurrentActionMap("UI");
                 }else{
@@ -67,6 +71,24 @@ namespace Theogony{
                     }
                 }
             }
+        }
+
+        public void ToggleRest(){
+            bool resting = !restBackground.activeSelf;
+            paused = resting;
+            globalInfo.paused = resting;
+            restBackground.SetActive(resting);
+            if(resting){
+                menuInfo = menus[1];
+                menuInfo.gameObject.SetActive(true);
+                GetButtons();
+                inputAction.SwitchCurrentActionMap("UI");
+            }
+        }
+
+        private void GetButtons(){
+            menuButtons = menuInfo.buttons;
+            highlightedBtn = menuButtons[buttonIndex];
         }
 
         #region Menu Navigation
@@ -90,6 +112,11 @@ namespace Theogony{
                         globalInfo.paused = false;
                         paused = false;
                         inputAction.SwitchCurrentActionMap("InGame");
+                    }else if(restBackground.activeSelf){ //If the bonfire menu is active
+                        menuInfo.currIndex = buttonIndex = 0;
+                        restBackground.SetActive(false);
+                        inputAction.SwitchCurrentActionMap("InGame");
+                        playerControllerScript.animator.Play("StandUp");
                     }
                 }else{ //If this action opens the previous menu
                     OpenMenu(menuInfo.previousMenu);

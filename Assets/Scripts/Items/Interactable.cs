@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Theogony{
     public class Interactable : MonoBehaviour
     {
+        public UIController uiController;
         public PlayerControllerScript playerControllerScript;
         public PlayerInventory playerInventory;
         [Tooltip("0 - Pick up\n1 - Open\n2 - Rest")]
@@ -14,6 +15,7 @@ namespace Theogony{
         {
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             playerInventory = playerControllerScript.gameObject.GetComponent<PlayerInventory>();
+            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
         }
 
         // Update is called once per frame
@@ -32,6 +34,9 @@ namespace Theogony{
 
                     break;
                 case 2:
+                    playerControllerScript.animator.Play("SitDown");
+                    playerControllerScript.canMove = false;
+                    uiController.ToggleRest();
                     break;
             }
         }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Theogony{
-public class ItemInteract : MonoBehaviour
+public class InventoryActions : MonoBehaviour
     {
-        public PauseScreen pauseScreen;
+        public UIController uiController;
         private MenuInfo menuInfo;
         void Start()
         {
@@ -25,7 +25,7 @@ public class ItemInteract : MonoBehaviour
                     menuInfo.previousMenu = obj;
                 }
             }
-            transform.position = pauseScreen.highlightedBtn.transform.position;
+            transform.position = uiController.highlightedBtn.transform.position;
         }
     }
 }

@@ -113,4 +113,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControllerScript: {fileID: 0}
   playerInventory: {fileID: 0}
-  action: 0
+  action: 2

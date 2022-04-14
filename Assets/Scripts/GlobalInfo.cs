@@ -21,7 +21,7 @@ namespace Theogony{
         [Space]
 
         [Space]
-        [Header("Bools")]
+        [Header("Booleans")]
         public bool paused;
         
         public static GlobalInfo GetGlobalInfo(){
