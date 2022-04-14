@@ -11,6 +11,7 @@ namespace Theogony{
         public PlayerControllerScript playerControllerScript;
         public UpdateBar health;
         public UpdateBar stamina;
+        private UIController uiController;
         [Space]
 
         [Space]
@@ -28,6 +29,7 @@ namespace Theogony{
         [Header("Booleans")]
         public bool paused;
         public bool refreshedScene;
+        public bool reloading;
         
         public static GlobalInfo GetGlobalInfo(){
             return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
@@ -45,8 +47,9 @@ namespace Theogony{
         }
 
         private IEnumerator StartFunctions(){
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.25f);
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
             refreshedScene = false;
         }
 
@@ -54,9 +57,6 @@ namespace Theogony{
         {
             if(refreshedScene){
                 StartCoroutine(StartFunctions());
-            }
-            if(Input.GetKeyDown(KeyCode.R)){
-                ReloadLevel();
             }
         }
 
@@ -87,25 +87,39 @@ namespace Theogony{
             }
         }
 
-        public IEnumerator TravelTo(Checkpoint destination){
-            yield return new WaitForSeconds(0.15f);
-            // if(destination != lastCheckpoint){
-                Debug.Log("Travel");
+        public IEnumerator TravelTo(Checkpoint destination, bool reload){
+            if(destination != lastCheckpoint || reloading){ //Won't run if the player tries to travel to the checkpoint they are resting at
+                reloading = true; //Triggers the reload "animation"
+
+                yield return new WaitForSeconds(0.3f);
                 playerControllerScript.animator.Play("JumpToSit");
+                
+                if(uiController.menuInfo)
+                    uiController.OpenMenu(uiController.menuInfo.previousMenu);
+                uiController.restBackground.SetActive(false);
+
+                uiController.ToggleRest();
+
                 CameraHandler cam = playerControllerScript.cameraHandler;
                 cam.transform.position = destination.teleportPosition;
                 playerControllerScript.transform.position = destination.teleportPosition;
+
                 playerControllerScript.transform.LookAt(destination.transform.position, Vector3.up);
                 lastCheckpoint = destination;
-            // }
+                reloading = false;
+
+                if(reload){
+                    ReloadLevel(destination.sceneName);
+                }
+            }
         }
 
-        public void ReloadLevel(){
+        public void ReloadLevel(string sceneName){
+            reloading = true;
             refreshedScene = true;
             paused = false;
-            string currScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currScene);
-            StartCoroutine(TravelTo(lastCheckpoint));
+            SceneManager.LoadScene(sceneName);
+            StartCoroutine(TravelTo(lastCheckpoint, false));
         }
     }
 }

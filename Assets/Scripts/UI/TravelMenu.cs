@@ -32,7 +32,7 @@ namespace Theogony{
             menuInfo = GetComponent<MenuInfo>();
             int arraySize = 0;
             foreach(Checkpoint checkpoint in globalInfo.checkpoints){
-                if(checkpoint != null){
+                if(checkpoint.unlocked){
                     arraySize++;
                 }
             }
@@ -40,7 +40,7 @@ namespace Theogony{
             unlockedCheckpoints = new Checkpoint[arraySize];
             int newArrayIndex = 0;
             foreach(Checkpoint checkpoint in globalInfo.checkpoints){
-                if(checkpoint != null){
+                if(checkpoint.unlocked){
                     unlockedCheckpoints[newArrayIndex] = checkpoint;
                     CreateButton(checkpoint, newArrayIndex);
                     newArrayIndex++;
@@ -59,7 +59,7 @@ namespace Theogony{
                 TextMeshProUGUI text = newButton.transform.GetComponentInChildren<TextMeshProUGUI>();
                 text.text = checkpointReference.locationName;
 
-                newButton.GetComponent<Button>().onClick.AddListener(delegate{StartCoroutine(globalInfo.TravelTo(checkpointReference));});
+                newButton.GetComponent<Button>().onClick.AddListener(delegate{StartCoroutine(globalInfo.TravelTo(checkpointReference, true));});
                 menuInfo.buttons[index] = newButton.GetComponent<Button>();
         }
     }
