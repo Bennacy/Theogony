@@ -9,7 +9,7 @@ namespace Theogony{
     {
         [Header("References")]
         public PlayerInput inputAction;
-        public GameObject backgroundImg;
+        public GameObject pauseBackground;
         public GlobalInfo globalInfo;
         public Button highlightedBtn;
         public MenuInfo menuInfo;
@@ -30,7 +30,7 @@ namespace Theogony{
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
-            backgroundImg.SetActive(paused);
+            pauseBackground.SetActive(paused);
             // unselectedC = new Color(1, 1, 1, .75f);
             // selectedC = new Color(.75f, .75f, .75f, .75f);
             menuButtons = menuInfo.buttons;
@@ -54,7 +54,7 @@ namespace Theogony{
         public void TogglePause(InputAction.CallbackContext context){
             if(context.canceled){
                 paused = !paused;
-                backgroundImg.SetActive(paused);
+                pauseBackground.SetActive(paused);
                 globalInfo.paused = paused;
                 if(paused){
                     highlightedBtn = menuButtons[buttonIndex];
@@ -83,13 +83,15 @@ namespace Theogony{
 
         public void Back(InputAction.CallbackContext context){
             if(context.canceled){
-                if(menuInfo.previousMenu == null){
-                    menuInfo.currIndex = buttonIndex = 0;
-                    backgroundImg.SetActive(false);
-                    globalInfo.paused = false;
-                    paused = false;
-                    inputAction.SwitchCurrentActionMap("InGame");
-                }else{
+                if(menuInfo.previousMenu == null){ //If this action returns to the game
+                    if(pauseBackground.activeSelf){ //If the pause menu is open
+                        menuInfo.currIndex = buttonIndex = 0;
+                        pauseBackground.SetActive(false);
+                        globalInfo.paused = false;
+                        paused = false;
+                        inputAction.SwitchCurrentActionMap("InGame");
+                    }
+                }else{ //If this action opens the previous menu
                     OpenMenu(menuInfo.previousMenu);
                 }
             }
