@@ -88,6 +88,10 @@ namespace Theogony {
             GetComponentInParent<PlayerControllerScript>().canMove = true;
         }
 
+        public void StopMove(){
+            GetComponentInParent<PlayerControllerScript>().rb.velocity = Vector3.zero;
+        }
+
         public void FinishRoll()
         {
             GetComponentInParent<PlayerControllerScript>().FinishRoll();

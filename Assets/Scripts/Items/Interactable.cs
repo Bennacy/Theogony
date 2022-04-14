@@ -36,6 +36,14 @@ namespace Theogony{
                 case 2:
                     playerControllerScript.animator.Play("SitDown");
                     playerControllerScript.canMove = false;
+                    Vector3 checkpointDirection = (playerControllerScript.transform.position - transform.position).normalized;
+                    float angle = Vector3.SignedAngle(checkpointDirection, Vector3.forward, Vector3.up);
+                    Quaternion rotation = Quaternion.Euler(0, angle + 180, 0);
+                    playerControllerScript.transform.LookAt(transform.position, Vector3.up);
+                    // playerControllerScript.transform.rotation = rotation;
+                    
+                    Vector3 forward = rotation * Vector3.forward;
+                    playerControllerScript.rb.velocity = -playerControllerScript.walkSpeed / 4 * forward;
                     uiController.ToggleRest();
                     break;
             }

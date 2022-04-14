@@ -27,7 +27,7 @@ namespace Theogony{
         public float runSpeed;
         public float backstepSpeed;
         public float rollSpeed;
-        private float moveSpeed;
+        public float moveSpeed;
         public float backstepTime;
         public float rollTime;
         public float turnTime;

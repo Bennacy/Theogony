@@ -53,7 +53,7 @@ namespace Theogony{
         }
 
         public void TogglePause(InputAction.CallbackContext context){
-            if(context.canceled){
+            if(context.canceled && !restBackground.activeSelf){
                 paused = !paused;
                 pauseBackground.SetActive(paused);
                 globalInfo.paused = paused;
@@ -83,6 +83,11 @@ namespace Theogony{
                 menuInfo.gameObject.SetActive(true);
                 GetButtons();
                 inputAction.SwitchCurrentActionMap("UI");
+            }else{
+                menuInfo.currIndex = buttonIndex = 0;
+                restBackground.SetActive(false);
+                inputAction.SwitchCurrentActionMap("InGame");
+                playerControllerScript.animator.Play("StandUp");
             }
         }
 
@@ -112,7 +117,7 @@ namespace Theogony{
                         globalInfo.paused = false;
                         paused = false;
                         inputAction.SwitchCurrentActionMap("InGame");
-                    }else if(restBackground.activeSelf){ //If the bonfire menu is active
+                    }else if(restBackground.activeSelf){ //If the checkpoint menu is active
                         menuInfo.currIndex = buttonIndex = 0;
                         restBackground.SetActive(false);
                         inputAction.SwitchCurrentActionMap("InGame");
