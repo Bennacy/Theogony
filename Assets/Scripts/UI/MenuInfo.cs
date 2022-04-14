@@ -11,14 +11,4 @@ public class MenuInfo : MonoBehaviour
     public Button[] buttons;
     public int rowSize;
     public int currIndex;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

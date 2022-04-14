@@ -35,8 +35,6 @@ namespace Theogony{
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             globalInfo = GlobalInfo.GetGlobalInfo();
             pauseBackground.SetActive(paused);
-            // unselectedC = new Color(1, 1, 1, .75f);
-            // selectedC = new Color(.75f, .75f, .75f, .75f);
         }
 
         void Update()
@@ -120,6 +118,7 @@ namespace Theogony{
                     }else if(restBackground.activeSelf){ //If the checkpoint menu is active
                         menuInfo.currIndex = buttonIndex = 0;
                         restBackground.SetActive(false);
+                        globalInfo.paused = paused = false;
                         inputAction.SwitchCurrentActionMap("InGame");
                         playerControllerScript.animator.Play("StandUp");
                     }
@@ -146,6 +145,12 @@ namespace Theogony{
             if(!menuInfo.closesPrevious){
                 menuInfo.previousMenu.gameObject.SetActive(true);
             }
+            menuButtons = menuInfo.buttons;
+            buttonIndex = menuInfo.currIndex;
+            highlightedBtn = menuButtons[menuInfo.currIndex];
+        }
+
+        public void GetMenuButtons(){
             menuButtons = menuInfo.buttons;
             buttonIndex = menuInfo.currIndex;
             highlightedBtn = menuButtons[menuInfo.currIndex];

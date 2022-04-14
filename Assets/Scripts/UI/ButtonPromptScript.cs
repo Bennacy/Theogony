@@ -33,9 +33,11 @@ namespace Theogony{
         public float interactRadius = 1;
         public Collider[] inRange;
         private Interactable interactScript;
+        private GlobalInfo globalInfo;
         
         void Start()
         {
+            globalInfo = GlobalInfo.GetGlobalInfo();
         }
 
         void Update()
@@ -55,7 +57,7 @@ namespace Theogony{
             promptText.text = prompts[0].actionText[action];
             promptImage.sprite = prompts[inputType].images[action];
             inRange = Physics.OverlapSphere(player.transform.position, interactRadius, interactLayer);
-            if(inRange.Length != 0){
+            if(inRange.Length > 0 && !globalInfo.paused){
                 interactScript = inRange[0].GetComponent<Interactable>();
                 action = interactScript.action + 2;
                 promptText.enabled = true;
@@ -67,7 +69,7 @@ namespace Theogony{
         }
 
         public void Interact(InputAction.CallbackContext context){
-            if(context.performed){
+            if(context.performed && inRange.Length > 0){
                 interactScript = inRange[0].GetComponent<Interactable>();
                 interactScript.Interact();
             }

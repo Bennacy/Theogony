@@ -7,6 +7,7 @@ namespace Theogony{
     {
         [Header("References")]
         public static GlobalInfo self;
+        public PlayerControllerScript playerControllerScript;
         public UpdateBar health;
         public UpdateBar stamina;
         [Space]
@@ -18,6 +19,8 @@ namespace Theogony{
         public int end;
         public int str;
         public int dex;
+        public Checkpoint lastCheckpoint;
+        public Checkpoint[] checkpoints;
         [Space]
 
         [Space]
@@ -37,6 +40,7 @@ namespace Theogony{
             }else{
                 Destroy(gameObject);
             }
+            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
         }
 
         void Update()
@@ -70,6 +74,16 @@ namespace Theogony{
                 return true;
             }else{
                 return false;
+            }
+        }
+
+        public void TravelTo(Checkpoint destination){
+            if(destination != lastCheckpoint){
+                CameraHandler cam = playerControllerScript.cameraHandler;
+                cam.transform.position = destination.teleportPosition;
+                playerControllerScript.transform.position = destination.teleportPosition;
+                playerControllerScript.transform.LookAt(destination.transform.position, Vector3.up);
+                lastCheckpoint = destination;
             }
         }
 }
