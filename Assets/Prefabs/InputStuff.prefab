@@ -211,6 +211,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8009718904826846615, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905120385570, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905222834690, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905418117128, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905513513006, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: origWidth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905534710966, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905644019568, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009718905829453375, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: origWidth
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
 --- !u!114 &1971696214044776924 stripped
