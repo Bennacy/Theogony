@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeinSpeed: 10
-  fadeoutSpeed: 5
+  fadeoutSpeed: 3
 --- !u!1001 &1138202246478417162
 PrefabInstance:
   m_ObjectHideFlags: 0
