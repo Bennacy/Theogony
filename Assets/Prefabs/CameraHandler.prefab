@@ -192,6 +192,7 @@ MonoBehaviour:
   targetAngleY: 0
   mouseSens: 500
   lookSpeed: 0.1
+  sensitivity: 50
   followSpeed: 0.1
   pivotSpeed: 0.03
   lookAngle: 0

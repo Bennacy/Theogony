@@ -464,13 +464,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163097712}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1095,10 +1095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: sensitivity
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 1971696213874277030, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.78431374
@@ -1603,6 +1599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f484f81d866e63499a3657ceec997a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeinSpeed: 10
+  fadeoutSpeed: 5
 --- !u!1001 &1138202246478417162
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ namespace Theogony{
         private static GlobalCanvas self;
         private GlobalInfo globalInfo;
         private Image image;
+        public float fadeinSpeed;
+        public float fadeoutSpeed;
+        private bool startedFade;
 
         void Start()
         {
@@ -25,7 +28,31 @@ namespace Theogony{
         // Update is called once per frame
         void Update()
         {
-            image.enabled = globalInfo.reloading;
+            if(globalInfo.reloading && !startedFade){
+                startedFade = true;
+                StartCoroutine(FadeOut(true));
+            }
+            if(!globalInfo.reloading && startedFade){
+                startedFade = false;
+                StartCoroutine(FadeOut(false));
+            }
+        }
+
+        public IEnumerator FadeOut(bool fadingOut){
+            Color color = image.color;
+            if(fadingOut){
+                while(image.color.a < 1){
+                    color.a += (fadeinSpeed * Time.deltaTime);
+                    image.color = color;
+                    yield return null;
+                }
+            }else{
+                while(image.color.a > 0){
+                    color.a -= fadeoutSpeed * Time.deltaTime;
+                    image.color = color;
+                    yield return null;
+                }
+            }
         }
     }
 }
