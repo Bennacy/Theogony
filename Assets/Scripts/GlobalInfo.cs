@@ -61,11 +61,13 @@ namespace Theogony{
         private IEnumerator StartFunctions(){
             yield return new WaitForSeconds(0.3f);
             activeScene = SceneManager.GetActiveScene().name;
-            foreach(Checkpoint checkpoint in checkpoints){
-                if(checkpoint.sceneName != activeScene){
-                    checkpoint.gameObject.SetActive(false);
-                }else{
-                    checkpoint.gameObject.SetActive(true);
+            if(checkpoints.Length > 0){
+                foreach(Checkpoint checkpoint in checkpoints){
+                    if(checkpoint.sceneName != activeScene){
+                        checkpoint.gameObject.SetActive(false);
+                    }else{
+                        checkpoint.gameObject.SetActive(true);
+                    }
                 }
             }
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
