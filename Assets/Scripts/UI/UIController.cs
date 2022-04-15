@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ namespace Theogony{
     {
         [Header("References")]
         public PlayerInput inputAction;
+        public Camera mainCam;
         public PlayerControllerScript playerControllerScript;
         public GameObject pauseBackground;
         public GameObject restBackground;
@@ -18,6 +20,7 @@ namespace Theogony{
         public MenuInfo menuInfo;
         public Button[] menuButtons;
         public int buttonIndex;
+        public LayerMask UILayer;
         [Space]
 
         [Space]
@@ -34,13 +37,19 @@ namespace Theogony{
         {
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             inputAction = playerControllerScript.gameObject.GetComponent<PlayerInput>();
+            mainCam = Camera.main;
             globalInfo = GlobalInfo.GetGlobalInfo();
             pauseBackground.SetActive(paused);
-            AssignInput();
         }
 
-        private void AssignInput(){
-            Debug.Log(inputAction.actionEvents[0]);
+        public void Bruh(Button button){
+            highlightedBtn = button;
+            for(int i = 0; i < menuButtons.Length; i++){
+                if(menuButtons[i] == highlightedBtn){
+                    buttonIndex = i;
+                    return;
+                }
+            }
         }
 
         void Update()
@@ -101,20 +110,32 @@ namespace Theogony{
 
         private void GetButtons(){
             menuButtons = menuInfo.buttons;
+            buttonIndex = menuInfo.currIndex;
             highlightedBtn = menuButtons[buttonIndex];
-        }
-
-        #region Menu Navigation
-        public void SwapTab(InputAction.CallbackContext context){
-            if(context.performed){
-                Vector2 value = context.ReadValue<Vector2>();
-                if(value.x > 0){
-                    Debug.Log("Right");
-                }else{
-                    Debug.Log("Left");
+            foreach(Button button in menuButtons){ //Adds an event that highlights buttons that the mouse hovers
+                GameObject current = button.gameObject;
+                if(current.GetComponent<EventTrigger>() == null){
+                    current.AddComponent<EventTrigger>();
+                    EventTrigger trigger = current.GetComponent<EventTrigger>();
+                    EventTrigger.Entry entry = new EventTrigger.Entry();
+                    entry.eventID = EventTriggerType.PointerEnter;
+                    entry.callback.AddListener(delegate{Bruh(button);});
+                    trigger.triggers.Add(entry);
                 }
             }
         }
+
+        #region Menu Navigation
+        // public void SwapTab(InputAction.CallbackContext context){
+        //     if(context.performed){
+        //         Vector2 value = context.ReadValue<Vector2>();
+        //         if(value.x > 0){
+        //             Debug.Log("Right");
+        //         }else{
+        //             Debug.Log("Left");
+        //         }
+        //     }
+        // }
 
         public void Back(InputAction.CallbackContext context){
             if(context.canceled){
@@ -146,7 +167,6 @@ namespace Theogony{
 
         public void OpenMenu(GameObject menu){
             menu.SetActive(true);
-            // highlightedBtn = menuInfo.gameObject.GetComponent<Button>();
             menuInfo.gameObject.SetActive(false);
             if(!menu.GetComponent<MenuInfo>().saveIndex){
                 menuInfo.currIndex = 0;
@@ -155,9 +175,7 @@ namespace Theogony{
             if(!menuInfo.closesPrevious){
                 menuInfo.previousMenu.gameObject.SetActive(true);
             }
-            menuButtons = menuInfo.buttons;
-            buttonIndex = menuInfo.currIndex;
-            highlightedBtn = menuButtons[menuInfo.currIndex];
+            GetButtons();
         }
 
         public void GetMenuButtons(){

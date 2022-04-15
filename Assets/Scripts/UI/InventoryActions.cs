@@ -9,6 +9,7 @@ public class InventoryActions : MonoBehaviour
         private MenuInfo menuInfo;
         void Start()
         {
+            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
         }
 
         void Update()

@@ -81,6 +81,9 @@ namespace Theogony{
             if(refreshedScene){
                 StartCoroutine(StartFunctions());
             }
+            if(paused){
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
 
         #region Player Leveling

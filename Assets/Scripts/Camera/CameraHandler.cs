@@ -36,6 +36,8 @@ namespace Theogony
         private bool resetCam;
         public float mouseSens;
         public float lookSpeed = 0.1f;
+        [Range(0,100)]
+        public float sensitivity;
         public float followSpeed = 0.1f;
         public float pivotSpeed = 0.03f;
         private float mouseXInput;
@@ -81,7 +83,7 @@ namespace Theogony
 
         public void HandleCameraRotation(float delta)
         {
-            targetAngleX += (mouseXInput * lookSpeed) / delta;
+            targetAngleX += (mouseXInput * (sensitivity / 1000)) / delta;
             if(targetAngleX >= 360){
                 targetAngleX -= 360;
             }else if(targetAngleX <= 0){

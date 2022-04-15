@@ -2678,7 +2678,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -50}
-  m_SizeDelta: {x: 800, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: -0.00000009033829, y: 1}
 --- !u!222 &8009718904826846609
 CanvasRenderer:
@@ -4154,7 +4154,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -120}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: -0.00000009033829, y: 1}
 --- !u!222 &8009718905120385580
 CanvasRenderer:
@@ -5166,7 +5166,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -120}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: -0.00000009033829, y: 1}
 --- !u!222 &8009718905222834700
 CanvasRenderer:
@@ -5646,7 +5646,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -50}
-  m_SizeDelta: {x: 800, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: -0.00000009033829, y: 1}
 --- !u!222 &8009718905418117130
 CanvasRenderer:
@@ -6696,7 +6696,7 @@ MonoBehaviour:
   barTrans: {fileID: 8009718905534710967}
   barBackground: {fileID: 8009718905418117129}
   decreaseSpeed: 50
-  origWidth: 800
+  origWidth: 500
   origMax: 100
   barType: 1
 --- !u!1 &8009718905534710965
@@ -6735,7 +6735,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -50}
-  m_SizeDelta: {x: 800, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: -0.00000009033829, y: 1}
 --- !u!222 &8009718905534710960
 CanvasRenderer:
@@ -7357,7 +7357,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -120}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: -0.00000009033829, y: 1}
 --- !u!222 &8009718905644019570
 CanvasRenderer:
@@ -8132,7 +8132,7 @@ MonoBehaviour:
   barTrans: {fileID: 8009718905222834691}
   barBackground: {fileID: 8009718905120385571}
   decreaseSpeed: 25
-  origWidth: 800
+  origWidth: 300
   origMax: 100
   barType: 0
 --- !u!1 &8009718905860768043
