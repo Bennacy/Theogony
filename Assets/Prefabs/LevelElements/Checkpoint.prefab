@@ -128,3 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe1cae6ef482f8439b684d0bb7b78d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiController: {fileID: 0}
+  destinationPreview: {fileID: 0}
+  locationName: 
+  sceneName: 
+  unlocked: 1
+  teleportPosition: {x: 0, y: 0, z: 0}
+  sortingOrder: 0

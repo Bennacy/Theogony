@@ -21,12 +21,17 @@ namespace Theogony{
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
+            cameraHandler = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>();
+            maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
+            maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
             currHealth = maxHealth;
             currStamina = maxStamina;
         }
 
         void Update()
         {
+            maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
+            maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
             if(!staminaSpent && currStamina < maxStamina){
                 currStamina += staminaRecharge * Time.deltaTime;
             }

@@ -8,7 +8,7 @@ namespace Theogony{
         private  GlobalInfo globalInfo;
         public UIController uiController;
         public Sprite destinationPreview;
-        private PlayerControllerScript playerControllerScript;
+        public PlayerControllerScript playerControllerScript;
         public string locationName;
         public string sceneName;
         public bool unlocked;
@@ -36,8 +36,13 @@ namespace Theogony{
             }
         }
 
+        void OnEnable()
+        {
+            StartCoroutine(StartFunctions());
+        }
+
         private IEnumerator StartFunctions(){
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(.5f);
             Debug.Log("Start");
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();

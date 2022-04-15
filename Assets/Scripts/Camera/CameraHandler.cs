@@ -61,9 +61,15 @@ namespace Theogony
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
             globalInfo = GlobalInfo.GetGlobalInfo();
+            AssignInput();
+        }
+
+        private void AssignInput(){
+            // playerInput.actions["Camera"] = MoveCamera();
         }
 
         public void FollowTarget(float delta)
@@ -134,8 +140,9 @@ namespace Theogony
                 
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
-                lockOnIndicator.transform.position = player.transform.position + (direction * .9f);
-                lockOnIndicator.transform.position = new Vector3(lockOnIndicator.transform.position.x, lockOnIndicator.transform.position.y + 1, lockOnIndicator.transform.position.z);
+                Vector3 indicatorPos = player.transform.position + (direction * .9f);
+                indicatorPos.y += 1;
+                lockOnIndicator.transform.position = indicatorPos;
 
                 Vector3.Normalize(direction);
                 targetAngleX = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
@@ -219,7 +226,7 @@ namespace Theogony
         }
 
         public void LockOn(InputAction.CallbackContext context){
-            if(context.performed){
+            if(context.performed && !globalInfo.paused){
                 GetClosestEnemy();
 
                 if(lockOnTarget != null){

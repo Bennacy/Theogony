@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GlobalInfo
   - Canvas
+  - Camera
   layers:
   - Default
   - TransparentFX

@@ -38,6 +38,8 @@ namespace Theogony{
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+            input = player.gameObject.GetComponent<PlayerInput>();
         }
 
         void Update()

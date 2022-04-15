@@ -33,8 +33,14 @@ namespace Theogony{
         void Start()
         {
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+            inputAction = playerControllerScript.gameObject.GetComponent<PlayerInput>();
             globalInfo = GlobalInfo.GetGlobalInfo();
             pauseBackground.SetActive(paused);
+            AssignInput();
+        }
+
+        private void AssignInput(){
+            Debug.Log(inputAction.actionEvents[0]);
         }
 
         void Update()

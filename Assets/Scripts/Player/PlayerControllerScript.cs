@@ -51,6 +51,8 @@ namespace Theogony{
             animator = GetComponentInChildren<Animator>();
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            cam = GameObject.FindGameObjectWithTag("Camera");
+            cameraHandler = cam.GetComponent<CameraHandler>();
             cameraHandler = playerManager.cameraHandler;
         }
 
