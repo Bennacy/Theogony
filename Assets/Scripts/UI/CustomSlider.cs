@@ -9,6 +9,9 @@ namespace Theogony{
         private GlobalInfo globalInfo;
         private UIController uiController;
         public Vector2 sliderRange;
+        private Vector2 backgroundThreshold;
+        private RectTransform canvasTransform;
+        private Camera mainCam;
         public RectTransform backgroundTransform;
         public Image sliderBall;
         private Button buttonRef;
@@ -17,12 +20,18 @@ namespace Theogony{
         public float sliderValue;
         private float lastValue;
         private bool changed;
+        private bool held;
+        public bool mouseOver;
 
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
             buttonRef = GetComponentInChildren<Button>();
+            canvasTransform = uiController.gameObject.GetComponent<RectTransform>();
+            mainCam = Camera.main;
+            backgroundThreshold.x = backgroundTransform.localPosition.x;
+            backgroundThreshold.y = backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x;
 
             SetValue(globalInfo.sensitivity);
         }
@@ -37,10 +46,32 @@ namespace Theogony{
         {
             lastValue = sliderValue;
             if(uiController.sliderChange != 0 && uiController.highlightedBtn == buttonRef){
+                Debug.Log(uiController.sliderChange);
                 ChangeSlider(uiController.sliderChange);
                 uiController.sliderChange = 0;
                 sliderValue = GetValue();
             }
+
+            if(mouseOver && Input.GetMouseButtonDown(0)){
+                held = true;
+            }
+
+            if(held){
+                Vector2 clicked;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasTransform, Input.mousePosition, null, out clicked);
+                clicked.y = sliderBall.transform.localPosition.y;
+                if(clicked.x < backgroundThreshold.x){
+                    clicked.x = backgroundThreshold.x;
+                }else if(clicked.x > backgroundThreshold.y){
+                    clicked.x = backgroundThreshold.y;
+                }
+                sliderBall.transform.localPosition = clicked;
+                sliderValue = GetValue();
+                if(Input.GetMouseButtonUp(0)){
+                    held = false;
+                }
+            }
+
             if(lastValue != sliderValue){
                 changed = true;
             }
@@ -52,8 +83,8 @@ namespace Theogony{
             
             if(newPos.x < Mathf.Round(backgroundTransform.localPosition.x)){
                 newPos.x = Mathf.Round(backgroundTransform.localPosition.x);
-            }else if(newPos.x > Mathf.Round(backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x)){
-                newPos.x = Mathf.Round(backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x);
+            }else if(newPos.x > Mathf.Round(backgroundThreshold.y)){
+                newPos.x = Mathf.Round(backgroundThreshold.y);
             }
             sliderBall.transform.localPosition = newPos;
         }
@@ -69,19 +100,27 @@ namespace Theogony{
 
         public void SetValue(float newValue){
             sliderValue = newValue;
-            float newPos = Functions.MapValues(sliderValue, sliderRange.x, sliderRange.y, backgroundTransform.localPosition.x, backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x);
+            float newPos = Functions.MapValues(sliderValue, sliderRange.x, sliderRange.y, backgroundThreshold.x, backgroundThreshold.y);
             Vector2 ballPos = sliderBall.transform.localPosition;
             ballPos.x = newPos;
             sliderBall.transform.localPosition = ballPos;
         }
 
-        public bool ValueChanged(){
+        public bool OnValueChanged(){
             if(changed){
                 changed = false;
                 return true;
             }else{
                 return false;
             }
+        }
+
+        public void SetMouseOver(bool state){
+            mouseOver = state;
+        }
+
+        public bool OnMouseOver(){
+            return mouseOver;
         }
     }
 }

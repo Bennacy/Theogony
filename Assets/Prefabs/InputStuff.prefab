@@ -127,6 +127,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8391582328164638332}
     m_Modifications:
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[0].eventID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].eventID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7231589046787033371}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMouseOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMouseOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Theogony.CustomSlider, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8009718904718144369, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
       propertyPath: m_Pivot.x
       value: 0

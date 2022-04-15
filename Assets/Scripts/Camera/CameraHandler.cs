@@ -137,7 +137,7 @@ namespace Theogony
         void LateUpdate()
         {
             sensitivity = sensSlider.GetValue();
-            if(sensSlider.ValueChanged()){
+            if(sensSlider.OnValueChanged()){
                 globalInfo.sensitivity = sensSlider.GetValue();
             }
             lockOnIndicator.SetActive(lockOnTarget != null);

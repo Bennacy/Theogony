@@ -220,7 +220,8 @@ namespace Theogony{
 
         private void ActualNavigation(){
             moveAgain = false;
-            if(overSlider){
+            
+            if(overSlider && navigationValue.x != 0){
                 sliderChange = (int)Mathf.Sign(navigationValue.x);
             }
 
