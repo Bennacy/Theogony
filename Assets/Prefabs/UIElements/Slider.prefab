@@ -53,7 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderRange: {x: 0, y: 100}
   backgroundTransform: {fileID: 7110498198901326168}
-  fractionCount: 0
+  sliderBall: {fileID: 3438262106855207446}
+  fractionCount: 10
   sliderValue: 0
 --- !u!1 &6885310615653146161
 GameObject:

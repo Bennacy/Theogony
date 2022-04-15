@@ -49,6 +49,7 @@ MonoBehaviour:
   stamina: {fileID: 0}
   activeScene: 
   currency: 5000
+  sensitivity: 50
   lastCheckpoint: {fileID: 0}
   checkpoints:
   - {fileID: 0}

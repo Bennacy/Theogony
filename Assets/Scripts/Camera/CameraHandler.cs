@@ -69,6 +69,7 @@ namespace Theogony
             lookAngle = targetAngleX = targetAngleY = 0;
             globalInfo = GlobalInfo.GetGlobalInfo();
             AssignInput();
+            sensSlider.SetValue(globalInfo.sensitivity);
         }
 
         private void AssignInput(){
@@ -135,7 +136,10 @@ namespace Theogony
 
         void LateUpdate()
         {
-            sensitivity = globalInfo.sensitivity = sensSlider.GetValue();
+            sensitivity = sensSlider.GetValue();
+            if(sensSlider.ValueChanged()){
+                globalInfo.sensitivity = sensSlider.GetValue();
+            }
             lockOnIndicator.SetActive(lockOnTarget != null);
             
             if(lockOnTarget != null){
