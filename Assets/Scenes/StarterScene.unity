@@ -995,12 +995,15 @@ MonoBehaviour:
   health: {fileID: 0}
   stamina: {fileID: 0}
   activeScene: 
-  currency: 0
+  currency: 5000
   lastCheckpoint: {fileID: 0}
   checkpoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  totalLevel: 0
+  baseLevelCost: 50
+  levelCostScaling: 15
   vit: 0
   end: 0
   str: 0

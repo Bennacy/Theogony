@@ -24,6 +24,9 @@ namespace Theogony{
 
         [Space]
         [Header("Player Stats Info")]
+        public int totalLevel;
+        public int baseLevelCost;
+        public int levelCostScaling;
         public int vit;
         public int end;
         public int str;
@@ -80,23 +83,37 @@ namespace Theogony{
             }
         }
 
+        #region Player Leveling
+        public void PlayerLevel(){
+            totalLevel = vit + end + str + dex;
+        }
+
+        public int LevelUpCost(){
+            return (baseLevelCost + totalLevel * levelCostScaling);
+        }
+
         public void AlterVit(int change){
             vit += change;
             health.UpdateBarWidth(health.origMax + (vitIncrease * vit));
+            PlayerLevel();
         }
 
         public void AlterEnd(int change){
             end += change;
             stamina.UpdateBarWidth(stamina.origMax + (endIncrease * end));
+            PlayerLevel();
         }
 
         public void AlterStr(int change){
             str += change;
+            PlayerLevel();
         }
 
         public void AlterDex(int change){
             dex += change;
+            PlayerLevel();
         }
+        #endregion
 
         public bool AlterCurrency(int valueToAdd){
             if(currency + valueToAdd >= 0){
