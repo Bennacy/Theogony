@@ -42,7 +42,8 @@ namespace Theogony{
             pauseBackground.SetActive(paused);
         }
 
-        public void Bruh(Button button){
+        public void MouseOver(Button button){
+            Debug.Log(button);
             highlightedBtn = button;
             for(int i = 0; i < menuButtons.Length; i++){
                 if(menuButtons[i] == highlightedBtn){
@@ -119,7 +120,7 @@ namespace Theogony{
                     EventTrigger trigger = current.GetComponent<EventTrigger>();
                     EventTrigger.Entry entry = new EventTrigger.Entry();
                     entry.eventID = EventTriggerType.PointerEnter;
-                    entry.callback.AddListener(delegate{Bruh(button);});
+                    entry.callback.AddListener(delegate{MouseOver(button);});
                     trigger.triggers.Add(entry);
                 }
             }

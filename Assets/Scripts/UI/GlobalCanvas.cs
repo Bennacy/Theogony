@@ -38,9 +38,10 @@ namespace Theogony{
             }
         }
 
-        public IEnumerator FadeOut(bool fadingOut){
+        public IEnumerator FadeOut(bool fadingIn){
             Color color = image.color;
-            if(fadingOut){
+            if(fadingIn){
+                image.enabled = true;
                 while(image.color.a < 1){
                     color.a += (fadeinSpeed * Time.deltaTime);
                     image.color = color;
@@ -52,6 +53,7 @@ namespace Theogony{
                     image.color = color;
                     yield return null;
                 }
+                image.enabled = false;
             }
         }
     }
