@@ -1388,24 +1388,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 90049254}
-  coll: {fileID: 90049242}
+  coll: {fileID: 0}
   rb: {fileID: 90049246}
   cam: {fileID: 820765740}
-  cameraHandler: {fileID: 0}
+  cameraHandler: {fileID: 296061942}
   camForward: {x: 0, y: 0, z: 0, w: 0}
   movementVector: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
   walkSpeed: 5
   runSpeed: 10
   backstepSpeed: -15
-  rollSpeed: 6
+  rollSpeed: 0
   moveSpeed: 0
-  backstepTime: 0.15
-  rollTime: 1
+  backstepTime: 0
+  rollTime: 0
   turnTime: 10
-  rollCost: 15
-  backstepCost: 10
-  runCost: 10
+  rollCost: 0
+  backstepCost: 0
+  runCost: 0
   canMove: 1
   running: 0
 --- !u!1 &130165926
@@ -2429,17 +2429,17 @@ MonoBehaviour:
   cameraPivotTransform: {fileID: 820765741}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   lockOnTarget: {fileID: 0}
   lockOnIndicator: {fileID: 1187580349}
-  lockOnSpeed: 0.1
+  lockOnSpeed: 0
   stoppedMove: 1
-  lockOnRange: 10
+  lockOnRange: 0
   previouslyLocked: 0
   colliders: []
   targetAngleX: 0
   targetAngleY: 0
-  mouseSens: 500
+  mouseSens: 0
   lookSpeed: 0.1
   followSpeed: 0.1
   pivotSpeed: 0.03
@@ -4225,9 +4225,9 @@ MonoBehaviour:
   barFront: {fileID: 1031683461}
   barTrans: {fileID: 1146353911}
   barBackground: {fileID: 1588869335}
-  decreaseSpeed: 25
-  origWidth: 800
-  origMax: 100
+  decreaseSpeed: 0
+  origWidth: 0
+  origMax: 0
   barType: 0
 --- !u!1 &576033759
 GameObject:
@@ -5786,9 +5786,9 @@ MonoBehaviour:
   barFront: {fileID: 1815416676}
   barTrans: {fileID: 939185731}
   barBackground: {fileID: 1224155901}
-  decreaseSpeed: 50
-  origWidth: 800
-  origMax: 100
+  decreaseSpeed: 0
+  origWidth: 0
+  origMax: 0
   barType: 1
 --- !u!1 &897583991
 GameObject:
@@ -13860,7 +13860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputAction: {fileID: 90049252}
-  playerControllerScript: {fileID: 0}
+  playerControllerScript: {fileID: 90049255}
   pauseBackground: {fileID: 806995093}
   restBackground: {fileID: 1529327405}
   globalInfo: {fileID: 1649123319}
@@ -15032,7 +15032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694d95923aa6c6a4486b8ca95ccdeff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalInfo: {fileID: 0}
+  globalInfo: {fileID: 1649123319}
   currencyText: {fileID: 1789030097}
   changeText: {fileID: 1383084542}
   changeTime: 1
