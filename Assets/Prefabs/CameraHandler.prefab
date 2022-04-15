@@ -178,6 +178,7 @@ MonoBehaviour:
   player: {fileID: 0}
   cameraTransform: {fileID: 7301024319384058074}
   cameraPivotTransform: {fileID: 7301024319241269635}
+  sensSlider: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -218,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7301024320552164368
 Transform:
   m_ObjectHideFlags: 0

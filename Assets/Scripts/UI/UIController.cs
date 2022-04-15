@@ -27,11 +27,17 @@ namespace Theogony{
         [Header("Values")]
         public Color unselectedC;
         public Color selectedC;
+        [SerializeField]
+        private Vector2 navigationValue;
         [Space]
 
         [Space]
         [Header("Booleans")]
         public bool paused;
+        public bool overSlider;
+        public int sliderChange;
+        public bool holdingNavigation;
+        private bool moveAgain;
         
         void Start()
         {
@@ -40,10 +46,10 @@ namespace Theogony{
             mainCam = Camera.main;
             globalInfo = GlobalInfo.GetGlobalInfo();
             pauseBackground.SetActive(paused);
+            moveAgain = false;
         }
 
         public void MouseOver(Button button){
-            Debug.Log(button);
             highlightedBtn = button;
             for(int i = 0; i < menuButtons.Length; i++){
                 if(menuButtons[i] == highlightedBtn){
@@ -62,6 +68,14 @@ namespace Theogony{
                     }else{
                         button.image.color = selectedC;
                     }
+                }
+                overSlider = highlightedBtn.name.Contains("Slider");
+                if(holdingNavigation && moveAgain){
+                    StartCoroutine(ResetNavigation());
+                    ActualNavigation();
+                }
+                if(!holdingNavigation){
+                    moveAgain = false;
                 }
             }
         }
@@ -126,18 +140,11 @@ namespace Theogony{
             }
         }
 
-        #region Menu Navigation
-        // public void SwapTab(InputAction.CallbackContext context){
-        //     if(context.performed){
-        //         Vector2 value = context.ReadValue<Vector2>();
-        //         if(value.x > 0){
-        //             Debug.Log("Right");
-        //         }else{
-        //             Debug.Log("Left");
-        //         }
-        //     }
-        // }
+        public void Quit(){
+            Application.Quit();
+        }
 
+        #region Menu Navigation
         public void Back(InputAction.CallbackContext context){
             if(context.canceled){
                 if(menuInfo.previousMenu == null){ //If this action returns to the game
@@ -187,73 +194,61 @@ namespace Theogony{
 
         public void NavigateMenu(InputAction.CallbackContext context){
             if(context.performed){
-                Vector2 value = context.ReadValue<Vector2>();
-                if(value.x == 1){
-                    buttonIndex++;
-                    if(buttonIndex >= menuButtons.Length){
-                        buttonIndex = 0;
-                    }
-                }else if(value.x == -1){
-                    buttonIndex--;
-                    if(buttonIndex < 0){
-                        buttonIndex = menuButtons.Length - 1;
-                    }
-                }else if(value.y == -1){
-                    int futureIndex = buttonIndex + menuInfo.rowSize;
-                    if(futureIndex >= menuButtons.Length){
-                        futureIndex = futureIndex - menuButtons.Length;
-                    }
-                    buttonIndex = futureIndex;
-                }else if(value.y == 1){
-                    int futureIndex = buttonIndex - menuInfo.rowSize;
-                    if(futureIndex < 0){
-                        futureIndex = futureIndex + menuButtons.Length;
-                    }
-                    buttonIndex = futureIndex;
-                }
-                menuInfo.currIndex = buttonIndex;
-                highlightedBtn = menuButtons[buttonIndex];
+                navigationValue = context.ReadValue<Vector2>();
+                holdingNavigation = true;
+                ActualNavigation();
+                StartCoroutine(FirstNavigation());
+            }else if(context.canceled){
+                navigationValue = context.ReadValue<Vector2>();
+                holdingNavigation = false;
+                moveAgain = false;
+                StopCoroutine(ResetNavigation());
+                StopCoroutine(FirstNavigation());
             }
+        }
+
+        private IEnumerator FirstNavigation(){
+            yield return new WaitForSeconds(.4f);
+            moveAgain = true;
+        }
+
+        private IEnumerator ResetNavigation(){
+            yield return new WaitForSeconds(.1f);
+            moveAgain = true;
+        }
+
+        private void ActualNavigation(){
+            moveAgain = false;
+            if(overSlider){
+                sliderChange = (int)Mathf.Sign(navigationValue.x);
+            }
+
+            if(navigationValue.x == 1 && !overSlider){
+                buttonIndex++;
+                if(buttonIndex >= menuButtons.Length){
+                    buttonIndex = 0;
+                }
+            }else if(navigationValue.x == -1 && !overSlider){
+                buttonIndex--;
+                if(buttonIndex < 0){
+                    buttonIndex = menuButtons.Length - 1;
+                }
+            }else if(navigationValue.y == -1){
+                int futureIndex = buttonIndex + menuInfo.rowSize;
+                if(futureIndex >= menuButtons.Length){
+                    futureIndex = futureIndex - menuButtons.Length;
+                }
+                buttonIndex = futureIndex;
+            }else if(navigationValue.y == 1){
+                int futureIndex = buttonIndex - menuInfo.rowSize;
+                if(futureIndex < 0){
+                    futureIndex = futureIndex + menuButtons.Length;
+                }
+                buttonIndex = futureIndex;
+            }
+            menuInfo.currIndex = buttonIndex;
+            highlightedBtn = menuButtons[buttonIndex];
         }
         #endregion
-
-        public void IncreaseLevel(int statIndex){
-            switch(statIndex){
-                case 0: //Vitality
-                    globalInfo.AlterVit(1);
-                    break;
-                
-                case 1: //Endurance
-                    globalInfo.AlterEnd(1);
-                    break;
-                
-                case 2: //Strength
-                    globalInfo.AlterStr(1);
-                    break;
-                
-                case 3: //Dexterity
-                    globalInfo.AlterDex(1);
-                    break;
-            }
-        }
-        public void DecreaseLevel(int statIndex){
-            switch(statIndex){
-                case 0: //Vitality
-                    globalInfo.AlterVit(-1);
-                    break;
-                
-                case 1: //Endurance
-                    globalInfo.AlterEnd(-1);
-                    break;
-                
-                case 2: //Strength
-                    globalInfo.AlterStr(-1);
-                    break;
-                
-                case 3: //Dexterity
-                    globalInfo.AlterDex(-1);
-                    break;
-            }
-        }
     }
 }

@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7916017722255109740}
+    - target: {fileID: 7301024319790079576, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
+      propertyPath: sensSlider
+      value: 
+      objectReference: {fileID: 7231589046787033371}
     - target: {fileID: 7301024319790079578, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
       propertyPath: m_Name
       value: CameraHandler
@@ -240,6 +244,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8009718904718144369, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
   m_PrefabInstance: {fileID: 8391582328132789188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7231589046787033371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1166186317232745183, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+  m_PrefabInstance: {fileID: 8391582328132789188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f1b554d2eda404484c8494445bf5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8391582328842675166
 PrefabInstance:
   m_ObjectHideFlags: 0

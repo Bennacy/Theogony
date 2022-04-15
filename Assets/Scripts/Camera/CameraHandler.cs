@@ -15,6 +15,7 @@ namespace Theogony
         private LayerMask ignoreLayers;
         private PlayerInput playerInput;
         private GlobalInfo globalInfo;
+        public CustomSlider sensSlider;
 
         public static CameraHandler singleton;
 
@@ -134,6 +135,7 @@ namespace Theogony
 
         void LateUpdate()
         {
+            sensitivity = globalInfo.sensitivity = sensSlider.GetValue();
             lockOnIndicator.SetActive(lockOnTarget != null);
             
             if(lockOnTarget != null){
