@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3958135181016333159}
   - component: {fileID: 3958135181016333165}
   - component: {fileID: 3958135181016333164}
+  - component: {fileID: -3458501296833675365}
   m_Layer: 0
   m_Name: Gorgon
   m_TagString: Untagged
@@ -203,6 +204,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   maxprediction: 0
+--- !u!114 &-3458501296833675365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958135181016333158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf7dfb333c6ee640ab61ff34a46ae02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 2
+  decayCoefficient: -25
 --- !u!1001 &3958135181569937373
 PrefabInstance:
   m_ObjectHideFlags: 0
