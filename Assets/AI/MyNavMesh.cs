@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Theogony{
     public class MyNavMesh : MonoBehaviour
     {
 
@@ -14,6 +13,7 @@ namespace Theogony{
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
+            target = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         public void FaceTarget()
@@ -55,4 +55,3 @@ namespace Theogony{
             transform.rotation = lookRotation;
         }
     }
-}

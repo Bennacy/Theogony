@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Actions/Patrol")]
-    public class Patrol : Action
+    public class actPatrol : Action
     {
         public Transform[] waypoints;
         public override void Act(FSM fsm)

@@ -6,7 +6,7 @@ namespace Theogony{
     public class FSM : MonoBehaviour
     {
         public State initialState;
-        private State currentState;
+        public State currentState;
         private MyNavMesh navMeshAgent;
 
         void Start(){
@@ -19,6 +19,7 @@ namespace Theogony{
             Transition triggeredTransition = null;
             foreach (Transition transition in currentState.GetTransitions()){
                 if(transition.IsTriggered(this)){
+                    Debug.Log(transition.name);
                     triggeredTransition = transition;
                     break;
                 }
@@ -41,7 +42,7 @@ namespace Theogony{
         private void PerformActions(List<Action> actions){
             foreach(Action action in actions){
                 if(action != null){
-                    action.Act(this);
+                    // action.Act(this);
                 }
             }
         }

@@ -7,8 +7,8 @@ namespace Theogony{
     public class State : ScriptableObject
     {
         [SerializeField] private Action entryAction;
-        [SerializeField] private Action[] stateActions;
         [SerializeField]  private Action exitAction;
+        [SerializeField] private Action[] stateActions;
         [SerializeField] private Transition[] transitions;
 
         public Action[] GetActions(){

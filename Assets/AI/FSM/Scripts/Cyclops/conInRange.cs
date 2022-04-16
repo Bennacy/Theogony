@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Conditions/InRange")]
-    public class InRange : Condition
+    public class conInRange : Condition
     {
         [SerializeField]  private bool negation;
         [SerializeField]  private float attackDistance;

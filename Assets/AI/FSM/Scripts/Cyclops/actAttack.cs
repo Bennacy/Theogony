@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Actions/Attack")]
-    public class Attack : Action
+    public class actAttack : Action
     {
         public float attackCooldown;
         public float attackTime;

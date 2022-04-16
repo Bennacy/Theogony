@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Conditions/CanSee")]
-    public class CanSee : Condition
+    public class conCanSee : Condition
     {
         [SerializeField]  private bool negation;
         [SerializeField]  private float viewAngle;

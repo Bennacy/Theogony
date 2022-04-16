@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: cAttack
   m_EditorClassIdentifier: 
   entryAction: {fileID: 0}
-  stateActions: []
   exitAction: {fileID: 0}
-  transitions: []
+  stateActions:
+  - {fileID: 11400000, guid: c86ff9750f844224d8e686922deea25a, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: e0fcb2d93c0f382419aea4fc51eff920, type: 2}
