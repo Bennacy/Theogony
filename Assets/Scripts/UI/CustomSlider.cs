@@ -45,7 +45,6 @@ namespace Theogony{
         {
             lastValue = sliderValue;
             if(uiController.sliderChange != 0 && uiController.highlightedBtn == buttonRef){
-                Debug.Log(uiController.sliderChange);
                 ChangeSlider(uiController.sliderChange);
                 uiController.sliderChange = 0;
                 sliderValue = GetValue();

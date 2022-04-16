@@ -145,7 +145,6 @@ namespace Theogony{
                 uiController.ToggleRest();
 
                 CameraHandler cam = playerControllerScript.cameraHandler;
-                Debug.Log(cam);
                 cam.transform.position = destination.teleportPosition;
                 playerControllerScript.transform.position = destination.teleportPosition;
 

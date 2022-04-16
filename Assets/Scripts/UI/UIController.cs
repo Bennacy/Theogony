@@ -78,7 +78,6 @@ namespace Theogony{
                     moveAgain = false;
                 }
             }
-            // Debug.Log(mainCam.ScreenToWorldPoint(Input.mousePosition));
         }
 
         public void TogglePause(InputAction.CallbackContext context){
