@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: cChase-Attack
   m_EditorClassIdentifier: 
   decision: {fileID: 11400000, guid: 1de96eaa2a4438d438cc64ff70e370e3, type: 2}
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: f708d4fb5fbc02844a6e730cc2fb9718, type: 2}
   targetState: {fileID: 11400000, guid: 9fa757d24014e3d4ebffa9aa93a6220f, type: 2}

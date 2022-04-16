@@ -14,6 +14,7 @@ namespace Theogony{
         private ParticleSystem blood;
         public LayerMask viewLayer;
         public Collider[] inRange;
+        public Vector3[] patrolWaypoints;
         public float viewRange;
         public float moveSpeed;
         public Transform target;

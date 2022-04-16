@@ -24,8 +24,9 @@ using UnityEngine.AI;
         }
         public void GoToTarget()
         {
-        FaceTarget();
-        agent.SetDestination(target.position - new Vector3(0.1f, 0, 0.1f));
+            FaceTarget();
+            
+            agent.SetDestination(target.position);
         }
 
         public void Stop()

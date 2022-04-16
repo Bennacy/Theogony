@@ -6,6 +6,10 @@ namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Actions/Chase")]
     public class actChase : Action
     {
+        // public override void Start(FSM fsm){
+            
+        // }
+
         public override void Act(FSM fsm){
             Debug.Log("Chasing");
             if(fsm.GetNavMesh().IsAtDestination()){
