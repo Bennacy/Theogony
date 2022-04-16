@@ -9,7 +9,7 @@ namespace Theogony {
         WeaponHolderSlot rightHandSlot;
 
         DamageCollider rightWeaponCollider;
-        DamageCollider LeftWeaponCollider;
+        ParryColider LeftWeaponCollider;
 
         Animator animHandler;
         public bool rotateAttack;
@@ -59,7 +59,7 @@ namespace Theogony {
         }
         private void LoadLeftCollider()
         {
-            LeftWeaponCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            LeftWeaponCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<ParryColider>();
         }
         #endregion
 
@@ -79,7 +79,7 @@ namespace Theogony {
         }
         public void DisableLeftCollider()
         {
-            // LeftWeaponCollider.DisableCollider();
+             LeftWeaponCollider.DisableCollider();
         }
 
 

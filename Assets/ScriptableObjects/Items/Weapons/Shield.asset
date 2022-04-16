@@ -17,6 +17,5 @@ MonoBehaviour:
   isUnarmed: 0
   lightAttack:
   - 
-  - 
-  heavyAttack: 
+  heavyAttack: Parry
   currattack: 0

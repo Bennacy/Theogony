@@ -37,5 +37,17 @@ namespace Theogony
 
             animator.Play(weaponItem.heavyAttack);
         }
+
+
+        public void HandleParry(weaponItems weaponItem)
+        {
+           
+            if (animator.GetBool("Occupied") == true || !playerManager.UpdateStamina(heavyAttackCost))
+                return;
+
+            animator.Play(weaponItem.heavyAttack);
+        }
+
+
     }
 }
