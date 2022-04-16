@@ -29,6 +29,10 @@ using UnityEngine.AI;
             agent.SetDestination(target.position);
         }
 
+        public void SetTarget(Vector3 newTarget){
+            agent.SetDestination(newTarget);
+        }
+
         public void Stop()
         {
             agent.isStopped = true;

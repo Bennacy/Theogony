@@ -9,9 +9,9 @@ namespace Theogony{
         public float attackCooldown;
         public float attackTime;
 
-        // public override void Start(FSM fsm){
-
-        // }
+        public override void Startup(FSM fsm){
+            
+        }
         
         public override void Act(FSM fsm){
             attackTime += Time.deltaTime;

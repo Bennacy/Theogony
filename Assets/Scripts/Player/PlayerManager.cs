@@ -8,8 +8,6 @@ namespace Theogony{
     {
         public GlobalInfo globalInfo;
         public CameraHandler cameraHandler;
-        public float mouseX;
-        public float mouseY;
         public float maxHealth;
         public float maxStamina;
         public float currHealth;
@@ -60,12 +58,6 @@ namespace Theogony{
             staminaSpent = true;
             yield return new WaitForSeconds(1);
             staminaSpent = false;
-        }
-
-        public void TestDelta(InputAction.CallbackContext context){
-            Vector2 value = context.ReadValue<Vector2>();
-            mouseX = value.x;
-            mouseY = value.y;
         }
     }
 }

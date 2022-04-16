@@ -7,6 +7,7 @@ namespace Theogony{
     {
         public State initialState;
         public State currentState;
+        public bool changedState;
         private MyNavMesh navMeshAgent;
 
         void Start(){
@@ -26,6 +27,7 @@ namespace Theogony{
             List<Action> actions = new List<Action>();
             if(triggeredTransition){
                 State targetState = triggeredTransition.GetTargetState();
+                changedState = true;
                 actions.Add(currentState.GetExitAction());
                 actions.Add(triggeredTransition.GetAction());
                 actions.Add(targetState.GetEntryAction());

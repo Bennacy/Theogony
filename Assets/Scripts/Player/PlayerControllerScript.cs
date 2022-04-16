@@ -77,21 +77,22 @@ namespace Theogony{
                 vel += camForward * movementVector * moveSpeed;
                 rb.velocity = vel;
                 
-                float angle;
-                if(cameraHandler.lockOnTarget != null && canMove){
-                    Vector3 direction = cameraHandler.lockOnTarget.position - transform.position;
-                    Vector3.Normalize(direction);
-                    angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
-                }else{
-                    angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
-                }
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
 
                 animator.SetFloat("Speed", rb.velocity.magnitude);
                 if(canMove && rb.velocity.magnitude > 0.1f){
                     // animator.speed = rb.velocity.magnitude / moveSpeed;
                 }
             }
+            float angle = transform.rotation.eulerAngles.y;
+            if(cameraHandler.lockOnTarget != null && canMove){
+                Vector3 direction = cameraHandler.lockOnTarget.position - transform.position;
+                Vector3.Normalize(direction);
+                angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
+                Debug.Log(angle);
+            }else if((movementVector != Vector3.zero || stoppedMove) && canMove){
+                angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
+            }
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
         }
 
         public void Move(InputAction.CallbackContext context){
