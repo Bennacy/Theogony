@@ -9,7 +9,7 @@ public class ChaseAction : Action
     {
         Debug.Log("Chase");
         fsm.animator.Play("Chase");
-        fsm.GetAgent().FacePlayer();
+        // fsm.GetAgent().FacePlayer();
        // fsm.GetAgent().GoToTarget();
         
     }

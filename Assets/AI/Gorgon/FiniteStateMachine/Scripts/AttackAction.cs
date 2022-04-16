@@ -15,7 +15,7 @@ public class AttackAction : Action
         int i = Random.Range(1, 4);
         if (cooldowntimer < 0)
         {
-            fsm.GetAgent().FacePlayer();
+            // fsm.GetAgent().FacePlayer();
          
             switch (i)
             {

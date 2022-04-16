@@ -10,6 +10,6 @@ public class StopAction : Action
     {
         // throw new System.NotImplementedException();
         Debug.Log("Stop");
-        fsm.GetAgent().StopAction();
+        // fsm.GetAgent().StopAction();
     }
 }

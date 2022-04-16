@@ -6,10 +6,10 @@ public class DieCondition : Condition
 {
     public override bool Test(GorgonFiniteStateMachine fsm)
     {
-       if(fsm.GetAgent().GetHealth() == 0)
-        {
-            return true;
-        }
+    //    if(fsm.GetAgent().GetHealth() == 0)
+    //     {
+    //         return true;
+    //     }
         return false;
     }
 }

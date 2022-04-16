@@ -10,21 +10,12 @@ public class MyNavMesh : MonoBehaviour
     private NavMeshAgent agent;
     public float health = 10;
 
-
-
     void Start()
     {
-      
         agent = GetComponent<NavMeshAgent>();
     }
 
-
-    void Update()
-    {
-
-
-    }
-    public void FacePlayer()
+    public void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -32,21 +23,27 @@ public class MyNavMesh : MonoBehaviour
     }
     public void GoToTarget()
     {
-       FacePlayer();
+       FaceTarget();
        agent.SetDestination(target.position - new Vector3(0.1f, 0, 0.1f));
     }
-   
-    public float GetHealth()
-    {
-        return health;
-    }
-   
-   
-    public void StopAction()
+
+    public void Stop()
     {
         agent.isStopped = true;
         agent.ResetPath();
     }
+
+    public bool IsAtDestination(){
+        if(!agent.pathPending){
+            if(agent.remainingDistance <= agent.stoppingDistance){
+                if(!agent.hasPath || agent.velocity.sqrMagnitude == 0f){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public void RotateGorgon()
     {
         Vector3 direction = (target.position - transform.position).normalized;
@@ -55,6 +52,5 @@ public class MyNavMesh : MonoBehaviour
         angle.y += 90;
         lookRotation = Quaternion.Euler(angle);
         transform.rotation = lookRotation;
-       
     }
 }
