@@ -24,7 +24,7 @@ public class AttackAction : Action
                         
                         Debug.Log("First Attack");
                         cooldowntimer = 2;
-                        fsm.gorgonAnimator.Play("Attack1");
+                        fsm.animator.Play("Attack1");
 
                         break;
                     }
@@ -33,7 +33,7 @@ public class AttackAction : Action
                        
                         Debug.Log("Second Attack");
                         cooldowntimer = 2;
-                        fsm.gorgonAnimator.Play("Attack2");
+                        fsm.animator.Play("Attack2");
                         fsm.GetAgent().RotateGorgon();
 
                         break;
@@ -43,7 +43,7 @@ public class AttackAction : Action
 
                         Debug.Log("Third Attack");
                         cooldowntimer = 2;
-                        fsm.gorgonAnimator.Play("Attack3");
+                        fsm.animator.Play("Attack3");
 
                         break;
                     }

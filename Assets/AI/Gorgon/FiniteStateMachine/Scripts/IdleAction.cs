@@ -7,7 +7,7 @@ public class IdleAction : Action
 {
     public override void Act(GorgonFiniteStateMachine fsm)
     {
-        fsm.gorgonAnimator.Play("Idle");
+        fsm.animator.Play("Idle");
         Debug.Log("Idle");
     }
 }

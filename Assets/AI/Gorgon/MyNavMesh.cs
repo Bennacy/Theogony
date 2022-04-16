@@ -57,9 +57,4 @@ public class MyNavMesh : MonoBehaviour
         transform.rotation = lookRotation;
        
     }
-
-
-
-
-
 }

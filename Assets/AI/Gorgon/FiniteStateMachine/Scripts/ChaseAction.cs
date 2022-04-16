@@ -8,7 +8,7 @@ public class ChaseAction : Action
     public override void Act(GorgonFiniteStateMachine fsm)
     {
         Debug.Log("Chase");
-        fsm.gorgonAnimator.Play("Chase");
+        fsm.animator.Play("Chase");
         fsm.GetAgent().FacePlayer();
        // fsm.GetAgent().GoToTarget();
         
