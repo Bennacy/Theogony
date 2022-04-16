@@ -13,7 +13,12 @@ namespace Theogony {
         {
             hitEnemies = new List<GameObject>();
             globalInfo = GlobalInfo.GetGlobalInfo();
-            Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+            Rigidbody rb;
+            if(GetComponent<Rigidbody>() == null){
+                rb = gameObject.AddComponent<Rigidbody>();
+            }else{
+                rb = GetComponent<Rigidbody>();
+            }
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
             gameObject.tag = "PlayerWeapon";

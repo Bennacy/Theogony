@@ -11,10 +11,12 @@ namespace Theogony{
         public float iFrames;
         private GlobalInfo globalInfo;
         private Rigidbody rb;
+        private ParticleSystem blood;
 
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
+            blood = GetComponentInChildren<ParticleSystem>();
             // rb = GetComponent<Rigidbody>();
             currHealth = maxHealth;
         }
@@ -39,7 +41,9 @@ namespace Theogony{
         void OnCollisionEnter(Collision collision){
             if(collision.gameObject.layer == 8){
                 DamageCollider enemyController = collision.gameObject.GetComponent<DamageCollider>();
-                Damage(10);
+                Damage(globalInfo.str + 1);
+                blood.transform.position = collision.contacts[0].point;
+                blood.Play();
                 // Debug.Log(collision.contacts[0].point);
             }
         }

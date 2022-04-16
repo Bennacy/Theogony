@@ -108,7 +108,7 @@ namespace Theogony{
         }
 
         public void ConfirmationYes(){
-            GameObject menuSelection = transform.Find("MenuSelection").gameObject;
+            GameObject menuSelection = transform.Find("RestMenuSelection").gameObject;
 
             if(confirming){
                 globalInfo.AlterCurrency(-totalCost);
