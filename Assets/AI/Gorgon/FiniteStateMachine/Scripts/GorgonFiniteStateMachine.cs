@@ -6,7 +6,7 @@ public class GorgonFiniteStateMachine : MonoBehaviour
 {
     public State initialState;
     public State currentState;
-    private MyNavMesh agent;
+    // private MyNavMesh agent;
     public Animator animator;
 
    
@@ -14,13 +14,13 @@ public class GorgonFiniteStateMachine : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         currentState = initialState;
-        agent = GetComponent<MyNavMesh>();
+        // agent = GetComponent<MyNavMesh>();
 
     }
-    public MyNavMesh GetAgent()
-    {
-        return agent;
-    }
+    // public MyNavMesh GetAgent()
+    // {
+        // return agent;
+    // }
 
 
     void Update()

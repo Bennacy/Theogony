@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: cAttack
-  m_EditorClassIdentifier: Assembly-CSharp:Theogony:Attack
-  attackCooldown: 0
-  attackTime: 1
+  m_Name: cCanSee
+  m_EditorClassIdentifier: Assembly-CSharp:Theogony:CanSee
+  negation: 0
+  viewAngle: 180
+  viewDistance: 5

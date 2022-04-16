@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Transition")]
-    public abstract class Transition : ScriptableObject
+    public class Transition : ScriptableObject
     {
-        [SerializeField]  private Condition decision;
-        [SerializeField]  private Action action;
-        [SerializeField] private State targetState;
+        [SerializeField]  private Theogony.Condition decision;
+        [SerializeField]  private Theogony.Action action;
+        [SerializeField] private Theogony.State targetState;
 
         public bool IsTriggered(FSM fsm){
             return decision.Test(fsm);

@@ -15,14 +15,14 @@ public class CanSeeCondition : Condition
   
     public override bool Test(GorgonFiniteStateMachine fsm)
     {
-        Transform target = fsm.GetAgent().target;
-        Vector3 direction = target.position - fsm.transform.position;
-        float distance = direction.magnitude;
-        float angle = Vector3.Angle(direction.normalized, fsm.transform.forward);
-        if (angle < viewAngle && distance < viewDistance)// && !Physics.Linecast(fsm.GetAgent().transform.position,target.position))
-        {
-            return !negation;
-        }
+        // Transform target = fsm.GetAgent().target;
+        // Vector3 direction = target.position - fsm.transform.position;
+        // float distance = direction.magnitude;
+        // float angle = Vector3.Angle(direction.normalized, fsm.transform.forward);
+        // if (angle < viewAngle && distance < viewDistance)// && !Physics.Linecast(fsm.GetAgent().transform.position,target.position))
+        // {
+            // return !negation;
+        // }
         
         return negation;
 

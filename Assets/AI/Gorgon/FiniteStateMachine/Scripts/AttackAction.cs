@@ -10,7 +10,7 @@ public class AttackAction : Action
     
     public override void Act(GorgonFiniteStateMachine fsm)
     {
-        fsm.GetAgent().GoToTarget();
+        // fsm.GetAgent().GoToTarget();
 
         int i = Random.Range(1, 4);
         if (cooldowntimer < 0)
@@ -34,7 +34,7 @@ public class AttackAction : Action
                         Debug.Log("Second Attack");
                         cooldowntimer = 2;
                         fsm.animator.Play("Attack2");
-                        fsm.GetAgent().RotateGorgon();
+                        // fsm.GetAgent().RotateGorgon();
 
                         break;
                     }

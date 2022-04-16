@@ -8,7 +8,7 @@ public class DieAction : Action
     public override void Act(GorgonFiniteStateMachine fsm)
     {
         Debug.Log("Die");
-        fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.white;
+        // fsm.GetAgent().GetComponent<MeshRenderer>().material.color = Color.white;
         //distroy enemy
     }
 }
