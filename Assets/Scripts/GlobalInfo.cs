@@ -18,7 +18,8 @@ namespace Theogony{
         [Space]
         [Header("Values")]
         public int currency;
-        public float sensitivity;
+        public float sensitivityX;
+        public float sensitivityY;
         public Checkpoint lastCheckpoint;
         public Checkpoint[] checkpoints;
         [Space]

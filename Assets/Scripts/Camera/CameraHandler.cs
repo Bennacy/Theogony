@@ -16,6 +16,7 @@ namespace Theogony
         private PlayerInput playerInput;
         private GlobalInfo globalInfo;
         public CustomSlider sensSlider;
+        public CustomSlider pivotSlider;
 
         public static CameraHandler singleton;
 
@@ -40,7 +41,8 @@ namespace Theogony
         [Range(0,100)]
         public float sensitivity;
         public float followSpeed = 0.1f;
-        public float pivotSpeed = 0.03f;
+        [Range(0,100)]
+        public float pivotSensitivity;
         private float mouseXInput;
         private float mouseYInput;
 
@@ -69,7 +71,10 @@ namespace Theogony
             lookAngle = targetAngleX = targetAngleY = 0;
             globalInfo = GlobalInfo.GetGlobalInfo();
             AssignInput();
-            sensSlider.SetValue(globalInfo.sensitivity);
+            sensSlider.SetValue(globalInfo.sensitivityX);
+            pivotSlider.SetValue(globalInfo.sensitivityY);
+            sensitivity = globalInfo.sensitivityX;
+            pivotSensitivity = globalInfo.sensitivityY;
         }
 
         private void AssignInput(){
@@ -92,7 +97,7 @@ namespace Theogony
                 targetAngleX += 360;
             }
             
-            targetAngleY -= (mouseYInput * pivotSpeed) / delta;
+            targetAngleY -= (mouseYInput * (pivotSensitivity / 2000)) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
             Vector3 rotation = Vector3.zero;
@@ -136,9 +141,11 @@ namespace Theogony
 
         void LateUpdate()
         {
-            sensitivity = sensSlider.GetValue();
             if(sensSlider.OnValueChanged()){
-                globalInfo.sensitivity = sensSlider.GetValue();
+                globalInfo.sensitivityX = sensitivity = sensSlider.GetValue();
+            }
+            if(pivotSlider.OnValueChanged()){
+                globalInfo.sensitivityY = pivotSensitivity = pivotSlider.GetValue();
             }
             lockOnIndicator.SetActive(lockOnTarget != null);
             

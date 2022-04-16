@@ -13,6 +13,7 @@ namespace Theogony{
         private RectTransform canvasTransform;
         private Camera mainCam;
         public RectTransform backgroundTransform;
+        public RectTransform filledIndicator;
         public Image sliderBall;
         private Button buttonRef;
         private float fractionSize;
@@ -32,14 +33,12 @@ namespace Theogony{
             mainCam = Camera.main;
             backgroundThreshold.x = backgroundTransform.localPosition.x;
             backgroundThreshold.y = backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x;
-
-            SetValue(globalInfo.sensitivity);
+            SetValue(sliderValue);
         }
 
         void OnEnable()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
-            SetValue(globalInfo.sensitivity);
         }
 
         void Update()
@@ -71,6 +70,10 @@ namespace Theogony{
                     held = false;
                 }
             }
+
+            Vector2 filledSize = filledIndicator.sizeDelta;
+            filledSize.x = (sliderBall.transform.localPosition.x - backgroundTransform.localPosition.x);
+            filledIndicator.sizeDelta = filledSize;
 
             if(lastValue != sliderValue){
                 changed = true;

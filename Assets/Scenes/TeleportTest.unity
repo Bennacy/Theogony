@@ -918,46 +918,6 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.180054
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 397.73944
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.7406094
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -1375,3 +1335,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f484f81d866e63499a3657ceec997a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeinSpeed: 0
+  fadeoutSpeed: 0
