@@ -16,7 +16,9 @@ namespace Theogony{
             enemyController = fsm.gameObject.GetComponent<EnemyController>();
             waypoints = enemyController.patrolWaypoints;
             GetClosestWaypoint(fsm);
-            currentTarget = waypoints[waypointIndex];
+            if(waypoints.Length > 0){
+                currentTarget = waypoints[waypointIndex];
+            }
         }
         public override void Act(FSM fsm)
         {
@@ -29,25 +31,29 @@ namespace Theogony{
         }
 
         private void NextWaypoint(FSM fsm){
-            waypointIndex++;
-            if(waypointIndex >= waypoints.Length){
-                waypointIndex = 0;
+            if(waypoints.Length > 0){
+                waypointIndex++;
+                if(waypointIndex >= waypoints.Length){
+                    waypointIndex = 0;
+                }
+                enemyController.waypointIndex = waypointIndex;
+                currentTarget = waypoints[waypointIndex];
+                fsm.GetNavMesh().SetTarget(currentTarget);
             }
-            enemyController.waypointIndex = waypointIndex;
-            currentTarget = waypoints[waypointIndex];
-            fsm.GetNavMesh().SetTarget(currentTarget);
         }
 
         private void GetClosestWaypoint(FSM fsm){
             float distance = float.PositiveInfinity;
-            for(int i = 0; i < waypoints.Length; i++){
-                Debug.Log(waypoints[i]);
-                if(Vector3.Distance(fsm.transform.position, waypoints[i]) < distance){
-                    distance = Vector3.Distance(fsm.transform.position, waypoints[i]);
-                    waypointIndex = i;
+            if(waypoints.Length > 0){
+                for(int i = 0; i < waypoints.Length; i++){
+                    Debug.Log(waypoints[i]);
+                    if(Vector3.Distance(fsm.transform.position, waypoints[i]) < distance){
+                        distance = Vector3.Distance(fsm.transform.position, waypoints[i]);
+                        waypointIndex = i;
+                    }
                 }
+                fsm.GetNavMesh().SetTarget(waypoints[waypointIndex]);
             }
-            fsm.GetNavMesh().SetTarget(waypoints[waypointIndex]);
         }
     }
 }

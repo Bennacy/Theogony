@@ -9,6 +9,8 @@ TagManager:
   - Camera
   - Gorgon
   - PlayerWeapon
+  - EnemyWeapon
+  - Cyclops
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - UI
   - 3DUI
   - Interactable
-  - PlayerWeapon
+  - Weapon
   - Player
   - 
   - 

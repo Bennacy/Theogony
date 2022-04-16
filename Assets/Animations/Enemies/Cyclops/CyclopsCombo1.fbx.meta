@@ -39,8 +39,8 @@ ModelImporter:
       name: Combo1
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
-      lastFrame: 144
+      firstFrame: 25
+      lastFrame: 97
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

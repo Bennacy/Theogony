@@ -88,7 +88,6 @@ namespace Theogony{
                 Vector3 direction = cameraHandler.lockOnTarget.position - transform.position;
                 Vector3.Normalize(direction);
                 angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
-                Debug.Log(angle);
             }else if((movementVector != Vector3.zero || stoppedMove) && canMove){
                 angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
             }
@@ -160,6 +159,25 @@ namespace Theogony{
             moveSpeed = walkSpeed;
             canMove = true;
             StartCoroutine(playerManager.RechargeStamina());
+        }
+
+        void OnCollisionEnter(Collision collision){
+            Debug.Log(collision.gameObject.tag);
+            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
+                // DamageCollider enemyController = collision.gameObject.GetComponent<DamageCollider>();
+                // Damage(10);
+                // blood.transform.position = collision.contacts[0].point;
+                // Vector3 direction = GetDirection(collision.transform.position, transform.position);
+                // direction.y = 0;
+                // rb.AddForce(direction * 10, ForceMode.Impulse);
+                // blood.Play();
+                // Debug.Log(collision.contacts[0].point);
+                Debug.Log("Player Hit");
+            }
+        }
+
+        private Vector3 GetDirection(Vector3 position1, Vector3 position2){
+            return Vector3.Normalize(position2 - position1);
         }
     }
 }

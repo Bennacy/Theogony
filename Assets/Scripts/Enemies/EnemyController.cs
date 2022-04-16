@@ -64,7 +64,7 @@ namespace Theogony{
         }
 
         void OnCollisionEnter(Collision collision){
-            if(collision.gameObject.layer == 8){
+            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
                 DamageCollider enemyController = collision.gameObject.GetComponent<DamageCollider>();
                 Damage(10);
                 blood.transform.position = collision.contacts[0].point;

@@ -7,7 +7,7 @@ namespace Theogony{
     {
         private Animator animator;
         private EnemyController enemyController;
-        private Collider weaponCollider;
+        public Collider weaponCollider;
         public bool animating;
         public bool attacking;
 
@@ -15,11 +15,20 @@ namespace Theogony{
         {
             animator = GetComponent<Animator>();
             enemyController = GetComponentInParent<EnemyController>();
+            weaponCollider = transform.GetChild(0).GetComponentInChildren<Collider>();
         }
 
         void Update()
         {
             animator.SetBool("Animating", animating);
+        }
+
+        public void ColliderOn(){
+            weaponCollider.enabled = true;
+        }
+
+        public void ColliderOff(){
+            weaponCollider.enabled = false;
         }
         
         public void AnimationOver(){
