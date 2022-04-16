@@ -156,7 +156,7 @@ namespace Theogony
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
                 Vector3 indicatorPos = player.transform.position + (direction * .9f);
-                indicatorPos.y += 1;
+                indicatorPos.y = lockOnTarget.position.y;
                 lockOnIndicator.transform.position = indicatorPos;
 
                 Vector3.Normalize(direction);
@@ -171,6 +171,7 @@ namespace Theogony
                 }
             }else if(previouslyLocked){
                 lockOnTarget = GetClosestEnemy();
+                lookSpeed = 0.1f;
             }else{
                 lookSpeed = 0.1f;
             }

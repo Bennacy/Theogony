@@ -7,14 +7,15 @@ namespace Theogony {
     {
         Collider damageCollider;
 
-            private void Awake()
-            {
-                damageCollider = GetComponent<Collider>();
-                damageCollider.gameObject.SetActive(true);
-                damageCollider.isTrigger = true;
-                damageCollider.enabled = false;
+        private void Awake()
+        {
+            gameObject.tag = "PlayerWeapon";
+            damageCollider = GetComponent<Collider>();
+            damageCollider.gameObject.SetActive(true);
+            damageCollider.isTrigger = true;
+            damageCollider.enabled = false;
 
-            }
+        }
 
         public void EnableCollider()
         {

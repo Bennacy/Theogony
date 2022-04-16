@@ -418,10 +418,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: lockOnTest1
       objectReference: {fileID: 0}
-    - target: {fileID: 1997296248483302, guid: 9984be23625843a48a44d88aae5669f2, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4615360315754548, guid: 9984be23625843a48a44d88aae5669f2, type: 3}
       propertyPath: m_RootOrder
       value: 4

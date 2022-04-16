@@ -7,6 +7,8 @@ TagManager:
   - GlobalInfo
   - Canvas
   - Camera
+  - Gorgon
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX
