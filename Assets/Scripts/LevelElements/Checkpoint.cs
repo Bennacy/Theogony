@@ -6,6 +6,8 @@ namespace Theogony{
     public class Checkpoint : MonoBehaviour
     {
         private  GlobalInfo globalInfo;
+        public Material glowMat;
+        public Color[] glowColors;
         public UIController uiController;
         public Sprite destinationPreview;
         public PlayerControllerScript playerControllerScript;
@@ -43,6 +45,13 @@ namespace Theogony{
 
         private IEnumerator StartFunctions(){
             yield return new WaitForSeconds(.5f);
+            unlocked = globalInfo.checkpoints[sortingOrder].unlocked;
+            if(unlocked){
+                glowMat.SetColor("_EmissionColor", glowColors[1]);
+            }else{
+                glowMat.SetColor("_EmissionColor", glowColors[0]);
+            }
+            
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
         }
@@ -69,6 +78,8 @@ namespace Theogony{
             globalInfo.ReloadLevel(sceneName);
         }
         private void UnlockCheckpoint(){
+            unlocked = true;
+            glowMat.SetColor("_EmissionColor", glowColors[1]);
             globalInfo.checkpoints[sortingOrder].unlocked = true;
         }
     }

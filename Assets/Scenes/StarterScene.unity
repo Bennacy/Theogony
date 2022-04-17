@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138202247522909276, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1138202247522909276, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: m_LocalPosition.z
@@ -989,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138202247522909276, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1138202247522909276, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1024,6 +1024,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowMat
+      value: 
+      objectReference: {fileID: 2100000, guid: ef499ec91e835d64ea6ab0474072b930, type: 2}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
       value: StarterScene
       objectReference: {fileID: 0}
@@ -1039,6 +1047,30 @@ PrefabInstance:
       propertyPath: destinationPreview
       value: 
       objectReference: {fileID: 21300000, guid: bdf7320cf93d7ac4b8482a062ec79deb, type: 3}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowColors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowColors.Array.data[0].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowColors.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: glowColors.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!1001 &1871738871
@@ -1253,7 +1285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138202247522909276, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1138202247522909276, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: m_LocalPosition.z
