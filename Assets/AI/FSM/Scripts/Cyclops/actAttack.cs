@@ -6,18 +6,26 @@ namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Actions/Attack")]
     public class actAttack : Action
     {
-        public float attackCooldown;
-        public float attackTime;
-
+        private EnemyController enemyController;
         public override void Startup(FSM fsm){
-            
+            enemyController = fsm.GetComponent<EnemyController>();
         }
         
         public override void Act(FSM fsm){
-            attackTime += Time.deltaTime;
-            if(attackTime > attackCooldown){
-                attackTime = 0;
-                Debug.Log("Attacking");
+            if(!enemyController.attacking){
+                Debug.Log("Attack");
+                string[] possibleAttacks = enemyController.weapon.possibleAttacks;
+                int[] attackWeights = enemyController.weapon.attackWeights;
+
+                int attackRoll = Random.Range(0, 101);
+                int percentSum = 0;
+                for(int i = 0; i < possibleAttacks.Length; i++){
+                    percentSum += attackWeights[i];
+                    if(attackRoll <= percentSum){
+                        enemyController.animator.Play(possibleAttacks[i]);
+                        return;
+                    }
+                }
             }
         }
     }

@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 1563597366}
   m_Layer: 3
   m_Name: TestEnemy
-  m_TagString: Gorgon
+  m_TagString: Cyclops
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,11 +142,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   inRange: []
-  patrolWaypoints:
-  - {x: -15.27, y: 1, z: 4}
-  - {x: 1.64, y: 1, z: 6}
-  - {x: 6.98, y: 1, z: -0.27}
-  - {x: 8, y: 1, z: 9}
+  patrolWaypoints: []
   waypointIndex: 0
   viewRange: 0
   moveSpeed: 4
@@ -325,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff25bafb670f0148afc40513ba4daf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponCollider: {fileID: 0}
   animating: 0
   attacking: 0
 --- !u!4 &6519144573344472665 stripped

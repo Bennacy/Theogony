@@ -23,6 +23,14 @@ namespace Theogony{
             animator.SetBool("Animating", animating);
         }
 
+        public void StartAttack(){
+            enemyController.attacking = true;
+        }
+
+        public void EndAttack(){
+            enemyController.attacking = false;
+        }
+
         public void ColliderOn(){
             weaponCollider.enabled = true;
         }

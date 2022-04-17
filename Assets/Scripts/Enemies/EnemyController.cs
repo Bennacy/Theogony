@@ -11,17 +11,15 @@ namespace Theogony{
         public int currencyDrop;
         public float iFrames;
         private GlobalInfo globalInfo;
-        private Animator animator;
+        public Animator animator;
         private NavMeshAgent navMeshAgent;
         private Rigidbody rb;
         private ParticleSystem blood;
-        public LayerMask viewLayer;
-        public Collider[] inRange;
         public Vector3[] patrolWaypoints;
         public int waypointIndex;
-        public float viewRange;
-        public float moveSpeed;
+        public bool attacking;
         public Transform target;
+        public EnemyWeapons weapon;
 
         void Start()
         {
@@ -31,6 +29,7 @@ namespace Theogony{
             animator = GetComponentInChildren<Animator>();
             rb = GetComponent<Rigidbody>();
             currHealth = maxHealth;
+            weapon = GetComponent<EnemyWeaponManager>().weaponTemplate;
         }
 
         void Update()
@@ -39,19 +38,6 @@ namespace Theogony{
                 Kill();
             }
             animator.SetFloat("Velocity", Vector3.Magnitude(navMeshAgent.velocity));
-
-            inRange = Physics.OverlapSphere(transform.position, viewRange, viewLayer);
-            if(inRange.Length != 0){
-                target = inRange[0].transform;
-            }else{
-                target = null;
-            }
-
-            if(target != null){
-                rb.velocity = GetDirection(transform.position, target.position) * moveSpeed;
-            }else{
-                rb.velocity = Vector3.zero;
-            }
         }
 
         void Kill(){
@@ -82,7 +68,6 @@ namespace Theogony{
 
         void OnDrawGizmosSelected()
         {
-            Gizmos.DrawWireSphere(transform.position, viewRange);
             for(int i = 0; i < patrolWaypoints.Length; i++){
                 if(i == waypointIndex){
                     Gizmos.color = Color.red;

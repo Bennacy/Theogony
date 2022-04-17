@@ -162,7 +162,6 @@ namespace Theogony{
         }
 
         void OnCollisionEnter(Collision collision){
-            Debug.Log(collision.gameObject.tag);
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
                 // DamageCollider enemyController = collision.gameObject.GetComponent<DamageCollider>();
                 // Damage(10);
@@ -172,7 +171,6 @@ namespace Theogony{
                 // rb.AddForce(direction * 10, ForceMode.Impulse);
                 // blood.Play();
                 // Debug.Log(collision.contacts[0].point);
-                Debug.Log("Player Hit");
             }
         }
 

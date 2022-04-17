@@ -7,10 +7,7 @@ namespace Theogony{
     public class actChase : Action
     {
         public override void Startup(FSM fsm){
-            if(fsm.changedState){
-                fsm.changedState = false;
-                fsm.GetNavMesh().GoToTarget();
-            }
+            fsm.GetNavMesh().GoToTarget();
         }
 
         public override void Act(FSM fsm){

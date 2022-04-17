@@ -43,7 +43,6 @@ namespace Theogony{
 
         private IEnumerator StartFunctions(){
             yield return new WaitForSeconds(.5f);
-            Debug.Log("Start");
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
         }

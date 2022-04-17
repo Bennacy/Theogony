@@ -42,10 +42,14 @@ namespace Theogony{
 
         private void PerformActions(List<Action> actions){
             foreach(Action action in actions){
+                if(changedState){
+                    action.Startup(this);
+                }
                 if(action != null){
                     action.Act(this);
                 }
             }
+            changedState = false;
         }
 
         public MyNavMesh GetNavMesh(){

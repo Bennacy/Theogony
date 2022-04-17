@@ -8,5 +8,6 @@ namespace Theogony{
     {
         public GameObject weaponPrefab;
         public string[] possibleAttacks;
+        public int[] attackWeights;
     }
 }

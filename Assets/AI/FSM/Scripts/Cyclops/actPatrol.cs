@@ -12,7 +12,6 @@ namespace Theogony{
         private EnemyController enemyController;
         public override void Startup(FSM fsm)
         {
-            fsm.changedState = false;
             enemyController = fsm.gameObject.GetComponent<EnemyController>();
             waypoints = enemyController.patrolWaypoints;
             GetClosestWaypoint(fsm);
@@ -22,9 +21,6 @@ namespace Theogony{
         }
         public override void Act(FSM fsm)
         {
-            if(fsm.changedState){
-                Startup(fsm);
-            }
             if(fsm.GetNavMesh().IsAtDestination()){
                 NextWaypoint(fsm);
             }

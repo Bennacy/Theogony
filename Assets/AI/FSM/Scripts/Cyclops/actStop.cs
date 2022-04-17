@@ -11,7 +11,6 @@ namespace Theogony{
         }
         
         public override void Act(FSM fsm){
-            Debug.Log("Stopping");
             fsm.GetNavMesh().Stop();
         }
     }
