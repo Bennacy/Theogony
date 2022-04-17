@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1138202247522909273}
   - component: {fileID: 1138202247522909277}
   - component: {fileID: 7772011582584479596}
-  - component: {fileID: -2157982843472457077}
   m_Layer: 7
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -90,6 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe1cae6ef482f8439b684d0bb7b78d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat:
+  - {fileID: 2100000, guid: ef499ec91e835d64ea6ab0474072b930, type: 2}
+  - {fileID: 2100000, guid: 349e844ceb3abc048b89e9f909937fe0, type: 2}
+  pillarRenderer: {fileID: 7548626141860202341}
   uiController: {fileID: 0}
   destinationPreview: {fileID: 0}
   playerControllerScript: {fileID: 0}
@@ -98,24 +101,6 @@ MonoBehaviour:
   unlocked: 1
   teleportPosition: {x: 0, y: 0, z: 0}
   sortingOrder: 0
---- !u!114 &-2157982843472457077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138202247522909272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889378a8ea118f5449ae56e20a57d8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  renderers: []
-  colliders: []
-  scripts: []
-  toggled: 0
-  seenThreshold: {x: -1, y: 2}
 --- !u!1 &1193373535272331115
 GameObject:
   m_ObjectHideFlags: 0

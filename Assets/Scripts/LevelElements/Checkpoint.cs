@@ -6,8 +6,8 @@ namespace Theogony{
     public class Checkpoint : MonoBehaviour
     {
         private  GlobalInfo globalInfo;
-        public Material glowMat;
-        public Color[] glowColors;
+        public Material[] mat;
+        public MeshRenderer pillarRenderer;
         public UIController uiController;
         public Sprite destinationPreview;
         public PlayerControllerScript playerControllerScript;
@@ -19,6 +19,7 @@ namespace Theogony{
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
+            pillarRenderer.materials[1] = mat[1];
 
             DontDestroyOnLoad(gameObject);
             if(globalInfo.checkpoints[sortingOrder] == null){
@@ -28,6 +29,7 @@ namespace Theogony{
             }
             teleportPosition = transform.position;
             teleportPosition.x += 2;
+            teleportPosition.y += 1;
             StartCoroutine(StartFunctions());
         }
 
@@ -47,9 +49,9 @@ namespace Theogony{
             yield return new WaitForSeconds(.5f);
             unlocked = globalInfo.checkpoints[sortingOrder].unlocked;
             if(unlocked){
-                glowMat.SetColor("_EmissionColor", glowColors[1]);
+                pillarRenderer.materials[1] = mat[1];
             }else{
-                glowMat.SetColor("_EmissionColor", glowColors[0]);
+                pillarRenderer.materials[1] = mat[0];
             }
             
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
@@ -79,7 +81,7 @@ namespace Theogony{
         }
         private void UnlockCheckpoint(){
             unlocked = true;
-            glowMat.SetColor("_EmissionColor", glowColors[1]);
+            pillarRenderer.materials[1] = mat[1];
             globalInfo.checkpoints[sortingOrder].unlocked = true;
         }
     }
