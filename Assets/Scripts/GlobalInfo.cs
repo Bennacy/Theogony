@@ -61,7 +61,7 @@ namespace Theogony{
         }
 
         private IEnumerator StartFunctions(){
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
             activeScene = SceneManager.GetActiveScene().name;
             if(checkpoints.Length > 0){
                 foreach(Checkpoint checkpoint in checkpoints){
@@ -135,7 +135,7 @@ namespace Theogony{
             if(destination != lastCheckpoint || reloading){ //Won't run if the player tries to travel to the checkpoint they are resting at
                 reloading = true; //Triggers the reload "animation"
 
-                yield return new WaitForSeconds(0.35f);
+                yield return new WaitForSeconds(0.45f);
                 playerControllerScript.animator.Play("JumpToSit");
                 
                 if(uiController.menuInfo)
