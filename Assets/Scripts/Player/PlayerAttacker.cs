@@ -12,6 +12,8 @@ namespace Theogony
         public float lightAttackCost;
         public float heavyAttackCost;
 
+        public bool riposteAttack;
+
         public void Awake()
         {
             playerManager = GetComponent<PlayerManager>();
@@ -20,8 +22,13 @@ namespace Theogony
         }
         public void HandleLightAttack(weaponItems weaponItem)
         {
-          
-            
+            if (riposteAttack)
+            {
+                animator.Play("LightAttack_3");
+                riposteAttack = false;
+                return;
+            } 
+                        
             if (weaponItem.currattack == weaponItem.lightAttack.Length)
             {
                 weaponItem.currattack = 0;
@@ -48,6 +55,11 @@ namespace Theogony
             animator.Play(weaponItem.heavyAttack);
         }
 
+
+        public void WillRiposte()
+        {
+            riposteAttack = true;
+        }
 
     }
 }

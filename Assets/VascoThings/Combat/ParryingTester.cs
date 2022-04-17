@@ -2,25 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParryingTester : MonoBehaviour
+namespace Theogony
 {
-    [SerializeField]
-    private Animator animator;
-
-    void Start()
+    public class ParryingTester : MonoBehaviour
     {
-        
-    }
+        [SerializeField]
+        private Animator animator;
+        [SerializeField]
+        private GameObject mob;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        void Start()
+        {
 
-    public void GotParried()
-    {
-        animator.Play("Parried");
-        //parried  = true;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void GotParried()
+        {
+            animator.Play("Parried");
+            mob.GetComponent<Riposte>().GotParried();
+        }
     }
 }
