@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GlobalInfo
   - Canvas
+  - Enemy
+  - Paryable
   layers:
   - Default
   - TransparentFX

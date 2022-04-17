@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParryingTester : MonoBehaviour
+public class Riposte : MonoBehaviour
 {
-    [SerializeField]
-    private Animator animator;
-
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -16,11 +14,5 @@ public class ParryingTester : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void GotParried()
-    {
-        animator.Play("Parried");
-        //parried  = true;
     }
 }
