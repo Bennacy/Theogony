@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: sword
   weaponPrefab: {fileID: 4189712685836114373, guid: 8493fe4f5d78f564c88cd711b36af11e, type: 3}
   isUnarmed: 0
+  knockback: 3
   lightAttack:
   - LightAttack_1
   - LightAttack_2

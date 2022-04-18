@@ -8,7 +8,7 @@ namespace Theogony{
     {
 
         public Transform target;
-        private NavMeshAgent agent;
+        public NavMeshAgent agent;
         private EnemyController enemyController;
         private GlobalInfo globalInfo;
         public float health = 10;
@@ -46,9 +46,7 @@ namespace Theogony{
         public bool IsAtDestination(){
             if(!agent.pathPending){
                 if(agent.remainingDistance <= agent.stoppingDistance){
-                    if(!agent.hasPath || agent.velocity.sqrMagnitude == 0f){
                         return true;
-                    }
                 }
             }
             return false;

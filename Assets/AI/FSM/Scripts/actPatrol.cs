@@ -7,6 +7,7 @@ namespace Theogony{
     public class actPatrol : Action
     {
         public Vector3[] waypoints;
+        public float distanceThreshold;
         private Vector3 currentTarget;
         private int waypointIndex;
         private EnemyController enemyController;
@@ -15,6 +16,7 @@ namespace Theogony{
             enemyController = fsm.gameObject.GetComponent<EnemyController>();
             waypoints = enemyController.patrolWaypoints;
             GetClosestWaypoint(fsm);
+            fsm.GetNavMesh().agent.stoppingDistance = distanceThreshold;
             if(waypoints.Length > 0){
                 currentTarget = waypoints[waypointIndex];
             }

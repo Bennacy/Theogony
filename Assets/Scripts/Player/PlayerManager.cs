@@ -7,6 +7,8 @@ namespace Theogony{
     public class PlayerManager : MonoBehaviour
     {
         public GlobalInfo globalInfo;
+        private PlayerControllerScript playerControllerScript;
+        private Rigidbody rb;
         public CameraHandler cameraHandler;
         public float maxHealth;
         public float maxStamina;
@@ -18,6 +20,8 @@ namespace Theogony{
 
         void Start()
         {
+            playerControllerScript = GetComponent<PlayerControllerScript>();
+            rb = GetComponent<Rigidbody>();
             globalInfo = GlobalInfo.GetGlobalInfo();
             cameraHandler = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>();
             maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
@@ -58,6 +62,32 @@ namespace Theogony{
             staminaSpent = true;
             yield return new WaitForSeconds(1);
             staminaSpent = false;
+        }
+
+        void OnCollisionEnter(Collision collision){
+            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
+                EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
+                StartCoroutine(Knockback(collision, weapon.knockback));
+                Damage(10);
+                Debug.Log(collision.contacts[0].point);
+            }
+        }
+
+        private void Damage(float deduction){
+            currHealth -= deduction;
+        }
+
+        private IEnumerator Knockback(Collision collision, float knockback){
+            playerControllerScript.canMove = false;
+            Vector3 direction = GetDirection(collision.transform.position, transform.position);
+            direction.y = 0;
+            rb.AddForce(direction * knockback, ForceMode.Impulse);
+            yield return new WaitForSeconds(0.5f);
+            playerControllerScript.canMove = true;
+        }
+
+        private Vector3 GetDirection(Vector3 position1, Vector3 position2){
+            return Vector3.Normalize(position2 - position1);
         }
     }
 }

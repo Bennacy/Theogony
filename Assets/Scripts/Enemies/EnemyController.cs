@@ -17,7 +17,7 @@ namespace Theogony{
         private ParticleSystem blood;
         public Vector3[] patrolWaypoints;
         public int waypointIndex;
-        public float knockbackTaken;
+        public float knockbackResistance;
         public bool attacking;
         public Transform target;
         public bool playerTargetable;
@@ -54,18 +54,21 @@ namespace Theogony{
 
         void OnCollisionEnter(Collision collision){
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
-                DamageCollider enemyController = collision.gameObject.GetComponent<DamageCollider>();
+                weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
+                Debug.Log(weapon);
                 Damage(10);
                 blood.transform.position = collision.contacts[0].point;
-                Knockback(collision);
+                if(weapon.knockback - knockbackResistance > 0){
+                    Knockback(collision, weapon.knockback - knockbackResistance);
+                }
                 blood.Play();
             }
         }
 
-        private void Knockback(Collision collision){
+        private void Knockback(Collision collision, float knockback){
                 Vector3 direction = GetDirection(collision.transform.position, transform.position);
                 direction.y = 0;
-                rb.AddForce(direction * knockbackTaken, ForceMode.Impulse);
+                rb.AddForce(direction * knockback, ForceMode.Impulse);
         }
 
         private Vector3 GetDirection(Vector3 position1, Vector3 position2){

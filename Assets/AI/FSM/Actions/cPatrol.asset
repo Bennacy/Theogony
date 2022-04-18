@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15125bcccdb0594c851fc6a6ad8ca7a, type: 3}
   m_Name: cPatrol
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {x: -14, y: 0, z: 4}
+  - {x: 14, y: 0, z: 4}
+  - {x: 14, y: 0, z: 14}
+  distanceThreshold: 2

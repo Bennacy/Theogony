@@ -10,7 +10,7 @@ namespace Theogony{
         [Header("References")]
         // public GlobalInfo globalInfo;
         public PlayerManager playerManager;
-        public CapsuleCollider coll;
+        public CapsuleCollider damageColl;
         public Rigidbody rb;
         public GameObject cam;
         public CameraHandler cameraHandler;
@@ -133,12 +133,16 @@ namespace Theogony{
             if(true){
                 if(context.performed && canMove && !animator.GetBool("Occupied")){ //Backstep
                     if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
+                        rb.useGravity = false;
+                        damageColl.enabled = false;
                         moveSpeed = backstepSpeed;
                         rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
                         animator.Play("Backstep");
                         canMove = false;
                         playerManager.staminaSpent = true;
                     }else if(playerManager.UpdateStamina(rollCost)){ //Roll
+                        rb.useGravity = false;
+                        damageColl.enabled = false;
                         moveSpeed = rollSpeed;
                         float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
                         transform.rotation = Quaternion.Euler(0, angle, 0);
@@ -153,29 +157,13 @@ namespace Theogony{
         }
 
         public void FinishRoll(){
-            coll.enabled = true;
+            damageColl.enabled = true;
+            rb.useGravity = true;
             Debug.Log("A");
             rb.velocity = Vector3.zero;
             moveSpeed = walkSpeed;
             canMove = true;
             StartCoroutine(playerManager.RechargeStamina());
-        }
-
-        void OnCollisionEnter(Collision collision){
-            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
-                // DamageCollider enemyController = collision.gameObject.GetComponent<DamageCollider>();
-                // Damage(10);
-                // blood.transform.position = collision.contacts[0].point;
-                // Vector3 direction = GetDirection(collision.transform.position, transform.position);
-                // direction.y = 0;
-                // rb.AddForce(direction * 10, ForceMode.Impulse);
-                // blood.Play();
-                // Debug.Log(collision.contacts[0].point);
-            }
-        }
-
-        private Vector3 GetDirection(Vector3 position1, Vector3 position2){
-            return Vector3.Normalize(position2 - position1);
         }
     }
 }
