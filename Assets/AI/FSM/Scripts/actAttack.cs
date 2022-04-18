@@ -8,12 +8,11 @@ namespace Theogony{
     {
         private EnemyController enemyController;
         public override void Startup(FSM fsm){
-            enemyController = fsm.GetComponent<EnemyController>();
+            enemyController = fsm.enemyController;
         }
         
         public override void Act(FSM fsm){
             if(!enemyController.attacking){
-                Debug.Log("Attack");
                 string[] possibleAttacks = enemyController.weapon.possibleAttacks;
                 int[] attackWeights = enemyController.weapon.attackWeights;
 

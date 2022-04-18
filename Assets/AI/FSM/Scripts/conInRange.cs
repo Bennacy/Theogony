@@ -16,6 +16,10 @@ namespace Theogony{
             float angle = Vector3.Angle(targetDir, fsm.transform.forward);
             float dist = Vector3.Distance(target.position,  fsm.transform.position);
 
+            if(!fsm.enemyController.playerTargetable){
+                return negation;
+            }
+
             if(dist < attackDistance){
                 return !negation;
             }else{

@@ -44,6 +44,7 @@ namespace Theogony{
         public bool paused;
         public bool refreshedScene;
         public bool reloading;
+        public bool playerTargetable;
         
         public static GlobalInfo GetGlobalInfo(){
             return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());

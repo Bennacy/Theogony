@@ -70,3 +70,4 @@ MonoBehaviour:
   paused: 0
   refreshedScene: 0
   reloading: 0
+  playerTargetable: 1

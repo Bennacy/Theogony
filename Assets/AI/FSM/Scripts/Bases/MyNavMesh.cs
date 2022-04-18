@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+namespace Theogony{
     public class MyNavMesh : MonoBehaviour
     {
 
         public Transform target;
         private NavMeshAgent agent;
+        private EnemyController enemyController;
+        private GlobalInfo globalInfo;
         public float health = 10;
 
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            enemyController = GetComponent<EnemyController>();
+            target = enemyController.target;
         }
 
         public void FaceTarget()
         {
             Vector3 direction = (target.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            globalInfo = GlobalInfo.GetGlobalInfo();
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 100f);
         }
         public void GoToTarget()
         {
             FaceTarget();
-            
             agent.SetDestination(target.position);
         }
 
@@ -60,3 +64,4 @@ using UnityEngine.AI;
             transform.rotation = lookRotation;
         }
     }
+}

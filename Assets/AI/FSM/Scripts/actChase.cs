@@ -11,9 +11,7 @@ namespace Theogony{
         }
 
         public override void Act(FSM fsm){
-            if(fsm.GetNavMesh().IsAtDestination()){
-                fsm.GetNavMesh().GoToTarget();
-            }
+            fsm.GetNavMesh().GoToTarget();
         }
     }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: c!InRange
   m_EditorClassIdentifier: 
   negation: 1
-  attackDistance: 4
+  attackDistance: 5

@@ -9,9 +9,10 @@ namespace Theogony{
         public State currentState;
         public bool changedState;
         private MyNavMesh navMeshAgent;
-
+        public EnemyController enemyController;
         void Start(){
             currentState = initialState;
+            enemyController = GetComponent<EnemyController>();
             navMeshAgent = GetComponent<MyNavMesh>();
         }
 
