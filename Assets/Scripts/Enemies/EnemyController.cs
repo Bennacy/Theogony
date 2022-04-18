@@ -56,7 +56,7 @@ namespace Theogony{
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
                 Debug.Log(weapon);
-                Damage(10);
+                Damage(weapon.CalculateDamage(globalInfo));
                 blood.transform.position = collision.contacts[0].point;
                 if(weapon.knockback - knockbackResistance > 0){
                     Knockback(collision, weapon.knockback - knockbackResistance);

@@ -68,8 +68,7 @@ namespace Theogony{
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
                 EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 StartCoroutine(Knockback(collision, weapon.knockback));
-                Damage(10);
-                Debug.Log(collision.contacts[0].point);
+                Damage(weapon.damageDealt);
             }
         }
 

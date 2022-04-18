@@ -10,5 +10,7 @@ namespace Theogony{
         public float knockback;
         public string[] possibleAttacks;
         public int[] attackWeights;
+        public float damageDealt;
+        public weaponItems playerWeapon;
     }
 }

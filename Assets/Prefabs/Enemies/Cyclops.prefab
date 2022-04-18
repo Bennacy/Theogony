@@ -377,9 +377,12 @@ MonoBehaviour:
   currencyDrop: 1000
   iFrames: 1
   animator: {fileID: 0}
-  patrolWaypoints: []
+  patrolWaypoints:
+  - {x: -14, y: 0, z: 4}
+  - {x: 14, y: 0, z: 4}
+  - {x: 14, y: 0, z: 14}
   waypointIndex: 0
-  knockbackTaken: 2
+  knockbackResistance: 5
   attacking: 0
   target: {fileID: 0}
   playerTargetable: 0
@@ -413,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  agent: {fileID: 0}
   health: 10
 --- !u!114 &1563597365
 MonoBehaviour:

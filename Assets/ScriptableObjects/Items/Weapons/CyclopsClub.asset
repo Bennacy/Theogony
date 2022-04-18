@@ -20,3 +20,5 @@ MonoBehaviour:
   - Combo2
   - Combo3
   attackWeights: 320000001e00000014000000
+  damageDealt: 15
+  playerWeapon: {fileID: 0}

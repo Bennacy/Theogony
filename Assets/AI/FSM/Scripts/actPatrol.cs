@@ -44,7 +44,6 @@ namespace Theogony{
             float distance = float.PositiveInfinity;
             if(waypoints.Length > 0){
                 for(int i = 0; i < waypoints.Length; i++){
-                    Debug.Log(waypoints[i]);
                     if(Vector3.Distance(fsm.transform.position, waypoints[i]) < distance){
                         distance = Vector3.Distance(fsm.transform.position, waypoints[i]);
                         waypointIndex = i;

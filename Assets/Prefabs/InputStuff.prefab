@@ -458,6 +458,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1235834874110441457}
     - target: {fileID: 1850904162861747634, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: damageColl
+      value: 
+      objectReference: {fileID: 7916017722255109713}
+    - target: {fileID: 1850904162861747634, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: cameraHandler
       value: 
       objectReference: {fileID: 1235834874110441459}
@@ -467,6 +471,11 @@ PrefabInstance:
       objectReference: {fileID: 1235834874110441459}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+--- !u!136 &7916017722255109713 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 1850904162861747599, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+  m_PrefabInstance: {fileID: 8391582328842675166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7916017722255109718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1850904162861747592, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}

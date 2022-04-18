@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: c3d1b50194daec140b3af3a6a05fcf2a, type: 2}
---- !u!136 &360083524 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 7916017722255109713, guid: ed375999891047845aaded976c6903e6, type: 3}
-  m_PrefabInstance: {fileID: 1871738871}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &360083530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
@@ -510,34 +505,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 360083530}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.data[0].x
-      value: -14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.data[0].z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.data[1].x
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.data[1].z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.data[2].x
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: patrolWaypoints.Array.data[2].z
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 4155513737072620764, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1228,10 +1195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: damageColl
-      value: 
-      objectReference: {fileID: 360083524}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
       value: 2
