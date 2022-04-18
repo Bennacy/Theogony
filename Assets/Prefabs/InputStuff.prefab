@@ -50,6 +50,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7231589046787033371}
     - target: {fileID: 7301024319790079576, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
+      propertyPath: lockOnRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301024319790079576, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
       propertyPath: pivotSlider
       value: 
       objectReference: {fileID: 2605162513703166880}
@@ -151,6 +155,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1746668178306842188, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958544076814623113, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_Name
+      value: PivotSlider
+      objectReference: {fileID: 0}
     - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
       propertyPath: m_Delegates.Array.size
       value: 2
@@ -202,6 +214,12 @@ PrefabInstance:
     - target: {fileID: 3320871941844576057, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462026589482604996, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_text
+      value: 'Camera x
+
+        Sensitivity'
       objectReference: {fileID: 0}
     - target: {fileID: 3842367494683364045, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
       propertyPath: m_Name
@@ -298,6 +316,20 @@ PrefabInstance:
     - target: {fileID: 8009718905504946572, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184352328777593301, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_text
+      value: 'Camera y
+
+        sensitivity'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184352328777593301, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_fontSize
+      value: 67.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294490368094304036, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -481
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a315b4930a665a547aa29b4d1d30c599, type: 3}
@@ -465,6 +497,10 @@ PrefabInstance:
       propertyPath: cameraHandler
       value: 
       objectReference: {fileID: 1235834874110441459}
+    - target: {fileID: 1850904162861747635, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747635, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: cameraHandler
       value: 
