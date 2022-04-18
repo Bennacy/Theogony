@@ -94,13 +94,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 349e844ceb3abc048b89e9f909937fe0, type: 2}
   pillarRenderer: {fileID: 7548626141860202341}
   uiController: {fileID: 0}
-  destinationPreview: {fileID: 0}
+  destinationPreview: {fileID: 21300000, guid: fe652e5e651d98848ad5fe74a7a3afdf, type: 3}
   playerControllerScript: {fileID: 0}
-  locationName: 
-  sceneName: 
+  locationName: TeleportTest
+  sceneName: TeleportTest
   unlocked: 1
   teleportPosition: {x: 0, y: 0, z: 0}
-  sortingOrder: 0
+  sortingOrder: 3
 --- !u!1 &1193373535272331115
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,8 +820,8 @@ GameObject:
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7862643147373248417
 Transform:
@@ -987,8 +987,8 @@ GameObject:
   m_Name: Collumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2585198737156135484
 Transform:

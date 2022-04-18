@@ -18,13 +18,13 @@ namespace Theogony{
             agent = GetComponent<NavMeshAgent>();
             enemyController = GetComponent<EnemyController>();
             target = enemyController.target;
+            globalInfo = GlobalInfo.GetGlobalInfo();
         }
 
         public void FaceTarget()
         {
             Vector3 direction = (target.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            globalInfo = GlobalInfo.GetGlobalInfo();
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 100f);
         }
         public void GoToTarget()

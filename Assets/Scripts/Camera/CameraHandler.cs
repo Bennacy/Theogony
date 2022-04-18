@@ -155,7 +155,7 @@ namespace Theogony
                 
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
-                Vector3 indicatorPos = player.transform.position + (direction * .9f);
+                Vector3 indicatorPos = player.transform.position + (direction * .8f);
                 indicatorPos.y = lockOnTarget.position.y;
                 lockOnIndicator.transform.position = indicatorPos;
 

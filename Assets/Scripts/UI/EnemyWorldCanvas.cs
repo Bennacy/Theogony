@@ -29,7 +29,7 @@ namespace Theogony{
             transform.rotation = Quaternion.Euler(rotation);
 
             bool active = false;
-            active = cam.lockOnTarget == transform.parent || enemyController.currHealth != enemyController.maxHealth;
+            active = (cam.lockOnTarget == transform.parent || enemyController.currHealth != enemyController.maxHealth) && Vector3.Distance(enemyController.transform.position, enemyController.target.position) < 15;
             healthBar.SetActive(active);
 
             Vector3 newSize = barTransform.sizeDelta;

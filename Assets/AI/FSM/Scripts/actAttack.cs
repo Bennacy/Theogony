@@ -13,6 +13,7 @@ namespace Theogony{
         
         public override void Act(FSM fsm){
             if(!enemyController.attacking){
+                fsm.GetNavMesh().FaceTarget();
                 string[] possibleAttacks = enemyController.weapon.possibleAttacks;
                 int[] attackWeights = enemyController.weapon.attackWeights;
 

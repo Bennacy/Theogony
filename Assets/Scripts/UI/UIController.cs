@@ -107,11 +107,13 @@ namespace Theogony{
             globalInfo.paused = resting;
             restBackground.SetActive(resting);
             if(resting){
+                globalInfo.playerTargetable = false;
                 menuInfo = menus[1];
                 menuInfo.gameObject.SetActive(true);
                 GetButtons();
                 inputAction.SwitchCurrentActionMap("UI");
             }else{
+                globalInfo.playerTargetable = true;
                 menuInfo.currIndex = buttonIndex = 0;
                 restBackground.SetActive(false);
                 inputAction.SwitchCurrentActionMap("InGame");
@@ -156,6 +158,7 @@ namespace Theogony{
                         inputAction.SwitchCurrentActionMap("InGame");
                     }else if(restBackground.activeSelf){ //If the checkpoint menu is active
                         menuInfo.currIndex = buttonIndex = 0;
+                        globalInfo.playerTargetable = true;
                         restBackground.SetActive(false);
                         globalInfo.paused = paused = false;
                         inputAction.SwitchCurrentActionMap("InGame");
