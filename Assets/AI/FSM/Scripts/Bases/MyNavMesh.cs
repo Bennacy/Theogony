@@ -11,7 +11,6 @@ namespace Theogony{
         public NavMeshAgent agent;
         private EnemyController enemyController;
         private GlobalInfo globalInfo;
-        public float health = 10;
 
         void Start()
         {

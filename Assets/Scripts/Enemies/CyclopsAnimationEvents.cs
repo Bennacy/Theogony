@@ -23,6 +23,10 @@ namespace Theogony{
             animator.SetBool("Animating", animating);
         }
 
+        public void Die(){
+            Destroy(transform.parent.gameObject);
+        }
+
         public void StartAttack(){
             enemyController.attacking = true;
         }

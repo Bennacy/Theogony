@@ -59,7 +59,8 @@ namespace Theogony{
         public int GetUpgradeCost(int levels){
             if(levels == 1){
                 return globalInfo.LevelUpCost();
-            }else if(levels == 0){
+            }
+            if(levels == 0){
                 return 0;
             }else{
                 int finalCost = GetUpgradeCost(levels - 1);

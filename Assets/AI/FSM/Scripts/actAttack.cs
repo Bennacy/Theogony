@@ -14,15 +14,15 @@ namespace Theogony{
         public override void Act(FSM fsm){
             if(!enemyController.attacking){
                 fsm.GetNavMesh().FaceTarget();
-                string[] possibleAttacks = enemyController.weapon.possibleAttacks;
-                int[] attackWeights = enemyController.weapon.attackWeights;
+                string[] possibleAttacks = fsm.enemyController.weapon.possibleAttacks;
+                int[] attackWeights = fsm.enemyController.weapon.attackWeights;
 
                 int attackRoll = Random.Range(0, 101);
                 int percentSum = 0;
                 for(int i = 0; i < possibleAttacks.Length; i++){
                     percentSum += attackWeights[i];
                     if(attackRoll <= percentSum){
-                        enemyController.animator.Play(possibleAttacks[i]);
+                        fsm.enemyController.animator.Play(possibleAttacks[i]);
                         return;
                     }
                 }

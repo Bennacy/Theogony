@@ -52894,15 +52894,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.4333333
-    functionName: CanNotCombo
+  - time: 1.3666667
+    functionName: EnableCanMove
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.4666667
-    functionName: EnableCanMove
+  - time: 1.4
+    functionName: IsNotOccupied
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.4333333
+    functionName: CanNotCombo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

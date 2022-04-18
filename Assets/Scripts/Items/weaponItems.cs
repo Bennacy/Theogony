@@ -20,7 +20,6 @@ namespace Theogony
         public float CalculateDamage(GlobalInfo globalInfo){
             //As of now, each level simply adds 5%*scaling to the total weapon damage
             float damage = baseDamage + ((0.05f * strScaling) * globalInfo.str * baseDamage) + ((0.5f * dexScaling) * globalInfo.dex);
-            Debug.Log(damage);
             return damage;
         }
 

@@ -22,6 +22,8 @@ namespace Theogony{
         public Transform target;
         public bool playerTargetable;
         public EnemyWeapons weapon;
+        private bool dying;
+        private MonoBehaviour[] scripts;
 
         void Start()
         {
@@ -32,11 +34,12 @@ namespace Theogony{
             rb = GetComponent<Rigidbody>();
             currHealth = maxHealth;
             weapon = GetComponent<EnemyWeaponManager>().weaponTemplate;
+            dying = false;
         }
 
         void Update()
         {
-            if(currHealth <= 0){
+            if(currHealth <= 0 && !dying){
                 Kill();
             }
             animator.SetFloat("Velocity", Vector3.Magnitude(navMeshAgent.velocity));
@@ -44,8 +47,23 @@ namespace Theogony{
         }
 
         void Kill(){
+            dying = true;
+            foreach(MonoBehaviour script in GetComponents<MonoBehaviour>()){
+                if(script != this){
+                    Destroy(script);
+                }
+            }
+            foreach(Collider collider in GetComponentsInChildren<Collider>()){
+                Destroy(collider);
+            }
+            Destroy(navMeshAgent);
+            Destroy(GetComponentInChildren<Canvas>().gameObject);
+            Destroy(GetComponent<Rigidbody>());
+            
+            animator.StopPlayback();
+            animator.Play("Die");
             globalInfo.AlterCurrency(currencyDrop);
-            Destroy(gameObject);
+            Destroy(this);
         }
 
         public void Damage(float damageTaken){
@@ -55,7 +73,6 @@ namespace Theogony{
         void OnCollisionEnter(Collision collision){
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
-                Debug.Log(weapon);
                 Damage(weapon.CalculateDamage(globalInfo));
                 blood.transform.position = collision.contacts[0].point;
                 if(weapon.knockback - knockbackResistance > 0){

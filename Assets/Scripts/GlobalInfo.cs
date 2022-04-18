@@ -58,11 +58,11 @@ namespace Theogony{
             }else{
                 Destroy(gameObject);
             }
-            StartCoroutine(StartFunctions());
+            StartCoroutine(StartFunctions(.4f));
         }
 
-        private IEnumerator StartFunctions(){
-            yield return new WaitForSeconds(0.4f);
+        private IEnumerator StartFunctions(float wait){
+            yield return new WaitForSeconds(wait);
             activeScene = SceneManager.GetActiveScene().name;
             if(checkpoints.Length > 0){
                 foreach(Checkpoint checkpoint in checkpoints){
@@ -78,13 +78,19 @@ namespace Theogony{
             health = uiController.transform.Find("HUD").Find("Health").GetComponent<UpdateBar>();
             stamina = uiController.transform.Find("HUD").Find("Stamina").GetComponent<UpdateBar>();
 
+            playerControllerScript.playerInput.enabled = true;
+            if(lastCheckpoint != null){
+                playerControllerScript.transform.position = lastCheckpoint.teleportPosition;
+            }
+            playerTargetable = true;
+            reloading = false;
             refreshedScene = false;
         }
 
         void Update()
         {
             if(refreshedScene){
-                StartCoroutine(StartFunctions());
+                StartCoroutine(StartFunctions(.4f));
             }
             if(paused){
                 Cursor.lockState = CursorLockMode.None;
@@ -132,13 +138,25 @@ namespace Theogony{
             }
         }
 
+        public void PlayerDeath(){
+            Debug.Log("You Died");
+            reloading = true;
+            playerControllerScript.playerInput.enabled = false;
+            playerTargetable = false;
+            refreshedScene = true;
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(StartFunctions(1.5f));
+        }
+
         public IEnumerator TravelTo(Checkpoint destination, bool reload){
             if(destination != lastCheckpoint || reloading){ //Won't run if the player tries to travel to the checkpoint they are resting at
                 reloading = true; //Triggers the reload "animation"
-                StartCoroutine(StartFunctions());
+                StartCoroutine(StartFunctions(.4f));
 
                 yield return new WaitForSeconds(0.45f);
-                playerControllerScript.animator.Play("JumpToSit");
+                if(playerControllerScript)
+                    playerControllerScript.animator.Play("JumpToSit");
                 
                 if(uiController.menuInfo)
                     uiController.OpenMenu(uiController.menuInfo.previousMenu);
@@ -152,16 +170,16 @@ namespace Theogony{
 
                 playerControllerScript.transform.LookAt(destination.transform.position, Vector3.up);
                 lastCheckpoint = destination;
-                reloading = false;
 
                 if(reload){
-                    ReloadLevel(destination.sceneName);
+                    StartCoroutine(ReloadLevel(destination.sceneName));
                 }
             }
         }
 
-        public void ReloadLevel(string sceneName){
+        public IEnumerator ReloadLevel(string sceneName){
             reloading = true;
+            yield return new WaitForSeconds(.4f);
             refreshedScene = true;
             paused = false;
             SceneManager.LoadScene(sceneName);

@@ -37,6 +37,9 @@ namespace Theogony{
             if(!staminaSpent && currStamina < maxStamina){
                 currStamina += staminaRecharge * Time.deltaTime;
             }
+            if(currHealth < maxHealth){
+                Die();
+            }
         }
 
         void FixedUpdate()
@@ -47,6 +50,11 @@ namespace Theogony{
                 cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta);
             }
+        }
+
+        private void Die(){
+            globalInfo.playerTargetable = false;
+            GetComponentInChildren<Animator>().Play("Die");
         }
 
         public bool UpdateStamina(float changeBy){

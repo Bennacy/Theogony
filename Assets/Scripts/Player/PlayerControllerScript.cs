@@ -10,6 +10,7 @@ namespace Theogony{
         [Header("References")]
         // public GlobalInfo globalInfo;
         public PlayerManager playerManager;
+        public PlayerInput playerInput;
         public CapsuleCollider damageColl;
         public Rigidbody rb;
         public GameObject cam;
@@ -54,6 +55,7 @@ namespace Theogony{
             cam = GameObject.FindGameObjectWithTag("Camera");
             cameraHandler = cam.GetComponent<CameraHandler>();
             cameraHandler = playerManager.cameraHandler;
+            playerInput = GetComponent<PlayerInput>();
         }
 
         void Update()
@@ -159,7 +161,6 @@ namespace Theogony{
         public void FinishRoll(){
             damageColl.enabled = true;
             rb.useGravity = true;
-            Debug.Log("A");
             rb.velocity = Vector3.zero;
             moveSpeed = walkSpeed;
             canMove = true;

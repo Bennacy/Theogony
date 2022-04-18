@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 334275e7514869d46a3b45b50aea1353, type: 3}
-  m_Name: Shield
+  m_Name: PlayerClub
   m_EditorClassIdentifier: 
-  itemName: shield
-  weaponPrefab: {fileID: 8365965172047031865, guid: 7bc124a6f4e5c294188055ee76b11720, type: 3}
+  itemName: Club
+  weaponPrefab: {fileID: 8566638831284201798, guid: bd74fb66a6f6555499f45bf57a265730, type: 3}
   isUnarmed: 0
+  knockback: 3
   lightAttack:
-  - 
-  - 
-  heavyAttack: 
+  - LightAttack_1
+  - LightAttack_2
+  - LightAttack_3
+  heavyAttack: HeavyAttack
   currattack: 0
+  baseDamage: 10
+  strScaling: 1
+  dexScaling: 3

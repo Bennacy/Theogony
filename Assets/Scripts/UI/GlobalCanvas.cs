@@ -28,6 +28,7 @@ namespace Theogony{
         // Update is called once per frame
         void Update()
         {
+            // fadeinSpeed = globalInfo.fadeSpeed;
             if(globalInfo.reloading && !startedFade){
                 startedFade = true;
                 StartCoroutine(FadeOut(true));

@@ -46,13 +46,14 @@ namespace Theogony{
         }
 
         private IEnumerator StartFunctions(){
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.3f);
             unlocked = globalInfo.checkpoints[sortingOrder].unlocked;
             if(unlocked){
                 pillarRenderer.materials[1] = mat[1];
             }else{
                 pillarRenderer.materials[1] = mat[0];
             }
+            Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>());
             
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
@@ -77,7 +78,7 @@ namespace Theogony{
         }
 
         public void Rest(){
-            globalInfo.ReloadLevel(sceneName);
+            StartCoroutine(globalInfo.ReloadLevel(sceneName));
         }
         private void UnlockCheckpoint(){
             unlocked = true;
