@@ -38813,7 +38813,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: StopRotateInAttacks
+    functionName: DisableRightCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

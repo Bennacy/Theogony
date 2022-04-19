@@ -24,8 +24,8 @@ namespace Theogony
         {
             if (riposteAttack)
             {
-                animator.Play("LightAttack_3");
-                riposteAttack = false;
+                animator.Play("Riposte");
+              
                 return;
             } 
                         

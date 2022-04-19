@@ -6,6 +6,8 @@ namespace Theogony {
     public class DamageCollider : MonoBehaviour
     {
         Collider damageCollider;
+        public GameObject player;
+        public bool ripost;
 
             private void Awake()
             {
@@ -16,6 +18,12 @@ namespace Theogony {
 
             }
 
+        public void Update()
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            ripost = player.GetComponent<PlayerAttacker>().riposteAttack;
+
+        }
         public void EnableCollider()
         {
             damageCollider.enabled = true;
@@ -31,7 +39,11 @@ namespace Theogony {
         
             if (collision.tag == "Enemy")
             {
-                //create function to take damage
+                if (ripost)
+                {
+                    collision.GetComponentInChildren<Animator>().Play("Riposted");
+                    player.GetComponent<PlayerAttacker>().riposteAttack = false;
+                }
                 Debug.Log("Hit");
             }
         }

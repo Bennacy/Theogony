@@ -10,9 +10,11 @@ namespace Theogony
         public bool canRiposte;
         private float riposteTimer = 3;
         Collider riposteCollider;
+        Animator animator;
 
         void Start()
         {
+            animator = GetComponentInChildren<Animator>();
             riposteCollider = GetComponent<Collider>();
             riposteCollider.gameObject.SetActive(true);
             riposteCollider.isTrigger = true;
@@ -38,7 +40,10 @@ namespace Theogony
             canRiposte = true;
             riposteTimer = 3;
         }
-
+        public void StandUp()
+        {
+            animator.Play("Standing");
+        }
         private void OnTriggerEnter(Collider collision)
         {
 
@@ -47,7 +52,7 @@ namespace Theogony
                 //create function to parry
                 collision.GetComponent<PlayerAttacker>().WillRiposte();
 
-                Debug.Log("riposted");
+               
             }
         }
     }
