@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494f9eaa2029eca47a7315938caad28f, type: 3}
+  m_Name: gChase
+  m_EditorClassIdentifier: 
+  entryAction: {fileID: 0}
+  exitAction: {fileID: 11400000, guid: 9e1b8f15b7ae34d4b995b61f5c3e71f1, type: 2}
+  stateActions:
+  - {fileID: 11400000, guid: 6b48c6e5e468e224dbb78b0ad0cb12be, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: 8635f402806b94c4e8f7267ad5d93ace, type: 2}
+  - {fileID: 11400000, guid: d65555ee594040943883476f60aba6b7, type: 2}
+  - {fileID: 11400000, guid: 179b9e3cf6b77374e910e3fdd95a9cc2, type: 2}

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: gChase-Die
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: ed5f7644e64d248429fe6c126378a095, type: 2}
+  action: {fileID: 11400000, guid: 3ddbb361adc78194f8412e51d09e3988, type: 2}
+  targetState: {fileID: 11400000, guid: 0bf760a886028c645ad85d4950064860, type: 2}

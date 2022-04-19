@@ -152,7 +152,9 @@ namespace Theogony{
         public IEnumerator TravelTo(Checkpoint destination, bool reload){
             if(destination != lastCheckpoint || reloading){ //Won't run if the player tries to travel to the checkpoint they are resting at
                 reloading = true; //Triggers the reload "animation"
-                StartCoroutine(StartFunctions(.4f));
+                if(!reload){
+                    StartCoroutine(StartFunctions(.4f));
+                }
 
                 yield return new WaitForSeconds(0.45f);
                 if(playerControllerScript)

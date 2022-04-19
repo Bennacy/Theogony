@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: cPatrol-Die
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: 38d5f0954c3263f47bd7032b7ee66ec2, type: 2}
+  action: {fileID: 11400000, guid: 7dd5f71b97378a34fa189cb51173919c, type: 2}
+  targetState: {fileID: 11400000, guid: 2d9b854a5b242b64491dff312ac59cee, type: 2}

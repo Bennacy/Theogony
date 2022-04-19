@@ -12,6 +12,7 @@ namespace Theogony{
 
         public override void Act(FSM fsm){
             fsm.GetNavMesh().GoToTarget();
+            //Test pursue behavior
         }
     }
 }

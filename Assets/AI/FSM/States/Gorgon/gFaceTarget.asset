@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494f9eaa2029eca47a7315938caad28f, type: 3}
+  m_Name: gFaceTarget
+  m_EditorClassIdentifier: 
+  entryAction: {fileID: 0}
+  exitAction: {fileID: 11400000, guid: 9e1b8f15b7ae34d4b995b61f5c3e71f1, type: 2}
+  stateActions:
+  - {fileID: 11400000, guid: 769de48ad9140d9418e7cee36595b5c1, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: 05d43b3fb86c1d64daa9556d5706e77a, type: 2}
+  - {fileID: 11400000, guid: efdcf878aecb7ed4881b2992c2788425, type: 2}

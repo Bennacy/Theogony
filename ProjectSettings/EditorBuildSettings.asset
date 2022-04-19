@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeleportTest.unity
     guid: 7ac662881e647b74495b3e0c0928420a
+  - enabled: 1
+    path: Assets/Scenes/Gorgons.unity
+    guid: 7de0622929e49384ba13d84f17b30c12
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c36d68df2ea19784eaee9c33877553c5, type: 2}

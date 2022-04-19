@@ -9,7 +9,6 @@ namespace Theogony{
         public float maxHealth;
         public float currHealth;
         public int currencyDrop;
-        public float iFrames;
         private GlobalInfo globalInfo;
         public Animator animator;
         private NavMeshAgent navMeshAgent;
@@ -22,12 +21,15 @@ namespace Theogony{
         public Transform target;
         public bool playerTargetable;
         public EnemyWeapons weapon;
-        private bool dying;
+
+        [HideInInspector]
+        public bool dying;
         private MonoBehaviour[] scripts;
 
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
+            target = GameObject.FindGameObjectWithTag("Player").transform;
             blood = GetComponentInChildren<ParticleSystem>();
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponentInChildren<Animator>();
@@ -40,7 +42,7 @@ namespace Theogony{
         void Update()
         {
             if(currHealth <= 0 && !dying){
-                Kill();
+                // Kill();
             }
             animator.SetFloat("Velocity", Vector3.Magnitude(navMeshAgent.velocity));
             playerTargetable = globalInfo.playerTargetable;

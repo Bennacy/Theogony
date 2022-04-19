@@ -17,7 +17,7 @@ namespace Theogony{
         {
             agent = GetComponent<NavMeshAgent>();
             enemyController = GetComponent<EnemyController>();
-            target = enemyController.target;
+            target = GameObject.FindGameObjectWithTag("Player").transform;
             globalInfo = GlobalInfo.GetGlobalInfo();
         }
 

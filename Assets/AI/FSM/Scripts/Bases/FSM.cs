@@ -39,17 +39,17 @@ namespace Theogony{
                     actions.Add(a);
                 }
             }
-            if(!enemyController.attacking){
+            if(!enemyController.attacking || enemyController.currHealth < 0){
                 PerformActions(actions);
             }
         }
 
         private void PerformActions(List<Action> actions){
             foreach(Action action in actions){
-                if(changedState && action){
-                    Debug.Log(action);
-                    action.Startup(this);
-                }
+                // if(changedState){
+                //     Debug.Log(action);
+                //     action.Startup(this);
+                // }
                 if(action != null){
                     action.Act(this);
                 }

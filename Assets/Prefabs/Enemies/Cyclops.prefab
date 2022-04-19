@@ -301,9 +301,9 @@ GameObject:
   - component: {fileID: 471346293712424572}
   - component: {fileID: 1984469461}
   - component: {fileID: 1984469460}
-  - component: {fileID: 3360790890396571597}
-  - component: {fileID: 1563597364}
   - component: {fileID: 1563597365}
+  - component: {fileID: 1563597364}
+  - component: {fileID: 3360790890396571597}
   - component: {fileID: 1563597366}
   m_Layer: 3
   m_Name: Cyclops
@@ -311,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4155513737072620764
 Transform:
   m_ObjectHideFlags: 0
@@ -324,8 +324,8 @@ Transform:
   m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2507133366974165430}
   - {fileID: 6519282829765312791}
+  - {fileID: 2507133366974165430}
   - {fileID: 1729620558}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -375,7 +375,6 @@ MonoBehaviour:
   maxHealth: 50
   currHealth: 0
   currencyDrop: 1000
-  iFrames: 1
   animator: {fileID: 0}
   patrolWaypoints:
   - {x: -14, y: 0, z: 4}
@@ -387,36 +386,7 @@ MonoBehaviour:
   target: {fileID: 0}
   playerTargetable: 0
   weapon: {fileID: 0}
---- !u!114 &3360790890396571597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6387489604616102335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5572f6f97c4f77f4c9e04819a5408b42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 6519144573344472665}
-  weaponTemplate: {fileID: 11400000, guid: dcf563fb2b156aa4f8b30c7c3a8fd3a0, type: 2}
-  positionAdjustment: {x: 0, y: 0, z: 0}
-  angleAdjustment: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
---- !u!114 &1563597364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6387489604616102335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e05e0760cbfa5f47af3733643cfae85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  agent: {fileID: 0}
+  dying: 0
 --- !u!114 &1563597365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +404,37 @@ MonoBehaviour:
   changedState: 1
   enemyController: {fileID: 0}
   attackTracker: {x: 0, y: 0}
+--- !u!114 &1563597364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387489604616102335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e05e0760cbfa5f47af3733643cfae85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  rotationSpeed: 3
+--- !u!114 &3360790890396571597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387489604616102335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5572f6f97c4f77f4c9e04819a5408b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 6519144573344472665}
+  weaponTemplate: {fileID: 11400000, guid: dcf563fb2b156aa4f8b30c7c3a8fd3a0, type: 2}
+  positionAdjustment: {x: 0, y: 0, z: 0}
+  angleAdjustment: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
 --- !u!195 &1563597366
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -469,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804301688967996, guid: d9162a78a8deb714a9bddd8038021008, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4804301688967996, guid: d9162a78a8deb714a9bddd8038021008, type: 3}
       propertyPath: m_LocalScale.x
@@ -589,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898053385602177880, guid: 4599c41e920a1614691368621b6fb0da, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5898053385602177880, guid: 4599c41e920a1614691368621b6fb0da, type: 3}
       propertyPath: m_LocalPosition.x

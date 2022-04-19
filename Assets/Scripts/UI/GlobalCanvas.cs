@@ -7,22 +7,22 @@ namespace Theogony{
     public class GlobalCanvas : MonoBehaviour
     {
         private static GlobalCanvas self;
-        private GlobalInfo globalInfo;
+        public GlobalInfo globalInfo;
         private Image image;
         public float fadeinSpeed;
         public float fadeoutSpeed;
-        private bool startedFade;
+        public bool startedFade;
 
         void Start()
         {
             if(self == null){
                 self = this;
+                DontDestroyOnLoad(gameObject);
+                globalInfo = GlobalInfo.GetGlobalInfo();
+                image = GetComponentInChildren<Image>();
             }else{
                 Destroy(gameObject);
             }
-            DontDestroyOnLoad(gameObject);
-            globalInfo = GlobalInfo.GetGlobalInfo();
-            image = GetComponentInChildren<Image>();
         }
 
         // Update is called once per frame
@@ -43,14 +43,16 @@ namespace Theogony{
             Color color = image.color;
             if(fadingIn){
                 image.enabled = true;
-                while(image.color.a < 1){
+                while(color.a < 1){
                     color.a += (fadeinSpeed * Time.deltaTime);
+                    Debug.Log("fade out " + color);
                     image.color = color;
                     yield return null;
                 }
             }else{
-                while(image.color.a > 0){
+                while(color.a > 0){
                     color.a -= fadeoutSpeed * Time.deltaTime;
+                    Debug.Log("fade in " + color);
                     image.color = color;
                     yield return null;
                 }
