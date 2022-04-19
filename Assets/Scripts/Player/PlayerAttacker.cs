@@ -55,6 +55,18 @@ namespace Theogony
             animator.Play(weaponItem.heavyAttack);
         }
 
+        public void HandleBlock(weaponItems weaponItem)
+        {
+
+          
+            if (weaponItem.currattack == weaponItem.lightAttack.Length)
+            {
+                weaponItem.currattack = 0;
+            }
+
+            animator.Play(weaponItem.lightAttack[weaponItem.currattack]);
+        }
+
 
         public void WillRiposte()
         {

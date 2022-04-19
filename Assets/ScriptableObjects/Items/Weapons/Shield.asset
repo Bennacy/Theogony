@@ -16,6 +16,6 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8365965172047031865, guid: 7bc124a6f4e5c294188055ee76b11720, type: 3}
   isUnarmed: 0
   lightAttack:
-  - 
+  - BlockIdle
   heavyAttack: Parry
   currattack: 0

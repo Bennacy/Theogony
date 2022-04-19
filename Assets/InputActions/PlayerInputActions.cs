@@ -100,6 +100,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""01dea573-75f7-43b7-9117-4c02b2f866d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""LockOn"",
                     ""type"": ""Button"",
                     ""id"": ""8b34cd83-8f57-4331-9362-5cea014f0031"",
@@ -501,6 +510,28 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Parry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66052394-306b-4e4e-8bf1-b3fa0b14de41"",
+                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""396ca902-a1ad-43ba-b404-0f5b1310f0d6"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1228,6 +1259,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_InGame_LightAttack = m_InGame.FindAction("LightAttack", throwIfNotFound: true);
         m_InGame_HeavyAttack = m_InGame.FindAction("HeavyAttack", throwIfNotFound: true);
         m_InGame_Parry = m_InGame.FindAction("Parry", throwIfNotFound: true);
+        m_InGame_Block = m_InGame.FindAction("Block", throwIfNotFound: true);
         m_InGame_LockOn = m_InGame.FindAction("LockOn", throwIfNotFound: true);
         m_InGame_Interact = m_InGame.FindAction("Interact", throwIfNotFound: true);
         // UI
@@ -1309,6 +1341,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_LightAttack;
     private readonly InputAction m_InGame_HeavyAttack;
     private readonly InputAction m_InGame_Parry;
+    private readonly InputAction m_InGame_Block;
     private readonly InputAction m_InGame_LockOn;
     private readonly InputAction m_InGame_Interact;
     public struct InGameActions
@@ -1323,6 +1356,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @LightAttack => m_Wrapper.m_InGame_LightAttack;
         public InputAction @HeavyAttack => m_Wrapper.m_InGame_HeavyAttack;
         public InputAction @Parry => m_Wrapper.m_InGame_Parry;
+        public InputAction @Block => m_Wrapper.m_InGame_Block;
         public InputAction @LockOn => m_Wrapper.m_InGame_LockOn;
         public InputAction @Interact => m_Wrapper.m_InGame_Interact;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
@@ -1358,6 +1392,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Parry.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnParry;
                 @Parry.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnParry;
                 @Parry.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnParry;
+                @Block.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnBlock;
+                @Block.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnBlock;
+                @Block.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnBlock;
                 @LockOn.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnLockOn;
                 @LockOn.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnLockOn;
                 @LockOn.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnLockOn;
@@ -1392,6 +1429,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Parry.started += instance.OnParry;
                 @Parry.performed += instance.OnParry;
                 @Parry.canceled += instance.OnParry;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
                 @LockOn.started += instance.OnLockOn;
                 @LockOn.performed += instance.OnLockOn;
                 @LockOn.canceled += instance.OnLockOn;
@@ -1544,6 +1584,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnLightAttack(InputAction.CallbackContext context);
         void OnHeavyAttack(InputAction.CallbackContext context);
         void OnParry(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
     }

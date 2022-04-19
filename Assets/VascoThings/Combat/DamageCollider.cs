@@ -42,6 +42,7 @@ namespace Theogony {
                 if (ripost)
                 {
                     collision.GetComponentInChildren<Animator>().Play("Riposted");
+                    Debug.Log("RIP");
                     player.GetComponent<PlayerAttacker>().riposteAttack = false;
                 }
                 Debug.Log("Hit");
