@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Actions/Attack")]
-    public class actAttack : Action
+    public class actMeleeAttack : Action
     {
         private EnemyController enemyController;
         public override void Startup(FSM fsm){

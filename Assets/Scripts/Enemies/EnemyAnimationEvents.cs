@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Theogony{
-    public class CyclopsAnimationEvents : MonoBehaviour
+    public class EnemyAnimationEvents : MonoBehaviour
     {
         private Animator animator;
         private EnemyController enemyController;
