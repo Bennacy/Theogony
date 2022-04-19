@@ -15,6 +15,8 @@ namespace Theogony
         private LayerMask ignoreLayers;
         private PlayerInput playerInput;
         private GlobalInfo globalInfo;
+        public CustomSlider sensSlider;
+        public CustomSlider pivotSlider;
 
         public static CameraHandler singleton;
 
@@ -36,8 +38,11 @@ namespace Theogony
         private bool resetCam;
         public float mouseSens;
         public float lookSpeed = 0.1f;
+        [Range(0,100)]
+        public float sensitivity;
         public float followSpeed = 0.1f;
-        public float pivotSpeed = 0.03f;
+        [Range(0,100)]
+        public float pivotSensitivity;
         private float mouseXInput;
         private float mouseYInput;
 
@@ -61,9 +66,19 @@ namespace Theogony
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
             globalInfo = GlobalInfo.GetGlobalInfo();
+            AssignInput();
+            sensSlider.SetValue(globalInfo.sensitivityX);
+            pivotSlider.SetValue(globalInfo.sensitivityY);
+            sensitivity = globalInfo.sensitivityX;
+            pivotSensitivity = globalInfo.sensitivityY;
+        }
+
+        private void AssignInput(){
+            // playerInput.actions["Camera"] = MoveCamera();
         }
 
         public void FollowTarget(float delta)
@@ -75,14 +90,14 @@ namespace Theogony
 
         public void HandleCameraRotation(float delta)
         {
-            targetAngleX += (mouseXInput * lookSpeed) / delta;
+            targetAngleX += (mouseXInput * (sensitivity / 1000)) / delta;
             if(targetAngleX >= 360){
                 targetAngleX -= 360;
             }else if(targetAngleX <= 0){
                 targetAngleX += 360;
             }
             
-            targetAngleY -= (mouseYInput * pivotSpeed) / delta;
+            targetAngleY -= (mouseYInput * (pivotSensitivity / 2000)) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
             Vector3 rotation = Vector3.zero;
@@ -126,6 +141,12 @@ namespace Theogony
 
         void LateUpdate()
         {
+            if(sensSlider.OnValueChanged()){
+                globalInfo.sensitivityX = sensitivity = sensSlider.GetValue();
+            }
+            if(pivotSlider.OnValueChanged()){
+                globalInfo.sensitivityY = pivotSensitivity = pivotSlider.GetValue();
+            }
             lockOnIndicator.SetActive(lockOnTarget != null);
             
             if(lockOnTarget != null){
@@ -134,8 +155,9 @@ namespace Theogony
                 
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
-                lockOnIndicator.transform.position = player.transform.position + (direction * .9f);
-                lockOnIndicator.transform.position = new Vector3(lockOnIndicator.transform.position.x, lockOnIndicator.transform.position.y + 1, lockOnIndicator.transform.position.z);
+                Vector3 indicatorPos = player.transform.position + (direction * .8f);
+                indicatorPos.y = lockOnTarget.position.y;
+                lockOnIndicator.transform.position = indicatorPos;
 
                 Vector3.Normalize(direction);
                 targetAngleX = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
@@ -149,6 +171,7 @@ namespace Theogony
                 }
             }else if(previouslyLocked){
                 lockOnTarget = GetClosestEnemy();
+                lookSpeed = 0.1f;
             }else{
                 lookSpeed = 0.1f;
             }
@@ -219,7 +242,7 @@ namespace Theogony
         }
 
         public void LockOn(InputAction.CallbackContext context){
-            if(context.performed){
+            if(context.performed && !globalInfo.paused){
                 GetClosestEnemy();
 
                 if(lockOnTarget != null){

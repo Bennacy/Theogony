@@ -27,6 +27,7 @@ namespace Theogony
             {
                 weaponItem.currattack = 0;
             }
+            
             animator.Play(weaponItem.lightAttack[weaponItem.currattack]);
 
         }

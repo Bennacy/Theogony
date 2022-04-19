@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace Theogony{
     public class UpdateBar : MonoBehaviour
     {
+        public GlobalInfo globalInfo;
         public PlayerManager playerManager;
         public Image barFront;
         public Image barTrans;
@@ -24,10 +25,21 @@ namespace Theogony{
 
         void Awake()
         {
+            globalInfo = GlobalInfo.GetGlobalInfo();
             playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
             RectTransform frontTrans = (RectTransform)barFront.transform;
             RectTransform transTrans = (RectTransform)barTrans.transform;
-            maxWidth = frontTrans.sizeDelta.x;
+            switch(barType){
+                case 0:
+                    origMax = globalInfo.baseStamina;
+                    UpdateBarWidth(globalInfo.baseStamina + globalInfo.end * globalInfo.endIncrease);
+                    break;
+                case 1:
+                    origMax = globalInfo.baseHealth;
+                    UpdateBarWidth(globalInfo.baseHealth + globalInfo.vit * globalInfo.vitIncrease);
+                    break;
+            }
+            // maxWidth = frontTrans.sizeDelta.x;
         }
 
         void Start()

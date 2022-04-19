@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Theogony {
     public class WeaponSlotManager : MonoBehaviour
     {
+        private GlobalInfo globalInfo;
         WeaponHolderSlot leftHandSlot;
         WeaponHolderSlot rightHandSlot;
 
@@ -19,6 +20,7 @@ namespace Theogony {
 
         private void Awake()
         {
+            globalInfo = GlobalInfo.GetGlobalInfo();
             pos = GetComponentInParent<Transform>();
             playerInventory = GetComponentInParent<PlayerInventory>();
             animHandler = GetComponent<Animator>();
@@ -82,10 +84,22 @@ namespace Theogony {
             // LeftWeaponCollider.DisableCollider();
         }
 
+        public void DisableCanMove(){
+            GetComponentInParent<PlayerControllerScript>().canMove = false;
+        }
 
         public void EnableCanMove()
         {
             GetComponentInParent<PlayerControllerScript>().canMove = true;
+        }
+
+        public void StopMove(){
+            GetComponentInParent<PlayerControllerScript>().rb.velocity = Vector3.zero;
+        }
+
+        public void FinishRoll()
+        {
+            GetComponentInParent<PlayerControllerScript>().FinishRoll();
         }
 
         public void CanCombo()
@@ -97,7 +111,10 @@ namespace Theogony {
         {
             animHandler.SetBool("Combo", false);
             playerInventory.rightWeapon.currattack = 0;
+        }
 
+        public void FinalDeath(){
+            globalInfo.PlayerDeath();
         }
 
         public void ResetEvents()
@@ -114,7 +131,6 @@ namespace Theogony {
 
         public void IsOccupied()
         {
-            Debug.Log("AAA");
             animHandler.SetBool("Occupied", true);
         }
         public void IsNotOccupied()

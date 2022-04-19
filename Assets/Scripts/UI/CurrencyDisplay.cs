@@ -33,7 +33,6 @@ namespace Theogony{
             if(oldCurrency != currency && !changing){
                 changing = true;
                 currencyTarget = currency;
-                Debug.Log("Currency Target: " + currencyTarget);
                 currency = oldCurrency;
                 CurrChange(currencyTarget - currency);
             }

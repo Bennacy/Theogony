@@ -7,9 +7,9 @@ namespace Theogony{
     public class PlayerManager : MonoBehaviour
     {
         public GlobalInfo globalInfo;
+        private PlayerControllerScript playerControllerScript;
+        private Rigidbody rb;
         public CameraHandler cameraHandler;
-        public float mouseX;
-        public float mouseY;
         public float maxHealth;
         public float maxStamina;
         public float currHealth;
@@ -20,15 +20,25 @@ namespace Theogony{
 
         void Start()
         {
+            playerControllerScript = GetComponent<PlayerControllerScript>();
+            rb = GetComponent<Rigidbody>();
             globalInfo = GlobalInfo.GetGlobalInfo();
+            cameraHandler = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>();
+            maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
+            maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
             currHealth = maxHealth;
             currStamina = maxStamina;
         }
 
         void Update()
         {
+            maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
+            maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
             if(!staminaSpent && currStamina < maxStamina){
                 currStamina += staminaRecharge * Time.deltaTime;
+            }
+            if(currHealth < 0){
+                Die();
             }
         }
 
@@ -40,6 +50,12 @@ namespace Theogony{
                 cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta);
             }
+        }
+
+        private void Die(){
+            GetComponent<PlayerInput>().enabled = false;
+            globalInfo.playerTargetable = false;
+            GetComponentInChildren<Animator>().Play("Die");
         }
 
         public bool UpdateStamina(float changeBy){
@@ -57,10 +73,29 @@ namespace Theogony{
             staminaSpent = false;
         }
 
-        public void TestDelta(InputAction.CallbackContext context){
-            Vector2 value = context.ReadValue<Vector2>();
-            mouseX = value.x;
-            mouseY = value.y;
+        void OnCollisionEnter(Collision collision){
+            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
+                EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
+                StartCoroutine(Knockback(collision, weapon.knockback));
+                Damage(weapon.damageDealt);
+            }
+        }
+
+        private void Damage(float deduction){
+            currHealth -= deduction;
+        }
+
+        private IEnumerator Knockback(Collision collision, float knockback){
+            playerControllerScript.canMove = false;
+            Vector3 direction = GetDirection(collision.transform.position, transform.position);
+            direction.y = 0;
+            rb.AddForce(direction * knockback, ForceMode.Impulse);
+            yield return new WaitForSeconds(0.5f);
+            playerControllerScript.canMove = true;
+        }
+
+        private Vector3 GetDirection(Vector3 position1, Vector3 position2){
+            return Vector3.Normalize(position2 - position1);
         }
     }
 }

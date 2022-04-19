@@ -1,0 +1,128 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Theogony{
+    public class CustomSlider : MonoBehaviour
+    {
+        private GlobalInfo globalInfo;
+        private UIController uiController;
+        public Vector2 sliderRange;
+        private Vector2 backgroundThreshold;
+        private RectTransform canvasTransform;
+        private Camera mainCam;
+        public RectTransform backgroundTransform;
+        public RectTransform filledIndicator;
+        public Image sliderBall;
+        private Button buttonRef;
+        private float fractionSize;
+        public int fractionCount;
+        public float sliderValue;
+        private float lastValue;
+        private bool changed;
+        private bool held;
+        public bool mouseOver;
+
+        void Start()
+        {
+            globalInfo = GlobalInfo.GetGlobalInfo();
+            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
+            buttonRef = GetComponentInChildren<Button>();
+            canvasTransform = uiController.gameObject.GetComponent<RectTransform>();
+            mainCam = Camera.main;
+            backgroundThreshold.x = backgroundTransform.localPosition.x;
+            backgroundThreshold.y = backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x;
+            SetValue(sliderValue);
+        }
+
+        void OnEnable()
+        {
+            globalInfo = GlobalInfo.GetGlobalInfo();
+        }
+
+        void Update()
+        {
+            lastValue = sliderValue;
+            if(uiController.sliderChange != 0 && uiController.highlightedBtn == buttonRef){
+                ChangeSlider(uiController.sliderChange);
+                uiController.sliderChange = 0;
+                sliderValue = GetValue();
+            }
+
+            if(mouseOver && Input.GetMouseButtonDown(0)){
+                held = true;
+            }
+
+            if(held){
+                Vector2 clicked;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasTransform, Input.mousePosition, null, out clicked);
+                clicked.y = sliderBall.transform.localPosition.y;
+                if(clicked.x < backgroundThreshold.x){
+                    clicked.x = backgroundThreshold.x;
+                }else if(clicked.x > backgroundThreshold.y){
+                    clicked.x = backgroundThreshold.y;
+                }
+                sliderBall.transform.localPosition = clicked;
+                sliderValue = GetValue();
+                if(Input.GetMouseButtonUp(0)){
+                    held = false;
+                }
+            }
+
+            Vector2 filledSize = filledIndicator.sizeDelta;
+            filledSize.x = (sliderBall.transform.localPosition.x - backgroundTransform.localPosition.x);
+            filledIndicator.sizeDelta = filledSize;
+
+            if(lastValue != sliderValue){
+                changed = true;
+            }
+        }
+
+        private void ChangeSlider(int sign){
+            Vector2 newPos = sliderBall.transform.localPosition;
+            newPos.x += sign * fractionSize;
+            
+            if(newPos.x < Mathf.Round(backgroundTransform.localPosition.x)){
+                newPos.x = Mathf.Round(backgroundTransform.localPosition.x);
+            }else if(newPos.x > Mathf.Round(backgroundThreshold.y)){
+                newPos.x = Mathf.Round(backgroundThreshold.y);
+            }
+            sliderBall.transform.localPosition = newPos;
+        }
+
+        public float GetValue(){
+            fractionSize = backgroundTransform.sizeDelta.x / fractionCount;
+            float ballOffset = sliderBall.transform.localPosition.x - backgroundTransform.localPosition.x;
+            float fractions = ballOffset / fractionSize;
+            float finalValue = (sliderRange.y - sliderRange.x) / fractionCount * fractions;
+            sliderValue = finalValue + sliderRange.x;
+            return sliderValue;
+        }
+
+        public void SetValue(float newValue){
+            sliderValue = newValue;
+            float newPos = Functions.MapValues(sliderValue, sliderRange.x, sliderRange.y, backgroundThreshold.x, backgroundThreshold.y);
+            Vector2 ballPos = sliderBall.transform.localPosition;
+            ballPos.x = newPos;
+            sliderBall.transform.localPosition = ballPos;
+        }
+
+        public bool OnValueChanged(){
+            if(changed){
+                changed = false;
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public void SetMouseOver(bool state){
+            mouseOver = state;
+        }
+
+        public bool OnMouseOver(){
+            return mouseOver;
+        }
+    }
+}

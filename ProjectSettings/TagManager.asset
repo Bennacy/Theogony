@@ -6,17 +6,22 @@ TagManager:
   tags:
   - GlobalInfo
   - Canvas
+  - Camera
+  - Gorgon
+  - PlayerWeapon
+  - EnemyWeapon
+  - Cyclops
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemies
+  - Enemy
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - 3DUI
+  - Interactable
+  - Weapon
+  - Player
   - 
   - 
   - 
