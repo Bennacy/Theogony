@@ -158,7 +158,7 @@ namespace Theogony{
 
                 yield return new WaitForSeconds(0.45f);
                 if(playerControllerScript)
-                    playerControllerScript.animator.Play("JumpToSit");
+                    playerControllerScript.animator.Play("InstantSit");
                 
                 if(uiController.menuInfo)
                     uiController.OpenMenu(uiController.menuInfo.previousMenu);

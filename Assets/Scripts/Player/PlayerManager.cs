@@ -73,8 +73,9 @@ namespace Theogony{
             staminaSpent = false;
         }
 
-        void OnCollisionEnter(Collision collision){
-            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "EnemyWeapon"){
+        void OnTriggerEnter(Collider collision){
+            Debug.Log("Collision");
+            if(collision.gameObject.tag == "EnemyWeapon"){
                 EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 StartCoroutine(Knockback(collision, weapon.knockback));
                 Damage(weapon.damageDealt);
@@ -85,7 +86,7 @@ namespace Theogony{
             currHealth -= deduction;
         }
 
-        private IEnumerator Knockback(Collision collision, float knockback){
+        private IEnumerator Knockback(Collider collision, float knockback){
             playerControllerScript.canMove = false;
             Vector3 direction = GetDirection(collision.transform.position, transform.position);
             direction.y = 0;

@@ -8,6 +8,11 @@ TagManager:
   - Canvas
   - Enemy
   - Paryable
+  - Cyclops
+  - Gorgon
+  - Camera
+  - PlayerWeapon
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX

@@ -43,8 +43,8 @@ ModelImporter:
       name: SitDown
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 11
-      lastFrame: 97
+      firstFrame: 92
+      lastFrame: 95
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

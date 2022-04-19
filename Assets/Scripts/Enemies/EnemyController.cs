@@ -72,11 +72,11 @@ namespace Theogony{
             currHealth -= damageTaken;
         }
 
-        void OnCollisionEnter(Collision collision){
+        void OnTriggerEnter(Collider collision){
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
                 Damage(weapon.CalculateDamage(globalInfo));
-                blood.transform.position = collision.contacts[0].point;
+                blood.transform.position = transform.position;
                 if(weapon.knockback - knockbackResistance > 0){
                     Knockback(collision, weapon.knockback - knockbackResistance);
                 }
@@ -84,7 +84,7 @@ namespace Theogony{
             }
         }
 
-        private void Knockback(Collision collision, float knockback){
+        private void Knockback(Collider collision, float knockback){
                 Vector3 direction = GetDirection(collision.transform.position, transform.position);
                 direction.y = 0;
                 rb.AddForce(direction * knockback, ForceMode.Impulse);

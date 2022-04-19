@@ -395,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747592, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.90686417
+      value: 7.46
       objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747592, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747592, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.387775
+      value: -17.87
       objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747592, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_LocalRotation.w
@@ -440,6 +440,34 @@ PrefabInstance:
     - target: {fileID: 1850904162861747596, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: e269a18f-8ee8-44ec-aa0c-02c0d488659f
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: 01dea573-75f7-43b7-9117-4c02b2f866d9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: InGame/Parry[/XInputControllerWindows/leftTrigger,/Keyboard/r]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: InGame/Block[/XInputControllerWindows/leftShoulder,/Keyboard/f]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -485,10 +513,54 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1971696214044776924}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7916017722255109740}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7916017722255109740}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Parry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Theogony.PlayerControllerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Theogony.PlayerControllerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747634, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1235834874110441457}
+    - target: {fileID: 1850904162861747634, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: runCost
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747634, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: damageColl
       value: 
@@ -505,6 +577,10 @@ PrefabInstance:
       propertyPath: cameraHandler
       value: 
       objectReference: {fileID: 1235834874110441459}
+    - target: {fileID: 1850904162861747635, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: staminaRecharge
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1850904163237810211, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_Name
       value: Model

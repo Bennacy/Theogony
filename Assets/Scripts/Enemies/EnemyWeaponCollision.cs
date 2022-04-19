@@ -24,9 +24,8 @@ namespace Theogony{
             gameObject.tag = "EnemyWeapon";
             damageCollider = GetComponent<Collider>();
             damageCollider.gameObject.SetActive(true);
-            damageCollider.isTrigger = false;
+            damageCollider.isTrigger = true;
             damageCollider.enabled = false;
-            gameObject.layer = 8;
         }
     }
 }

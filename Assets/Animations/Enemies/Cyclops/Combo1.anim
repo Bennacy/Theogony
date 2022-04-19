@@ -77044,7 +77044,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.1666666
+  - time: 1
     functionName: ColliderOn
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -22,13 +22,14 @@ namespace Theogony
         }
         public void HandleLightAttack(weaponItems weaponItem)
         {
-            if (riposteAttack)
-            {
+            if (riposteAttack){
                 animator.Play("Riposte");
-              
                 return;
             } 
-                        
+            
+            if (animator.GetBool("Occupied") == true || !playerManager.UpdateStamina(heavyAttackCost))
+                return;
+
             if (weaponItem.currattack == weaponItem.lightAttack.Length)
             {
                 weaponItem.currattack = 0;
