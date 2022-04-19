@@ -118,6 +118,28 @@ namespace Theogony{
             }
         }
 
+
+        public void Parry(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+              
+                canMove = false;
+                playerAttacker.HandleParry(playerInventory.leftWeapon);
+            }
+        }
+
+
+        public void Block(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+
+                canMove = false;
+                playerAttacker.HandleBlock(playerInventory.leftWeapon);
+            }
+        }
+
         public void Run(InputAction.CallbackContext context){
             float value = context.ReadValue<float>();
             if(context.performed){
