@@ -6,50 +6,51 @@ namespace Theogony{
     [CreateAssetMenu(menuName = "AI/FSM/Actions/Patrol")]
     public class actPatrol : Action
     {
-        public Vector3[] waypoints;
         public float distanceThreshold;
         private Vector3 currentTarget;
         private int waypointIndex;
         private EnemyController enemyController;
         public override void Startup(FSM fsm)
         {
-            enemyController = fsm.gameObject.GetComponent<EnemyController>();
-            waypoints = enemyController.patrolWaypoints;
+            Debug.Log("Died");
+            enemyController = fsm.enemyController;
             GetClosestWaypoint(fsm);
             fsm.GetNavMesh().agent.stoppingDistance = distanceThreshold;
-            if(waypoints.Length > 0){
-                currentTarget = waypoints[waypointIndex];
+
+            if(enemyController.patrolWaypoints.Length > 0){
+                currentTarget = enemyController.patrolWaypoints[waypointIndex];
             }
         }
         public override void Act(FSM fsm)
         {
+            // enemyController = fsm.enemyController;
             if(fsm.GetNavMesh().IsAtDestination()){
                 NextWaypoint(fsm);
             }
         }
 
         private void NextWaypoint(FSM fsm){
-            if(waypoints.Length > 0){
+            if(enemyController.patrolWaypoints.Length > 0){
                 waypointIndex++;
-                if(waypointIndex >= waypoints.Length){
+                if(waypointIndex >= enemyController.patrolWaypoints.Length){
                     waypointIndex = 0;
                 }
                 enemyController.waypointIndex = waypointIndex;
-                currentTarget = waypoints[waypointIndex];
+                currentTarget = enemyController.patrolWaypoints[waypointIndex];
                 fsm.GetNavMesh().SetTarget(currentTarget);
             }
         }
 
         private void GetClosestWaypoint(FSM fsm){
             float distance = float.PositiveInfinity;
-            if(waypoints.Length > 0){
-                for(int i = 0; i < waypoints.Length; i++){
-                    if(Vector3.Distance(fsm.transform.position, waypoints[i]) < distance){
-                        distance = Vector3.Distance(fsm.transform.position, waypoints[i]);
+            if(enemyController.patrolWaypoints.Length > 0){
+                for(int i = 0; i < enemyController.patrolWaypoints.Length; i++){
+                    if(Vector3.Distance(fsm.transform.position, enemyController.patrolWaypoints[i]) < distance){
+                        distance = Vector3.Distance(fsm.transform.position, enemyController.patrolWaypoints[i]);
                         waypointIndex = i;
                     }
                 }
-                fsm.GetNavMesh().SetTarget(waypoints[waypointIndex]);
+                fsm.GetNavMesh().SetTarget(enemyController.patrolWaypoints[waypointIndex]);
             }
         }
     }

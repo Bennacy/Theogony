@@ -7,7 +7,6 @@ namespace Theogony{
     public class actFace : Action
     {
         public override void Startup(FSM fsm){
-            fsm.GetNavMesh().GoToTarget();
         }
 
         public override void Act(FSM fsm){

@@ -46,10 +46,10 @@ namespace Theogony{
 
         private void PerformActions(List<Action> actions){
             foreach(Action action in actions){
-                // if(changedState){
-                //     Debug.Log(action);
-                //     action.Startup(this);
-                // }
+                if(changedState && action != null){
+                    Debug.Log("A");
+                    action.Startup(this);
+                }
                 if(action != null){
                     action.Act(this);
                 }

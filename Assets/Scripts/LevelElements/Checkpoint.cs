@@ -53,7 +53,6 @@ namespace Theogony{
             }else{
                 pillarRenderer.materials[1] = mat[0];
             }
-            Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>());
             
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
