@@ -47,6 +47,7 @@ namespace Theogony {
                 collision.transform.parent.GetComponentInChildren<Animator>().Play("Riposted");
                 collision.GetComponentInParent<FSM>().staggerTimer = float.PositiveInfinity;
                 collision.enabled = false;
+                player.riposteAttack = false;
                 Debug.Log("RIP");
             }
         }

@@ -83,10 +83,5 @@ namespace Theogony
             }
         }
 
-        public void WillRiposte()
-        {
-            riposteAttack = true;
-        }
-
     }
 }
