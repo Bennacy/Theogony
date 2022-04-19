@@ -18,7 +18,8 @@ GameObject:
   - component: {fileID: 3958135181016333159}
   - component: {fileID: 3958135181016333165}
   - component: {fileID: 3958135181016333164}
-  - component: {fileID: -3458501296833675365}
+  - component: {fileID: 5577668085028076285}
+  - component: {fileID: 5653545098097776552}
   m_Layer: 0
   m_Name: Gorgon
   m_TagString: Untagged
@@ -120,7 +121,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!195 &3958135181016333157
 NavMeshAgent:
@@ -202,9 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9172704ed07eba4992999ffdd0da4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weight: 1
   target: {fileID: 0}
   maxprediction: 0
---- !u!114 &-3458501296833675365
+--- !u!114 &5577668085028076285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,11 +215,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 3958135181016333158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bf7dfb333c6ee640ab61ff34a46ae02, type: 3}
+  m_Script: {fileID: 11500000, guid: b301d776aea6b344b80aa342f6159117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 2
-  decayCoefficient: -25
+  weight: 2
+  avoidDistance: 1
+  lookahead: 3
+  sideViewAngle: 45
+  obstacle:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &5653545098097776552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958135181016333158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a4499e1565c0b4d9fa3a9de1401690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1.5
+  radius: 1
 --- !u!1001 &3958135181569937373
 PrefabInstance:
   m_ObjectHideFlags: 0

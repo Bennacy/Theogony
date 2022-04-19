@@ -30,8 +30,8 @@ public class SteeringBehaviorBase : MonoBehaviour
             foreach (Steering behavior in steerings)
             {
                 SteeringData steeringData = behavior.GetSteering(this);
-                acceleration += steeringData.linear;
-                rotation += steeringData.angular;
+                acceleration += steeringData.linear *behavior.GetWeight();
+                rotation += steeringData.angular * behavior.GetWeight();
             }
             if (acceleration.magnitude > maxAcceleration)
             {

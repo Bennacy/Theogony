@@ -10,7 +10,7 @@ public class AttackAction : Action
     
     public override void Act(GorgonFiniteStateMachine fsm)
     {
-        fsm.GetAgent().GoToTarget();
+       // fsm.GetAgent().GoToTarget();
 
         int i = Random.Range(1, 4);
         if (cooldowntimer < 0)

@@ -4,30 +4,43 @@ using UnityEngine;
 
 public class SeparationBehavior : Steering
 {
-    private Transform[] targets;
-    [SerializeField] private float threshold = 2f;
-    [SerializeField] private float decayCoefficient = -25f;
 
-    void Start() { 
-        SteeringBehaviorBase[] agents = FindObjectsOfType<SteeringBehaviorBase>();
-        targets = new Transform[agents.Length - 1]; int count = 0; 
-        foreach (SteeringBehaviorBase agent in agents) {
-            if (agent.gameObject != gameObject) {
-                targets[count] = agent.transform; count++;
-            }
-        }
-    }
+    private Transform[] agents;
+    public float radius;
+    public float decayCoefficient;
+
     public override SteeringData GetSteering(SteeringBehaviorBase steeringbase)
     {
-        SteeringData steering = new SteeringData(); 
-        foreach (Transform target in targets)
-        { Vector3 direction = target.transform.position -  transform.position; float distance = direction.magnitude;
-            if (distance < threshold) {
-                float strength = Mathf.Min(decayCoefficient / (distance * distance), steeringbase.maxAcceleration);
-                direction.Normalize(); 
-                steering.linear += strength * direction; 
+        SteeringData steeringData = new SteeringData();
+       
+
+        foreach (Transform agent in agents)
+        {
+            Vector3 direction = agent.position - transform.position;
+            if(direction.magnitude < radius)
+            {
+                float strength = Mathf.Min(decayCoefficient / (direction.sqrMagnitude), steeringbase.maxAcceleration); 
+                direction.Normalize();
             }
         }
-        return steering;
+        return steeringData;
     }
+
+    void Start()
+    {
+        SteeringBehaviorBase[] agents_i = FindObjectsOfType<SteeringBehaviorBase>();
+        agents = new Transform[agents_i.Length - 1];
+        int c = 0;
+        foreach (SteeringBehaviorBase agent in agents_i)
+        {
+            if (agent.gameObject != gameObject)
+            {
+                agents[c] = agent.transform;
+                c++;
+            }
+        }
+    }
+
+
 }
+
