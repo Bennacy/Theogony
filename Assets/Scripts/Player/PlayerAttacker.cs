@@ -68,7 +68,20 @@ namespace Theogony
 
             animator.Play(weaponItem.lightAttack[weaponItem.currattack]);
         }
-
+        
+        void OnTriggerEnter(Collider other)
+        {
+            if(other.tag == "Staggered"){
+                riposteAttack = true;
+            }
+        }
+        
+        void OnTriggerExit(Collider other)
+        {
+            if(other.tag == "Staggered"){
+                riposteAttack = false;
+            }
+        }
 
         public void WillRiposte()
         {

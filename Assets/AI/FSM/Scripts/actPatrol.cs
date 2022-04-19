@@ -12,7 +12,6 @@ namespace Theogony{
         private EnemyController enemyController;
         public override void Startup(FSM fsm)
         {
-            Debug.Log("Died");
             enemyController = fsm.enemyController;
             GetClosestWaypoint(fsm);
             fsm.GetNavMesh().agent.stoppingDistance = distanceThreshold;

@@ -13,6 +13,7 @@ TagManager:
   - Camera
   - PlayerWeapon
   - EnemyWeapon
+  - Staggered
   layers:
   - Default
   - TransparentFX

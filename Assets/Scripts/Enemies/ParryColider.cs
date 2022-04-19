@@ -31,17 +31,10 @@ namespace Theogony
 
         private void OnTriggerEnter(Collider collision)
         {
-
-
-
-            if (collision.tag == "Paryable")
+            if (collision.tag == "EnemyWeapon")
             {
-                //create function to parry
-                collision.GetComponent<ParryingTester>().GotParried();
-        
-                Debug.Log(collision);
-
-                Debug.Log("Parried");
+                Debug.Log("Hit weapon");
+                collision.GetComponentInParent<EnemyController>().GotParried();
             }
         }
     }

@@ -9,7 +9,6 @@ namespace Theogony {
         private GlobalInfo globalInfo;
         public PlayerAttacker player;
         public List<GameObject> hitEnemies;
-        public bool ripost;
 
         private void Awake()
         {
@@ -33,11 +32,6 @@ namespace Theogony {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttacker>();
         }
 
-        void Update()
-        {
-            ripost = player.riposteAttack;
-        }
-
         public void EnableCollider()
         {
             damageCollider.enabled = true;
@@ -49,14 +43,11 @@ namespace Theogony {
         }
         private void OnTriggerEnter(Collider collision)
         {
-            Debug.Log("Hit");
             if (collision.gameObject.layer == 3){
-                if (ripost){
-                    collision.GetComponentInChildren<Animator>().Play("Riposted");
-                    Debug.Log("RIP");
-                    player.GetComponent<PlayerAttacker>().riposteAttack = false;
-                }
-                Debug.Log("Hit");
+                collision.transform.parent.GetComponentInChildren<Animator>().Play("Riposted");
+                collision.GetComponentInParent<FSM>().staggerTimer = float.PositiveInfinity;
+                collision.enabled = false;
+                Debug.Log("RIP");
             }
         }
     }

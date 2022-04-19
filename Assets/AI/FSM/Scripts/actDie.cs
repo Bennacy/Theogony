@@ -10,6 +10,7 @@ namespace Theogony
     {
         public override void Startup(FSM fsm)
         {
+            fsm.enemyController.animator.StopPlayback();
             return;
         }
         public override void Act(FSM fsm)

@@ -431,6 +431,7 @@ MonoBehaviour:
   attacking: 0
   target: {fileID: 0}
   playerTargetable: 0
+  staggered: 0
   weapon: {fileID: 0}
   dying: 0
 --- !u!114 &1563597365

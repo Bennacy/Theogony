@@ -74,7 +74,6 @@ namespace Theogony{
         }
 
         void OnTriggerEnter(Collider collision){
-            Debug.Log("Collision");
             if(collision.gameObject.tag == "EnemyWeapon"){
                 EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 StartCoroutine(Knockback(collision, weapon.knockback));

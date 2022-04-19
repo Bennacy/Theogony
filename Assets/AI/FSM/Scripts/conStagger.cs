@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Theogony{
-    [CreateAssetMenu(menuName = "AI/FSM/Condition/Stagger")]
+    [CreateAssetMenu(menuName = "AI/FSM/Conditions/Stagger")]
     public class conStagger : Condition
     {
+        public bool negation;
         public override bool Test(FSM fsm)
         {
-            //add code for return true
-            return false;
+        if(fsm.enemyController.staggered){
+            return !negation;
         }
-
-    
+            return negation;
+        }
     }
 }

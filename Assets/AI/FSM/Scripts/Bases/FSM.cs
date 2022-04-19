@@ -10,6 +10,7 @@ namespace Theogony{
         public bool changedState;
         private MyNavMesh navMeshAgent;
         public EnemyController enemyController;
+        public float staggerTimer;
         public Vector2 attackTracker; //X value is the attack index, Y is the number of times the attack was performed
         void Start(){
             currentState = initialState;
@@ -47,7 +48,6 @@ namespace Theogony{
         private void PerformActions(List<Action> actions){
             foreach(Action action in actions){
                 if(changedState && action != null){
-                    Debug.Log("A");
                     action.Startup(this);
                 }
                 if(action != null){

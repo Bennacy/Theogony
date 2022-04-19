@@ -50,5 +50,13 @@ namespace Theogony{
         public void AnimationStarted(){
             animating = true;
         }
+
+        public void StandUp(){
+            animator.Play("Standing");
+        }
+
+        public void Recover(){
+            enemyController.staggered = false;
+        }
     }
 }

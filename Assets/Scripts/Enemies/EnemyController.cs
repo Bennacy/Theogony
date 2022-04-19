@@ -20,6 +20,7 @@ namespace Theogony{
         public bool attacking;
         public Transform target;
         public bool playerTargetable;
+        public bool staggered;
         public EnemyWeapons weapon;
 
         [HideInInspector]
@@ -92,6 +93,10 @@ namespace Theogony{
 
         private Vector3 GetDirection(Vector3 position1, Vector3 position2){
             return Vector3.Normalize(position2 - position1);
+        }
+
+        public void GotParried(){
+            staggered = true;
         }
 
         void OnDrawGizmosSelected()
