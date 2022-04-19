@@ -433,6 +433,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   changedState: 1
   enemyController: {fileID: 0}
+  attackTracker: {x: 0, y: 0}
 --- !u!195 &1563597366
 NavMeshAgent:
   m_ObjectHideFlags: 0

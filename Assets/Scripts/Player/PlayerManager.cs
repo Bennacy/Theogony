@@ -37,7 +37,7 @@ namespace Theogony{
             if(!staminaSpent && currStamina < maxStamina){
                 currStamina += staminaRecharge * Time.deltaTime;
             }
-            if(currHealth < maxHealth){
+            if(currHealth < 0){
                 Die();
             }
         }
@@ -53,6 +53,7 @@ namespace Theogony{
         }
 
         private void Die(){
+            GetComponent<PlayerInput>().enabled = false;
             globalInfo.playerTargetable = false;
             GetComponentInChildren<Animator>().Play("Die");
         }

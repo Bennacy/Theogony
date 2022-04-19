@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 494f9eaa2029eca47a7315938caad28f, type: 3}
-  m_Name: cAttack
+  m_Name: cFaceTarget
   m_EditorClassIdentifier: 
   entryAction: {fileID: 0}
-  exitAction: {fileID: 0}
+  exitAction: {fileID: 11400000, guid: f708d4fb5fbc02844a6e730cc2fb9718, type: 2}
   stateActions:
-  - {fileID: 11400000, guid: c86ff9750f844224d8e686922deea25a, type: 2}
+  - {fileID: 11400000, guid: 769de48ad9140d9418e7cee36595b5c1, type: 2}
   transitions:
-  - {fileID: 11400000, guid: e0fcb2d93c0f382419aea4fc51eff920, type: 2}
-  - {fileID: 11400000, guid: 6587e1f82f2920743a1f372b2fc01b46, type: 2}
+  - {fileID: 11400000, guid: 7d1d6d44e084d554395f6131f9ae0347, type: 2}

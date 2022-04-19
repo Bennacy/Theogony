@@ -11,6 +11,7 @@ namespace Theogony{
         public NavMeshAgent agent;
         private EnemyController enemyController;
         private GlobalInfo globalInfo;
+        public float rotationSpeed;
 
         void Start()
         {
@@ -24,7 +25,7 @@ namespace Theogony{
         {
             Vector3 direction = (target.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 100f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
         public void GoToTarget()
         {

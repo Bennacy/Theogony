@@ -101,6 +101,13 @@ namespace Theogony{
                     Gizmos.color = Color.white;
                 }
                 Gizmos.DrawWireSphere(patrolWaypoints[i], 1);
+                Gizmos.color = Color.white;
+                int j = i;
+                j++;
+                if(j >= patrolWaypoints.Length){
+                    j = 0;
+                }
+                Gizmos.DrawLine(patrolWaypoints[i], patrolWaypoints[i] + ((patrolWaypoints[j] - patrolWaypoints[i]) / 2));
             }
         }
     }

@@ -497,6 +497,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1563597364, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
+      propertyPath: rotationSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1729620561, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1195,6 +1199,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: runCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: staminaRecharge
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1260,10 +1272,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 360083530}
-    - target: {fileID: 1984469460, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: maxHealth
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 4155513737072620764, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1323,6 +1331,10 @@ PrefabInstance:
     - target: {fileID: 6387489604616102335, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_Name
       value: Cyclops (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387489604616102335, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6516123026757347141, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_Name

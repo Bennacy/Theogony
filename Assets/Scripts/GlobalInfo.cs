@@ -82,7 +82,6 @@ namespace Theogony{
             if(lastCheckpoint != null){
                 playerControllerScript.transform.position = lastCheckpoint.teleportPosition;
             }
-            playerTargetable = true;
             reloading = false;
             refreshedScene = false;
         }
@@ -147,6 +146,7 @@ namespace Theogony{
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             StartCoroutine(StartFunctions(1.5f));
+            playerTargetable = true;
         }
 
         public IEnumerator TravelTo(Checkpoint destination, bool reload){
@@ -170,6 +170,7 @@ namespace Theogony{
 
                 playerControllerScript.transform.LookAt(destination.transform.position, Vector3.up);
                 lastCheckpoint = destination;
+                playerTargetable = false;
 
                 if(reload){
                     StartCoroutine(ReloadLevel(destination.sceneName));

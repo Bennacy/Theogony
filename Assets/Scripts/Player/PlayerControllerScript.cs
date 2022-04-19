@@ -108,14 +108,12 @@ namespace Theogony{
 
         public void LightAttack(InputAction.CallbackContext context){
             if(context.performed){
-                canMove = false;
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
             }
         }
 
         public void HeavyAttack(InputAction.CallbackContext context){
             if(context.performed){
-                canMove = false;
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
         }

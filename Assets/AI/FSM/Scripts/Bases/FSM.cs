@@ -10,6 +10,7 @@ namespace Theogony{
         public bool changedState;
         private MyNavMesh navMeshAgent;
         public EnemyController enemyController;
+        public Vector2 attackTracker; //X value is the attack index, Y is the number of times the attack was performed
         void Start(){
             currentState = initialState;
             enemyController = GetComponent<EnemyController>();
@@ -38,7 +39,9 @@ namespace Theogony{
                     actions.Add(a);
                 }
             }
-            PerformActions(actions);
+            if(!enemyController.attacking){
+                PerformActions(actions);
+            }
         }
 
         private void PerformActions(List<Action> actions){
