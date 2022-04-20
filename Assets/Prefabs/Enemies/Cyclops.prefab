@@ -356,7 +356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4155513737072620764
 Transform:
   m_ObjectHideFlags: 0
@@ -433,6 +433,7 @@ MonoBehaviour:
   playerTargetable: 0
   staggered: 0
   weapon: {fileID: 0}
+  invincible: 0
   dying: 0
   parryCollider: {fileID: 7352224887389364334}
 --- !u!114 &1563597365

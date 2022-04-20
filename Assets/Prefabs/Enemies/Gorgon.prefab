@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &760157034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760157036}
+  - component: {fileID: 760157035}
+  m_Layer: 3
+  m_Name: ParryCollider
+  m_TagString: Staggered
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &760157036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760157034}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4190858495876950290}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &760157035
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760157034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 0.75}
+  m_Center: {x: 0, y: 1, z: 0.75}
 --- !u!1 &4073788106396261122
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +203,7 @@ Transform:
   - {fileID: 4190228300866492722}
   - {fileID: 4442816545950047420}
   - {fileID: 1551564211287570654}
+  - {fileID: 760157036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -215,8 +261,11 @@ MonoBehaviour:
   attacking: 0
   target: {fileID: 0}
   playerTargetable: 0
+  staggered: 0
   weapon: {fileID: 0}
+  invincible: 0
   dying: 0
+  parryCollider: {fileID: 760157035}
 --- !u!114 &4190858495876950303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,8 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialState: {fileID: 11400000, guid: e21b7184da19c52419c7948a4b0c3556, type: 2}
   currentState: {fileID: 0}
-  changedState: 0
+  changedState: 1
   enemyController: {fileID: 0}
+  staggerTimer: 0
   attackTracker: {x: 0, y: 0}
 --- !u!114 &4190858495876950288
 MonoBehaviour:
@@ -248,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: 0}
-  rotationSpeed: 10
+  rotationSpeed: 3
 --- !u!114 &4190858495876950302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,11 +325,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 270
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

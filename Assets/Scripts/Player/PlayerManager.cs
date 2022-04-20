@@ -96,7 +96,7 @@ namespace Theogony{
             }
         }
 
-        private void Damage(float deduction){
+        public void Damage(float deduction){
             currHealth -= deduction;
         }
 

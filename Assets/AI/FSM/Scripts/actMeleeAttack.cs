@@ -9,13 +9,16 @@ namespace Theogony{
         private EnemyController enemyController;
         public override void Startup(FSM fsm){
             enemyController = fsm.enemyController;
+            Debug.Log("Started Attack");
         }
         
         public override void Act(FSM fsm){
+            enemyController = fsm.enemyController;
+            Debug.Log(enemyController);
             if(!fsm.enemyController.attacking){
                 string[] possibleAttacks = fsm.enemyController.weapon.possibleAttacks;
                 int[] attackWeights = fsm.enemyController.weapon.attackWeights;
-
+                Debug.Log(possibleAttacks);
                 int attackRoll = Random.Range(0, 101);
                 int percentSum = 0;
                 for(int i = 0; i < possibleAttacks.Length; i++){

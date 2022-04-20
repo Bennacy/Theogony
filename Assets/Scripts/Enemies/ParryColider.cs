@@ -32,7 +32,8 @@ namespace Theogony
         {
             if (collision.tag == "EnemyWeapon")
             {
-                Debug.Log("Hit weapon");
+                Debug.Log("Parried");
+                GetComponentInParent<PlayerManager>().Damage(-collision.GetComponentInParent<EnemyController>().weapon.damageDealt);
                 collision.GetComponentInParent<EnemyController>().GotParried();
                 collision.enabled = false;
             }
