@@ -60,7 +60,9 @@ namespace Theogony{
                 if(invincible)
                     return;
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
-                Damage(weapon.CalculateDamage(globalInfo, staggered));
+                Damage(weapon.CalculateDamage(globalInfo, collision.GetComponentInParent<PlayerAttacker>().riposteAttack));
+                // collision.GetComponentInParent<PlayerAttacker>().riposteAttack = true;
+                riposteCollider.enabled = false;
                 if(weapon.knockback - knockbackResistance > 0){
                     Knockback(collision, weapon.knockback - knockbackResistance);
                 }

@@ -65,6 +65,9 @@ namespace Theogony{
         }
 
         public void Riposte(){
+            Vector3 ripostePos = parryEnemy.transform.position + RipostePosition();
+            ripostePos.y = transform.position.y;
+            transform.position = ripostePos;
             transform.LookAt(parryEnemy.transform);
             cameraHandler.LoseLockOn();
             rb.isKinematic = true;
@@ -72,6 +75,12 @@ namespace Theogony{
             GetComponentInChildren<Animator>().Play("Riposte");
             parryEnemy.GetComponent<FSM>().staggerTimer = float.PositiveInfinity;
             StartCoroutine(EndRiposte(1));
+        }
+
+        private Vector3 RipostePosition(){
+            Vector3 forward = parryEnemy.transform.forward;
+            // forward *= parryEnemy.riposteDistance;
+            return forward;
         }
 
         public IEnumerator EndRiposte(float wait){

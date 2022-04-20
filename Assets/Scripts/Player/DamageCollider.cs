@@ -43,12 +43,11 @@ namespace Theogony {
         }
         private void OnTriggerEnter(Collider collision)
         {
-            if (player.riposteAttack){
-                collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
+            if (player.riposteAttack && !collision.gameObject.GetComponent<EnemyController>().invincible){
+                // collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
                 player.playerManager.cameraHandler.ShakeRotation(1f, 0f, 1f, .2f);
                 collision.transform.GetComponentInChildren<Animator>().StopPlayback();
                 collision.transform.GetComponentInChildren<Animator>().Play("Riposted");
-                player.riposteAttack = false;
                 Debug.Log("RIP");
             }
         }
