@@ -197,8 +197,8 @@ Transform:
   m_GameObject: {fileID: 4190858495876950295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.34, y: 1, z: 4.3867226}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4190228300866492722}
   - {fileID: 4442816545950047420}
@@ -252,7 +252,7 @@ MonoBehaviour:
   maxHealth: 20
   currHealth: 0
   currencyDrop: 500
-  animator: {fileID: 0}
+  animator: {fileID: 4286433686144998528}
   patrolWaypoints:
   - {x: -14, y: 0, z: 4}
   - {x: 0, y: 0, z: 4}
@@ -265,7 +265,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   invincible: 0
   dying: 0
-  parryCollider: {fileID: 760157035}
+  riposteCollider: {fileID: 760157035}
 --- !u!114 &4190858495876950303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,8 +313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 4195609012982153448}
   weaponTemplate: {fileID: 11400000, guid: f593f1662f8445342a578e081af148bc, type: 2}
-  positionAdjustment: {x: 0, y: 0, z: 0}
-  angleAdjustment: {x: 0, y: 0, z: 0, w: 0}
+  positionAdjustment: {x: 0, y: 0, z: 0.2}
+  angleAdjustment: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
 --- !u!195 &4190858495876950294
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 95863272260243382, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 32d0cf5aef89a4b4c97494a620243b0f, type: 2}
+      objectReference: {fileID: 9100000, guid: 92807dee6a83c404c9bc6287c65c2b1f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
 --- !u!4 &4190228300866492722 stripped
@@ -624,6 +624,11 @@ MonoBehaviour:
 --- !u!4 &4195609012982153448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4828722190242782, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
+  m_PrefabInstance: {fileID: 4190858497742918454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4286433686144998528 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95863272260243382, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
   m_PrefabInstance: {fileID: 4190858497742918454}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4923097552562856838

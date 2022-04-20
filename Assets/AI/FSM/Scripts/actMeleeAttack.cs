@@ -14,6 +14,7 @@ namespace Theogony{
         
         public override void Act(FSM fsm){
             enemyController = fsm.enemyController;
+            Debug.Log("Attacking");
             if(!fsm.enemyController.attacking){
                 string[] possibleAttacks = fsm.enemyController.weapon.possibleAttacks;
                 int[] attackWeights = fsm.enemyController.weapon.attackWeights;
