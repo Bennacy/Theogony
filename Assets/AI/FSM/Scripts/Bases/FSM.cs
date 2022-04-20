@@ -10,11 +10,13 @@ namespace Theogony{
         public bool changedState;
         private MyNavMesh navMeshAgent;
         public EnemyController enemyController;
+        public BossController bossController;
         public float staggerTimer;
         public Vector2 attackTracker; //X value is the attack index, Y is the number of times the attack was performed
         void Start(){
             currentState = initialState;
             enemyController = GetComponent<EnemyController>();
+            bossController = GetComponent<BossController>();
             navMeshAgent = GetComponent<MyNavMesh>();
         }
 
@@ -40,8 +42,18 @@ namespace Theogony{
                     actions.Add(a);
                 }
             }
-            if(!enemyController.attacking || enemyController.currHealth <= 0 || enemyController.staggered){
-                PerformActions(actions);
+            if (enemyController)
+            {
+                if (!enemyController.attacking || enemyController.currHealth <= 0 || enemyController.staggered)
+                {
+                    PerformActions(actions);
+                }
+            }else if (bossController)
+            {
+                if (!bossController.attacking || bossController.currHealth <= 0 || bossController.staggered)
+                {
+                    PerformActions(actions);
+                }
             }
         }
 

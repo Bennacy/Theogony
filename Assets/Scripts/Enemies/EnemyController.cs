@@ -55,19 +55,7 @@ namespace Theogony{
             currHealth -= damageTaken;
         }
 
-        void OnTriggerEnter(Collider collision){
-            if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
-                if(invincible)
-                    return;
-                weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
-                Damage(weapon.CalculateDamage(globalInfo, staggered));
-                blood.transform.position = transform.position;
-                if(weapon.knockback - knockbackResistance > 0){
-                    Knockback(collision, weapon.knockback - knockbackResistance);
-                }
-                blood.Play();
-            }
-        }
+      
 
         private void Knockback(Collider collision, float knockback){
                 Vector3 direction = GetDirection(collision.transform.position, transform.position);
@@ -101,6 +89,22 @@ namespace Theogony{
                     j = 0;
                 }
                 Gizmos.DrawLine(patrolWaypoints[i], patrolWaypoints[i] + ((patrolWaypoints[j] - patrolWaypoints[i]) / 2));
+            }
+        }
+        void OnTriggerEnter(Collider collision)
+        {
+            if (collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon")
+            {
+                if (invincible)
+                    return;
+                weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
+                Damage(weapon.CalculateDamage(globalInfo, staggered));
+                blood.transform.position = transform.position;
+                if (weapon.knockback - knockbackResistance > 0)
+                {
+                    Knockback(collision, weapon.knockback - knockbackResistance);
+                }
+                blood.Play();
             }
         }
     }

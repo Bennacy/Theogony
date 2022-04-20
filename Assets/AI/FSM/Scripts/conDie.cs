@@ -8,9 +8,19 @@ namespace Theogony{
     {
         public override bool Test(FSM fsm)
         {
-        if(fsm.enemyController.currHealth <= 0){
-            return true;
-        }
+            if (fsm.bossController)
+            {
+                if (fsm.bossController.currHealth <= 0)
+                {
+                    return true;
+                }
+            }else if (fsm.enemyController)
+            {
+                if (fsm.enemyController.currHealth <= 0)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

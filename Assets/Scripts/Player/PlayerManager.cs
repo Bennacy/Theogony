@@ -88,15 +88,9 @@ namespace Theogony{
             staminaSpent = false;
         }
 
-        void OnTriggerEnter(Collider collision){
-            if(collision.gameObject.tag == "EnemyWeapon"){
-                EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
-                StartCoroutine(Knockback(collision, weapon.knockback));
-                Damage(weapon.damageDealt);
-            }
-        }
 
-        private void Damage(float deduction){
+
+        public void Damage(float deduction){
             currHealth -= deduction;
         }
 
@@ -111,6 +105,16 @@ namespace Theogony{
 
         private Vector3 GetDirection(Vector3 position1, Vector3 position2){
             return Vector3.Normalize(position2 - position1);
+        }
+
+        void OnTriggerEnter(Collider collision)
+        {
+            if (collision.gameObject.tag == "EnemyWeapon")
+            {
+                EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
+                StartCoroutine(Knockback(collision, weapon.knockback));
+                Damage(weapon.damageDealt);
+            }
         }
     }
 }
