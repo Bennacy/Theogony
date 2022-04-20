@@ -22,12 +22,12 @@ namespace Theogony
         }
         public void HandleLightAttack(weaponItems weaponItem)
         {
-            if (riposteAttack){
-                animator.Play("Riposte");
+            if (riposteAttack && playerManager.UpdateStamina(lightAttackCost)){
+                playerManager.Riposte();
                 return;
             } 
             
-            if (animator.GetBool("Occupied") == true || !playerManager.UpdateStamina(heavyAttackCost))
+            if (animator.GetBool("Occupied") == true || !playerManager.UpdateStamina(lightAttackCost))
                 return;
 
             if (weaponItem.currattack == weaponItem.lightAttack.Length)
@@ -73,6 +73,7 @@ namespace Theogony
         {
             if(other.tag == "Staggered"){
                 riposteAttack = true;
+                playerManager.parryEnemy = other.GetComponentInParent<EnemyController>();
             }
         }
         
@@ -80,6 +81,7 @@ namespace Theogony
         {
             if(other.tag == "Staggered"){
                 riposteAttack = false;
+                playerManager.parryEnemy = null;
             }
         }
 

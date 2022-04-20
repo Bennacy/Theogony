@@ -10,13 +10,11 @@ namespace Theogony
     {
         public override void Startup(FSM fsm)
         {
-            fsm.enemyController.animator.StopPlayback();
+            Debug.Log("Died");
             return;
         }
         public override void Act(FSM fsm)
         {
-            fsm.enemyController.animator.StopPlayback();
-            Debug.Log("Die");
             fsm.enemyController.dying = true;
             foreach(MonoBehaviour script in fsm.gameObject.GetComponents<MonoBehaviour>()){
                 if(script != fsm.enemyController && script != fsm){

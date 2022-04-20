@@ -40,7 +40,7 @@ namespace Theogony{
                     actions.Add(a);
                 }
             }
-            if(!enemyController.attacking || enemyController.currHealth < 0){
+            if(!enemyController.attacking || enemyController.currHealth <= 0 || enemyController.staggered){
                 PerformActions(actions);
             }
         }

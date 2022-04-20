@@ -11,8 +11,8 @@ namespace Theogony{
         }
 
         public override void Act(FSM fsm){
+            Debug.Log("Chasing " + fsm.enemyController.target);
             fsm.GetNavMesh().GoToTarget();
-            //Test pursue behavior
         }
     }
 }

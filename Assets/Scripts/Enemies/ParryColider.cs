@@ -35,6 +35,7 @@ namespace Theogony
             {
                 Debug.Log("Hit weapon");
                 collision.GetComponentInParent<EnemyController>().GotParried();
+                collision.enabled = false;
             }
         }
     }

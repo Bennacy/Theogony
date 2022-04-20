@@ -58,5 +58,14 @@ namespace Theogony{
         public void Recover(){
             enemyController.staggered = false;
         }
+
+        public void InvincibleOn(){
+            enemyController.invincible = true;
+        }
+
+        public void InvincibleOff(){
+            enemyController.GetComponent<Rigidbody>().isKinematic = false;
+            enemyController.invincible = false;
+        }
     }
 }

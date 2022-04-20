@@ -582,10 +582,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 360083530}
-    - target: {fileID: 912349824367960789, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: m_TagString
-      value: Staggered
-      objectReference: {fileID: 0}
     - target: {fileID: 4155513737072620764, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -633,10 +629,6 @@ PrefabInstance:
     - target: {fileID: 6387489604616102335, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
       propertyPath: m_Name
       value: Cyclops
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387489604616102335, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}

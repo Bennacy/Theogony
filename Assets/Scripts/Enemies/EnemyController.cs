@@ -22,9 +22,11 @@ namespace Theogony{
         public bool playerTargetable;
         public bool staggered;
         public EnemyWeapons weapon;
+        public bool invincible;
 
         [HideInInspector]
         public bool dying;
+        public Collider parryCollider;
         private MonoBehaviour[] scripts;
 
         void Start()
@@ -49,34 +51,16 @@ namespace Theogony{
             playerTargetable = globalInfo.playerTargetable;
         }
 
-        void Kill(){
-            dying = true;
-            foreach(MonoBehaviour script in GetComponents<MonoBehaviour>()){
-                if(script != this){
-                    Destroy(script);
-                }
-            }
-            foreach(Collider collider in GetComponentsInChildren<Collider>()){
-                Destroy(collider);
-            }
-            Destroy(navMeshAgent);
-            Destroy(GetComponentInChildren<Canvas>().gameObject);
-            Destroy(GetComponent<Rigidbody>());
-            
-            animator.StopPlayback();
-            animator.Play("Die");
-            globalInfo.AlterCurrency(currencyDrop);
-            Destroy(this);
-        }
-
         public void Damage(float damageTaken){
             currHealth -= damageTaken;
         }
 
         void OnTriggerEnter(Collider collision){
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
+                if(invincible)
+                    return;
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
-                Damage(weapon.CalculateDamage(globalInfo));
+                Damage(weapon.CalculateDamage(globalInfo, staggered));
                 blood.transform.position = transform.position;
                 if(weapon.knockback - knockbackResistance > 0){
                     Knockback(collision, weapon.knockback - knockbackResistance);
@@ -96,7 +80,9 @@ namespace Theogony{
         }
 
         public void GotParried(){
+            GetComponent<Rigidbody>().isKinematic = true;
             staggered = true;
+            parryCollider.enabled = true;
         }
 
         void OnDrawGizmosSelected()

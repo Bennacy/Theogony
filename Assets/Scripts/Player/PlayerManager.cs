@@ -10,6 +10,7 @@ namespace Theogony{
         private PlayerControllerScript playerControllerScript;
         private Rigidbody rb;
         public CameraHandler cameraHandler;
+        public EnemyController parryEnemy;
         public float maxHealth;
         public float maxStamina;
         public float currHealth;
@@ -56,6 +57,11 @@ namespace Theogony{
             GetComponent<PlayerInput>().enabled = false;
             globalInfo.playerTargetable = false;
             GetComponentInChildren<Animator>().Play("Die");
+        }
+
+        public void Riposte(){
+            GetComponentInChildren<Animator>().Play("Riposte");
+            parryEnemy.GetComponent<FSM>().staggerTimer = float.PositiveInfinity;
         }
 
         public bool UpdateStamina(float changeBy){

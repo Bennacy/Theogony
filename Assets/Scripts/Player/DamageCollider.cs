@@ -43,7 +43,10 @@ namespace Theogony {
         }
         private void OnTriggerEnter(Collider collision)
         {
-            if (collision.gameObject.layer == 3){
+            if (collision.gameObject.tag == "Staggered"){
+                Debug.Log(collision);
+                Debug.Log(collision.transform.parent);
+                collision.transform.parent.GetComponentInChildren<Animator>().StopPlayback();
                 collision.transform.parent.GetComponentInChildren<Animator>().Play("Riposted");
                 collision.GetComponentInParent<FSM>().staggerTimer = float.PositiveInfinity;
                 collision.enabled = false;
