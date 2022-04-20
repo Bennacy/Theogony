@@ -89,6 +89,13 @@ namespace Theogony {
             StartCoroutine(manager.EndRiposte(0));
         }
 
+        public void FastParry(){
+            GetComponent<Animator>().speed = 2;
+        }
+        public void SlowParry(){
+            GetComponent<Animator>().speed = 1;
+        }
+
         public void DisableCanMove(){
             GetComponentInParent<PlayerControllerScript>().canMove = false;
         }

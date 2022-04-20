@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   negation: 1
   viewAngle: 180
-  viewDistance: 15
+  viewDistance: 55
