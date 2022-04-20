@@ -16,7 +16,6 @@ namespace Theogony
             parryCollider.gameObject.SetActive(true);
             parryCollider.isTrigger = true;
             parryCollider.enabled = false;
-
         }
 
         public void EnableCollider()

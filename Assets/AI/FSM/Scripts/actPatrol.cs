@@ -22,7 +22,7 @@ namespace Theogony{
         }
         public override void Act(FSM fsm)
         {
-            // enemyController = fsm.enemyController;
+            enemyController = fsm.enemyController;
             if(fsm.GetNavMesh().IsAtDestination()){
                 NextWaypoint(fsm);
             }

@@ -45,14 +45,12 @@ namespace Theogony{
                 image.enabled = true;
                 while(color.a < 1){
                     color.a += (fadeinSpeed * Time.deltaTime);
-                    Debug.Log("fade out " + color);
                     image.color = color;
                     yield return null;
                 }
             }else{
                 while(color.a > 0){
                     color.a -= fadeoutSpeed * Time.deltaTime;
-                    Debug.Log("fade in " + color);
                     image.color = color;
                     yield return null;
                 }

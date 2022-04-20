@@ -60,8 +60,17 @@ namespace Theogony{
         }
 
         public void Riposte(){
+            rb.isKinematic = true;
+            globalInfo.playerTargetable = false;
             GetComponentInChildren<Animator>().Play("Riposte");
             parryEnemy.GetComponent<FSM>().staggerTimer = float.PositiveInfinity;
+            StartCoroutine(EndRiposte(1));
+        }
+
+        public IEnumerator EndRiposte(float wait){
+            yield return new WaitForSeconds(wait);
+            rb.isKinematic = false;
+            globalInfo.playerTargetable = true;
         }
 
         public bool UpdateStamina(float changeBy){

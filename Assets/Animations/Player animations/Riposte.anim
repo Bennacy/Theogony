@@ -102618,7 +102618,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3
+  - time: 2.5
+    functionName: EndRiposte
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.5
     functionName: EnableCanMove
     data: 
     objectReferenceParameter: {fileID: 0}

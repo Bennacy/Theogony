@@ -84,6 +84,11 @@ namespace Theogony {
             leftWeaponCollider.DisableCollider();
         }
 
+        public void EndRiposte(){
+            PlayerManager manager = GetComponentInParent<PlayerManager>();
+            StartCoroutine(manager.EndRiposte(0));
+        }
+
         public void DisableCanMove(){
             GetComponentInParent<PlayerControllerScript>().canMove = false;
         }
