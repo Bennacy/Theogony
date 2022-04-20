@@ -614,10 +614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyclops
       objectReference: {fileID: 0}
-    - target: {fileID: 6387489604616102335, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b8b5a1e5888fd45844eef356118b3b, type: 3}
 --- !u!1 &940655803
@@ -1267,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 7916017721623304691, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_LocalPosition.z
       value: -8.691441
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: PS4
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
