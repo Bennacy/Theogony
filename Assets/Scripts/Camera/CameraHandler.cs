@@ -57,7 +57,17 @@ namespace Theogony
         public float cameraCollisionOffset = 0.2f;
         public float minimumCollisionOffset = 0.2f;
 
-      
+        // Camera shake variables
+        private Vector3 origPos;
+        private float posDuration;
+        private float xPos;
+        private float yPos;
+        private float zPos;
+        private Quaternion origRot;
+        private float rotDuration;
+        private float xRot;
+        private float yRot;
+        private float zRot;
 
 
         private void Awake()
@@ -70,15 +80,12 @@ namespace Theogony
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
             globalInfo = GlobalInfo.GetGlobalInfo();
-            AssignInput();
             sensSlider.SetValue(globalInfo.sensitivityX);
             pivotSlider.SetValue(globalInfo.sensitivityY);
             sensitivity = globalInfo.sensitivityX;
             pivotSensitivity = globalInfo.sensitivityY;
-        }
-
-        private void AssignInput(){
-            // playerInput.actions["Camera"] = MoveCamera();
+            origPos = cameraTransform.localPosition;
+            origRot = cameraTransform.localRotation;
         }
 
         public void FollowTarget(float delta)
@@ -175,8 +182,11 @@ namespace Theogony
             }else{
                 lookSpeed = 0.1f;
             }
+
+            CameraShake();
         }
 
+        #region Camera Controls
         public void MoveCamera(InputAction.CallbackContext context){
             Vector2 value = context.ReadValue<Vector2>();
             value *= Time.deltaTime * mouseSens;
@@ -261,6 +271,11 @@ namespace Theogony
             }
         }
 
+        public void LoseLockOn(){
+            previouslyLocked = false;
+            lockOnTarget = null;
+        }
+
         private Transform GetClosestEnemy(){
             colliders = Physics.OverlapSphere(player.transform.position, lockOnRange, enemyLayer);
 
@@ -280,11 +295,53 @@ namespace Theogony
 
             return null;
         }
+        #endregion
+
+        #region Camera Shake
+        public void CameraShake(){
+            if(posDuration > 0){
+                posDuration -= Time.deltaTime;
+                Vector3 random = Random.insideUnitSphere;
+                float newX = random.x * xPos;
+                float newY = random.y * yPos;
+                float newZ = random.z * zPos;
+                cameraTransform.localPosition = origPos + new Vector3(newX, newY, newZ);
+            }else{
+                cameraTransform.localPosition = origPos;
+                xPos = yPos = zPos = 0;
+            }
+
+            if(rotDuration > 0){
+                rotDuration -= Time.deltaTime;
+                Vector3 random = Random.insideUnitSphere;
+                float newX = random.x * xRot;
+                float newY = random.y * yRot;
+                float newZ = random.z * zRot;
+                cameraTransform.localRotation = Quaternion.Euler(origRot.eulerAngles + new Vector3(newX, newY, newZ));
+            }else{
+                cameraTransform.localRotation = origRot;
+                xRot = yRot = zRot = 0;
+            }
+        }
+
+        public void ShakePosition(float xMag, float yMag, float zMag, float duration){
+            xPos = xMag;
+            yPos = yMag;
+            zPos = zMag;
+            posDuration = duration;
+        }
+
+        public void ShakeRotation(float xMag, float yMag, float zMag, float duration){
+            xRot = xMag;
+            yRot = yMag;
+            zRot = zMag;
+            rotDuration = duration;
+        }
+        #endregion
 
         void OnDrawGizmosSelected()
         {
             Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
         }
     }
-
 }

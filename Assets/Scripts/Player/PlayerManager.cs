@@ -41,6 +41,11 @@ namespace Theogony{
             if(currHealth < 0){
                 Die();
             }
+
+            if(Input.GetKeyDown(KeyCode.G)){
+                // cameraHandler.ShakePosition(.1f, .1f, .1f, .3f);
+                // cameraHandler.ShakeRotation(1f, 0f, 1f, .3f);
+            }
         }
 
         void FixedUpdate()
@@ -60,6 +65,8 @@ namespace Theogony{
         }
 
         public void Riposte(){
+            transform.LookAt(parryEnemy.transform);
+            cameraHandler.LoseLockOn();
             rb.isKinematic = true;
             globalInfo.playerTargetable = false;
             GetComponentInChildren<Animator>().Play("Riposte");
@@ -100,7 +107,7 @@ namespace Theogony{
             currHealth -= deduction;
         }
 
-        private IEnumerator Knockback(Collider collision, float knockback){
+        public IEnumerator Knockback(Collider collision, float knockback){
             playerControllerScript.canMove = false;
             Vector3 direction = GetDirection(collision.transform.position, transform.position);
             direction.y = 0;

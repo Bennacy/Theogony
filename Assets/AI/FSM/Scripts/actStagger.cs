@@ -18,7 +18,7 @@ namespace Theogony{
             fsm.staggerTimer -= Time.deltaTime;
             if(fsm.staggerTimer <= 0){
                 fsm.enemyController.staggered = false;
-                fsm.enemyController.parryCollider.enabled = false;
+                fsm.enemyController.riposteCollider.enabled = false;
             }
         }
     }

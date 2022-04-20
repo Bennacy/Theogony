@@ -26,7 +26,7 @@ namespace Theogony{
 
         [HideInInspector]
         public bool dying;
-        public Collider parryCollider;
+        public Collider riposteCollider;
         private MonoBehaviour[] scripts;
 
         void Start()
@@ -61,7 +61,6 @@ namespace Theogony{
                     return;
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
                 Damage(weapon.CalculateDamage(globalInfo, staggered));
-                blood.transform.position = transform.position;
                 if(weapon.knockback - knockbackResistance > 0){
                     Knockback(collision, weapon.knockback - knockbackResistance);
                 }
@@ -82,7 +81,7 @@ namespace Theogony{
         public void GotParried(){
             GetComponent<Rigidbody>().isKinematic = true;
             staggered = true;
-            parryCollider.enabled = true;
+            riposteCollider.enabled = true;
         }
 
         void OnDrawGizmosSelected()

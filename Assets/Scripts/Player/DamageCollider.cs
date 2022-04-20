@@ -43,13 +43,11 @@ namespace Theogony {
         }
         private void OnTriggerEnter(Collider collision)
         {
-            if (collision.gameObject.tag == "Staggered"){
-                Debug.Log(collision);
-                Debug.Log(collision.transform.parent);
-                collision.transform.parent.GetComponentInChildren<Animator>().StopPlayback();
-                collision.transform.parent.GetComponentInChildren<Animator>().Play("Riposted");
-                collision.GetComponentInParent<FSM>().staggerTimer = float.PositiveInfinity;
-                collision.enabled = false;
+            if (player.riposteAttack){
+                collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
+                player.playerManager.cameraHandler.ShakeRotation(1f, 0f, 1f, .2f);
+                collision.transform.GetComponentInChildren<Animator>().StopPlayback();
+                collision.transform.GetComponentInChildren<Animator>().Play("Riposted");
                 player.riposteAttack = false;
                 Debug.Log("RIP");
             }

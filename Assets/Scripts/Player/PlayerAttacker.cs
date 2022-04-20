@@ -7,6 +7,7 @@ namespace Theogony
 {
     public class PlayerAttacker : MonoBehaviour
     {
+        public
         PlayerManager playerManager;
         Animator animator;
         public float lightAttackCost;
