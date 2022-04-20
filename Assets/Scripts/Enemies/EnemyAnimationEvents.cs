@@ -28,10 +28,12 @@ namespace Theogony{
         }
 
         public void StartAttack(){
+            Debug.Log("Started Attack");
             enemyController.attacking = true;
         }
 
         public void EndAttack(){
+            Debug.Log("Stopped Attack");
             enemyController.attacking = false;
         }
 

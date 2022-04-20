@@ -18,7 +18,6 @@ MonoBehaviour:
   possibleAttacks:
   - Attack1
   - Attack2
-  - Attack3
-  attackWeights: 210000002100000021000000
+  attackWeights: 0000000064000000
   damageDealt: 5
   playerWeapon: {fileID: 0}

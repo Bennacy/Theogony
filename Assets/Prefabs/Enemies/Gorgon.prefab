@@ -187,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4190858495876950290
 Transform:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 4190858495876950295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.34, y: 1, z: 4.3867226}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4190228300866492722}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5572f6f97c4f77f4c9e04819a5408b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 4195609012982153448}
+  parent: {fileID: 4195284728073980290}
   weaponTemplate: {fileID: 11400000, guid: f593f1662f8445342a578e081af148bc, type: 2}
   positionAdjustment: {x: 0, y: 0, z: 0.2}
   angleAdjustment: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 95863272260243382, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 92807dee6a83c404c9bc6287c65c2b1f, type: 2}
+      objectReference: {fileID: 9100000, guid: 32d0cf5aef89a4b4c97494a620243b0f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
 --- !u!4 &4190228300866492722 stripped
@@ -621,9 +621,9 @@ MonoBehaviour:
   weaponCollider: {fileID: 0}
   animating: 0
   attacking: 0
---- !u!4 &4195609012982153448 stripped
+--- !u!4 &4195284728073980290 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4828722190242782, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4590061372594868, guid: 333e5531d0814614f9738b8e0f3807cd, type: 3}
   m_PrefabInstance: {fileID: 4190858497742918454}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &4286433686144998528 stripped

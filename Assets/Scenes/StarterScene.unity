@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: c3d1b50194daec140b3af3a6a05fcf2a, type: 2}
---- !u!4 &336304144 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4195284728073980290, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
-  m_PrefabInstance: {fileID: 672387254}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &360083530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
@@ -417,18 +412,6 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4190858495876950290, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190858495876950290, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190858495876950290, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190858495876950290, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -472,14 +455,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gorgon
       objectReference: {fileID: 0}
-    - target: {fileID: 4190858495876950302, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 336304144}
-    - target: {fileID: 4286433686144998528, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 32d0cf5aef89a4b4c97494a620243b0f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0746fa7ec5866a744acb6dd2e7d2c64d, type: 3}
 --- !u!1 &705507993
