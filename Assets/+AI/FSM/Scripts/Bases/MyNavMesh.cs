@@ -23,7 +23,11 @@ namespace Theogony{
 
         public void FaceTarget()
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 targetPos = target.position;
+            targetPos.y = 0;
+            Vector3 selfPos = transform.position;
+            selfPos.y = 0;
+            Vector3 direction = (targetPos - selfPos).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
