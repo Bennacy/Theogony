@@ -11,7 +11,7 @@ namespace Theogony{
     {
         [Serializable]
         public class ButtonImages{
-            [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Recover\n6 - Tab left\n7 - Tab right")]
+            [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Recover\n6 - Fog wall\n7 - Tab left\n8 - Tab right")]
             public Sprite[] images;
             public string[] actionText;
         }

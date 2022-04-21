@@ -9,11 +9,12 @@ namespace Theogony{
         private GlobalInfo globalInfo;
         public PlayerControllerScript playerControllerScript;
         public PlayerInventory playerInventory;
-        [Tooltip("0 - Pick up\n1 - Open\n2 - Rest\n3 - Recover")]
+        [Tooltip("0 - Pick up\n1 - Open\n2 - Rest\n3 - Recover\n4 - Fog wall")]
         public int action;
         
         void Start()
         {
+            gameObject.layer = 7;
             globalInfo = GlobalInfo.GetGlobalInfo();
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             playerInventory = playerControllerScript.gameObject.GetComponent<PlayerInventory>();
@@ -36,11 +37,13 @@ namespace Theogony{
 
                     break;
                 case 2:
-                    Checkpoint checkpoint = GetComponent<Checkpoint>();
-                    checkpoint.Sit();
+                    GetComponent<Checkpoint>().Sit();
                     break;
                 case 3:
                     globalInfo.RecoverCurrency();
+                    break;
+                case 4:
+                    GetComponent<BossBarrier>().Traverse();
                     break;
             }
         }
