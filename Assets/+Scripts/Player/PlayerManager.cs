@@ -59,6 +59,8 @@ namespace Theogony{
         }
 
         private void Die(){
+            if(GetComponent<PlayerInput>().enabled)
+                globalInfo.DropCurrency();
             GetComponent<PlayerInput>().enabled = false;
             globalInfo.playerTargetable = false;
             GetComponentInChildren<Animator>().Play("Die");

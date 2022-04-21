@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,16 @@ using UnityEngine.SceneManagement;
 namespace Theogony{
     public class GlobalInfo : MonoBehaviour
     {
+        [Serializable]
+        public class LostCurrency{
+            // [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Tab left\n6 - Tab right")]
+            public GameObject prefab;
+            public int amount;
+            public string scene;
+            public Transform transform;
+            public bool collected;
+        }
+
         [Header("References")]
         public static GlobalInfo self;
         public PlayerControllerScript playerControllerScript;
@@ -13,6 +24,7 @@ namespace Theogony{
         public UpdateBar stamina;
         private UIController uiController;
         public string activeScene;
+        public LostCurrency lostCurrency;
         [Space]
 
         [Space]
@@ -54,6 +66,7 @@ namespace Theogony{
         {
             DontDestroyOnLoad(gameObject);
             if(self == null){
+                // gameObject.AddComponent<Interactable>();
                 self = this;
             }else{
                 Destroy(gameObject);
@@ -82,6 +95,14 @@ namespace Theogony{
             if(lastCheckpoint != null){
                 playerControllerScript.transform.position = lastCheckpoint.teleportPosition;
             }
+
+            if(lostCurrency.transform){
+                if(lostCurrency.scene == activeScene){
+                    lostCurrency.transform.gameObject.SetActive(true);
+                }else{
+                    lostCurrency.transform.gameObject.SetActive(false);
+                }
+            }
             reloading = false;
             refreshedScene = false;
         }
@@ -94,6 +115,10 @@ namespace Theogony{
             if(paused){
                 Cursor.lockState = CursorLockMode.None;
             }
+
+            // if(Input.GetKeyDown(KeyCode.P)){
+            //     DropCurrency();
+            // }
         }
 
         #region Player Leveling
@@ -139,6 +164,7 @@ namespace Theogony{
 
         public void PlayerDeath(){
             Debug.Log("You Died");
+            Debug.Log(playerControllerScript.transform.position);
             reloading = true;
             playerControllerScript.playerInput.enabled = false;
             playerTargetable = false;
@@ -147,6 +173,31 @@ namespace Theogony{
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             StartCoroutine(StartFunctions(1.5f));
             playerTargetable = true;
+        }
+
+        public void DropCurrency(){
+            if(lostCurrency.transform){
+                Destroy(lostCurrency.transform.gameObject);
+            }
+            if(currency > 0){
+                GameObject currencyObj = Instantiate(lostCurrency.prefab, transform);
+                Interactable interactable = currencyObj.AddComponent<Interactable>();
+                lostCurrency.transform = currencyObj.transform;
+                lostCurrency.transform.position = playerControllerScript.transform.position;
+                lostCurrency.transform.position = new Vector3(lostCurrency.transform.position.x, lostCurrency.transform.localScale.y, lostCurrency.transform.position.z);
+                lostCurrency.amount = currency;
+                currency = 0;
+                lostCurrency.collected = false;
+                lostCurrency.scene = activeScene;
+                currencyObj.SetActive(false);
+            }
+        }
+
+        public void RecoverCurrency(){
+            Destroy(lostCurrency.transform.gameObject);
+            currency += lostCurrency.amount;
+            lostCurrency.amount = 0;
+            lostCurrency.collected = true;
         }
 
         public IEnumerator TravelTo(Checkpoint destination, bool reload){

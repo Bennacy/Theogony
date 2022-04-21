@@ -48,6 +48,12 @@ MonoBehaviour:
   health: {fileID: 0}
   stamina: {fileID: 0}
   activeScene: 
+  lostCurrency:
+    prefab: {fileID: 151655428380968344, guid: 2ff9fba3830968340a1eddd8143b9366, type: 3}
+    amount: 0
+    scene: 
+    transform: {fileID: 0}
+    collected: 0
   currency: 5000
   sensitivityX: 50
   sensitivityY: 30

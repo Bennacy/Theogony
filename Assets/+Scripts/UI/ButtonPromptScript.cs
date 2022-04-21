@@ -11,10 +11,11 @@ namespace Theogony{
     {
         [Serializable]
         public class ButtonImages{
-            [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Tab left\n6 - Tab right")]
+            [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Recover\n6 - Tab left\n7 - Tab right")]
             public Sprite[] images;
             public string[] actionText;
         }
+
         [Tooltip("Controller types:\n0 - Keyboard\n1 - xBox\n2 - PS4")]
         public ButtonImages[] prompts;
         
