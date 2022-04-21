@@ -121129,6 +121129,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: EndAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
     functionName: StartAttack
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -121149,7 +121156,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.2
+  - time: 3.6333334
     functionName: EndAttack
     data: 
     objectReferenceParameter: {fileID: 0}
