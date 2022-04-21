@@ -22,6 +22,10 @@ namespace Theogony{
 
         void Update()
         {
+            if (bossController)
+            {
+                GetNavMesh().FaceTarget();
+            }
             Transition triggeredTransition = null;
             foreach (Transition transition in currentState.GetTransitions()){
                 if(transition.IsTriggered(this)){

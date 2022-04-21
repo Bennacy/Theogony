@@ -16,9 +16,10 @@ MonoBehaviour:
   weaponPrefab: {fileID: 1956573029940920979, guid: 79694f60c32997942b5e856f901bce38, type: 3}
   knockback: 10
   possibleAttacks:
+  - GrandSlam
   - LeftSwing
-  - SpinSlash
   - 3xCombo
-  attackWeights: 32000000140000001e000000
+  - Spin
+  attackWeights: 1e0000000a0000001e0000001e000000
   damageDealt: 25
   playerWeapon: {fileID: 0}

@@ -957,9 +957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2aa2ce02cd8304682e5056620fa7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   currHealth: 0
-  currencyDrop: 1000
+  currencyDrop: 20000
   animator: {fileID: 0}
   attacking: 0
   target: {fileID: 0}
@@ -1959,13 +1959,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623304691, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.15193765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623304691, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.691441
+      objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109714, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Keyboard
+      value: xBox
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
@@ -2037,6 +2045,7 @@ MonoBehaviour:
   weaponCollider: {fileID: 0}
   animating: 0
   attacking: 0
+  Slam: {fileID: 6929287914374828085, guid: de1ef82952b6df24297465b118c278ae, type: 3}
 --- !u!1 &2108569783
 GameObject:
   m_ObjectHideFlags: 0

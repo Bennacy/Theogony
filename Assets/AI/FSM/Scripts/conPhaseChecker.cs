@@ -9,14 +9,26 @@ namespace Theogony
     {
         public override bool Test(FSM fsm)
         {
-            if (fsm.enemyController.currHealth <=  (fsm.enemyController.maxHealth / 2))
+            if (fsm.bossController)
             {
-                return true;
+                Debug.Log(fsm.bossController.currHealth);
+                if (fsm.bossController.currHealth <= (fsm.bossController.maxHealth / 2))
+                {
+                    Debug.Log("HERE");
+                    return true;
+                }
+            }
+            else if (fsm.enemyController)
+            {
+                if (fsm.enemyController.currHealth <= 0)
+                {
+                    return true;
+                }
             }
             return false;
         }
-
-
     }
-
 }
+
+
+

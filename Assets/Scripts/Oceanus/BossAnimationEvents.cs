@@ -11,6 +11,7 @@ namespace Theogony
         public Collider weaponCollider;
         public bool animating;
         public bool attacking;
+        public GameObject Slam;
 
         void Start()
         {
@@ -86,6 +87,10 @@ namespace Theogony
         {
             bossController.GetComponent<Rigidbody>().isKinematic = false;
             bossController.invincible = false;
+        }
+        public void SlamAttack()
+        {
+            Instantiate(Slam, transform.position, transform.rotation);
         }
     }
 }
