@@ -982,7 +982,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1347836472}
-  weaponTemplate: {fileID: 11400000, guid: 9b7852f23ca21624f88ab42463ffb7d7, type: 2}
+  weaponTemplate: {fileID: 0}
+  bossweaponTemplate: {fileID: 11400000, guid: 90e975d5cbe1d5841894784a343b5792, type: 2}
   positionAdjustment: {x: 0, y: 0, z: 0}
   angleAdjustment: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &940655803
