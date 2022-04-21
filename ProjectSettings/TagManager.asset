@@ -14,6 +14,7 @@ TagManager:
   - PlayerWeapon
   - EnemyWeapon
   - Staggered
+  - BossWeapon
   layers:
   - Default
   - TransparentFX

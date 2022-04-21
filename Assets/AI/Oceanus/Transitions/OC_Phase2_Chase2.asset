@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cca641572805c94f8d94670c2d1e864, type: 3}
-  m_Name: OC_CanSee
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: OC_Phase2_Chase2
   m_EditorClassIdentifier: 
-  negation: 0
-  viewAngle: 360
-  viewDistance: 30
+  decision: {fileID: 11400000, guid: ab7b94127a08f7741b105ae51f2a7d1f, type: 2}
+  action: {fileID: 0}
+  targetState: {fileID: 11400000, guid: f3ff926d5a9ca1c41acb4be93d24439a, type: 2}

@@ -19,8 +19,8 @@ namespace Theogony{
             if (fsm.bossController)
             {
                             if (!fsm.bossController.attacking){
-                string[] possibleAttacks = fsm.bossController.weapon.possibleAttacks;
-                int[] attackWeights = fsm.bossController.weapon.attackWeights;
+                string[] possibleAttacks = fsm.bossController.weapon.phase1Attacks;
+                int[] attackWeights = fsm.bossController.weapon.phase1Weights;
 
                 int attackRoll = Random.Range(0, 101);
                 int percentSum = 0;

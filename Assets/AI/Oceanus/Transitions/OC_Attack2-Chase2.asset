@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cca641572805c94f8d94670c2d1e864, type: 3}
-  m_Name: OC_CanSee
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: OC_Attack2-Chase2
   m_EditorClassIdentifier: 
-  negation: 0
-  viewAngle: 360
-  viewDistance: 30
+  decision: {fileID: 11400000, guid: 735599b528e019340be8e215338d63f3, type: 2}
+  action: {fileID: 0}
+  targetState: {fileID: 11400000, guid: 97adbbd8a9f4ea44683d45f2872d8b18, type: 2}

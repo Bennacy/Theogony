@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 494f9eaa2029eca47a7315938caad28f, type: 3}
-  m_Name: OC_Attack
+  m_Name: OC_ChasePhase2
   m_EditorClassIdentifier: 
   entryAction: {fileID: 0}
-  exitAction: {fileID: 0}
+  exitAction: {fileID: 11400000, guid: 958c6e1b56e70a249bc2f85d55114bb1, type: 2}
   stateActions:
-  - {fileID: 11400000, guid: cab666dfc9e636e42846e60431c8b810, type: 2}
+  - {fileID: 11400000, guid: dc6fec2f227214e4bbbee77f015d72d1, type: 2}
   transitions:
-  - {fileID: 11400000, guid: 728227b2a5d25654c8437fb5a852863c, type: 2}
-  - {fileID: 11400000, guid: 95ae918146bff6b4ba89287998cd1441, type: 2}
+  - {fileID: 11400000, guid: 7fb847c4ef29cca47aa110c344e2a166, type: 2}
+  - {fileID: 11400000, guid: 5ffa59f8c03bd8445b79f27a30225623, type: 2}

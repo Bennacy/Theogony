@@ -21,7 +21,7 @@ namespace Theogony
         public Transform target;
         public bool playerTargetable;
         public bool staggered;
-        public EnemyWeapons weapon;
+        public BossWeapon weapon;
         public bool invincible;
 
         [HideInInspector]
@@ -38,7 +38,7 @@ namespace Theogony
             animator = GetComponentInChildren<Animator>();
             rb = GetComponent<Rigidbody>();
             currHealth = maxHealth;
-            weapon = GetComponent<EnemyWeaponManager>().weaponTemplate;
+            weapon = GetComponent<EnemyWeaponManager>().bossweaponTemplate;
             dying = false;
         }
 

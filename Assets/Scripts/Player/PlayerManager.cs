@@ -114,6 +114,11 @@ namespace Theogony{
                 EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 StartCoroutine(Knockback(collision, weapon.knockback));
                 Damage(weapon.damageDealt);
+            }else if (collision.gameObject.tag == "BossWeapon")
+            {
+                BossWeapon bossweapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().bossweaponTemplate;
+                StartCoroutine(Knockback(collision, bossweapon.knockback));
+                Damage(bossweapon.damageDealt);
             }
         }
     }
