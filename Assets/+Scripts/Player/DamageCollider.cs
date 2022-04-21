@@ -43,6 +43,7 @@ namespace Theogony {
         }
         private void OnTriggerEnter(Collider collision)
         {
+            Debug.Log(collision);
             if (player.riposteAttack && !collision.gameObject.GetComponent<EnemyController>().invincible){
                 // collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
                 player.playerManager.cameraHandler.ShakeRotation(1f, 0f, 1f, .2f);

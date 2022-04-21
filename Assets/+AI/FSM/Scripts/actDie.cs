@@ -28,6 +28,7 @@ namespace Theogony
             Destroy(fsm.gameObject.GetComponentInChildren<Canvas>().gameObject);
             Destroy(fsm.gameObject.GetComponent<Rigidbody>());
             
+            Debug.Log("Died");
             fsm.enemyController.animator.StopPlayback();
             fsm.enemyController.animator.Play("Die");
             GlobalInfo.GetGlobalInfo().AlterCurrency(fsm.enemyController.currencyDrop);

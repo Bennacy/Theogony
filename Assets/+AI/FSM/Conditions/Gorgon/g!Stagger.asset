@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3550c29bbbe443f43ae1dedd4c67eb84, type: 3}
   m_Name: g!Stagger
   m_EditorClassIdentifier: 
+  negation: 1

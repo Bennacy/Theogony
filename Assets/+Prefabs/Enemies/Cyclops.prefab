@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7eaef7ecd50774fafe63f6ca24e39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 75
   currHealth: 0
   currencyDrop: 1000
   animator: {fileID: 0}
@@ -481,7 +481,7 @@ MonoBehaviour:
   parent: {fileID: 6519144573344472665}
   weaponTemplate: {fileID: 11400000, guid: dcf563fb2b156aa4f8b30c7c3a8fd3a0, type: 2}
   positionAdjustment: {x: 0, y: 0, z: 0}
-  angleAdjustment: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  angleAdjustment: {x: 0, y: 90, z: 0}
 --- !u!195 &1563597366
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ namespace Theogony{
         [SerializeField] private Theogony.State targetState;
 
         public bool IsTriggered(FSM fsm){
-            Debug.Log(decision);
             return decision.Test(fsm);
         }
 
