@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7553928176507397333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7553928176507397334}
+  - component: {fileID: 7553928176507397335}
+  m_Layer: 0
+  m_Name: GlobalInfo
+  m_TagString: GlobalInfo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7553928176507397334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553928176507397333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7553928176507397335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553928176507397333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3d501028063e948a487b5e58eda42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControllerScript: {fileID: 0}
+  health: {fileID: 0}
+  stamina: {fileID: 0}
+  activeScene: 
+  lostCurrency:
+    prefab: {fileID: 151655428380968344, guid: 2ff9fba3830968340a1eddd8143b9366, type: 3}
+    amount: 0
+    scene: 
+    transform: {fileID: 0}
+    collected: 0
+  currency: 5000
+  sensitivityX: 50
+  sensitivityY: 30
+  lastCheckpoint: {fileID: 0}
+  checkpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  totalLevel: 0
+  baseLevelCost: 50
+  levelCostScaling: 15
+  vit: 0
+  end: 0
+  str: 0
+  dex: 0
+  vitIncrease: 10
+  baseHealth: 100
+  endIncrease: 5
+  baseStamina: 100
+  paused: 0
+  refreshedScene: 0
+  reloading: 0
+  playerTargetable: 1
