@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab3fea3eadf6ec4d84377abd4349b2b, type: 3}
-  m_Name: AttackCondition
+  m_Script: {fileID: 11500000, guid: eda9248700a576a43996bee8b3bb3f36, type: 3}
+  m_Name: cStop
   m_EditorClassIdentifier: 
-  negation: 0
-  viewAngle: 360
-  viewDistance: 2
