@@ -27,5 +27,15 @@ namespace Theogony{
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;
         }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if(other.tag == "Player"){
+                EnemyWeapons weapon = GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
+                PlayerManager manager = other.gameObject.GetComponent<PlayerManager>();
+                StartCoroutine(manager.Knockback(transform, weapon.knockback));
+                manager.Damage(weapon.damageDealt);
+            }
+        }
     }
 }

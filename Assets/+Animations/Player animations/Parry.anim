@@ -78030,6 +78030,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.8333333
+    functionName: DisableKinematic
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.5
     functionName: EnableLeftCollider
     data: 
@@ -78039,6 +78046,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.5
     functionName: SlowParry
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.5
+    functionName: EnableKinematic
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -107,20 +107,20 @@ namespace Theogony{
         }
 
         void OnTriggerEnter(Collider collision){
-            if(collision.gameObject.tag == "EnemyWeapon"){
-                EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
-                StartCoroutine(Knockback(collision, weapon.knockback));
-                Damage(weapon.damageDealt);
-            }
+            // if(collision.gameObject.tag == "EnemyWeapon"){
+            //     EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
+            //     StartCoroutine(Knockback(collision.transform, weapon.knockback));
+            //     Damage(weapon.damageDealt);
+            // }
         }
 
         public void Damage(float deduction){
             currHealth -= deduction;
         }
 
-        public IEnumerator Knockback(Collider collision, float knockback){
+        public IEnumerator Knockback(Transform weapon, float knockback){
             playerControllerScript.canMove = false;
-            Vector3 direction = GetDirection(collision.transform.position, transform.position);
+            Vector3 direction = GetDirection(weapon.position, transform.position);
             direction.y = 0;
             rb.AddForce(direction * knockback, ForceMode.Impulse);
             yield return new WaitForSeconds(0.5f);

@@ -109,6 +109,14 @@ namespace Theogony {
             GetComponentInParent<PlayerControllerScript>().rb.velocity = Vector3.zero;
         }
 
+        public void EnableKinematic(){
+            GetComponentInParent<Rigidbody>().isKinematic = true;
+        }
+
+        public void DisableKinematic(){
+            GetComponentInParent<Rigidbody>().isKinematic = false;
+        }
+
         public void FinishRoll()
         {
             GetComponentInParent<PlayerControllerScript>().FinishRoll();
