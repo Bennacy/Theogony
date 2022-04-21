@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SteeringData 
+namespace Theogony
 {
-    public Vector3 linear;
-    public float angular;
-    public SteeringData()
+    public class SteeringData
     {
-        linear = Vector3.zero;
-        angular = 0;
+        public Vector3 linear;
+        public float angular;
+        public SteeringData()
+        {
+            linear = Vector3.zero;
+            angular = 0;
+        }
     }
 }
