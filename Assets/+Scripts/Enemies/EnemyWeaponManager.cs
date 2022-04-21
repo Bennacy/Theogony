@@ -8,7 +8,7 @@ namespace Theogony{
         public Transform parent;
         public EnemyWeapons weaponTemplate;
         public Vector3 positionAdjustment;
-        public Quaternion angleAdjustment;
+        public Vector3 angleAdjustment;
         
         void Awake()
         {
@@ -19,7 +19,7 @@ namespace Theogony{
                 }
             }
             weapon.transform.localPosition = positionAdjustment;
-            weapon.transform.localRotation = angleAdjustment;
+            weapon.transform.localRotation = Quaternion.Euler(angleAdjustment);
             weapon.tag = "EnemyWeapon";
         }
     }

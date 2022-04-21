@@ -23,7 +23,7 @@ namespace Theogony{
                     percentSum += attackWeights[i];
                     if(attackRoll <= percentSum){
                         if(fsm.attackTracker.x == i){
-                            if(fsm.attackTracker.y > float.PositiveInfinity){ //If the same attack has been performed two times in a row
+                            if(fsm.attackTracker.y > 1){ //If the same attack has been performed two times in a row
                                 return;
                             }
                             else{

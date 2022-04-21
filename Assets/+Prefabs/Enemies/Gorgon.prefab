@@ -313,8 +313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 4195284728073980290}
   weaponTemplate: {fileID: 11400000, guid: f593f1662f8445342a578e081af148bc, type: 2}
-  positionAdjustment: {x: 0, y: 0, z: 0.2}
-  angleAdjustment: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  positionAdjustment: {x: -0.48, y: -0.113, z: -0.4}
+  angleAdjustment: {x: 0, y: -45, z: -160}
 --- !u!195 &4190858495876950294
 NavMeshAgent:
   m_ObjectHideFlags: 0

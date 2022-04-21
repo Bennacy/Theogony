@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
   m_Name: gStaggered-Attack
   m_EditorClassIdentifier: 
-  decision: {fileID: 0}
+  decision: {fileID: 11400000, guid: 5840e69cf1def774dbcee42bc4427905, type: 2}
   action: {fileID: 0}
-  targetState: {fileID: 11400000, guid: 0bf760a886028c645ad85d4950064860, type: 2}
+  targetState: {fileID: 11400000, guid: cc6810efd9be535448b17a8fa5655afc, type: 2}
