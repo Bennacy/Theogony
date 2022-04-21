@@ -15,7 +15,13 @@ namespace Theogony{
         {
             animator = GetComponent<Animator>();
             enemyController = GetComponentInParent<EnemyController>();
-            weaponCollider = transform.GetChild(0).GetComponentInChildren<Collider>();
+            Collider[] colliders = transform.GetComponentsInChildren<Collider>();
+            foreach(Collider collider in colliders){
+                if(collider != GetComponent<Collider>()){
+                    weaponCollider = collider;
+                    return;
+                }
+            }
         }
 
         void Update()
