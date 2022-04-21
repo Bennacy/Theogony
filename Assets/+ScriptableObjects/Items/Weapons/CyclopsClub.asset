@@ -16,9 +16,9 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8566638831284201798, guid: bd74fb66a6f6555499f45bf57a265730, type: 3}
   knockback: 10
   possibleAttacks:
-  - Attack1
-  - Attack2
-  - Attack3
-  attackWeights: 640000000000000000000000
+  - Combo1
+  - Combo2
+  - Combo3
+  attackWeights: 320000001e00000014000000
   damageDealt: 15
   playerWeapon: {fileID: 0}

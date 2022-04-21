@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: cFacing
   m_EditorClassIdentifier: 
   negation: 0
-  angleThreshold: 16
+  angleThreshold: 11
+  larger: 0

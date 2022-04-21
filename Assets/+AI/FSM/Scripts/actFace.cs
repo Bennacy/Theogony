@@ -10,6 +10,7 @@ namespace Theogony{
         }
 
         public override void Act(FSM fsm){
+            Debug.Log("Facing");
             fsm.GetNavMesh().FaceTarget();
         }
     }

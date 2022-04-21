@@ -8,22 +8,30 @@ namespace Theogony{
     {
         [SerializeField] private bool negation;
         [SerializeField] private float angleThreshold;
+        [SerializeField] private bool larger;
 
         public override bool Test(FSM fsm)
         {
             Transform target = fsm.GetNavMesh().target;
             Vector3 targetDir = target.position - fsm.transform.position;
-            targetDir.y = 0;
             float angle = Vector3.Angle(targetDir, fsm.transform.forward);
 
             if(!fsm.enemyController.playerTargetable){
                 return negation;
             }
 
-            if((angle < angleThreshold)){
-                return !negation;
+            if(!larger){
+                if((angle < angleThreshold)){
+                    return !negation;
+                }else{
+                    return negation;
+                }
             }else{
-                return negation;
+                if((angle > angleThreshold)){
+                    return !negation;
+                }else{
+                    return negation;
+                }
             }
         }
     }
