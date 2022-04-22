@@ -57,10 +57,25 @@ namespace Theogony{
             cameraHandler = cam.GetComponent<CameraHandler>();
             cameraHandler = playerManager.cameraHandler;
             playerInput = GetComponent<PlayerInput>();
+            Debug.Log(playerInput.currentControlScheme);
+        }
+
+        void OnGUI()
+        {
+            GUI.Label(new Rect(0, 0, 100, 100), (playerInput.currentControlScheme));
         }
 
         void Update()
         {
+            if(Input.GetKeyDown(KeyCode.Alpha1)){
+                playerInput.SwitchCurrentControlScheme("Keyboard");
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha2)){
+                playerInput.SwitchCurrentControlScheme("XBox");
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha3)){
+                playerInput.SwitchCurrentControlScheme("PS4");
+            }
             float camRot = cam.transform.rotation.eulerAngles.y;
             camForward = Quaternion.Euler(0, camRot, 0);
             if((movementVector != Vector3.zero || stoppedMove) && canMove){
