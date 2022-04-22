@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Theogony
+public class PersueBehavior : Steering
 {
-    public class PersueBehavior : Steering
+     public Transform target;
+     public float maxprediction;
+  
+    public override SteeringData GetSteering(SteeringBehaviorBase steeringbase)
     {
-        public Transform target;
-        public float maxprediction;
-
-        public override SteeringData GetSteering(SteeringBehaviorBase steeringbase)
-        {
             Debug.Log("Peruse");
             SteeringData steeringData = new SteeringData();
             Vector3 direction = target.transform.position - transform.position;
@@ -28,12 +26,11 @@ namespace Theogony
                 prediction = distance / speedAgent;
             }
             Vector3 futureDirection = target.position + (target.GetComponent<Rigidbody>().velocity * prediction);
-            steeringData.linear = Vector3.Normalize(futureDirection - (transform.position - new Vector3(1f, 0f, 1f)));
+            steeringData.linear = Vector3.Normalize(futureDirection - (transform.position - new Vector3(1f,0f,1f)));
             steeringData.linear *= steeringbase.maxAcceleration;
 
             return steeringData;
-
-
-        }
+        
+       
     }
 }
