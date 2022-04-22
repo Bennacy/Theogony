@@ -24,6 +24,11 @@ MonoBehaviour:
   phase2Attacks:
   - JumpAttack
   - Phase2
-  phase2Weights: 3200000032000000
+  - Throw
+  - JumpAtk
+  - 2xCombo
+  - WaterLaser
+  - ThrustSlash
+  phase2Weights: 00000000000000003200000000000000000000003200000000000000
   damageDealt: 20
   playerWeapon: {fileID: 0}
