@@ -12,7 +12,7 @@ namespace Theogony{
         private GlobalInfo globalInfo;
         public float rotationSpeed;
 
-        void Start()
+        void Awake()
         {
             agent = GetComponent<NavMeshAgent>();
             enemyController = GetComponent<EnemyController>();

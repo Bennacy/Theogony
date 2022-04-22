@@ -12,6 +12,7 @@ namespace Theogony{
         public float traverseSpeed;
         private bool canTraverse;
         private bool disabled;
+        public GameObject boss;
 
         void Start()
         {
@@ -19,6 +20,7 @@ namespace Theogony{
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             traversing = false;
             canTraverse = true;
+            boss.SetActive(false);
         }
 
         void Update()
@@ -74,6 +76,7 @@ namespace Theogony{
             newPos.y = player.transform.position.y;
             player.transform.position = newPos;
             traversing = true;
+            boss.SetActive(true);
         }
 
         void OnDrawGizmosSelected()
