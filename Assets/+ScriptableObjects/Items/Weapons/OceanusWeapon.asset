@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880c0122bfe910b498fb8b6d3a962510, type: 3}
+  m_Name: OceanusWeapon
+  m_EditorClassIdentifier: 
+  itemName: Trident
+  weaponPrefab: {fileID: 1956573029940920979, guid: 79694f60c32997942b5e856f901bce38, type: 3}
+  knockback: 0
+  phase1Attacks:
+  - GrandSlam
+  - LeftSwing
+  - 3xCombo
+  - Spin
+  phase1Weights: 19000000190000001900000019000000
+  phase2Attacks:
+  - Phase2
+  - Throw
+  - JumpAtk
+  - 2xCombo
+  - WaterLaser
+  - Thrust Slash
+  phase2Weights: 000000000000000000000000000000006400000000000000
+  damageDealt: 20
+  playerWeapon: {fileID: 0}

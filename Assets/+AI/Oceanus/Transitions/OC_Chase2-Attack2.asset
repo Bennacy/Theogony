@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: OC_Chase2-Attack2
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: 4995e0e3de0bfc84e81558965ee78922, type: 2}
+  action: {fileID: 11400000, guid: 958c6e1b56e70a249bc2f85d55114bb1, type: 2}
+  targetState: {fileID: 11400000, guid: 65218735db937c240acd73c559d098ba, type: 2}
