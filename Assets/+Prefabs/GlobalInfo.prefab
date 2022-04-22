@@ -54,15 +54,46 @@ MonoBehaviour:
     scene: 
     transform: {fileID: 0}
     collected: 0
+  levelCost:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  healthIncrease:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  staminaIncrease:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  strIncrease:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dexIncrease:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   currency: 5000
   sensitivityX: 50
   sensitivityY: 30
   lastCheckpoint: {fileID: 0}
   checkpoints:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  healCharges: 3
+  healLevel: 1
+  healBase: 15
+  healIncrease: 5
   totalLevel: 0
   baseLevelCost: 50
   levelCostScaling: 15
