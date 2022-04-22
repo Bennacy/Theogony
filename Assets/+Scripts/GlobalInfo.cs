@@ -28,6 +28,15 @@ namespace Theogony{
         [Space]
 
         [Space]
+        [Header("Curves")]
+        public AnimationCurve levelCost;
+        public AnimationCurve healthIncrease;
+        public AnimationCurve staminaIncrease;
+        public AnimationCurve strIncrease;
+        public AnimationCurve dexIncrease;
+        [Space]
+
+        [Space]
         [Header("Values")]
         public int currency;
         public float sensitivityX;

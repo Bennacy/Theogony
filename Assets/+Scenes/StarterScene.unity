@@ -1216,6 +1216,122 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 9.476646
       objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623269949, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623269949, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623269949, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623269949, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623269949, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721623269949, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: drinkSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].inSlope
+      value: 3.283336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].outSlope
+      value: 3.283336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: curveTest.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
       value: 1

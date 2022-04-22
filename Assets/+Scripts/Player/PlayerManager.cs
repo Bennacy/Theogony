@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.InputSystem;
 
 namespace Theogony{
@@ -49,6 +50,8 @@ namespace Theogony{
                 // cameraHandler.ShakePosition(.1f, .1f, .1f, .3f);
                 // cameraHandler.ShakeRotation(1f, 0f, 1f, .3f);
             }
+            // float testNo = (Mathf.Sin(Time.time) + 1) / 2;
+            // Debug.Log(testNo + " = " + curveTest.Evaluate(testNo));
         }
 
         void LateUpdate()
@@ -116,7 +119,13 @@ namespace Theogony{
         
         public void Heal(InputAction.CallbackContext context){
             if(context.performed){
-                if(healCharges > 0){
+                Animator animator = GetComponentInChildren<Animator>();
+                if(healCharges > 0 && !animator.GetBool("Occupied")){
+                    string animName = "Drink";
+                    if(animator.GetCurrentAnimatorStateInfo(0).IsName("FastDrink") || animator.GetCurrentAnimatorStateInfo(0).IsName("Drink"))
+                        animName = "FastDrink";
+
+                    animator.Play(animName);
                     healCharges--;
                     currHealth += globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
                     if(currHealth > maxHealth){

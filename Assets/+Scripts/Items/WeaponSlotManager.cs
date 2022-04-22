@@ -133,6 +133,16 @@ namespace Theogony {
             playerInventory.rightWeapon.currattack = 0;
         }
 
+        public void StartDrink(){
+            GetComponentInParent<PlayerControllerScript>().moveSpeed = GetComponentInParent<PlayerControllerScript>().drinkSpeed;
+            rightWeaponCollider.gameObject.SetActive(false);
+        }
+
+        public void EndDrink(){
+            GetComponentInParent<PlayerControllerScript>().moveSpeed = GetComponentInParent<PlayerControllerScript>().walkSpeed;
+            rightWeaponCollider.gameObject.SetActive(true);
+        }
+
         public void FinalDeath(){
             globalInfo.PlayerDeath();
         }
@@ -182,6 +192,9 @@ namespace Theogony {
 
         void Update()
         {
+            if(Input.GetKeyDown(KeyCode.V)){
+                GetComponent<Animator>().Play("Drink");
+            }
 
 
             if (rotateAttack == true)
