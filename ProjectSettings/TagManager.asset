@@ -4,31 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GameMaster
-  - GlobalInfo
-  - Canvas
-  - Enemy
-  - Paryable
-  - Cyclops
   - Gorgon
-  - Camera
-  - PlayerWeapon
-  - EnemyWeapon
   - Staggered
+  - Walls
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Arhitecture
+  - 
   - Water
   - UI
-<<<<<<< HEAD
-  - Enemies
   - 
-=======
-  - 3DUI
-  - Interactable
->>>>>>> main-Benny
+  - 
   - 
   - 
   - 

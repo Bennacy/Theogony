@@ -181,6 +181,8 @@ GameObject:
   - component: {fileID: 4190858495876950288}
   - component: {fileID: 4190858495876950302}
   - component: {fileID: 4190858495876950294}
+  - component: {fileID: 4793752813810270931}
+  - component: {fileID: 1671732712743212528}
   m_Layer: 3
   m_Name: Gorgon
   m_TagString: Gorgon
@@ -337,6 +339,38 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4793752813810270931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190858495876950295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9172704ed07eba4992999ffdd0da4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 0}
+  maxprediction: 0
+--- !u!114 &1671732712743212528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190858495876950295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4c795615b3fc94da8243572b6a2419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAcceleration: 0
+  maxAngularAcceleration: 0
+  drag: 0
+  fsm: {fileID: 4190858495876950303}
+  conditionState: {fileID: 11400000, guid: 0287152918801f0408f9c0d5277a45ab, type: 2}
 --- !u!1 &5677384657586211626
 GameObject:
   m_ObjectHideFlags: 0
