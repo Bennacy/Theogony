@@ -19,7 +19,7 @@ namespace Theogony{
         public int[] levels;
         public bool staminaSpent;
         public bool wasHit;
-        private int healCharges;
+        public int healCharges;
 
         void Start()
         {

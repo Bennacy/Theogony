@@ -590,17 +590,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
---- !u!114 &579958131 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
-  m_PrefabInstance: {fileID: 1871738871}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18fec92e892b774c9d149410655f561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &672387254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1219,45 +1208,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 22
+    - target: {fileID: 6789781818728437363, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_text
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_ActionId
-      value: 589b9f41-b868-4ae9-a412-30f47e68c29b
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_ActionName
-      value: InGame/Heal[/XInputControllerWindows/buttonWest,/Keyboard/r]
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 579958131}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Heal
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Theogony.PlayerManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 6789781818728437363, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_margin.z
+      value: 9.476646
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
@@ -1307,7 +1264,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputStuff
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8728619263169582258, guid: ed375999891047845aaded976c6903e6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed375999891047845aaded976c6903e6, type: 3}
 --- !u!1 &2108569783
 GameObject:
@@ -1611,6 +1569,18 @@ PrefabInstance:
     - target: {fileID: 7553928176507397334, guid: 774a556b1f8e6e0458259bd6490c28cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553928176507397335, guid: 774a556b1f8e6e0458259bd6490c28cb, type: 3}
+      propertyPath: healBase
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553928176507397335, guid: 774a556b1f8e6e0458259bd6490c28cb, type: 3}
+      propertyPath: healCharges
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553928176507397335, guid: 774a556b1f8e6e0458259bd6490c28cb, type: 3}
+      propertyPath: healIncrease
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774a556b1f8e6e0458259bd6490c28cb, type: 3}
