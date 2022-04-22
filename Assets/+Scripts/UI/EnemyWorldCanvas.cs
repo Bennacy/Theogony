@@ -7,6 +7,7 @@ namespace Theogony{
     {
         public PlayerControllerScript playerControllerScript;
         public EnemyController enemyController;
+        public BossController bossController;
         public CameraHandler cam;
         public GameObject healthBar;
         public GlobalInfo globalInfo;
@@ -15,6 +16,7 @@ namespace Theogony{
         
         void Start()
         {
+            bossController = GetComponentInParent<BossController>(); 
             enemyController = GetComponentInParent<EnemyController>();
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             cam = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>();
@@ -29,12 +31,23 @@ namespace Theogony{
             transform.rotation = Quaternion.Euler(rotation);
 
             bool active = false;
-            active = (cam.lockOnTarget == transform.parent || enemyController.currHealth != enemyController.maxHealth) && Vector3.Distance(enemyController.transform.position, enemyController.target.position) < 15;
-            healthBar.SetActive(active);
+            if (bossController)
+            {
+                active = (cam.lockOnTarget == transform.parent || bossController.currHealth != bossController.maxHealth) && Vector3.Distance(bossController.transform.position, bossController.target.position) < 15;
+                healthBar.SetActive(active);
 
-            Vector3 newSize = barTransform.sizeDelta;
-            newSize.x = enemyController.currHealth * maxWidth / enemyController.maxHealth;
-            barTransform.sizeDelta = newSize;
+                Vector3 newSize = barTransform.sizeDelta;
+                newSize.x = bossController.currHealth * maxWidth / bossController.maxHealth;
+                barTransform.sizeDelta = newSize;
+            }else if (enemyController)
+            {
+                active = (cam.lockOnTarget == transform.parent || enemyController.currHealth != enemyController.maxHealth) && Vector3.Distance(enemyController.transform.position, enemyController.target.position) < 15;
+                healthBar.SetActive(active);
+
+                Vector3 newSize = barTransform.sizeDelta;
+                newSize.x = enemyController.currHealth * maxWidth / enemyController.maxHealth;
+                barTransform.sizeDelta = newSize;
+            }
         }
     }
 }

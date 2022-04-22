@@ -14,9 +14,12 @@ namespace Theogony {
 
         Animator animHandler;
         public bool rotateAttack;
+        public bool resetAttack;
 
         private PlayerInventory playerInventory;
         public Transform pos;
+
+        public Quaternion originalRotationValue;
 
         private void Awake()
         {
@@ -175,14 +178,22 @@ namespace Theogony {
         {
             rotateAttack = true;
             accely = 100;
+            originalRotationValue = transform.rotation;
+
         }
         public void ResetInAttacks()
         {
-            accely = -100;
+            resetAttack = true;
+            rotateAttack = false;
         }
         public void StopRotateInAttacks()
         {
-            rotateAttack = false;
+            resetAttack = false;
+            accely = 0;         
+
+        }
+        public void Rot0()
+        {
             accely = 0;
         }
 
@@ -203,9 +214,10 @@ namespace Theogony {
                 accelz = Input.acceleration.z;
                 transform.Rotate(accelx * Time.deltaTime, accely * Time.deltaTime, accelz * Time.deltaTime);
             }
-            else if (transform.rotation.y != 0)
+            else if (resetAttack == true)
             {
-              //  transform.rotation = Quaternion.identity;
+                transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, 25f  * Time.deltaTime);
+
             }
             
            

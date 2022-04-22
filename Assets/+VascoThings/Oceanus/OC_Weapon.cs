@@ -7,6 +7,7 @@ namespace Theogony
         public class OC_Weapon : MonoBehaviour
         {
             Collider tridentCollider;
+            public float OC_Damage;
                 
 
             private void Awake()
@@ -34,7 +35,7 @@ namespace Theogony
 
                 if (collision.tag == "Player")
                 {
-
+                collision.GetComponent<PlayerManager>().Damage(OC_Damage);
                     Debug.Log("Hit Player");
                 }
             }
