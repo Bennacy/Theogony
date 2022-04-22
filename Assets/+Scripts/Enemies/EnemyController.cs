@@ -28,6 +28,7 @@ namespace Theogony{
         public bool dying;
         public Collider riposteCollider;
         private MonoBehaviour[] scripts;
+        public bool wasHit;
 
         void Start()
         {
@@ -52,6 +53,7 @@ namespace Theogony{
         }
 
         public void Damage(float damageTaken){
+            wasHit = true;
             currHealth -= damageTaken;
         }
 

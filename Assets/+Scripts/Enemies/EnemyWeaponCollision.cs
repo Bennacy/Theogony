@@ -30,10 +30,11 @@ namespace Theogony{
 
         void OnTriggerEnter(Collider other)
         {
-            if(other.tag == "Player"){
+            if(other.tag == "Player" && !GetComponentInParent<EnemyController>().staggered){
                 EnemyWeapons weapon = GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 PlayerManager manager = other.gameObject.GetComponent<PlayerManager>();
                 StartCoroutine(manager.Knockback(transform, weapon.knockback));
+                manager.wasHit = true;
                 manager.Damage(weapon.damageDealt);
             }
         }

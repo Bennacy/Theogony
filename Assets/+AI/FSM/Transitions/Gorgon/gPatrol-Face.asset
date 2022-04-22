@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cca641572805c94f8d94670c2d1e864, type: 3}
-  m_Name: c!CanSee
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: gPatrol-Face
   m_EditorClassIdentifier: 
-  negation: 1
-  viewAngle: 145
-  viewDistance: 15
+  decision: {fileID: 11400000, guid: 20cf72c17132d5f4e87f9bab164d73c8, type: 2}
+  action: {fileID: 0}
+  targetState: {fileID: 11400000, guid: 069525ebd427faf42924d56b95b252ff, type: 2}

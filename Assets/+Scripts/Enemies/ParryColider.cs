@@ -33,8 +33,11 @@ namespace Theogony
             if (collision.tag == "EnemyWeapon")
             {
                 Debug.Log("Parried");
-                GetComponentInParent<PlayerManager>().Damage(-collision.GetComponentInParent<EnemyController>().weapon.damageDealt);
-                GetComponentInParent<PlayerManager>().Knockback(collision.transform, -3 * collision.GetComponentInParent<EnemyController>().weapon.knockback);
+                PlayerManager manager = GetComponentInParent<PlayerManager>();
+                if(manager.wasHit){
+                    manager.Damage(-collision.GetComponentInParent<EnemyController>().weapon.damageDealt);
+                    manager.Knockback(collision.transform, -3 * collision.GetComponentInParent<EnemyController>().weapon.knockback);
+                }
                 collision.GetComponentInParent<EnemyController>().GotParried();
                 collision.enabled = false;
             }

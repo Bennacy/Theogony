@@ -6,7 +6,6 @@ using UnityEngine.AI;
 namespace Theogony{
     public class MyNavMesh : MonoBehaviour
     {
-
         public Transform target;
         public NavMeshAgent agent;
         private EnemyController enemyController;
@@ -54,16 +53,6 @@ namespace Theogony{
                 }
             }
             return false;
-        }
-
-        public void RotateGorgon()
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            Vector3 angle = lookRotation.eulerAngles;
-            angle.y += 90;
-            lookRotation = Quaternion.Euler(angle);
-            transform.rotation = lookRotation;
         }
     }
 }

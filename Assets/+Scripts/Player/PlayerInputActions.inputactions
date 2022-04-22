@@ -103,6 +103,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Heal",
+                    "type": "Button",
+                    "id": "589b9f41-b868-4ae9-a412-30f47e68c29b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -218,22 +227,22 @@
                 },
                 {
                     "name": "",
-                    "id": "577aab21-e4a2-4345-9141-f7c43ab85c2f",
-                    "path": "<DualShockGamepad>/buttonEast",
+                    "id": "a2567135-7416-4aca-b2de-6540e7423213",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PS4",
+                    "groups": "xBox",
                     "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a2567135-7416-4aca-b2de-6540e7423213",
-                    "path": "<XInputController>/buttonEast",
+                    "id": "577aab21-e4a2-4345-9141-f7c43ab85c2f",
+                    "path": "<DualShockGamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "xBox",
+                    "groups": "PS4",
                     "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -354,7 +363,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "LightAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -376,7 +385,7 @@
                     "path": "<DualShockGamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "xBox",
+                    "groups": "PS4",
                     "action": "HeavyAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -387,7 +396,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "HeavyAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -420,7 +429,7 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "LockOn",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -431,7 +440,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "LockOn",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -494,11 +503,22 @@
                 {
                     "name": "",
                     "id": "5fd6de21-2b58-4144-a5ed-085de35a9406",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/leftAlt",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eeb2e64d-f521-49c8-b409-b486181ecaf3",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "xBox",
+                    "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -515,23 +535,45 @@
                 },
                 {
                     "name": "",
-                    "id": "eeb2e64d-f521-49c8-b409-b486181ecaf3",
-                    "path": "<Gamepad>/leftShoulder",
+                    "id": "396ca902-a1ad-43ba-b404-0f5b1310f0d6",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "xBox",
+                    "groups": "Keyboard",
                     "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "396ca902-a1ad-43ba-b404-0f5b1310f0d6",
-                    "path": "<Keyboard>/f",
+                    "id": "7d902ee4-8768-4978-bc16-0486728e777c",
+                    "path": "<XInputController>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Block",
+                    "groups": "xBox",
+                    "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59e66c45-dd5b-421d-9577-658c2c33287d",
+                    "path": "<DualShockGamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4bc0eeab-1022-4178-a02b-02182dbd206a",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -18,6 +18,8 @@ namespace Theogony{
         public float staminaRecharge;
         public int[] levels;
         public bool staminaSpent;
+        public bool wasHit;
+        private int healCharges;
 
         void Start()
         {
@@ -29,6 +31,7 @@ namespace Theogony{
             maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
             currHealth = maxHealth;
             currStamina = maxStamina;
+            healCharges = globalInfo.healCharges;
         }
 
         void Update()
@@ -46,6 +49,11 @@ namespace Theogony{
                 // cameraHandler.ShakePosition(.1f, .1f, .1f, .3f);
                 // cameraHandler.ShakeRotation(1f, 0f, 1f, .3f);
             }
+        }
+
+        void LateUpdate()
+        {
+            wasHit = false;
         }
 
         void FixedUpdate()
@@ -105,13 +113,17 @@ namespace Theogony{
             yield return new WaitForSeconds(1);
             staminaSpent = false;
         }
-
-        void OnTriggerEnter(Collider collision){
-            // if(collision.gameObject.tag == "EnemyWeapon"){
-            //     EnemyWeapons weapon = collision.gameObject.GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
-            //     StartCoroutine(Knockback(collision.transform, weapon.knockback));
-            //     Damage(weapon.damageDealt);
-            // }
+        
+        public void Heal(InputAction.CallbackContext context){
+            if(context.performed){
+                if(healCharges > 0){
+                    healCharges--;
+                    currHealth += globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
+                    if(currHealth > maxHealth){
+                        currHealth = maxHealth;
+                    }
+                }
+            }
         }
 
         public void Damage(float deduction){

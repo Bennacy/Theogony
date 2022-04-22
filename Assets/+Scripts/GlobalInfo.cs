@@ -38,6 +38,10 @@ namespace Theogony{
 
         [Space]
         [Header("Player Stats Info")]
+        public int healCharges;
+        public int healLevel;
+        public int healBase;
+        public int healIncrease;
         public int totalLevel;
         public int baseLevelCost;
         public int levelCostScaling;

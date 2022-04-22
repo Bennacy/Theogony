@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: cCanSee
   m_EditorClassIdentifier: 
   negation: 0
-  viewAngle: 180
+  viewAngle: 145
   viewDistance: 10
