@@ -16,12 +16,6 @@ namespace Theogony{
         }
         
         public override void Act(FSM fsm){
-<<<<<<< HEAD:Assets/+AI/FSM/Scripts/actMeleeAttack.cs
-            enemyController = fsm.enemyController;
-            if(!fsm.enemyController.attacking){
-                string[] possibleAttacks = fsm.enemyController.weapon.possibleAttacks;
-                int[] attackWeights = fsm.enemyController.weapon.attackWeights;
-=======
 
             if (fsm.bossController)
             {
@@ -29,7 +23,6 @@ namespace Theogony{
                 string[] possibleAttacks = fsm.bossController.weapon.phase1Attacks;
                 int[] attackWeights = fsm.bossController.weapon.phase1Weights;
 
->>>>>>> new-main-vasco:Assets/AI/FSM/Scripts/actMeleeAttack.cs
                 int attackRoll = Random.Range(0, 101);
                 int percentSum = 0;
                 for(int i = 0; i < possibleAttacks.Length; i++){

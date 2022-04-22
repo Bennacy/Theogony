@@ -36,7 +36,6 @@ namespace Theogony{
             weapon.transform.localPosition = positionAdjustment;
             weapon.transform.localRotation = Quaternion.Euler(angleAdjustment);
             weapon.tag = "EnemyWeapon";
-            weapon.transform.localRotation = angleAdjustment;
             
         }
     }

@@ -11,11 +11,8 @@ namespace Theogony{
         }
 
         public override void Act(FSM fsm){
-<<<<<<< HEAD:Assets/+AI/FSM/Scripts/actChase.cs
-=======
 
           //  Debug.Log("Chasing " + fsm.enemyController.target);
->>>>>>> new-main-vasco:Assets/AI/FSM/Scripts/actChase.cs
             fsm.GetNavMesh().GoToTarget();
         }
     }
