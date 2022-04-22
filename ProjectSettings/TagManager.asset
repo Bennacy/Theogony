@@ -15,6 +15,7 @@ TagManager:
   - EnemyWeapon
   - Staggered
   - BossWeapon
+  - Oceanus
   layers:
   - Default
   - TransparentFX

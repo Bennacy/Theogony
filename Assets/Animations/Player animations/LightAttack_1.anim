@@ -52866,14 +52866,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.46666667
+  - time: 0.43333334
     functionName: EnableRightCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5
+  - time: 0.46666667
     functionName: ResetInAttacks
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -52895,13 +52895,20 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.0666667
+    functionName: IsNotOccupied
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.0666667
     functionName: CanCombo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.3333334
+  - time: 1.3
     functionName: EnableCanMove
     data: 
     objectReferenceParameter: {fileID: 0}

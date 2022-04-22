@@ -12,6 +12,10 @@ namespace Theogony
         public bool animating;
         public bool attacking;
         public GameObject Slam;
+        public GameObject waterLaser;
+        public Vector3 positionAdjustment;
+        public Quaternion angleAdjustment;
+        public Transform parent;
 
         void Start()
         {
@@ -91,6 +95,26 @@ namespace Theogony
         public void SlamAttack()
         {
             Instantiate(Slam, transform.position, transform.rotation);
+        }
+        public void Stopfacing()
+        {
+            GetComponentInParent<FSM>().stopFacing = false;
+        }
+        public void Continuefacing()
+        {
+            GetComponentInParent<FSM>().stopFacing = true;
+        }
+
+        public void LaserAttack()
+        {
+
+           GameObject laser = Instantiate(waterLaser) as GameObject;
+
+            laser.transform.parent = parent;
+            laser.transform.localPosition = positionAdjustment;
+            laser.transform.localRotation = angleAdjustment;
+
+           //  Instantiate(waterLaser, transform.position, transform.rotation);
         }
     }
 }

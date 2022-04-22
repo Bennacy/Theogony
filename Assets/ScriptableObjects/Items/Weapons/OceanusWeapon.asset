@@ -22,13 +22,12 @@ MonoBehaviour:
   - Spin
   phase1Weights: 19000000190000001900000019000000
   phase2Attacks:
-  - JumpAttack
   - Phase2
   - Throw
   - JumpAtk
   - 2xCombo
   - WaterLaser
-  - ThrustSlash
-  phase2Weights: 00000000000000003200000000000000000000003200000000000000
+  - Thrust Slash
+  phase2Weights: 000000000000000000000000000000006400000000000000
   damageDealt: 20
   playerWeapon: {fileID: 0}

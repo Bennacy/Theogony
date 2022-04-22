@@ -12,6 +12,8 @@ namespace Theogony{
         public EnemyController enemyController;
         public BossController bossController;
         public float staggerTimer;
+        public bool stopFacing = true;
+
         public Vector2 attackTracker; //X value is the attack index, Y is the number of times the attack was performed
         void Start(){
             currentState = initialState;
@@ -22,9 +24,10 @@ namespace Theogony{
 
         void Update()
         {
-            if (bossController)
+            if (bossController && stopFacing )
             {
-                GetNavMesh().FaceTarget();
+                GetNavMesh().FaceTarget(); 
+
             }
             Transition triggeredTransition = null;
             foreach (Transition transition in currentState.GetTransitions()){

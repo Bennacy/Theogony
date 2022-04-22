@@ -6,7 +6,7 @@ namespace Theogony
 {
     public class SlamAttack : MonoBehaviour
     {
-        private float timer = 1.5f;
+        private float timer = 2f;
 
         // Update is called once per frame
         void Update()

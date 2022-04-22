@@ -61362,7 +61362,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.53333336
+  - time: 0.6333333
     functionName: ResetInAttacks
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -61397,15 +61397,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.6
-    functionName: CanNotCombo
+  - time: 1.1666666
+    functionName: IsNotOccupied
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.6333333
+  - time: 1.5
     functionName: EnableCanMove
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.6
+    functionName: CanNotCombo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbb00565c58e2743ae7a7848fda8255, type: 3}
+  m_Name: OC_Chase2-Die
+  m_EditorClassIdentifier: 
+  decision: {fileID: 11400000, guid: 25bee37d93f617c448cbe26f3cf5c598, type: 2}
+  action: {fileID: 11400000, guid: 89fb9f17a75f6df44b11d1ae62190dfd, type: 2}
+  targetState: {fileID: 11400000, guid: 4face7ad61966724b836b7f32b0f0b6e, type: 2}
