@@ -16,8 +16,18 @@ namespace Theogony{
             targetDir.y = 0;
             float angle = Vector3.Angle(targetDir, fsm.transform.forward);
 
-            if(!fsm.enemyController.playerTargetable){
-                return negation;
+            if (fsm.enemyController)
+            {
+                if (!fsm.enemyController.playerTargetable)
+                {
+                    return negation;
+                }
+            }else if (fsm.bossController)
+            {
+                if (!fsm.bossController.playerTargetable)
+                {
+                    return negation;
+                }
             }
 
             if((angle < angleThreshold)){
