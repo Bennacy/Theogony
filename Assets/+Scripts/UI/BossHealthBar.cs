@@ -47,7 +47,6 @@ namespace Theogony{
             RectTransform transTrans = (RectTransform)barTrans.transform;
 
             currWidth = bossController.currHealth * maxWidth / bossController.maxHealth;
-            Debug.Log(currWidth);
             if(lowering && transTrans.sizeDelta.x > frontTrans.sizeDelta.x){
                 Vector2 temp = transTrans.sizeDelta;
                 temp.x -= decreaseSpeed * Time.deltaTime;
