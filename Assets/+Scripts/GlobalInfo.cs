@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Theogony{
@@ -124,13 +125,11 @@ namespace Theogony{
             if(refreshedScene){
                 StartCoroutine(StartFunctions(.4f));
             }
-            if(paused){
+            if(paused && playerControllerScript.playerInput.currentControlScheme == "Keyboard"){
                 Cursor.lockState = CursorLockMode.None;
+            }else{
+                Cursor.lockState = CursorLockMode.Locked;
             }
-
-            // if(Input.GetKeyDown(KeyCode.P)){
-            //     DropCurrency();
-            // }
         }
 
         #region Player Leveling

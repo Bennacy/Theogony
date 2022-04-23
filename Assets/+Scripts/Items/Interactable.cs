@@ -11,6 +11,7 @@ namespace Theogony{
         public PlayerInventory playerInventory;
         [Tooltip("0 - Pick up\n1 - Open\n2 - Rest\n3 - Recover\n4 - Fog wall")]
         public int action;
+        public int currencyChange;
         
         void Start()
         {
@@ -30,7 +31,7 @@ namespace Theogony{
         public void Interact(){
             switch(action){
                 case 0:
-                    Debug.Log("Pick up");
+                    globalInfo.AlterCurrency(currencyChange);
                     Destroy(gameObject);
                     break;
                 case 1:

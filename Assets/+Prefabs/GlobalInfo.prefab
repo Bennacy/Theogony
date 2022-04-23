@@ -150,21 +150,30 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.1
-      inSlope: 2.7500296
-      outSlope: 2.7500296
+      inSlope: 7.1141076
+      outSlope: 7.1141076
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.03747977
+      outWeight: 0.016723279
     - serializedVersion: 3
-      time: 0.429136
-      value: 0.7988696
-      inSlope: 0.6946755
-      outSlope: 0.6946755
+      time: 0.24904424
+      value: 0.77104956
+      inSlope: 0.6376144
+      outSlope: 0.6376144
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1785514
+      outWeight: 0.6028427
+    - serializedVersion: 3
+      time: 0.46129057
+      value: 0.8840795
+      inSlope: 0.5264916
+      outSlope: 0.5264916
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.39722934
+      outWeight: 0.1898861
     - serializedVersion: 3
       time: 1
       value: 1
@@ -190,23 +199,23 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.016723279
     - serializedVersion: 3
-      time: 0.31757343
-      value: 0.85470843
-      inSlope: 0.39576596
-      outSlope: 0.39576596
+      time: 0.24904424
+      value: 0.77104956
+      inSlope: 0.6376144
+      outSlope: 0.6376144
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.3083474
+      outWeight: 0.6028427
     - serializedVersion: 3
-      time: 0.7052634
-      value: 0.95680654
-      inSlope: 0.31515473
-      outSlope: 0.31515473
+      time: 0.46129057
+      value: 0.8840795
+      inSlope: 0.5264916
+      outSlope: 0.5264916
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.2682846
-      outWeight: 0.1785514
+      inWeight: 0.39722934
+      outWeight: 0.1898861
     - serializedVersion: 3
       time: 1
       value: 1
@@ -220,15 +229,15 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   currency: 5000
-  sensitivityX: 50
-  sensitivityY: 30
+  sensitivityX: 20
+  sensitivityY: 20
   lastCheckpoint: {fileID: 0}
   checkpoints:
   - {fileID: 0}
   healCharges: 3
   healLevel: 1
-  healBase: 15
-  healIncrease: 5
+  healBase: 150
+  healIncrease: 50
   totalLevel: 0
   baseLevelCost: 50
   levelCostScaling: 15

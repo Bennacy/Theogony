@@ -5,23 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/+Scenes/InputSystem.unity
-    guid: 64d750f65e51c31498b809280a938ab6
   - enabled: 1
     path: Assets/+Scenes/NewStarter.unity
     guid: d9d66f461157ac34aac7de701e743958
-  - enabled: 0
-    path: Assets/+Scenes/StarterScene.unity
-    guid: a352c3d410dcd3e46aea4848ac61733d
-  - enabled: 0
-    path: Assets/+Scenes/VascoScene.unity
-    guid: 1cefefe547bec1c479907b16d1691fdc
-  - enabled: 0
-    path: Assets/+Scenes/TeleportTest.unity
-    guid: 7ac662881e647b74495b3e0c0928420a
-  - enabled: 0
-    path: Assets/+Scenes/Gorgons.unity
-    guid: 7de0622929e49384ba13d84f17b30c12
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c36d68df2ea19784eaee9c33877553c5, type: 2}
