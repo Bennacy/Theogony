@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControllerScript: {fileID: 0}
   enemyController: {fileID: 0}
+  bossController: {fileID: 0}
   cam: {fileID: 0}
   healthBar: {fileID: 8664969854447081118}
   globalInfo: {fileID: 0}
@@ -254,8 +255,8 @@ MonoBehaviour:
   currencyDrop: 500
   animator: {fileID: 4286433686144998528}
   patrolWaypoints:
-  - {x: -14, y: 0, z: 4}
-  - {x: 0, y: 0, z: 4}
+  - {x: -14, y: 0, z: -7.6}
+  - {x: -8.3, y: 0, z: -4.69}
   waypointIndex: 0
   knockbackResistance: 0
   attacking: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   invincible: 0
   dying: 0
   riposteCollider: {fileID: 760157035}
+  wasHit: 0
 --- !u!114 &4190858495876950303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +284,9 @@ MonoBehaviour:
   currentState: {fileID: 0}
   changedState: 1
   enemyController: {fileID: 0}
+  bossController: {fileID: 0}
   staggerTimer: 0
+  stopFacing: 1
   attackTracker: {x: 0, y: 0}
 --- !u!114 &4190858495876950288
 MonoBehaviour:
@@ -313,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 4195284728073980290}
   weaponTemplate: {fileID: 11400000, guid: f593f1662f8445342a578e081af148bc, type: 2}
+  bossweaponTemplate: {fileID: 0}
   positionAdjustment: {x: -0.48, y: -0.113, z: 0}
   angleAdjustment: {x: 0, y: 0, z: -160}
 --- !u!195 &4190858495876950294

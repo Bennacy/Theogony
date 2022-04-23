@@ -32,11 +32,11 @@ namespace Theogony{
             switch(barType){
                 case 0:
                     origMax = globalInfo.baseStamina;
-                    UpdateBarWidth(globalInfo.baseStamina + globalInfo.end * globalInfo.endIncrease);
+                    UpdateBarWidth(globalInfo.staminaIncrease.Evaluate(globalInfo.end * .01f) * 1000);
                     break;
                 case 1:
                     origMax = globalInfo.baseHealth;
-                    UpdateBarWidth(globalInfo.baseHealth + globalInfo.vit * globalInfo.vitIncrease);
+                    UpdateBarWidth(globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 1000);
                     break;
             }
             // maxWidth = frontTrans.sizeDelta.x;

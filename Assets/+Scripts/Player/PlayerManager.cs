@@ -28,8 +28,8 @@ namespace Theogony{
             rb = GetComponent<Rigidbody>();
             globalInfo = GlobalInfo.GetGlobalInfo();
             cameraHandler = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>();
-            maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
-            maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
+            maxHealth = globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 1000;
+            maxStamina = globalInfo.staminaIncrease.Evaluate(globalInfo.end * .01f) * 1000;
             currHealth = maxHealth;
             currStamina = maxStamina;
             healCharges = globalInfo.healCharges;
@@ -37,8 +37,8 @@ namespace Theogony{
 
         void Update()
         {
-            maxHealth = globalInfo.baseHealth + (globalInfo.vit * globalInfo.vitIncrease);
-            maxStamina = globalInfo.baseStamina + (globalInfo.end * globalInfo.endIncrease);
+            maxHealth = globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 1000;
+            maxStamina = globalInfo.staminaIncrease.Evaluate(globalInfo.end * .01f) * 1000;
             if(!staminaSpent && currStamina < maxStamina){
                 currStamina += staminaRecharge * Time.deltaTime;
             }

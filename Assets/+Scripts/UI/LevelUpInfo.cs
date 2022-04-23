@@ -21,12 +21,16 @@ namespace Theogony{
         public GlobalInfo globalInfo;
         public GameObject confirmation;
         public GameObject levelMenu;
+        public TextMeshProUGUI healthUpdate;
+        public TextMeshProUGUI staminaUpdate;
         private bool confirming;
+        private PlayerManager playerManager;
 
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
             uiController = transform.parent.gameObject.GetComponent<UIController>();
+            playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         }
 
         void Update()
@@ -54,19 +58,28 @@ namespace Theogony{
             }else{
                 confirmationText.text = "Cancel level up?";
             }
+
+            healthUpdate.text = "Health:  " + Mathf.Round(playerManager.maxHealth) + "     -     " + Mathf.Round(globalInfo.healthIncrease.Evaluate((vitLevels + globalInfo.vit) * .01f) * 1000);
+            staminaUpdate.text = "Stamina:  " + Mathf.Round(playerManager.maxStamina) + "     -     " + Mathf.Round(globalInfo.staminaIncrease.Evaluate((endLevels + globalInfo.end) * .01f) * 1000);
         }
 
         public int GetUpgradeCost(int levels){
-            if(levels == 1){
-                return globalInfo.LevelUpCost();
+            int finalCost = 0;
+            for(int i = 1; i < levels+1; i++){
+                finalCost += Mathf.RoundToInt(globalInfo.levelCost.Evaluate((globalInfo.totalLevel + levels) * .01f) * 1000);
             }
-            if(levels == 0){
-                return 0;
-            }else{
-                int finalCost = GetUpgradeCost(levels - 1);
-                finalCost += (globalInfo.baseLevelCost + globalInfo.levelCostScaling * (levels - 1 + globalInfo.totalLevel));
-                return finalCost;
-            }
+            return finalCost;
+
+            // if(levels == 1){
+            //     return globalInfo.LevelUpCost();
+            // }
+            // if(levels == 0){
+            //     return 0;
+            // }else{
+            //     int finalCost = GetUpgradeCost(levels - 1);
+            //     finalCost += (globalInfo.baseLevelCost + globalInfo.levelCostScaling * (levels - 1 + globalInfo.totalLevel));
+            //     return finalCost;
+            // }
         }
 
         public void TempIncrease(int stat){
