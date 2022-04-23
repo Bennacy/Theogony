@@ -126,8 +126,10 @@ namespace Theogony
             targetRotation = Quaternion.Euler(rotation);
             cameraPivotTransform.localRotation = targetRotation;
         }
+     
         private void HandleCameraCollisions(float delta)
         {
+            
             targetPosition = defaultPosition;
             RaycastHit hit;
             Vector3 direction = cameraTransform.position - cameraPivotTransform.position;
@@ -144,6 +146,7 @@ namespace Theogony
             }
             cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
             cameraTransform.localPosition = cameraTransformPosition;
+            
         }
 
         void LateUpdate()
