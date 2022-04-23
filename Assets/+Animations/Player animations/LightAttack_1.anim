@@ -52866,15 +52866,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.43333334
-    functionName: EnableRightCollider
+  - time: 0.4
+    functionName: ResetInAttacks
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.46666667
-    functionName: ResetInAttacks
+  - time: 0.43333334
+    functionName: EnableRightCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -52887,22 +52887,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
+  - time: 0.93333334
     functionName: StopRotateInAttacks
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.0666667
-    functionName: IsNotOccupied
+  - time: 0.96666664
+    functionName: CanCombo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.0666667
-    functionName: CanCombo
+  - time: 0.96666664
+    functionName: IsNotOccupied
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

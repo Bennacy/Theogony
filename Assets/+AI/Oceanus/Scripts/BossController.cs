@@ -29,6 +29,8 @@ namespace Theogony
         public Collider parryCollider;
         private MonoBehaviour[] scripts;
 
+        public bool phase2Transition;
+
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();

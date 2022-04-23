@@ -13,6 +13,7 @@ namespace Theogony
         public bool attacking;
         public GameObject Slam;
         public GameObject waterLaser;
+        public GameObject phase2Atk;
         public Vector3 positionAdjustment;
         public Quaternion angleAdjustment;
         public Transform parent;
@@ -115,6 +116,16 @@ namespace Theogony
             laser.transform.localRotation = angleAdjustment;
 
            //  Instantiate(waterLaser, transform.position, transform.rotation);
+        }
+
+        public void Phase2Transition()
+        {
+            GetComponentInParent<BossController>().phase2Transition = true;
+        }
+
+        public void Phase2Atk()
+        {
+           Instantiate(phase2Atk, transform.position, transform.rotation);            
         }
     }
 }
