@@ -18,6 +18,7 @@ namespace Theogony
         public Quaternion angleAdjustment;
         public Transform parent;
         public GameObject BossPhase2;
+        public GameObject oldSkin;
 
         void Start()
         {
@@ -131,6 +132,7 @@ namespace Theogony
         public void ChangeSkin()
         {
             BossPhase2.SetActive(true);
+            oldSkin.SetActive(false);
         }
     }
 }
