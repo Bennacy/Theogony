@@ -17,6 +17,7 @@ namespace Theogony
         public Vector3 positionAdjustment;
         public Quaternion angleAdjustment;
         public Transform parent;
+        public GameObject BossPhase2;
 
         void Start()
         {
@@ -126,6 +127,10 @@ namespace Theogony
         public void Phase2Atk()
         {
            Instantiate(phase2Atk, transform.position, transform.rotation);            
+        }
+        public void ChangeSkin()
+        {
+            BossPhase2.SetActive(true);
         }
     }
 }

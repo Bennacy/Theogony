@@ -13,6 +13,7 @@ public class RotateCamera : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        /*
         if(Input.GetKey(KeyCode.UpArrow)){
 
         }
@@ -29,5 +30,6 @@ public class RotateCamera : MonoBehaviour
             rot.y += 10 * Time.deltaTime;
             transform.rotation = Quaternion.Euler(rot);
         }
+        */
     }
 }

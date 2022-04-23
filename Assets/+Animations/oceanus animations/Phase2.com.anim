@@ -72768,14 +72768,21 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 2
-    functionName: EndAttack
+    functionName: Phase2Transition
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2
-    functionName: Phase2Transition
+  - time: 2.5
+    functionName: ChangeSkin
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.5333333
+    functionName: EndAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
