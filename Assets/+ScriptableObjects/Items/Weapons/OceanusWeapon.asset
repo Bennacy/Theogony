@@ -28,5 +28,5 @@ MonoBehaviour:
   - WaterLaser
   - Thrust Slash
   phase2Weights: 140000000a000000140000001400000014000000
-  damageDealt: 20
+  damageDealt: 200
   playerWeapon: {fileID: 0}

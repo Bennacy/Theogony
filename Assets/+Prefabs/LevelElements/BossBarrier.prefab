@@ -130,5 +130,6 @@ MonoBehaviour:
   traversePoints:
   - {x: -2.5, y: 0, z: 0}
   - {x: 4, y: 0, z: 0}
+  traversing: 0
   traverseSpeed: 3
   boss: {fileID: 0}

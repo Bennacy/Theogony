@@ -36,7 +36,7 @@ namespace Theogony{
                     break;
                 case 1:
                     origMax = globalInfo.baseHealth;
-                    UpdateBarWidth(globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 1000);
+                    UpdateBarWidth(globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 10000);
                     break;
             }
             // maxWidth = frontTrans.sizeDelta.x;

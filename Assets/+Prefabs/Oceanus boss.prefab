@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2aa2ce02cd8304682e5056620fa7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 45
+  maxHealth: 3000
   currHealth: 0
   currencyDrop: 20000
   animator: {fileID: 0}
@@ -508,6 +508,7 @@ MonoBehaviour:
   invincible: 0
   dying: 0
   parryCollider: {fileID: 0}
+  phase2Transition: 0
 --- !u!114 &2851511348467604718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +525,7 @@ MonoBehaviour:
   weaponTemplate: {fileID: 0}
   bossweaponTemplate: {fileID: 11400000, guid: 90e975d5cbe1d5841894784a343b5792, type: 2}
   positionAdjustment: {x: 0, y: 0, z: 0}
-  angleAdjustment: {x: 0, y: 0, z: 0, w: 0}
+  angleAdjustment: {x: 0, y: 0, z: 0}
 --- !u!1001 &2851511348657665679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -842,6 +843,7 @@ MonoBehaviour:
   attacking: 0
   Slam: {fileID: 6929287914374828085, guid: de1ef82952b6df24297465b118c278ae, type: 3}
   waterLaser: {fileID: 2729972697452325964, guid: a1b822c3740a2994ab598b597e13cb07, type: 3}
+  phase2Atk: {fileID: 7599685520640326246, guid: 23d5d1547401c0a4d8a12076ed35ac0f, type: 3}
   positionAdjustment: {x: 0, y: 0, z: 0}
   angleAdjustment: {x: 0, y: 0, z: 0, w: 0}
   parent: {fileID: 4237501844536836115}

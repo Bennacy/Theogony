@@ -23,6 +23,7 @@ namespace Theogony{
         public GameObject levelMenu;
         public TextMeshProUGUI healthUpdate;
         public TextMeshProUGUI staminaUpdate;
+        public TextMeshProUGUI damageUpdate;
         private bool confirming;
         private PlayerManager playerManager;
 
@@ -59,8 +60,14 @@ namespace Theogony{
                 confirmationText.text = "Cancel level up?";
             }
 
-            healthUpdate.text = "Health:  " + Mathf.Round(playerManager.maxHealth) + "     -     " + Mathf.Round(globalInfo.healthIncrease.Evaluate((vitLevels + globalInfo.vit) * .01f) * 1000);
+            healthUpdate.text = "Health:  " + Mathf.Round(playerManager.maxHealth) + "     -     " + Mathf.Round(globalInfo.healthIncrease.Evaluate((vitLevels + globalInfo.vit) * .01f) * 10000);
             staminaUpdate.text = "Stamina:  " + Mathf.Round(playerManager.maxStamina) + "     -     " + Mathf.Round(globalInfo.staminaIncrease.Evaluate((endLevels + globalInfo.end) * .01f) * 1000);
+
+            weaponItems weapon = playerManager.GetComponent<PlayerInventory>().rightWeapon;
+            int currentDamage = Mathf.RoundToInt(weapon.CalculateDamage(globalInfo, false));
+            float strBonus = weapon.baseDamage * (weapon.strScaling * .25f) * (globalInfo.strIncrease.Evaluate((strLevels + globalInfo.str) * .01f));
+            float dexBonus = weapon.baseDamage * (weapon.dexScaling * .25f) * (globalInfo.dexIncrease.Evaluate((dexLevels + globalInfo.dex) * .01f));
+            damageUpdate.text = "Damage:  " + currentDamage + "     -     " + Mathf.RoundToInt(weapon.baseDamage + strBonus + dexBonus);
         }
 
         public int GetUpgradeCost(int levels){

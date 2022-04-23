@@ -58,9 +58,7 @@ namespace Theogony{
         public int end;
         public int str;
         public int dex;
-        public float vitIncrease;
         public float baseHealth;
-        public float endIncrease;
         public float baseStamina;
         [Space]
 
@@ -84,7 +82,7 @@ namespace Theogony{
             }else{
                 Destroy(gameObject);
             }
-            Debug.Log(healthIncrease.Evaluate(23 * .01f) * 1000);
+            Debug.Log(healthIncrease.Evaluate(23 * .01f) * 10000);
             StartCoroutine(StartFunctions(.4f));
         }
 
@@ -146,7 +144,7 @@ namespace Theogony{
 
         public void AlterVit(int change){
             vit += change;
-            health.UpdateBarWidth(healthIncrease.Evaluate(vit * .01f) * 1000);
+            health.UpdateBarWidth(healthIncrease.Evaluate(vit * .01f) * 10000);
             Debug.Log(vit);
             PlayerLevel();
         }

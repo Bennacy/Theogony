@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControllerScript: {fileID: 0}
   enemyController: {fileID: 0}
+  bossController: {fileID: 0}
   cam: {fileID: 0}
   healthBar: {fileID: 23226305}
   globalInfo: {fileID: 0}
@@ -356,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4155513737072620764
 Transform:
   m_ObjectHideFlags: 0
@@ -418,11 +419,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7eaef7ecd50774fafe63f6ca24e39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 75
+  maxHealth: 750
   currHealth: 0
   currencyDrop: 1000
   animator: {fileID: 0}
-  patrolWaypoints: []
+  patrolWaypoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: 15.76, y: 0, z: 0}
+  - {x: 15.76, y: 0, z: 22.13}
   waypointIndex: 0
   knockbackResistance: 5
   attacking: 0
@@ -433,6 +437,7 @@ MonoBehaviour:
   invincible: 0
   dying: 0
   riposteCollider: {fileID: 7352224887389364334}
+  wasHit: 0
 --- !u!114 &1563597365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +454,9 @@ MonoBehaviour:
   currentState: {fileID: 0}
   changedState: 1
   enemyController: {fileID: 0}
+  bossController: {fileID: 0}
   staggerTimer: 0
+  stopFacing: 1
   attackTracker: {x: 0, y: 0}
 --- !u!114 &1563597364
 MonoBehaviour:
@@ -480,6 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 6519144573344472665}
   weaponTemplate: {fileID: 11400000, guid: dcf563fb2b156aa4f8b30c7c3a8fd3a0, type: 2}
+  bossweaponTemplate: {fileID: 0}
   positionAdjustment: {x: 0, y: 0, z: 0}
   angleAdjustment: {x: 0, y: 90, z: 0}
 --- !u!195 &1563597366
