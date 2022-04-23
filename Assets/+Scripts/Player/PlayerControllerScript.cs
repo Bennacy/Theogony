@@ -60,10 +60,10 @@ namespace Theogony{
             Debug.Log(playerInput.currentControlScheme);
         }
 
-        void OnGUI()
-        {
-            GUI.Label(new Rect(0, 0, 100, 100), (playerInput.currentControlScheme));
-        }
+        // void OnGUI()
+        // {
+        //     GUI.Label(new Rect(0, 0, 100, 100), (playerInput.currentControlScheme));
+        // }
 
         void Update()
         {

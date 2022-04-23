@@ -8,7 +8,7 @@ namespace Theogony{
         private GlobalInfo globalInfo;
         private PlayerControllerScript player;
         public Vector3[] traversePoints;
-        private bool traversing;
+        public bool traversing;
         public float traverseSpeed;
         private bool canTraverse;
         private bool disabled;
