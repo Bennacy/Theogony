@@ -152,6 +152,17 @@ namespace Theogony{
             }
         }
 
+        public void ChanggeRight(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                if(animator.GetBool("Occupied") == false)
+                {
+                playerInventory.ChangeWeapon();
+                }
+            }
+        }
+
         public void Roll(InputAction.CallbackContext context){
             if(true){
                 if(context.performed && canMove && !animator.GetBool("Occupied")){ //Backstep

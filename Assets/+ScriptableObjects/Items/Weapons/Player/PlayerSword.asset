@@ -23,6 +23,6 @@ MonoBehaviour:
   - LightAttack_3
   heavyAttack: HeavyAttack
   currattack: 0
-  baseDamage: 10
+  baseDamage: 15
   strScaling: 1
   dexScaling: 3
