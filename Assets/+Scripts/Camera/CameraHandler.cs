@@ -270,7 +270,20 @@ namespace Theogony
                 }else{
                     Quaternion angle = player.rb.rotation;
                     targetAngleX = angle.eulerAngles.y;
+                    Debug.Log("Not Sitting - " + targetAngleX);
                 }
+            }
+        }
+        private void LockOn(float waitTime){
+            float timer = 0;
+            while(timer < waitTime){
+                Debug.Log(timer);
+                timer += Time.deltaTime;
+            }
+            if(timer > waitTime){
+                Quaternion angle = player.rb.rotation;
+                targetAngleX = angle.eulerAngles.y;
+                Debug.Log("Sitting - " + targetAngleX);
             }
         }
 
@@ -297,6 +310,12 @@ namespace Theogony
             }
 
             return null;
+        }
+
+        public void LookAt(Transform target){
+            // LockOn(.5f);
+            
+            targetAngleX = Vector3.SignedAngle(Vector3.forward, target.position - player.transform.position, Vector3.up);
         }
         #endregion
 

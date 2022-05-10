@@ -60,6 +60,7 @@ namespace Theogony{
 
         public void Sit(){
             playerControllerScript.animator.Play("SitDown");
+            playerControllerScript.cameraHandler.LookAt(transform);
             playerControllerScript.canMove = false;
             teleportPosition = playerControllerScript.transform.position;
             Vector3 checkpointDirection = (playerControllerScript.transform.position - transform.position).normalized;

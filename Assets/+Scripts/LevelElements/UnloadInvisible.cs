@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Theogony{ 
     public class UnloadInvisible : MonoBehaviour
     {
+        public bool isParent;
         public Camera cam;
         public MeshRenderer[] renderers;
         public Collider[] colliders;
@@ -14,16 +15,24 @@ namespace Theogony{
 
         void Start()
         {
+            if(isParent){
+                foreach(Transform child in transform){
+                    UnloadInvisible script = child.gameObject.AddComponent<UnloadInvisible>();
+                    script.isParent = false;
+                }
+                return;
+            }
             cam = Camera.main;
             renderers = GetComponentsInChildren<MeshRenderer>();
             colliders = GetComponentsInChildren<Collider>();
             scripts = GetComponentsInChildren<MonoBehaviour>();
         }
 
-        // Update is called once per frame
         void Update()
         {
-             Vector3 screenPoint = cam.WorldToViewportPoint(transform.position);
+            if(isParent)
+                return;
+            Vector3 screenPoint = cam.WorldToViewportPoint(transform.position);
             bool onScreen = screenPoint.z > seenThreshold.x && screenPoint.x > seenThreshold.x && screenPoint.y > seenThreshold.x && screenPoint.x < seenThreshold.y && screenPoint.y < seenThreshold.y;
 
             if(onScreen && !toggled){
