@@ -18,9 +18,8 @@ MonoBehaviour:
   isUnarmed: 0
   knockback: 3
   lightAttack:
-  - Light_1
-  - LightAttack_2
-  - LightAttack_3
+  - Light_Sytche_1
+  - Light_Sytche_2
   heavyAttack: HeavyAttack
   currattack: 0
   baseDamage: 10
