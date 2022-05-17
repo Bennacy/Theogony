@@ -11,6 +11,7 @@ namespace Theogony {
 
         DamageCollider rightWeaponCollider;
         ParryColider leftWeaponCollider;
+        BlockColider blockColider;
 
         Animator animHandler;
         public bool rotateAttack;
@@ -49,6 +50,7 @@ namespace Theogony {
             {
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 LoadLeftCollider();
+                LoadBlockCollider();
             }
             else
             {
@@ -66,9 +68,17 @@ namespace Theogony {
         {
             leftWeaponCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<ParryColider>();
         }
+        private void LoadBlockCollider()
+        {
+            blockColider = leftHandSlot.currentWeaponModel.GetComponentInChildren<BlockColider>();
+        }
         #endregion
 
         #region Animation Events
+        public void TestEvent(){
+            Debug.Log("Running Event");
+        }
+
         public void EnableRightCollider()
         {
             rightWeaponCollider.EnableCollider();
@@ -76,6 +86,10 @@ namespace Theogony {
         public void EnableLeftCollider()
         {
             leftWeaponCollider.EnableCollider();
+        }
+        public void EnableBlockCollider()
+        {
+            blockColider.EnableCollider();
         }
 
         public void DisableRightCollider()
@@ -85,6 +99,10 @@ namespace Theogony {
         public void DisableLeftCollider()
         {
             leftWeaponCollider.DisableCollider();
+        }
+        public void DisableBlockCollider()
+        {
+            blockColider.DisableCollider();
         }
 
         public void EndRiposte(){
@@ -154,11 +172,12 @@ namespace Theogony {
         {
             CanNotCombo();
             EnableCanMove();
+            DisableKinematic();
             DisableLeftCollider();
             DisableRightCollider();
             IsNotOccupied();
             rotateAttack = false;
-            transform.rotation = Quaternion.identity;
+            transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
 

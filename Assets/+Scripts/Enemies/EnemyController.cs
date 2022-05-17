@@ -43,7 +43,7 @@ namespace Theogony{
             dying = false;
         }
 
-        void Update()
+        public void Update()
         {
             if(currHealth <= 0 && !dying){
                 // Kill();
@@ -91,19 +91,20 @@ namespace Theogony{
         void OnDrawGizmosSelected()
         {
             for(int i = 0; i < patrolWaypoints.Length; i++){
+                Vector3 waypointPos = patrolWaypoints[i];
                 if(i == waypointIndex){
                     Gizmos.color = Color.red;
                 }else{
                     Gizmos.color = Color.white;
                 }
-                Gizmos.DrawWireSphere(patrolWaypoints[i], 1);
+                Gizmos.DrawWireSphere(waypointPos, 1);
                 Gizmos.color = Color.white;
                 int j = i;
                 j++;
                 if(j >= patrolWaypoints.Length){
                     j = 0;
                 }
-                Gizmos.DrawLine(patrolWaypoints[i], patrolWaypoints[i] + ((patrolWaypoints[j] - patrolWaypoints[i]) / 2));
+                Gizmos.DrawLine(waypointPos, waypointPos + ((patrolWaypoints[j] - patrolWaypoints[i]) / 2));
             }
         }
     }

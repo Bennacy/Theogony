@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield_Desktop
       objectReference: {fileID: 0}
+    - target: {fileID: 1637648508562816, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
       propertyPath: m_RootOrder
       value: 0

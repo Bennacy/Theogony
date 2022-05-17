@@ -7,16 +7,18 @@ namespace Theogony
 {
     public class BlockColider : MonoBehaviour
     {
-        /*
-         Collider blockCollider;
+        public Collider blockCollider;
+
+        //  Collider blockCollider;
 
         private void Awake()
         {
-            blockCollider = GetComponent<Collider>();
+            Transform parentTrans = GameObject.FindGameObjectWithTag("Player").transform;
+            
+            blockCollider = parentTrans.Find("Block").gameObject.GetComponent<Collider>();
             blockCollider.gameObject.SetActive(true);
             blockCollider.isTrigger = false;
             blockCollider.enabled = false;
-
         }
 
         public void EnableCollider()
@@ -28,7 +30,6 @@ namespace Theogony
         {
             blockCollider.enabled = false;
         }
-        */
     }
 
 }

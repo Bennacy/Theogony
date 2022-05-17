@@ -7,6 +7,7 @@ namespace Theogony{
     {
         Collider damageCollider;
         private GlobalInfo globalInfo;
+        private Transform playerBlock;
         public List<GameObject> hitEnemies;
 
         private void Awake()
@@ -30,12 +31,22 @@ namespace Theogony{
 
         void OnTriggerEnter(Collider other)
         {
+            if(other.name == "Block"){
+                playerBlock = other.transform;
+            }
+            
             if(other.tag == "Player" && !GetComponentInParent<EnemyController>().staggered){
                 EnemyWeapons weapon = GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 PlayerManager manager = other.gameObject.GetComponent<PlayerManager>();
-                StartCoroutine(manager.Knockback(transform, weapon.knockback));
-                manager.wasHit = true;
-                manager.Damage(weapon.damageDealt);
+
+                if(playerBlock != null){
+                    playerBlock = null;
+                    manager.StaminaDamage(weapon.damageDealt / 3);
+                }else{
+                    StartCoroutine(manager.Knockback(transform, weapon.knockback));
+                    manager.wasHit = true;
+                    manager.Damage(weapon.damageDealt);
+                }
             }
         }
     }

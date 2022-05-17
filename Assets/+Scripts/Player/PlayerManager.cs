@@ -39,7 +39,7 @@ namespace Theogony{
         {
             maxHealth = globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 10000;
             maxStamina = globalInfo.staminaIncrease.Evaluate(globalInfo.end * .01f) * 1000;
-            if(!staminaSpent && currStamina < maxStamina){
+            if(currStamina < maxStamina){
                 currStamina += staminaRecharge * Time.deltaTime;
             }
             if(currHealth < 0){
@@ -137,6 +137,27 @@ namespace Theogony{
 
         public void Damage(float deduction){
             currHealth -= deduction;
+        }
+
+        public void StaminaDamage(float deduction){
+            currStamina -= deduction;
+            if(currStamina < 0){
+                currStamina = 0;
+                StanceBreak();
+            }
+        }
+
+        public void StanceBreak(){
+            Debug.Log("Stance Broken");
+            Animator animator = GetComponentInChildren<Animator>();
+            WeaponSlotManager manager = GetComponentInChildren<WeaponSlotManager>();
+            manager.DisableBlockCollider();
+            manager.ResetEvents();
+            manager.EnableKinematic();
+            
+            playerControllerScript.blocking = false;
+            playerControllerScript.canMove = false;
+            animator.Play("StanceBreak");
         }
 
         public IEnumerator Knockback(Transform weapon, float knockback){

@@ -60,8 +60,6 @@ namespace Theogony
 
         public void HandleBlock(weaponItems weaponItem)
         {
-
-          
             if (weaponItem.currattack == weaponItem.lightAttack.Length)
             {
                 weaponItem.currattack = 0;

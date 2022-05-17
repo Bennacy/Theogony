@@ -43,6 +43,7 @@ namespace Theogony{
         public bool canMove;
         private bool stoppedMove;
         public bool running;
+        public bool blocking;
 
 
 
@@ -67,6 +68,8 @@ namespace Theogony{
 
         void Update()
         {
+            animator.SetBool("Blocking", blocking);
+
             if(Input.GetKeyDown(KeyCode.Alpha1)){
                 playerInput.SwitchCurrentControlScheme("Keyboard");
             }
@@ -86,9 +89,9 @@ namespace Theogony{
                     if(!playerManager.UpdateStamina(runCost * Time.deltaTime)){
                         running = false;
                         moveSpeed = walkSpeed;
-                        playerManager.staminaSpent = false;
+                        // playerManager.staminaSpent = false;
                     }else{
-                        StartCoroutine(playerManager.RechargeStamina());
+                        // StartCoroutine(playerManager.RechargeStamina());
                     }
                 }
                 
@@ -150,9 +153,15 @@ namespace Theogony{
         {
             if (context.performed)
             {
-
                 canMove = false;
-                playerAttacker.HandleBlock(playerInventory.leftWeapon);
+                blocking = true;
+                // playerAttacker.HandleBlock(playerInventory.leftWeapon);
+            }
+            if(context.canceled && blocking){
+                canMove = true;
+                blocking = false;
+                GetComponentInChildren<WeaponSlotManager>().ResetEvents();
+                GetComponentInChildren<WeaponSlotManager>().DisableBlockCollider();
             }
         }
 
@@ -177,7 +186,7 @@ namespace Theogony{
                         rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
                         animator.Play("Backstep");
                         canMove = false;
-                        playerManager.staminaSpent = true;
+                        // playerManager.staminaSpent = true;
                     }else if(playerManager.UpdateStamina(rollCost)){ //Roll
                         rb.useGravity = false;
                         damageColl.enabled = false;
@@ -188,7 +197,7 @@ namespace Theogony{
                         animator.Play("Roll");
                         animator.speed = 1.5f;
                         canMove = false;
-                        playerManager.staminaSpent = true;
+                        // playerManager.staminaSpent = true;
                     }
                 }
             }
