@@ -13,6 +13,8 @@ namespace Theogony{
         public BossController bossController;
         public float staggerTimer;
         public bool stopFacing = true;
+        public float visionMemory;
+        public float visionCountdown;
 
         public Vector2 attackTracker; //X value is the attack index, Y is the number of times the attack was performed
         void Start(){

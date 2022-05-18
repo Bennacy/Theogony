@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cca641572805c94f8d94670c2d1e864, type: 3}
   m_Name: c!CanSee
   m_EditorClassIdentifier: 
+  visionLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   negation: 1
   viewAngle: 145
-  viewDistance: 15
+  viewDistance: 30
