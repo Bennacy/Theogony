@@ -12,6 +12,7 @@ namespace Theogony {
         DamageCollider rightWeaponCollider;
         ParryColider leftWeaponCollider;
         BlockColider blockColider;
+        PlayerManager playerManager;
 
         Animator animHandler;
         public bool rotateAttack;
@@ -27,6 +28,7 @@ namespace Theogony {
             globalInfo = GlobalInfo.GetGlobalInfo();
             pos = GetComponentInParent<Transform>();
             playerInventory = GetComponentInParent<PlayerInventory>();
+            playerManager = GetComponentInParent<PlayerManager>();
             animHandler = GetComponent<Animator>();
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -63,6 +65,7 @@ namespace Theogony {
         private void LoadRightCollider()
         {
             rightWeaponCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            Debug.Log(rightWeaponCollider);
         }
         private void LoadLeftCollider()
         {
@@ -90,6 +93,7 @@ namespace Theogony {
         public void EnableBlockCollider()
         {
             blockColider.EnableCollider();
+            playerManager.staminaRecharge = playerManager.blockingRecharge;
         }
 
         public void DisableRightCollider()
@@ -176,6 +180,8 @@ namespace Theogony {
             DisableLeftCollider();
             DisableRightCollider();
             IsNotOccupied();
+
+            playerManager.staminaRecharge = playerManager.normalRecharge;
             rotateAttack = false;
             transform.localRotation = Quaternion.Euler(Vector3.zero);
         }

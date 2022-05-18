@@ -64,6 +64,14 @@ namespace Theogony{
         [Space]
 
         [Space]
+        [Header("Inventory")]
+        public List<weaponItems> collectedWeaponsR;
+        public List<weaponItems> collectedWeaponsL;
+        public int currentWeaponR;
+        public int currentWeaponL;
+        [Space]
+
+        [Space]
         [Header("Booleans")]
         public bool paused;
         public bool refreshedScene;
@@ -252,6 +260,8 @@ namespace Theogony{
             StartCoroutine(TravelTo(lastCheckpoint, false));
         }
     }
+
+    public enum InteractionType{PickUp, Open, Sit, RecoverSouls, BossBarrier}
 
     public class Functions{
         public static float MapValues(float toMap, float min1, float max1, float min2, float max2){

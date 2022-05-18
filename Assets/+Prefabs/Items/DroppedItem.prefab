@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7923431558861329307}
   - component: {fileID: 7923431558861329311}
   m_Layer: 7
-  m_Name: Item
+  m_Name: DroppedItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b76d57306799f34182989c55299179d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiController: {fileID: 0}
+  interactRange: 2
   playerControllerScript: {fileID: 0}
   playerInventory: {fileID: 0}
   action: 0
+  itemGiven: {fileID: 0}
+  currencyChange: 500000

@@ -22,6 +22,7 @@ namespace Theogony{
         public bool playerTargetable;
         public bool staggered;
         public EnemyWeapons weapon;
+        public GameObject dropPreset;
         public bool invincible;
 
         [HideInInspector]
@@ -45,9 +46,6 @@ namespace Theogony{
 
         public void Update()
         {
-            if(currHealth <= 0 && !dying){
-                // Kill();
-            }
             animator.SetFloat("Velocity", Vector3.Magnitude(navMeshAgent.velocity));
             playerTargetable = globalInfo.playerTargetable;
         }

@@ -112,9 +112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 0}
+  interactRange: 5
   playerControllerScript: {fileID: 0}
   playerInventory: {fileID: 0}
   action: 4
+  itemGiven: {fileID: 0}
+  currencyChange: 0
 --- !u!114 &826043409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traversePoints:
-  - {x: -2.5, y: 0, z: 0}
-  - {x: 4, y: 0, z: 0}
+  - {x: -3.3089123, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
   traversing: 0
   traverseSpeed: 3
   boss: {fileID: 0}
+  interactable: {fileID: 2566491461697283580}

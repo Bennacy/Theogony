@@ -6,11 +6,13 @@ namespace Theogony{
     public class Interactable : MonoBehaviour
     {
         public UIController uiController;
+        public float interactRange;
         private GlobalInfo globalInfo;
         public PlayerControllerScript playerControllerScript;
         public PlayerInventory playerInventory;
         [Tooltip("0 - Pick up\n1 - Open\n2 - Rest\n3 - Recover\n4 - Fog wall")]
-        public int action;
+        public InteractionType action;
+        public weaponItems itemGiven;
         public int currencyChange;
         
         void Start()
@@ -22,30 +24,30 @@ namespace Theogony{
             uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
-
         public void Interact(){
-            switch(action){
-                case 0:
-                    globalInfo.AlterCurrency(currencyChange);
-                    Destroy(gameObject);
-                    break;
-                case 1:
+            if(Vector3.Distance(playerControllerScript.transform.position, transform.position) <= interactRange){
+                switch(action){
+                    case InteractionType.PickUp:
+                        if(currencyChange != 0){
+                            globalInfo.AlterCurrency(currencyChange);
+                        }else{
+                            playerInventory.PickUp(itemGiven, false);
+                        }
+                        Destroy(gameObject);
+                        break;
+                    case InteractionType.Open:
 
-                    break;
-                case 2:
-                    GetComponent<Checkpoint>().Sit();
-                    break;
-                case 3:
-                    globalInfo.RecoverCurrency();
-                    break;
-                case 4:
-                    GetComponent<BossBarrier>().Traverse();
-                    break;
+                        break;
+                    case InteractionType.Sit:
+                        GetComponent<Checkpoint>().Sit();
+                        break;
+                    case InteractionType.RecoverSouls:
+                        globalInfo.RecoverCurrency();
+                        break;
+                    case InteractionType.BossBarrier:
+                        GetComponent<BossBarrier>().Traverse();
+                        break;
+                }
             }
         }
     }

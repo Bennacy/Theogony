@@ -7,7 +7,6 @@ namespace Theogony{
     public class conCanSee : Condition
     {
         [SerializeField]  private LayerMask visionLayer;
-        [SerializeField]  private LayerMask playerLayer;
         [SerializeField]  private RaycastHit seeing;
         [SerializeField]  private bool negation;
         [SerializeField]  private float viewAngle;
@@ -46,14 +45,23 @@ namespace Theogony{
             }
            
 
+            fsm.visionCountdown -= Time.deltaTime;
             if((angle < viewAngle) && (dist < viewDistance)){
-                fsm.visionCountdown -= Time.deltaTime;
                 
                 if(!VisionBlocked(fsm, target, dist)){
                     fsm.visionCountdown = fsm.visionMemory;
                     // Debug.Log("Sees");
                     return !negation;
+                }else{
+                    if(fsm.visionCountdown <= 0){
+                        // Debug.Log("Forgor :skull:");
+                        return negation;
+                    }else{
+                        // Debug.Log("Remembers");
+                        return !negation;
+                    }
                 }
+            }else{
                 if(fsm.visionCountdown <= 0){
                     // Debug.Log("Forgor :skull:");
                     return negation;
@@ -61,9 +69,6 @@ namespace Theogony{
                     // Debug.Log("Remembers");
                     return !negation;
                 }
-            }else{
-                // Debug.Log("Not In Range");
-                return negation;
             }
         }
 

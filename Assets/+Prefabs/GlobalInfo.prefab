@@ -247,6 +247,12 @@ MonoBehaviour:
   dex: 0
   baseHealth: 1000
   baseStamina: 100
+  collectedWeaponsR:
+  - {fileID: 11400000, guid: 1890039a17c960e42a7a9e852c2bfc43, type: 2}
+  collectedWeaponsL:
+  - {fileID: 11400000, guid: 8c3a5526cae05d14e965b443bd78894a, type: 2}
+  currentWeaponR: 0
+  currentWeaponL: 0
   paused: 0
   refreshedScene: 0
   reloading: 0

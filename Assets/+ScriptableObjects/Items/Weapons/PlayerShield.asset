@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334275e7514869d46a3b45b50aea1353, type: 3}
   m_Name: PlayerShield
   m_EditorClassIdentifier: 
-  itemName: shield
+  itemName: Shield
   weaponPrefab: {fileID: 8365965172047031865, guid: 7bc124a6f4e5c294188055ee76b11720, type: 3}
+  riposteMultiplier: 0
   isUnarmed: 0
+  knockback: 0
   lightAttack:
   - BlockIdle
   heavyAttack: Parry
   currattack: 0
+  baseDamage: 0
+  strScaling: 0
+  dexScaling: 0

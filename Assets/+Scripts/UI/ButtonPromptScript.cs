@@ -59,12 +59,15 @@ namespace Theogony{
             promptText.text = prompts[0].actionText[action];
             promptImage.sprite = prompts[inputType].images[action];
             inRange = Physics.OverlapSphere(player.transform.position, interactRadius, interactLayer);
+
             
             if(inRange.Length > 0 && !globalInfo.paused){
                 interactScript = inRange[0].GetComponent<Interactable>();
-                action = interactScript.action + 2;
-                promptText.enabled = true;
-                promptImage.enabled = true;
+                if(Vector3.Distance(player.transform.position, interactScript.transform.position) <= interactScript.interactRange){
+                    action = (int)interactScript.action + 2;
+                    promptText.enabled = true;
+                    promptImage.enabled = true;
+                }
             }else{
                 promptImage.enabled = false;
                 promptText.enabled = false;

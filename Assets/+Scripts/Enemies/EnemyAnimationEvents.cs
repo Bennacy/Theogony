@@ -8,18 +8,23 @@ namespace Theogony{
         private Animator animator;
         private EnemyController enemyController;
         public Collider weaponCollider;
+        private GameObject dropPrefab;
+        public EnemyWeapons weapon;
         public bool animating;
         public bool attacking;
 
-        void Start()
+        IEnumerator Start()
         {
+            yield return new WaitForSeconds(0.01f);
             animator = GetComponent<Animator>();
             enemyController = GetComponentInParent<EnemyController>();
+            dropPrefab = enemyController.dropPreset;
+            weapon = enemyController.weapon;
             Collider[] colliders = transform.GetComponentsInChildren<Collider>();
             foreach(Collider collider in colliders){
                 if(collider != GetComponent<Collider>()){
                     weaponCollider = collider;
-                    return;
+                    break;
                 }
             }
         }
@@ -30,7 +35,15 @@ namespace Theogony{
         }
 
         public void Die(){
+            Drop();
             Destroy(transform.parent.gameObject);
+        }
+
+        public void Drop(){
+            Vector3 dropPos = transform.position;
+            dropPos.y = 1;
+            Interactable script = Instantiate(dropPrefab, dropPos, Quaternion.identity).GetComponent<Interactable>();
+            script.itemGiven = weapon.droppedWeapon;
         }
 
         public void StartAttack(){

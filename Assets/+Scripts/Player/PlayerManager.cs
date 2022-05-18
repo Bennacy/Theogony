@@ -17,6 +17,8 @@ namespace Theogony{
         public float currHealth;
         public float currStamina;
         public float staminaRecharge;
+        public float blockingRecharge;
+        public float normalRecharge;
         public int[] levels;
         public bool staminaSpent;
         public bool wasHit;

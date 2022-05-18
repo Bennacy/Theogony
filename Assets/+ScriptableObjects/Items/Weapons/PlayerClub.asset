@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PlayerClub
   m_EditorClassIdentifier: 
   itemName: Club
-  weaponPrefab: {fileID: 8566638831284201798, guid: bd74fb66a6f6555499f45bf57a265730, type: 3}
+  weaponPrefab: {fileID: 8566638831284201798, guid: df02a915c9fc5c1438f912fe4c46dfac, type: 3}
+  riposteMultiplier: 3
   isUnarmed: 0
   knockback: 3
   lightAttack:
@@ -22,6 +23,6 @@ MonoBehaviour:
   - LightAttack_3
   heavyAttack: HeavyAttack
   currattack: 0
-  baseDamage: 10
-  strScaling: 1
-  dexScaling: 3
+  baseDamage: 250
+  strScaling: 3
+  dexScaling: 1

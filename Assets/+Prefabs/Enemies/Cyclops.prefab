@@ -357,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4155513737072620764
 Transform:
   m_ObjectHideFlags: 0
@@ -424,9 +424,7 @@ MonoBehaviour:
   currencyDrop: 1000
   animator: {fileID: 0}
   patrolWaypoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: 15.76, y: 0, z: 0}
-  - {x: 15.76, y: 0, z: 22.13}
+  - {x: -33.15618, y: 0, z: -27.622864}
   waypointIndex: 0
   knockbackResistance: 5
   attacking: 0
@@ -434,6 +432,7 @@ MonoBehaviour:
   playerTargetable: 0
   staggered: 0
   weapon: {fileID: 0}
+  dropPreset: {fileID: 7923431558861329306, guid: 48f0013a7f8ed7842aff523e5b21f09e, type: 3}
   invincible: 0
   dying: 0
   riposteCollider: {fileID: 7352224887389364334}
@@ -457,6 +456,8 @@ MonoBehaviour:
   bossController: {fileID: 0}
   staggerTimer: 0
   stopFacing: 1
+  visionMemory: 2
+  visionCountdown: 0
   attackTracker: {x: 0, y: 0}
 --- !u!114 &1563597364
 MonoBehaviour:
@@ -1708,6 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 0}
+  weapon: {fileID: 0}
   animating: 0
   attacking: 0
 --- !u!4 &6519144573344472665 stripped
