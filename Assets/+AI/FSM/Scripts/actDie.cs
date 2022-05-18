@@ -10,7 +10,6 @@ namespace Theogony
     {
         public override void Startup(FSM fsm)
         {
-            Debug.Log("Died");
             return;
         }
         public override void Act(FSM fsm)

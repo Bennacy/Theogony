@@ -41,14 +41,29 @@ namespace Theogony {
         {
             damageCollider.enabled = false;
         }
+
+        public void ResetList(){
+            hitEnemies = new List<GameObject>();
+        }
+
         private void OnTriggerEnter(Collider collision)
         {
-            Debug.Log(collision);
-            if (player.riposteAttack && !collision.gameObject.GetComponent<EnemyController>().invincible){
+            GameObject rootObject = collision.gameObject;
+            while(rootObject.transform.parent != null){
+                rootObject = rootObject.transform.parent.gameObject;
+            }
+            foreach(GameObject hit in hitEnemies){
+                if(rootObject == hit){
+                    return;
+                }
+            }
+            hitEnemies.Add(rootObject);
+
+            if (player.riposteAttack && !collision.gameObject.GetComponentInParent<EnemyController>().invincible){
                 // collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
                 player.playerManager.cameraHandler.ShakeRotation(1f, 0f, 1f, .2f);
-                collision.transform.GetComponentInChildren<Animator>().StopPlayback();
-                collision.transform.GetComponentInChildren<Animator>().Play("Riposted");
+                collision.transform.parent.GetComponentInChildren<Animator>().StopPlayback();
+                collision.transform.parent.GetComponentInChildren<Animator>().Play("Riposted");
                 Debug.Log("RIP");
             }
         }

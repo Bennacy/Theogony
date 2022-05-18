@@ -21,7 +21,6 @@ namespace Theogony
         public float CalculateDamage(GlobalInfo globalInfo, bool riposte){
             float strBonus = baseDamage * (strScaling * .25f) * (globalInfo.strIncrease.Evaluate(globalInfo.str * .01f));
             float dexBonus = baseDamage * (dexScaling * .25f) * (globalInfo.dexIncrease.Evaluate(globalInfo.dex * .01f));
-            Debug.Log("Scaling = " + globalInfo.strIncrease.Evaluate(globalInfo.str * .01f) + "\tStr Bonus = " + strBonus + "\nDex Bonus = " + dexBonus);
 
             float damage = baseDamage + strBonus + dexBonus;
             if(riposte)

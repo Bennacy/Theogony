@@ -193,6 +193,7 @@ namespace Theogony {
         }
         public void IsNotOccupied()
         {
+            rightWeaponCollider.ResetList();
             animHandler.SetBool("Occupied", false);
         }
 
@@ -214,6 +215,8 @@ namespace Theogony {
         public void StopRotateInAttacks()
         {
             resetAttack = false;
+            rotateAttack = false;
+            ResetEvents();
             accely = 0;         
 
         }
@@ -228,11 +231,6 @@ namespace Theogony {
 
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.V)){
-                GetComponent<Animator>().Play("Drink");
-            }
-
-
             if (rotateAttack == true)
             {
                 accelx = Input.acceleration.x;
@@ -244,9 +242,6 @@ namespace Theogony {
                 transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, 25f  * Time.deltaTime);
 
             }
-            
-           
         }
-       
     }
 }

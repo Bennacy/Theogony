@@ -25,10 +25,11 @@ namespace Theogony{
         }
 
         public void Interact(){
+            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             if(Vector3.Distance(playerControllerScript.transform.position, transform.position) <= interactRange){
                 switch(action){
                     case InteractionType.PickUp:
-                        if(currencyChange != 0){
+                        if(!itemGiven){
                             globalInfo.AlterCurrency(currencyChange);
                         }else{
                             playerInventory.PickUp(itemGiven, false);
