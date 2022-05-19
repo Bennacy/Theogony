@@ -177,28 +177,26 @@ namespace Theogony{
         }
 
         public void Roll(InputAction.CallbackContext context){
-            if(true){
-                if(context.performed && canMove && !animator.GetBool("Occupied")){ //Backstep
-                    if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
-                        rb.useGravity = false;
-                        damageColl.enabled = false;
-                        moveSpeed = backstepSpeed;
-                        rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
-                        animator.Play("Backstep");
-                        canMove = false;
-                        // playerManager.staminaSpent = true;
-                    }else if(playerManager.UpdateStamina(rollCost)){ //Roll
-                        rb.useGravity = false;
-                        damageColl.enabled = false;
-                        moveSpeed = rollSpeed;
-                        float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
-                        transform.rotation = Quaternion.Euler(0, angle, 0);
-                        rb.velocity += (camForward * movementVector * moveSpeed);
-                        animator.Play("Roll");
-                        animator.speed = 1.5f;
-                        canMove = false;
-                        // playerManager.staminaSpent = true;
-                    }
+            if(context.performed && canMove && !animator.GetBool("Occupied")){ //Backstep
+                if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
+                    rb.useGravity = false;
+                    damageColl.enabled = false;
+                    moveSpeed = backstepSpeed;
+                    rb.velocity += ((rb.rotation * Vector3.forward) * moveSpeed);
+                    animator.Play("Backstep");
+                    canMove = false;
+                    // playerManager.staminaSpent = true;
+                }else if(playerManager.UpdateStamina(rollCost)){ //Roll
+                    rb.useGravity = false;
+                    damageColl.enabled = false;
+                    moveSpeed = rollSpeed;
+                    float angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
+                    transform.rotation = Quaternion.Euler(0, angle, 0);
+                    rb.velocity += (camForward * movementVector * moveSpeed);
+                    animator.Play("Roll");
+                    animator.speed = 1.5f;
+                    canMove = false;
+                    // playerManager.staminaSpent = true;
                 }
             }
         }

@@ -6,6 +6,7 @@ namespace Theogony{
     public class HiddenWall : MonoBehaviour
     {
         public GlobalInfo globalInfo;
+        public PlayerControllerScript controller;
         public PlayerControllerScript playerControllerScript;
         public float fadeDuration;
         public float fadeTimer;
@@ -36,6 +37,25 @@ namespace Theogony{
             }
             if(material.color.a <= 0){
                 Destroy(gameObject);
+            }
+            if(controller){
+                if(controller.animator.GetCurrentAnimatorStateInfo(0).IsName("Roll")){
+                    fading = true;
+                }
+            }
+        }
+
+        void OnCollisionEnter(Collision collisionInfo)
+        {
+            if(collisionInfo.gameObject.tag == "Player"){
+                controller = collisionInfo.gameObject.GetComponent<PlayerControllerScript>();
+            }
+        }
+
+        void OnCollisionExit(Collision collisionInfo)
+        {
+            if(collisionInfo.gameObject.tag == "Player"){
+                controller = null;
             }
         }
     }

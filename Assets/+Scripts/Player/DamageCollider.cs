@@ -58,6 +58,10 @@ namespace Theogony {
                 }
             }
             hitEnemies.Add(rootObject);
+            
+            if(rootObject.GetComponent<HiddenWall>()){
+                rootObject.GetComponent<HiddenWall>().fading = true;
+            }
 
             if (player.riposteAttack && !collision.gameObject.GetComponentInParent<EnemyController>().invincible){
                 // collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
