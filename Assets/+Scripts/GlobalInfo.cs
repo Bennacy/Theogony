@@ -267,5 +267,9 @@ namespace Theogony{
         public static float MapValues(float toMap, float min1, float max1, float min2, float max2){
             return (toMap - min1) * (max2 - min2) / (max1 - min1) + min2;
         }
+
+        public static Vector3 Perpendicular(Vector3 v1, Vector3 v2){
+            return Vector3.Cross(v1,v2);
+        }
     }
 }

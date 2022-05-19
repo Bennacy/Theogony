@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 380154393}
   - component: {fileID: 380154392}
   - component: {fileID: 380154391}
+  - component: {fileID: 380154395}
   m_Layer: 8
   m_Name: Blocker
   m_TagString: Untagged
@@ -258,7 +259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0c65919de05713143ac91e08bc1276c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -303,6 +304,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &380154395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380154390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822d566d8553caf4589ae4ba46e83de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalInfo: {fileID: 0}
+  playerControllerScript: {fileID: 0}
+  fadeDuration: 2
+  fadeTimer: 0
+  fading: 0
+  coll: {fileID: 0}
+  material: {fileID: 0}
 --- !u!1001 &622909467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +330,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1235834874110441456, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235834874110441456, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -61.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: tester
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: lockOnRange
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
       value: 8

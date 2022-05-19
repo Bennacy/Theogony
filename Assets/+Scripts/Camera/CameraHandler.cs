@@ -15,6 +15,7 @@ namespace Theogony
         private LayerMask ignoreLayers;
         private PlayerInput playerInput;
         private GlobalInfo globalInfo;
+        private Camera mainCam;
         public CustomSlider sensSlider;
         public CustomSlider pivotSlider;
 
@@ -73,6 +74,7 @@ namespace Theogony
         private void Awake()
         {
             singleton = this;
+            mainCam = Camera.main;
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
@@ -104,7 +106,14 @@ namespace Theogony
                 targetAngleX += 360;
             }
             
-            targetAngleY -= (mouseYInput * (pivotSensitivity / 2000)) / delta;
+            if(playerInput.currentControlScheme != "Keyboard"){
+                pivotSensitivity = globalInfo.sensitivityY * 3;
+                sensitivity = globalInfo.sensitivityX * 3;
+            }else{
+                sensitivity = globalInfo.sensitivityX;
+                pivotSensitivity = globalInfo.sensitivityY;
+            }
+            targetAngleY -= (mouseYInput * (pivotSensitivity / 1500)) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
             Vector3 rotation = Vector3.zero;
@@ -119,7 +128,7 @@ namespace Theogony
             rotation.x = pivotAngle;
 
             if(pivotAngle != targetAngleY){
-                pivotAngle = Mathf.LerpAngle(pivotAngle, targetAngleY, lookSpeed);
+                pivotAngle = Mathf.LerpAngle(pivotAngle, targetAngleY, lookSpeed*1.5f);
             }
 
 
@@ -146,7 +155,6 @@ namespace Theogony
             }
             cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
             cameraTransform.localPosition = cameraTransformPosition;
-            
         }
 
         void LateUpdate()
@@ -160,28 +168,27 @@ namespace Theogony
             lockOnIndicator.SetActive(lockOnTarget != null);
             
             if(lockOnTarget != null){
-                lookSpeed = 0.01f;
-                targetAngleY = 19;
+                // Debug.Log(Vector3.Angle(player.transform.position - transform.position, lockOnTarget.position - transform.position));
+
+                lookSpeed = 0.03f;
+                // targetAngleY = 19;
                 
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
                 Vector3 indicatorPos = player.transform.position + (direction * .8f);
                 indicatorPos.y = lockOnTarget.position.y;
                 lockOnIndicator.transform.position = indicatorPos;
-
-                Vector3.Normalize(direction);
-                targetAngleX = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
                 
-                if(lookAngle != targetAngleX){
-                    lookAngle = Mathf.LerpAngle(lookAngle, targetAngleX, lookSpeed);
-                }
+                LookAt(lockOnTarget);
+
                 if(Vector3.Distance(player.transform.position, lockOnTarget.position) > lockOnRange){
                     lockOnTarget = null;
                     previouslyLocked = false;
                 }
+
             }else if(previouslyLocked){
                 lockOnTarget = GetClosestEnemy();
-                lookSpeed = 0.1f;
+                lookSpeed = 0.03f;
             }else{
                 lookSpeed = 0.1f;
             }
@@ -270,23 +277,9 @@ namespace Theogony
                 }else{
                     Quaternion angle = player.rb.rotation;
                     targetAngleX = angle.eulerAngles.y;
-                    Debug.Log("Not Sitting - " + targetAngleX);
                 }
             }
         }
-        private void LockOn(float waitTime){
-            float timer = 0;
-            while(timer < waitTime){
-                Debug.Log(timer);
-                timer += Time.deltaTime;
-            }
-            if(timer > waitTime){
-                Quaternion angle = player.rb.rotation;
-                targetAngleX = angle.eulerAngles.y;
-                Debug.Log("Sitting - " + targetAngleX);
-            }
-        }
-
         public void LoseLockOn(){
             previouslyLocked = false;
             lockOnTarget = null;
@@ -312,10 +305,14 @@ namespace Theogony
             return null;
         }
 
-        public void LookAt(Transform target){
-            // LockOn(.5f);
-            
-            targetAngleX = Vector3.SignedAngle(Vector3.forward, target.position - player.transform.position, Vector3.up);
+        public void LookAt(Transform target){       
+            Vector3 angle = target.position - player.transform.position;
+            targetAngleX = Vector3.SignedAngle(Vector3.forward, angle, Vector3.up);
+            targetAngleY = Functions.MapValues(Vector3.Distance(player.transform.position, target.position), 0, lockOnRange, 0, 20);
+
+            // if(lookAngle != targetAngleX){
+            //     lookAngle = Mathf.LerpAngle(lookAngle, targetAngleX, lookSpeed);
+            // }
         }
         #endregion
 
@@ -365,5 +362,14 @@ namespace Theogony
         {
             Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
         }
+
+        // void OnDrawGizmos()
+        // {
+        //     if(lockOnTarget != null){
+        //         Debug.Log(transform.position);
+        //         Gizmos.DrawLine(player.transform.position, cameraTransform.position);
+        //         Gizmos.DrawLine(lockOnTarget.position, cameraTransform.position);
+        //     }
+        // }
     }
 }
