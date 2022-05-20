@@ -11,7 +11,7 @@ namespace Theogony{
         private PlayerControllerScript playerControllerScript;
         private Rigidbody rb;
         public CameraHandler cameraHandler;
-        public EnemyController parryEnemy;
+        public EnemyController riposteEnemy;
         public float maxHealth;
         public float maxStamina;
         public float currHealth;
@@ -48,12 +48,17 @@ namespace Theogony{
                 Die();
             }
 
+            if(riposteEnemy){
+                if(!riposteEnemy.riposteCollider.enabled){
+                    riposteEnemy = null;
+                    GetComponent<PlayerAttacker>().riposteAttack = false;
+                }
+            }
+
             if(Input.GetKeyDown(KeyCode.G)){
                 // cameraHandler.ShakePosition(.1f, .1f, .1f, .3f);
                 // cameraHandler.ShakeRotation(1f, 0f, 1f, .3f);
             }
-            // float testNo = (Mathf.Sin(Time.time) + 1) / 2;
-            // Debug.Log(testNo + " = " + curveTest.Evaluate(testNo));
         }
 
         void LateUpdate()
@@ -80,21 +85,21 @@ namespace Theogony{
         }
 
         public void Riposte(){
-            Vector3 ripostePos = parryEnemy.transform.position + RipostePosition();
+            Vector3 ripostePos = riposteEnemy.transform.position + RipostePosition();
             ripostePos.y = transform.position.y;
             transform.position = ripostePos;
-            transform.LookAt(parryEnemy.transform);
+            transform.LookAt(riposteEnemy.transform);
             cameraHandler.LoseLockOn();
             rb.isKinematic = true;
             globalInfo.playerTargetable = false;
             GetComponentInChildren<Animator>().Play("Riposte");
-            parryEnemy.GetComponent<FSM>().staggerTimer = float.PositiveInfinity;
+            riposteEnemy.GetComponent<FSM>().staggerTimer = float.PositiveInfinity;
             StartCoroutine(EndRiposte(1));
         }
 
         private Vector3 RipostePosition(){
-            Vector3 forward = parryEnemy.transform.forward;
-            // forward *= parryEnemy.riposteDistance;
+            Vector3 forward = riposteEnemy.transform.forward;
+            // forward *= riposteEnemy.riposteDistance;
             return forward;
         }
 

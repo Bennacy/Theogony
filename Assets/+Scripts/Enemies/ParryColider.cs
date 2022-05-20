@@ -9,6 +9,8 @@ namespace Theogony
     {
 
         Collider parryCollider;
+        public GameObject sparkPrefab;
+        public ParticleSystem sparkParticles;
 
         private void Awake()
         {
@@ -16,6 +18,7 @@ namespace Theogony
             parryCollider.gameObject.SetActive(true);
             parryCollider.isTrigger = true;
             parryCollider.enabled = false;
+            sparkParticles = Instantiate(sparkPrefab, transform).GetComponent<ParticleSystem>();
         }
 
         public void EnableCollider()
@@ -32,8 +35,11 @@ namespace Theogony
         {
             if (collision.tag == "EnemyWeapon")
             {
+                Debug.Log(transform.position);
                 Debug.Log("Parried");
                 PlayerManager manager = GetComponentInParent<PlayerManager>();
+                sparkParticles.transform.position = collision.transform.position;
+                sparkParticles.Play();
                 if(manager.wasHit){
                     manager.Damage(-collision.GetComponentInParent<EnemyController>().weapon.damageDealt);
                     manager.Knockback(collision.transform, -3 * collision.GetComponentInParent<EnemyController>().weapon.knockback);

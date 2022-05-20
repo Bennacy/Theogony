@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c87288ff2f8b0e43980e8dd208865d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockCollider: {fileID: 0}
 --- !u!1001 &7014032407582635818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,25 +135,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield_Desktop
       objectReference: {fileID: 0}
-    - target: {fileID: 1637648508562816, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -194,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 230
       objectReference: {fileID: 0}
+    - target: {fileID: 2825685040823422198, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
+      propertyPath: sparkPrefab
+      value: 
+      objectReference: {fileID: 4178278515322521599, guid: 84a165bde6adcc546afe3de1f9ad73da, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
 --- !u!4 &7009665425002860190 stripped
@@ -201,33 +190,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4939833594640820, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
   m_PrefabInstance: {fileID: 7014032407582635818}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7012958110626405034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1637648508562816, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
-  m_PrefabInstance: {fileID: 7014032407582635818}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &7033710098121657567
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7012958110626405034}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 2.4, y: 2.3, z: 0.510742}
-  m_Center: {x: 0, y: 0, z: 0.15897246}
---- !u!114 &2825685040823422198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7012958110626405034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e439f9fb9685a14291f8c7169f87b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

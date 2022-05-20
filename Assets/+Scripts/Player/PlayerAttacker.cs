@@ -72,7 +72,7 @@ namespace Theogony
         {
             if(other.tag == "Staggered"){
                 riposteAttack = true;
-                playerManager.parryEnemy = other.GetComponentInParent<EnemyController>();
+                playerManager.riposteEnemy = other.GetComponentInParent<EnemyController>();
             }
         }
         
@@ -80,7 +80,7 @@ namespace Theogony
         {
             if(other.tag == "Staggered"){
                 riposteAttack = false;
-                playerManager.parryEnemy = null;
+                playerManager.riposteEnemy = null;
             }
         }
 
