@@ -35,6 +35,10 @@ namespace Theogony{
         public Collider[] inRange;
         private Interactable interactScript;
         private GlobalInfo globalInfo;
+        public TextMeshProUGUI confirmText;
+        public Image confirmImage;
+        public TextMeshProUGUI backText;
+        public Image backImage;
         
         void Start()
         {
@@ -58,6 +62,12 @@ namespace Theogony{
             }
             promptText.text = prompts[0].actionText[action];
             promptImage.sprite = prompts[inputType].images[action];
+
+            confirmText.text = "Confirm";
+            confirmImage.sprite = prompts[inputType].images[0];
+            backText.text = "Back";
+            backImage.sprite = prompts[inputType].images[1];
+
             inRange = Physics.OverlapSphere(player.transform.position, interactRadius, interactLayer);
 
             
@@ -67,10 +77,22 @@ namespace Theogony{
                     action = (int)interactScript.action + 2;
                     promptText.enabled = true;
                     promptImage.enabled = true;
+
+                    backText.enabled = false;
+                    backImage.enabled = false;
+                    confirmText.enabled = false;
+                    confirmImage.enabled = false;
                 }
             }else{
                 promptImage.enabled = false;
                 promptText.enabled = false;
+
+                if(globalInfo.paused){
+                    backText.enabled = true;
+                    backImage.enabled = true;
+                    confirmText.enabled = true;
+                    confirmImage.enabled = true;
+                }
             }
         }
 

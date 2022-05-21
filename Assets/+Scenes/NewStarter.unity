@@ -388,21 +388,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1235834874110441456, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.12
+    - target: {fileID: 375461866157452444, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1235834874110441456, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -41.21
+    - target: {fileID: 2327878564141938838, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: tester
-      value: 
+    - target: {fileID: 2686225803356055790, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: lockOnRange
-      value: 15
+    - target: {fileID: 7867178876562391335, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
