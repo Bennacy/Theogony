@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
             LoadWeapons();
         }
 
-        private void LoadWeapons(){
+        public void LoadWeapons(){
             rightWeapon = globalInfo.collectedWeaponsR[globalInfo.currentWeaponR];
             leftWeapon = globalInfo.collectedWeaponsL[globalInfo.currentWeaponL];
             weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
