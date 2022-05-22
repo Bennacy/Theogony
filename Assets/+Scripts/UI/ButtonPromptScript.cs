@@ -92,6 +92,11 @@ namespace Theogony{
                     backImage.enabled = true;
                     confirmText.enabled = true;
                     confirmImage.enabled = true;
+                }else{
+                    backText.enabled = false;
+                    backImage.enabled = false;
+                    confirmText.enabled = false;
+                    confirmImage.enabled = false;
                 }
             }
         }
