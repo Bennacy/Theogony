@@ -27,6 +27,9 @@ namespace Theogony{
         [Header("Values")]
         public Color unselectedC;
         public Color selectedC;
+        public float firstHoldTime;
+        public float fastHoldTime;
+        public float holdTimer;
         [SerializeField]
         private Vector2 navigationValue;
         [Space]
@@ -37,7 +40,7 @@ namespace Theogony{
         public bool overSlider;
         public int sliderChange;
         public bool holdingNavigation;
-        private bool moveAgain;
+        public bool firstHold;
         
         void Start()
         {
@@ -46,7 +49,6 @@ namespace Theogony{
             mainCam = Camera.main;
             globalInfo = GlobalInfo.GetGlobalInfo();
             pauseBackground.SetActive(paused);
-            moveAgain = false;
         }
 
         public void MouseOver(Button button){
@@ -70,12 +72,21 @@ namespace Theogony{
                     }
                 }
                 overSlider = highlightedBtn.name.Contains("Slider");
-                if(holdingNavigation && moveAgain){
-                    StartCoroutine(ResetNavigation());
-                    ActualNavigation();
-                }
-                if(!holdingNavigation){
-                    moveAgain = false;
+                if(holdingNavigation){
+                    holdTimer += Time.deltaTime;
+                    if(firstHold){
+                        if(holdTimer > firstHoldTime){
+                            holdTimer = 0;
+                            firstHold = false;
+                            ActualNavigation();
+                        }
+                    }else{
+                        if(holdTimer > fastHoldTime){
+                            holdTimer = 0;
+                            firstHold = false;
+                            ActualNavigation();
+                        }
+                    }
                 }
             }
         }
@@ -198,31 +209,17 @@ namespace Theogony{
         public void NavigateMenu(InputAction.CallbackContext context){
             if(context.performed){
                 navigationValue = context.ReadValue<Vector2>();
-                holdingNavigation = true;
                 ActualNavigation();
-                StartCoroutine(FirstNavigation());
+                holdingNavigation = true;
             }else if(context.canceled){
                 navigationValue = context.ReadValue<Vector2>();
                 holdingNavigation = false;
-                moveAgain = false;
-                StopCoroutine(ResetNavigation());
-                StopCoroutine(FirstNavigation());
+                firstHold = true;
+                holdTimer = 0;
             }
         }
 
-        private IEnumerator FirstNavigation(){
-            yield return new WaitForSeconds(.4f);
-            moveAgain = true;
-        }
-
-        private IEnumerator ResetNavigation(){
-            yield return new WaitForSeconds(.1f);
-            moveAgain = true;
-        }
-
-        private void ActualNavigation(){
-            moveAgain = false;
-            
+        private void ActualNavigation(){            
             if(overSlider && navigationValue.x != 0){
                 sliderChange = (int)Mathf.Sign(navigationValue.x);
             }

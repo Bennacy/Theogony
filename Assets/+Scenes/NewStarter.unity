@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -233,6 +233,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107122466}
   m_CullTransparentMesh: 1
+--- !u!114 &107122473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107122466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &250293649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,6 +478,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2048144793631519796, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: maxCols
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884595106876370125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: maxCols
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5531419114827785049, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -488,44 +511,36 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6204113546599266177, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.0000004079193
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204113546599266177, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204113546599266177, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_SizeDelta.y
+      propertyPath: m_SizeDelta.x
       value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6204113546599266177, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204113546599266177, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -49.999977
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 6204113546599266177, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 6310587605042175421, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Pivot.x
-      value: -0.00000014714897
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310587605042175421, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.49999943
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310587605042175421, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_SizeDelta.y
+      propertyPath: m_SizeDelta.x
       value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6310587605042175421, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310587605042175421, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50.000008
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 6310587605042175421, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000076293945
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
@@ -603,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -628,6 +643,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750058068}
   m_CullTransparentMesh: 1
+--- !u!114 &750058075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750058068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &939795689
 PrefabInstance:
   m_ObjectHideFlags: 0

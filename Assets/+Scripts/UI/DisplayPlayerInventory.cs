@@ -44,16 +44,20 @@ namespace Theogony{
             }
             menuInfo.rowSize = maxCols;
 
-            // Debug.Log((weaponListSize - (weaponListSize % maxCols)) / maxCols);
-            itemSlotChildren.sizeDelta = Vector2.zero;
-            itemSlotChildren.localPosition = new Vector2(-50, -100);
+            int rows = ((weaponListSize-1)/maxCols) + 1;
+            if(weaponListSize < maxCols){
+                int cols = ((weaponListSize) % maxCols);
+                itemSlotChildren.sizeDelta = new Vector2(cols * 125 + 25, Mathf.Ceil(rows * 125));
+            }else{
+                itemSlotChildren.sizeDelta = new Vector2(maxCols * 125 + 25, Mathf.Ceil(rows * 125));
+            }
 
             menuInfo.buttons = new Button[weaponListSize];
             for(int i = 0; i < weaponListSize; i++){
                 Button slot = Instantiate(itemSlotPrefab, itemSlotChildren).GetComponent<Button>();
                 int col = i % maxCols;
                 int row = (i - col) / maxCols;
-                slot.transform.localPosition = new Vector2(col*125 + 50, -row * 125);
+                slot.transform.localPosition = new Vector2(col * 125 + 75, -row * 125 - 62.5f);
                 // slot.onClick.AddListener(delegate{uIController.OpenMenu(itemInteraction);});
                 int newIndex = i;
                 slot.onClick.AddListener(delegate{UpdateWeapons(newIndex);});
