@@ -20,6 +20,7 @@ namespace Theogony
         public CustomSlider pivotSlider;
 
         public static CameraHandler singleton;
+        private bool previouslyPaused;
 
         [Space]
         [Header("Lock-on stuff")]
@@ -194,12 +195,20 @@ namespace Theogony
             }
 
             CameraShake();
+
+            previouslyPaused = globalInfo.paused;
         }
 
         #region Camera Controls
         public void MoveCamera(InputAction.CallbackContext context){
             Vector2 value = context.ReadValue<Vector2>();
             value *= Time.deltaTime * mouseSens;
+            if(!previouslyPaused && globalInfo.paused){
+                Debug.Log("Paused");
+                mouseXInput = 0;
+                mouseYInput = 0;
+                return;
+            }
             
             if(context.performed && !(playerInput.currentControlScheme == "Keyboard" && globalInfo.paused)){
                 if(playerInput.currentControlScheme == "Keyboard"){
@@ -309,10 +318,6 @@ namespace Theogony
             Vector3 angle = target.position - player.transform.position;
             targetAngleX = Vector3.SignedAngle(Vector3.forward, angle, Vector3.up);
             targetAngleY = Functions.MapValues(Vector3.Distance(player.transform.position, target.position), 0, lockOnRange, 0, 20);
-
-            // if(lookAngle != targetAngleX){
-            //     lookAngle = Mathf.LerpAngle(lookAngle, targetAngleX, lookSpeed);
-            // }
         }
         #endregion
 
@@ -362,14 +367,5 @@ namespace Theogony
         {
             Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
         }
-
-        // void OnDrawGizmos()
-        // {
-        //     if(lockOnTarget != null){
-        //         Debug.Log(transform.position);
-        //         Gizmos.DrawLine(player.transform.position, cameraTransform.position);
-        //         Gizmos.DrawLine(lockOnTarget.position, cameraTransform.position);
-        //     }
-        // }
     }
 }
