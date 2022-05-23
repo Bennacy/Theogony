@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 0}
+  interactRange: 6
   playerControllerScript: {fileID: 0}
   playerInventory: {fileID: 0}
   action: 3
+  itemGiven: {fileID: 0}
+  currencyChange: 0

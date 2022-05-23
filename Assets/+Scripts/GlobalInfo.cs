@@ -8,16 +8,6 @@ using UnityEngine.SceneManagement;
 namespace Theogony{
     public class GlobalInfo : MonoBehaviour
     {
-        [Serializable]
-        public class LostCurrency{
-            // [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Tab left\n6 - Tab right")]
-            public GameObject prefab;
-            public int amount;
-            public string scene;
-            public Transform transform;
-            public bool collected;
-        }
-
         [Header("References")]
         public static GlobalInfo self;
         public PlayerControllerScript playerControllerScript;
@@ -26,6 +16,7 @@ namespace Theogony{
         private UIController uiController;
         public string activeScene;
         public LostCurrency lostCurrency;
+        // public HiddenWallInfo[] hiddenWalls;
         [Space]
 
         [Space]
@@ -91,13 +82,21 @@ namespace Theogony{
             }else{
                 Destroy(gameObject);
             }
-            Debug.Log(healthIncrease.Evaluate(23 * .01f) * 10000);
             StartCoroutine(StartFunctions(.4f));
+            
         }
 
         private IEnumerator StartFunctions(float wait){
             yield return new WaitForSeconds(wait);
             activeScene = SceneManager.GetActiveScene().name;
+            
+            // GameObject[] walls = GameObject.FindGameObjectsWithTag("HiddenWall");
+            // hiddenWalls = new HiddenWallInfo[walls.Length];
+            // for(int i = 0; i < walls.Length; i++){
+            //     hiddenWalls[i] = new HiddenWallInfo(walls[i].GetComponent<HiddenWall>());
+            //     hiddenWalls[i].wall.gameObject.SetActive(hiddenWalls[i].active);
+            // }
+
             if(checkpoints.Length > 0){
                 foreach(Checkpoint checkpoint in checkpoints){
                     if(checkpoint.sceneName != activeScene){
@@ -222,6 +221,7 @@ namespace Theogony{
 
         public IEnumerator TravelTo(Checkpoint destination, bool reload){
             if(destination != lastCheckpoint || reloading){ //Won't run if the player tries to travel to the checkpoint they are resting at
+                playerControllerScript.playerInput.enabled = false;
                 reloading = true; //Triggers the reload "animation"
                 if(!reload){
                     StartCoroutine(StartFunctions(.4f));
@@ -262,6 +262,26 @@ namespace Theogony{
     }
 
     public enum InteractionType{PickUp, Open, Sit, RecoverSouls, BossBarrier}
+    
+    [Serializable]
+    public class LostCurrency{
+        // [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Tab left\n6 - Tab right")]
+        public GameObject prefab;
+        public int amount;
+        public string scene;
+        public Transform transform;
+        public bool collected;
+    }
+
+    [Serializable]
+    public class HiddenWallInfo{
+        public bool active;
+        public HiddenWall wall;
+
+        public HiddenWallInfo(HiddenWall wallRef){
+            wall = wallRef;
+        }
+    }
 
     public class Functions{
         public static float MapValues(float toMap, float min1, float max1, float min2, float max2){

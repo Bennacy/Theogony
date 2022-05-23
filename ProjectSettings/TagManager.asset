@@ -16,6 +16,7 @@ TagManager:
   - Staggered
   - BossWeapon
   - Oceanus
+  - HiddenWall
   layers:
   - Default
   - TransparentFX

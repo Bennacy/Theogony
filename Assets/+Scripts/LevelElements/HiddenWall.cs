@@ -13,6 +13,7 @@ namespace Theogony{
         public bool fading;
         public Collider coll;
         public Material material;
+        public bool active;
         
         void Start()
         {
@@ -34,6 +35,13 @@ namespace Theogony{
                 newCol.a = Functions.MapValues(fadeTimer, 0, fadeDuration, 1, 0);
                 material.color = newCol;
                 coll.enabled = false;
+                active = false;
+                // foreach(HiddenWallInfo info in globalInfo.hiddenWalls){
+                //     if(info.wall == this){
+                //         info.active = false;
+                //         break;
+                //     }
+                // }
             }
             if(material.color.a <= 0){
                 Destroy(gameObject);

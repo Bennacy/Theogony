@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 380154395}
   m_Layer: 8
   m_Name: Blocker
-  m_TagString: Untagged
+  m_TagString: HiddenWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -439,6 +439,7 @@ MonoBehaviour:
   fading: 0
   coll: {fileID: 0}
   material: {fileID: 0}
+  active: 1
 --- !u!1001 &622909467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1022,10 +1023,6 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 273659244}
-    - target: {fileID: 2566491461697283553, guid: 59d42e9fe344f274086408152c268768, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 43de375a173e07a4bb83245dc76cecaf, type: 2}
     - target: {fileID: 2566491461697283555, guid: 59d42e9fe344f274086408152c268768, type: 3}
       propertyPath: m_RootOrder
       value: 3

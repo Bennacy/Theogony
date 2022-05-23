@@ -72,7 +72,14 @@ namespace Theogony{
 
             
             if(inRange.Length > 0 && !globalInfo.paused){
-                interactScript = inRange[0].GetComponent<Interactable>();
+                int index = 0;
+                for(int i = 0; i < inRange.Length; i++){
+                    interactScript = inRange[i].GetComponent<Interactable>();
+                    if(interactScript.interactRange > Vector3.Distance(player.transform.position, interactScript.transform.position)){
+                        index = i;
+                        break;
+                    }
+                }
                 if(Vector3.Distance(player.transform.position, interactScript.transform.position) <= interactScript.interactRange){
                     action = (int)interactScript.action + 2;
                     promptText.enabled = true;

@@ -78,7 +78,9 @@ namespace Theogony{
         public void Traverse(){
             if(!canTraverse)
                 return;
+
             
+            player.cameraHandler.LookAt(transform);
             Vector3 newPos = GetWorldCoordinates(traversePoints[0]);
             newPos.y = player.transform.position.y;
             player.transform.position = newPos;
