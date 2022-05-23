@@ -25,8 +25,9 @@ namespace Theogony
         [Space]
         [Header("Lock-on stuff")]
         public LayerMask enemyLayer;
+        public float reticleSize;
+        public Texture2D reticleTexture;
         public Transform lockOnTarget;
-        public GameObject lockOnIndicator;
         public float lockOnSpeed;
         public bool stoppedMove = true;
         public float lockOnRange;
@@ -93,8 +94,8 @@ namespace Theogony
 
         public void FollowTarget(float delta)
         {
-            Vector3 targetPosition = Vector3.Lerp(myTransform.position, player.transform.position, delta / followSpeed);
-            myTransform.position = targetPosition;
+            Vector3 targetPosition = Vector3.Lerp(myTransform.position, player.rb.position, delta / followSpeed);
+            myTransform.position = player.transform.position;
             HandleCameraCollisions(delta);
         }
 
@@ -114,25 +115,26 @@ namespace Theogony
                 sensitivity = globalInfo.sensitivityX;
                 pivotSensitivity = globalInfo.sensitivityY;
             }
-            targetAngleY -= (mouseYInput * (pivotSensitivity / 1500)) / delta;
+            targetAngleY -= (mouseYInput * (pivotSensitivity / 1000)) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
+
+            if(lookAngle != targetAngleX){
+                lookAngle = Mathf.LerpAngle(lookAngle, targetAngleX, lookSpeed);
+                // lookAngle = targetAngleX;
+            }
             Vector3 rotation = Vector3.zero;
             rotation.y = lookAngle;
             Quaternion targetRotation = Quaternion.Euler(rotation);
             myTransform.rotation = targetRotation;
 
-            if(lookAngle != targetAngleX){
-                lookAngle = Mathf.LerpAngle(lookAngle, targetAngleX, lookSpeed);
-            }
-            rotation = Vector3.zero;
-            rotation.x = pivotAngle;
 
             if(pivotAngle != targetAngleY){
                 pivotAngle = Mathf.LerpAngle(pivotAngle, targetAngleY, lookSpeed*1.5f);
+                // pivotAngle = targetAngleY;
             }
-
-
+            rotation = Vector3.zero;
+            rotation.x = pivotAngle;
             targetRotation = Quaternion.Euler(rotation);
             cameraPivotTransform.localRotation = targetRotation;
         }
@@ -155,6 +157,7 @@ namespace Theogony
                 targetPosition = -minimumCollisionOffset;
             }
             cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
+            // cameraTransformPosition.z = targetPosition;
             cameraTransform.localPosition = cameraTransformPosition;
         }
 
@@ -166,19 +169,14 @@ namespace Theogony
             if(pivotSlider.OnValueChanged()){
                 globalInfo.sensitivityY = pivotSensitivity = pivotSlider.GetValue();
             }
-            lockOnIndicator.SetActive(lockOnTarget != null);
             
             if(lockOnTarget != null){
-                // Debug.Log(Vector3.Angle(player.transform.position - transform.position, lockOnTarget.position - transform.position));
-
-                lookSpeed = 0.03f;
-                // targetAngleY = 19;
+                // lookSpeed = 0.03f;
                 
                 Vector3 direction = lockOnTarget.position - player.transform.position;
                 
                 Vector3 indicatorPos = player.transform.position + (direction * .8f);
                 indicatorPos.y = lockOnTarget.position.y;
-                lockOnIndicator.transform.position = indicatorPos;
                 
                 LookAt(lockOnTarget);
 
@@ -189,9 +187,9 @@ namespace Theogony
 
             }else if(previouslyLocked){
                 lockOnTarget = GetClosestEnemy();
-                lookSpeed = 0.03f;
+                // lookSpeed = 0.03f;
             }else{
-                lookSpeed = 0.1f;
+                // lookSpeed = 0.1f;
             }
 
             CameraShake();
@@ -366,6 +364,14 @@ namespace Theogony
         void OnDrawGizmosSelected()
         {
             Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
+        }
+
+        void OnGUI()
+        {
+            if(lockOnTarget != null){
+                Vector3 reticlePos= mainCam.WorldToScreenPoint(lockOnTarget.transform.position);
+                GUI.DrawTexture(new Rect((reticlePos.x - (reticleSize/2f)), (Screen.height - (reticlePos.y + (reticleSize/2f))), reticleSize, reticleSize), reticleTexture);
+            }
         }
     }
 }

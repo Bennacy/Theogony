@@ -63,6 +63,12 @@ namespace Theogony{
 
         void LateUpdate()
         {
+            // if (cameraHandler != null)
+            // {
+            //     float delta = Time.deltaTime;
+            //     cameraHandler.HandleCameraRotation(delta);
+            //     cameraHandler.FollowTarget(delta);
+            // }
             wasHit = false;
         }
 
@@ -71,8 +77,8 @@ namespace Theogony{
             if (cameraHandler != null)
             {
                 float delta = Time.deltaTime;
-                cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta);
+                cameraHandler.FollowTarget(delta);
             }
         }
 
