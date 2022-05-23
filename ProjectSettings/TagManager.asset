@@ -17,6 +17,7 @@ TagManager:
   - BossWeapon
   - Oceanus
   - HiddenWall
+  - GorgonStatue
   layers:
   - Default
   - TransparentFX
