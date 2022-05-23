@@ -69,14 +69,14 @@ namespace Theogony{
             //     cameraHandler.HandleCameraRotation(delta);
             //     cameraHandler.FollowTarget(delta);
             // }
-            wasHit = false;
+            // wasHit = false;
         }
 
         void FixedUpdate()
         {
             if (cameraHandler != null)
             {
-                float delta = Time.deltaTime;
+                float delta = Time.fixedDeltaTime;
                 cameraHandler.HandleCameraRotation(delta);
                 cameraHandler.FollowTarget(delta);
             }
