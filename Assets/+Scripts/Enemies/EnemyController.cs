@@ -59,6 +59,15 @@ namespace Theogony{
             if(collision.gameObject.layer == 8 && collision.gameObject.tag == "PlayerWeapon"){
                 if(invincible)
                     return;
+                
+                DamageCollider collider = collision.GetComponent<DamageCollider>();
+                foreach(GameObject hit in collider.hitEnemies){
+                    if(hit == gameObject){
+                        return;
+                    }
+                }
+                collider.hitEnemies.Add(gameObject);
+
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
                 Damage(weapon.CalculateDamage(globalInfo, collision.GetComponentInParent<PlayerAttacker>().riposteAttack));
                 collision.GetComponentInParent<PlayerAttacker>().riposteAttack = false;

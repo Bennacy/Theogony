@@ -9,10 +9,12 @@ namespace Theogony {
         private GlobalInfo globalInfo;
         public PlayerAttacker player;
         public List<GameObject> hitEnemies;
+        public List<GameObject> riposteEnemies;
 
         private void Awake()
         {
             hitEnemies = new List<GameObject>();
+            riposteEnemies = new List<GameObject>();
             globalInfo = GlobalInfo.GetGlobalInfo();
             Rigidbody rb;
             if(GetComponent<Rigidbody>() == null){
@@ -44,6 +46,7 @@ namespace Theogony {
 
         public void ResetList(){
             hitEnemies = new List<GameObject>();
+            riposteEnemies = new List<GameObject>();
         }
 
         private void OnTriggerEnter(Collider collision)
@@ -52,17 +55,18 @@ namespace Theogony {
             while(rootObject.transform.parent != null){
                 rootObject = rootObject.transform.parent.gameObject;
             }
-            foreach(GameObject hit in hitEnemies){
+            foreach(GameObject hit in riposteEnemies){
                 if(rootObject == hit){
                     return;
                 }
             }
-            hitEnemies.Add(rootObject);
+            riposteEnemies.Add(rootObject);
             
             if(rootObject.GetComponent<HiddenWall>()){
                 rootObject.GetComponent<HiddenWall>().fading = true;
             }
 
+            // Debug.Log("");
             if (player.riposteAttack && !collision.gameObject.GetComponentInParent<EnemyController>().invincible){
                 // collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
                 player.playerManager.cameraHandler.ShakeRotation(1f, 0f, 1f, .2f);
