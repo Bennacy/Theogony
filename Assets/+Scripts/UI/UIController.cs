@@ -25,6 +25,7 @@ namespace Theogony{
 
         [Space]
         [Header("Values")]
+        public Sprite[] buttonSprites;
         public Color unselectedC;
         public Color selectedC;
         public float firstHoldTime;
@@ -65,10 +66,11 @@ namespace Theogony{
         {
             if(paused){
                 foreach(Button button in menuButtons){
+                    // button.image.type = Image.Type.Tiled;
                     if(button != highlightedBtn){
-                        button.image.color = unselectedC;
+                        button.image.sprite = buttonSprites[0];
                     }else{
-                        button.image.color = selectedC;
+                        button.image.sprite = buttonSprites[1];
                     }
                 }
                 overSlider = highlightedBtn.name.Contains("Slider");
@@ -194,6 +196,7 @@ namespace Theogony{
                 menuInfo.currIndex = 0;
             }
             menuInfo = menu.GetComponent<MenuInfo>();
+            buttonSprites = menuInfo.buttonSprites;
             if(!menuInfo.closesPrevious){
                 menuInfo.previousMenu.gameObject.SetActive(true);
             }

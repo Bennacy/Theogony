@@ -49,9 +49,9 @@ namespace Theogony{
             int rows = ((weaponListSize-1)/maxCols) + 1;
             if(weaponListSize < maxCols){
                 int cols = ((weaponListSize) % maxCols);
-                itemSlotChildren.sizeDelta = new Vector2(cols * 125 + 25, Mathf.Ceil(rows * 125));
+                itemSlotChildren.sizeDelta = new Vector2(cols * 200 + 25, Mathf.Ceil(rows * 200));
             }else{
-                itemSlotChildren.sizeDelta = new Vector2(maxCols * 125 + 25, Mathf.Ceil(rows * 125));
+                itemSlotChildren.sizeDelta = new Vector2(maxCols * 200 + 25, Mathf.Ceil(rows * 200));
             }
 
             menuInfo.buttons = new Button[weaponListSize];
@@ -59,7 +59,7 @@ namespace Theogony{
                 Button slot = Instantiate(itemSlotPrefab, itemSlotChildren).GetComponent<Button>();
                 int col = i % maxCols;
                 int row = (i - col) / maxCols;
-                slot.transform.localPosition = new Vector2(col * 125 + 75, -row * 125 - 62.5f);
+                slot.transform.localPosition = new Vector2(col * 200 + 112.5f, -row * 200 - 100);
                 
                 int newIndex = i;
                 Image icon = slot.transform.Find("Icon").gameObject.GetComponent<Image>();

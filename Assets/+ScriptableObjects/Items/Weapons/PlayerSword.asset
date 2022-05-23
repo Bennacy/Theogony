@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sword
   weaponPrefab: {fileID: 4189712685836114373, guid: 8493fe4f5d78f564c88cd711b36af11e, type: 3}
-  icon: {fileID: 21300000, guid: 3ea7ccd26c882e94daee63e88752b768, type: 3}
+  icon: {fileID: 21300000, guid: 3ce49aa3ce59fcf4788382a3d8c50cca, type: 3}
   riposteMultiplier: 3
   isUnarmed: 0
   knockback: 3
