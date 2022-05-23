@@ -8,6 +8,7 @@ namespace Theogony
     public class weaponItems : Items
     {
         public GameObject weaponPrefab;
+        public Sprite icon;
         public float riposteMultiplier;
         public bool isUnarmed;
         public float knockback;

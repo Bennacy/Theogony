@@ -37,11 +37,13 @@ namespace Theogony{
             
             MenuInfo menuInfo = itemSlotChildren.gameObject.GetComponent<MenuInfo>();
             int weaponListSize = 0;
+            List<weaponItems> list;
             if(isLeft){
-                weaponListSize = globalInfo.collectedWeaponsL.Count;
+                list = globalInfo.collectedWeaponsL;
             }else{
-                weaponListSize = globalInfo.collectedWeaponsR.Count;
+                list = globalInfo.collectedWeaponsR;
             }
+            weaponListSize = list.Count;
             menuInfo.rowSize = maxCols;
 
             int rows = ((weaponListSize-1)/maxCols) + 1;
@@ -58,8 +60,10 @@ namespace Theogony{
                 int col = i % maxCols;
                 int row = (i - col) / maxCols;
                 slot.transform.localPosition = new Vector2(col * 125 + 75, -row * 125 - 62.5f);
-                // slot.onClick.AddListener(delegate{uIController.OpenMenu(itemInteraction);});
+                
                 int newIndex = i;
+                Image icon = slot.transform.Find("Icon").gameObject.GetComponent<Image>();
+                icon.sprite = list[newIndex].icon;
                 slot.onClick.AddListener(delegate{UpdateWeapons(newIndex);});
                 menuInfo.buttons[i] = slot;
             }
@@ -68,7 +72,6 @@ namespace Theogony{
         }
 
         private void UpdateWeapons(int newIndex){
-            Debug.Log(newIndex);
             if(isLeft){
                 globalInfo.currentWeaponL = newIndex;
             }else{
