@@ -31,7 +31,8 @@ namespace Theogony{
 
         void Update()
         {
-            animator.SetBool("Animating", animating);
+            if(animator)
+                animator.SetBool("Animating", animating);
         }
 
         public void Die(){

@@ -189,6 +189,7 @@ namespace Theogony {
 
         public void IsOccupied()
         {
+            Debug.Log("Occupied");
             animHandler.SetBool("Occupied", true);
         }
         public void IsNotOccupied()
