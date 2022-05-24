@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//  ₯
 namespace Theogony{
     public class CurrencyDisplay : MonoBehaviour
     {

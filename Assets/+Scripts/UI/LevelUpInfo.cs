@@ -55,7 +55,7 @@ namespace Theogony{
 
             costText.text = "Total cost:\t" + totalCost;
             if(confirming){
-                confirmationText.text = "Spend " + totalCost + " currency\nto level up?";
+                confirmationText.text = "Spend " + totalCost + " Drachma\nto level up?";
             }else{
                 confirmationText.text = "Cancel level up?";
             }

@@ -7,9 +7,12 @@ using TMPro;
 namespace Theogony{
     public class TravelMenu : MonoBehaviour
     {
+        public int maxCheckpoints;
+        public int indexOffset;
         private GlobalInfo globalInfo;
         private MenuInfo menuInfo;
         private UIController uiController;
+        public Transform buttonHolder;
         private Image destinationImage;
         public Checkpoint[] unlockedCheckpoints;
         public GameObject buttonPrefab;
@@ -17,6 +20,7 @@ namespace Theogony{
         void Start()
         {
             destinationImage = GetComponentInChildren<Image>();
+            indexOffset = 0;
         }
 
         void Update()
@@ -31,11 +35,16 @@ namespace Theogony{
             globalInfo = GlobalInfo.GetGlobalInfo();
             menuInfo = GetComponent<MenuInfo>();
             int arraySize = 0;
+            
             foreach(Checkpoint checkpoint in globalInfo.checkpoints){
                 if(checkpoint.unlocked){
                     arraySize++;
                 }
             }
+            foreach(Transform button in buttonHolder){
+                Destroy(button.gameObject);
+            }
+
             menuInfo.buttons = new Button[arraySize];
             unlockedCheckpoints = new Checkpoint[arraySize];
             int newArrayIndex = 0;
@@ -46,12 +55,16 @@ namespace Theogony{
                     newArrayIndex++;
                 }
             }
-
+            CreateButtons();
             uiController.GetMenuButtons();
         }
 
+        private void CreateButtons(){
+            
+        }
+
         private void CreateButton(Checkpoint checkpointReference, int index){
-                GameObject newButton = Instantiate(buttonPrefab, transform);
+                GameObject newButton = Instantiate(buttonPrefab, buttonHolder);
                 Vector3 buttonPos = newButton.transform.localPosition;
                 buttonPos.y -= index * 75;
                 newButton.transform.localPosition = buttonPos;

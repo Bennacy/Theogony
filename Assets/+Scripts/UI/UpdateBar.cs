@@ -67,7 +67,7 @@ namespace Theogony{
                 lowering = false;
                 transTrans.sizeDelta = frontTrans.sizeDelta;
             }
-            if(oldWidth > currWidth){
+            if(oldWidth > currWidth && barType == 1){
                 StartCoroutine(DecreaseBar());
             }
             frontTrans.sizeDelta = new Vector2(currWidth, frontTrans.sizeDelta.y);
