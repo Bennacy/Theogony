@@ -13,13 +13,8 @@ public class RotateCamera : MonoBehaviour
 
      
 
-    void Update()
+    void FixedUpdate()
     {
-
-        if( transform.position.y <= 10f)
-        {
-            transform.position =  new Vector3( transform.position.x ,10.1f ,  transform.position.z);
-        }
         Vector3 camToPly = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, player.position.z - transform.position.z);
         Vector3 camToPlayer = (player.position - transform.position);
 
@@ -28,7 +23,7 @@ public class RotateCamera : MonoBehaviour
         if(runOnce > 0){
             m.enabled = true;
         }
-        Debug.Log(transform.position);
+        Debug.Log(transform.position.y);
 
         Debug.DrawRay(transform.position, Vector3.forward, Color.red);
         float range = Vector3.Distance(player.position, transform.position);
@@ -44,7 +39,7 @@ public class RotateCamera : MonoBehaviour
     
     void OnDrawGizmos()
     {
-        // Debug.Log(transform.position);
+        // Debug.Log(transform.position.y);
         Gizmos.DrawSphere(transform.position, 1);
     }
 }
