@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.87
       objectReference: {fileID: 0}
+    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: ignoreLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 1971696215479432698, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -620,6 +624,10 @@ PrefabInstance:
     - target: {fileID: 7888454541282039190, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017721622934525, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8116177292807363958, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Sprite

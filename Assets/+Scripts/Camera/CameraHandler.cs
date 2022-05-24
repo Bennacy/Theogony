@@ -13,7 +13,7 @@ namespace Theogony
         public Transform cameraPivotTransform;
         private Transform myTransform;
         private Vector3 cameraTransformPosition;
-        private LayerMask ignoreLayers;
+        public LayerMask ignoreLayers;
         private PlayerInput playerInput;
         private GlobalInfo globalInfo;
         private Camera mainCam;
@@ -84,7 +84,7 @@ namespace Theogony
             mainCam = Camera.main;
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
-            ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
+            // ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
@@ -200,14 +200,12 @@ namespace Theogony
             CameraShake();
 
             Vector3 playerToCam = cameraTransform.TransformPoint(cameraTransform.localPosition) - player.transform.position;
-            Debug.Log(playerToCam.magnitude);
             RaycastHit hit;
-            Physics.Raycast(player.transform.position, playerToCam, out hit, 10);
+            Physics.Raycast(player.transform.position, playerToCam, out hit, 10, ~ignoreLayers);
             if(hit.collider){
                 float desiredZ = Vector3.Distance(player.transform.position, hit.point);
                 cameraPositionGoal = origPos;
-                cameraPositionGoal.z = -desiredZ;
-                Debug.Log(cameraPositionGoal);
+                cameraPositionGoal.z = -(desiredZ - 01f);
             }else{
                 cameraPositionGoal = origPos;
             }

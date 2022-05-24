@@ -47,12 +47,14 @@ namespace Theogony{
 
             fsm.visionCountdown -= Time.deltaTime;
             if((angle < viewAngle) && (dist < viewDistance)){
+                Debug.Log("InView");
                 
                 if(!VisionBlocked(fsm, target, dist)){
                     fsm.visionCountdown = fsm.visionMemory;
-                    // Debug.Log("Sees");
+                    Debug.Log("Sees");
                     return !negation;
                 }else{
+                    Debug.Log("Can't see");
                     if(fsm.visionCountdown <= 0){
                         // Debug.Log("Forgor :skull:");
                         return negation;
@@ -74,7 +76,11 @@ namespace Theogony{
 
         private bool VisionBlocked(FSM fsm, Transform target, float distanceToPlayer){
             Vector3 targetDir = (target.position - fsm.transform.position).normalized;
-            return Physics.Raycast(fsm.transform.position, targetDir, distanceToPlayer, visionLayer);
+
+            Physics.Raycast(fsm.transform.position, targetDir, out RaycastHit hit, distanceToPlayer, visionLayer);
+
+            Debug.Log(hit.collider != null);
+            return hit.collider != null;
         }
     }
 }
