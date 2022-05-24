@@ -181,6 +181,7 @@ MonoBehaviour:
   cameraPivotTransform: {fileID: 7301024319241269635}
   sensSlider: {fileID: 0}
   pivotSlider: {fileID: 0}
+  maxDistance: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -200,8 +201,8 @@ MonoBehaviour:
   followSpeed: 0.1
   pivotSensitivity: 30
   lookAngle: 0
-  minimumPivot: -35
-  maximumPivot: 35
+  minimumPivot: -20
+  maximumPivot: 45
   cameraSpheresRadius: 0.2
   cameraCollisionOffset: 0.2
   minimumCollisionOffset: 0.2

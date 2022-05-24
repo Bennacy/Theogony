@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.InputSystem;
 
 namespace Theogony
@@ -18,6 +19,8 @@ namespace Theogony
         private Camera mainCam;
         public CustomSlider sensSlider;
         public CustomSlider pivotSlider;
+        public float maxDistance;
+        private Vector3 cameraPositionGoal;
 
         public static CameraHandler singleton;
         private bool previouslyPaused;
@@ -66,11 +69,13 @@ namespace Theogony
         private float xPos;
         private float yPos;
         private float zPos;
+        private bool resetPos;
         private Quaternion origRot;
         private float rotDuration;
         private float xRot;
         private float yRot;
         private float zRot;
+        private bool resetRot;
 
 
         private void Awake()
@@ -156,9 +161,9 @@ namespace Theogony
             {
                 targetPosition = -minimumCollisionOffset;
             }
-            cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
+            // cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
             // cameraTransformPosition.z = targetPosition;
-            cameraTransform.localPosition = cameraTransformPosition;
+            // cameraTransform.localPosition = cameraTransformPosition;
         }
 
         void LateUpdate()
@@ -194,7 +199,26 @@ namespace Theogony
 
             CameraShake();
 
+            Vector3 playerToCam = cameraTransform.TransformPoint(cameraTransform.localPosition) - player.transform.position;
+            Debug.Log(playerToCam.magnitude);
+            RaycastHit hit;
+            Physics.Raycast(player.transform.position, playerToCam, out hit, 10);
+            if(hit.collider){
+                float desiredZ = Vector3.Distance(player.transform.position, hit.point);
+                cameraPositionGoal = origPos;
+                cameraPositionGoal.z = -desiredZ;
+                Debug.Log(cameraPositionGoal);
+            }else{
+                cameraPositionGoal = origPos;
+            }
+
+            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraPositionGoal, Time.deltaTime * 4);
+            
             previouslyPaused = globalInfo.paused;
+        }
+
+        void FixedUpdate()
+        {
         }
 
         #region Camera Controls
@@ -315,38 +339,43 @@ namespace Theogony
         public void LookAt(Transform target){       
             Vector3 angle = target.position - player.transform.position;
             targetAngleX = Vector3.SignedAngle(Vector3.forward, angle, Vector3.up);
-            targetAngleY = Functions.MapValues(Vector3.Distance(player.transform.position, target.position), 0, lockOnRange, 0, 20);
+            targetAngleY = Functions.MapValues(Vector3.Distance(player.transform.position, target.position), 0, lockOnRange, 25, 35);
         }
         #endregion
 
         #region Camera Shake
         public void CameraShake(){
             if(posDuration > 0){
+                resetPos = false;
                 posDuration -= Time.deltaTime;
                 Vector3 random = Random.insideUnitSphere;
                 float newX = random.x * xPos;
                 float newY = random.y * yPos;
                 float newZ = random.z * zPos;
                 cameraTransform.localPosition = origPos + new Vector3(newX, newY, newZ);
-            }else{
+            }else if(!resetPos){
+                resetPos = true;
                 cameraTransform.localPosition = origPos;
                 xPos = yPos = zPos = 0;
             }
 
             if(rotDuration > 0){
+                resetRot = false;
                 rotDuration -= Time.deltaTime;
                 Vector3 random = Random.insideUnitSphere;
                 float newX = random.x * xRot;
                 float newY = random.y * yRot;
                 float newZ = random.z * zRot;
                 cameraTransform.localRotation = Quaternion.Euler(origRot.eulerAngles + new Vector3(newX, newY, newZ));
-            }else{
+            }else if(!resetRot){
+                resetRot = true;
                 cameraTransform.localRotation = origRot;
                 xRot = yRot = zRot = 0;
             }
         }
 
         public void ShakePosition(float xMag, float yMag, float zMag, float duration){
+            origPos = cameraTransform.localPosition;
             xPos = xMag;
             yPos = yMag;
             zPos = zMag;
@@ -354,6 +383,7 @@ namespace Theogony
         }
 
         public void ShakeRotation(float xMag, float yMag, float zMag, float duration){
+            origRot = cameraTransform.localRotation;
             xRot = xMag;
             yRot = yMag;
             zRot = zMag;
@@ -361,9 +391,21 @@ namespace Theogony
         }
         #endregion
 
-        void OnDrawGizmosSelected()
+        void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
+            Transform parent = Selection.activeTransform;
+            if(parent){
+                if(parent.parent){
+                    while(parent.parent.parent != null){
+                        parent = parent.parent;
+                    }
+                    if(parent == transform){
+                        Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
+                        Gizmos.DrawSphere(cameraPivotTransform.position, .5f);
+                        Gizmos.DrawSphere(transform.position, .5f);
+                    }
+                }
+            }
         }
 
         void OnGUI()
