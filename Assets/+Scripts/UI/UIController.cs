@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Theogony{
     public class UIController : MonoBehaviour
@@ -26,6 +27,7 @@ namespace Theogony{
         [Space]
         [Header("Values")]
         public Sprite[] buttonSprites;
+        public Color[] buttonTextColors;
         public Color unselectedC;
         public Color selectedC;
         public float firstHoldTime;
@@ -66,10 +68,22 @@ namespace Theogony{
         {
             if(paused){
                 foreach(Button button in menuButtons){
+                    TextMeshProUGUI text = null;
+                    if(button.GetComponentInChildren<TextMeshProUGUI>()){
+                        text = button.GetComponentInChildren<TextMeshProUGUI>();
+                    }
+                    Debug.Log(text);
+
                     // button.image.type = Image.Type.Tiled;
                     if(button != highlightedBtn){
+                        if(text != null){
+                            text.color = buttonTextColors[0];
+                        }
                         button.image.sprite = buttonSprites[0];
                     }else{
+                        if(text != null){
+                            text.color = buttonTextColors[1];
+                        }
                         button.image.sprite = buttonSprites[1];
                     }
                 }
@@ -197,6 +211,7 @@ namespace Theogony{
             }
             menuInfo = menu.GetComponent<MenuInfo>();
             buttonSprites = menuInfo.buttonSprites;
+            buttonTextColors = menuInfo.buttonTextColors;
             if(!menuInfo.closesPrevious){
                 menuInfo.previousMenu.gameObject.SetActive(true);
             }

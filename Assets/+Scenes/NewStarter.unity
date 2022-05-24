@@ -389,12 +389,208 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1971696214887965211, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
+    - target: {fileID: 1213217403539323844, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1971696215615183123, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 1295324926060022329, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213673302828, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213831545973, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213925535390, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214019977239, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214452558798, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214837381478, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215017785791, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215076841462, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215180169584, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215411117860, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215545589826, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215666841514, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357208146856364534, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579468722908109093, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072362824729055508, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270934107483927788, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228672983499474047, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_Name
+      value: LevelConfirmation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662353342381808993, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858072343330876126, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
@@ -444,6 +640,30 @@ PrefabInstance:
     - target: {fileID: 8391582328164638333, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Name
       value: InputStuff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonTextColors.Array.data[1].r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8772686047610490843, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: barrier

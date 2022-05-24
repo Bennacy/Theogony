@@ -12,4 +12,5 @@ public class MenuInfo : MonoBehaviour
     public int rowSize;
     public int currIndex;
     public Sprite[] buttonSprites;
+    public Color[] buttonTextColors;
 }
