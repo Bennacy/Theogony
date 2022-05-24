@@ -46,6 +46,7 @@ namespace Theogony{
         public bool blocking;
 
 
+        private int grav = 0;
 
         void Start()
         {
@@ -112,6 +113,9 @@ namespace Theogony{
                 angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
             }
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
+
+            CheckGravity();
+            
         }
 
         public void Move(InputAction.CallbackContext context){
@@ -122,6 +126,35 @@ namespace Theogony{
                 stoppedMove = true;
                 movementVector = Vector3.zero;
             }
+        }
+
+        public void CheckGravity()
+        {
+            int layerMask = 1 << 8;
+            layerMask = ~layerMask;
+            RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.1f, layerMask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
+            Debug.Log("touching floor");
+            grav = 0;
+           
+            canMove = true;
+            Debug.Log(hit.collider.gameObject.name);
+        }else
+        {
+            canMove = false;
+            animator.SetFloat("Speed", 0);
+            grav = -5;
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.red);
+            rb.AddForce(0,grav,0);
+             
+          
+        }
+         
+       
+              
         }
 
         public void LightAttack(InputAction.CallbackContext context){
@@ -172,6 +205,17 @@ namespace Theogony{
             }else if(context.canceled){
                 moveSpeed = walkSpeed;
                 running = false;
+            }
+        }
+
+        public void ChanggeRight(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                if(animator.GetBool("Occupied") == false)
+                {
+                playerInventory.ChangeWeapon();
+                }
             }
         }
 

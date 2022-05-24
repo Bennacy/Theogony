@@ -127,6 +127,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""ChangeR"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a9b1fc0-cbd9-489b-848b-c61a6163d26b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Heal"",
                     ""type"": ""Button"",
                     ""id"": ""589b9f41-b868-4ae9-a412-30f47e68c29b"",
@@ -596,6 +605,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1b3f345-7b61-451c-ae96-96d529e03419"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1326,6 +1346,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_InGame_Block = m_InGame.FindAction("Block", throwIfNotFound: true);
         m_InGame_LockOn = m_InGame.FindAction("LockOn", throwIfNotFound: true);
         m_InGame_Interact = m_InGame.FindAction("Interact", throwIfNotFound: true);
+        m_InGame_ChangeR = m_InGame.FindAction("ChangeR", throwIfNotFound: true);
         m_InGame_Heal = m_InGame.FindAction("Heal", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1409,6 +1430,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Block;
     private readonly InputAction m_InGame_LockOn;
     private readonly InputAction m_InGame_Interact;
+    private readonly InputAction m_InGame_ChangeR;
     private readonly InputAction m_InGame_Heal;
     public struct InGameActions
     {
@@ -1425,6 +1447,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Block => m_Wrapper.m_InGame_Block;
         public InputAction @LockOn => m_Wrapper.m_InGame_LockOn;
         public InputAction @Interact => m_Wrapper.m_InGame_Interact;
+        public InputAction @ChangeR => m_Wrapper.m_InGame_ChangeR;
         public InputAction @Heal => m_Wrapper.m_InGame_Heal;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
@@ -1468,6 +1491,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnInteract;
+                @ChangeR.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnChangeR;
+                @ChangeR.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnChangeR;
+                @ChangeR.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnChangeR;
                 @Heal.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeal;
                 @Heal.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeal;
                 @Heal.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeal;
@@ -1508,6 +1534,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @ChangeR.started += instance.OnChangeR;
+                @ChangeR.performed += instance.OnChangeR;
+                @ChangeR.canceled += instance.OnChangeR;
                 @Heal.started += instance.OnHeal;
                 @Heal.performed += instance.OnHeal;
                 @Heal.canceled += instance.OnHeal;
@@ -1660,6 +1689,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnBlock(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnChangeR(InputAction.CallbackContext context);
         void OnHeal(InputAction.CallbackContext context);
     }
     public interface IUIActions

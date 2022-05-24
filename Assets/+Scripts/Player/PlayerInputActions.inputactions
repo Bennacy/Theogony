@@ -105,6 +105,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ChangeR",
+                    "type": "Button",
+                    "id": "8a9b1fc0-cbd9-489b-848b-c61a6163d26b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Heal",
                     "type": "Button",
                     "id": "589b9f41-b868-4ae9-a412-30f47e68c29b",
@@ -574,6 +583,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1b3f345-7b61-451c-ae96-96d529e03419",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

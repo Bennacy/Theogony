@@ -14,9 +14,6 @@ TagManager:
   - PlayerWeapon
   - EnemyWeapon
   - Staggered
-  - BossWeapon
-  - Oceanus
-  - HiddenWall
   layers:
   - Default
   - TransparentFX
@@ -26,8 +23,8 @@ TagManager:
   - UI
   - 3DUI
   - Interactable
-  - Terrain
   - Player
+  - 
   - 
   - 
   - 
