@@ -24,7 +24,7 @@ public class RotateCamera : MonoBehaviour
         RaycastHit verification;
         RaycastHit targ;
        
-        Debug.Log(transform.position.z);
+        // Debug.Log(transform.position.z);
 /*
         Physics.Raycast(transform.position, camToPly, out verification, Mathf.Infinity);
 
