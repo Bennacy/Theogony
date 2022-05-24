@@ -20,26 +20,28 @@ public class RotateCamera : MonoBehaviour
 
         RaycastHit targ;
 
-        if(runOnce > 0){
+        if(runOnce > 0)
+        {
             m.enabled = true;
         }
-        Debug.Log(transform.position.y);
+       
 
         Debug.DrawRay(transform.position, Vector3.forward, Color.red);
         float range = Vector3.Distance(player.position, transform.position);
         Physics.Raycast(transform.position, camToPlayer, out targ, range);
-        runOnce ++;
-        // Debug.Log(targ.collider.gameObject.name);
-        
-        m = targ.collider.gameObject.GetComponent<MeshRenderer>();
-        m.enabled = false;
+       
+       
+        if(targ.collider.gameObject.GetComponent<MeshRenderer>()){
+         m = targ.collider.gameObject.GetComponent<MeshRenderer>();
+         m.enabled = false;
+         runOnce ++;
+        }
 
 
     }
     
     void OnDrawGizmos()
     {
-        // Debug.Log(transform.position.y);
-        Gizmos.DrawSphere(transform.position, 1);
+        
     }
 }

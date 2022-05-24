@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7395574226300223164}
   - component: {fileID: 8825160725485904021}
   m_Layer: 0
-  m_Name: light beam
+  m_Name: weak light beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

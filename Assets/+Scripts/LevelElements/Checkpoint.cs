@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace Theogony{
     public class Checkpoint : MonoBehaviour
     {
-        private  GlobalInfo globalInfo;
+        public GameObject weaklight;
+        public GameObject afterUnlock;
+        
+        private GlobalInfo globalInfo;
         public Material[] mat;
         public MeshRenderer pillarRenderer;
         public UIController uiController;
@@ -35,6 +39,14 @@ namespace Theogony{
 
         void Update()
         {
+
+            if(unlocked)
+            {
+                 afterUnlock.SetActive(true);                   
+                 weaklight.SetActive(false);                            
+               
+            }
+
             if(globalInfo.refreshedScene){
                 StartCoroutine(StartFunctions());
             }
