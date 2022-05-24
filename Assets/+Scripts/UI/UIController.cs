@@ -72,9 +72,7 @@ namespace Theogony{
                     if(button.GetComponentInChildren<TextMeshProUGUI>()){
                         text = button.GetComponentInChildren<TextMeshProUGUI>();
                     }
-                    Debug.Log(text);
 
-                    // button.image.type = Image.Type.Tiled;
                     if(button != highlightedBtn){
                         if(text != null){
                             text.color = buttonTextColors[0];
@@ -86,6 +84,7 @@ namespace Theogony{
                         }
                         button.image.sprite = buttonSprites[1];
                     }
+                    button.image.type = Image.Type.Tiled;
                 }
                 overSlider = highlightedBtn.name.Contains("Slider");
                 if(holdingNavigation){

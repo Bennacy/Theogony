@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RotateCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public LayerMask obstacleLayers;
     private float range;
     public Transform player;
     private int runOnce = 0;
@@ -23,23 +21,14 @@ public class RotateCamera : MonoBehaviour
         if(runOnce > 0){
             m.enabled = true;
         }
-        Debug.Log(transform.position.y);
 
-        Debug.DrawRay(transform.position, Vector3.forward, Color.red);
         float range = Vector3.Distance(player.position, transform.position);
         Physics.Raycast(transform.position, camToPlayer, out targ, range);
-        runOnce ++;
-        // Debug.Log(targ.collider.gameObject.name);
         
-        m = targ.collider.gameObject.GetComponent<MeshRenderer>();
-        m.enabled = false;
-
-
-    }
-    
-    void OnDrawGizmos()
-    {
-        // Debug.Log(transform.position.y);
-        Gizmos.DrawSphere(transform.position, 1);
+        if(targ.collider.gameObject.GetComponent<MeshRenderer>()){
+            runOnce ++;
+            m = targ.collider.gameObject.GetComponent<MeshRenderer>();
+            m.enabled = false;
+        }
     }
 }
