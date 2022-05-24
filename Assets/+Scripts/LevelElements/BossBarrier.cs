@@ -8,6 +8,7 @@ namespace Theogony{
         private GlobalInfo globalInfo;
         private PlayerControllerScript player;
         public Vector3[] traversePoints;
+        private List<Collider> playerColliders;
         public bool traversing;
         public float traverseSpeed;
         private bool canTraverse;
@@ -56,8 +57,14 @@ namespace Theogony{
         private void DisablePlayerColliders(){
             if(!disabled){
                 player.canMove = false;
+
+                playerColliders = new List<Collider>();
                 Collider[] colliders = player.GetComponentsInChildren<Collider>();
+
                 foreach(Collider collider in colliders){
+                    if(collider.enabled){
+                        playerColliders.Add(collider);
+                    }
                     collider.enabled = false;
                 }
                 player.GetComponent<Rigidbody>().useGravity = false;
@@ -67,8 +74,8 @@ namespace Theogony{
 
         private void EnablePlayerColliders(){
             player.canMove = true;
-            Collider[] colliders = player.gameObject.GetComponentsInChildren<Collider>();
-            foreach(Collider collider in colliders){
+            
+            foreach(Collider collider in playerColliders){
                 collider.enabled = true;
             }
             player.GetComponent<Rigidbody>().useGravity = true;

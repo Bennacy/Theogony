@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotateCamera : MonoBehaviour
 {
     // Start is called before the first frame update
+    public LayerMask obstacleLayers;
     private float range;
     public Transform player;
     private int runOnce = 0;
@@ -12,7 +13,7 @@ public class RotateCamera : MonoBehaviour
 
      
 
-    void FixedUpdate()
+    void Update()
     {
 
         if( transform.position.y <= 10f)
@@ -20,56 +21,30 @@ public class RotateCamera : MonoBehaviour
             transform.position =  new Vector3( transform.position.x ,10.1f ,  transform.position.z);
         }
         Vector3 camToPly = new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, player.position.z - transform.position.z);
+        Vector3 camToPlayer = (player.position - transform.position);
 
-        RaycastHit verification;
         RaycastHit targ;
-       
-        // Debug.Log(transform.position.z);
-/*
-        Physics.Raycast(transform.position, camToPly, out verification, Mathf.Infinity);
 
-        if(targ.collider.gameObject.name == verification.collider.gameObject.name)
-        {
-            return;
-        }else
-        {
-              m.enabled = true;
-        }     
-*/  
-    if(runOnce>0){
-        m.enabled = true;
+        if(runOnce > 0){
+            m.enabled = true;
         }
+        Debug.Log(transform.position);
 
-        Physics.Raycast(transform.position, camToPly, out targ, Mathf.Infinity);
+        Debug.DrawRay(transform.position, Vector3.forward, Color.red);
+        float range = Vector3.Distance(player.position, transform.position);
+        Physics.Raycast(transform.position, camToPlayer, out targ, range);
         runOnce ++;
-        Debug.Log(targ.collider.gameObject.name);
+        // Debug.Log(targ.collider.gameObject.name);
         
         m = targ.collider.gameObject.GetComponent<MeshRenderer>();
         m.enabled = false;
 
 
     }
-
-    // Update is called once per frame
-    void LateUpdate()
+    
+    void OnDrawGizmos()
     {
-        /*
-        if(Input.GetKey(KeyCode.UpArrow)){
-
-        }
-        if(Input.GetKey(KeyCode.DownArrow)){
-            
-        }
-        if(Input.GetKey(KeyCode.LeftArrow)){
-            Vector3 rot = transform.rotation.eulerAngles;
-            rot.y -= 10 * Time.deltaTime;
-            transform.rotation = Quaternion.Euler(rot);
-        }
-        if(Input.GetKey(KeyCode.RightArrow)){
-            Vector3 rot = transform.rotation.eulerAngles;
-            rot.y += 10 * Time.deltaTime;
-            transform.rotation = Quaternion.Euler(rot);
-        }
-        */
+        // Debug.Log(transform.position);
+        Gizmos.DrawSphere(transform.position, 1);
     }
 }

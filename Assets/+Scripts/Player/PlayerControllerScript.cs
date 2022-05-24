@@ -8,6 +8,7 @@ namespace Theogony{
     public class PlayerControllerScript : MonoBehaviour
     {
         [Header("References")]
+        public LayerMask groundLayer;
         // public GlobalInfo globalInfo;
         public PlayerManager playerManager;
         public PlayerInput playerInput;
@@ -130,18 +131,13 @@ namespace Theogony{
 
         public void CheckGravity()
         {
-            int layerMask = 1 << 8;
-            layerMask = ~layerMask;
+            // int layerMask = ~groundLayer;
             RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.1f, layerMask))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.1f, groundLayer))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
-            Debug.Log("touching floor");
             grav = 0;
-           
-            canMove = true;
-            Debug.Log(hit.collider.gameObject.name);
         }else
         {
             canMove = false;
