@@ -58,7 +58,6 @@ namespace Theogony{
             cameraHandler = cam.GetComponent<CameraHandler>();
             cameraHandler = playerManager.cameraHandler;
             playerInput = GetComponent<PlayerInput>();
-            Debug.Log(playerInput.currentControlScheme);
         }
 
         // void OnGUI()

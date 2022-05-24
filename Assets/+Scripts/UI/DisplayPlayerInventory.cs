@@ -11,6 +11,7 @@ namespace Theogony{
         public GlobalInfo globalInfo;
         public UIController uIController;
         public PlayerInventory playerInventory;
+        public Image currentWeapon;
         
         public RectTransform itemSlotChildren;
         public GameObject itemInteraction;
@@ -26,7 +27,11 @@ namespace Theogony{
 
         void Update()
         {
-            
+            if(isLeft){
+                currentWeapon.sprite = globalInfo.collectedWeaponsL[globalInfo.currentWeaponL].icon;
+            }else{
+                currentWeapon.sprite = globalInfo.collectedWeaponsR[globalInfo.currentWeaponR].icon;
+            }
         }
 
         public void ExpandSlots(){
@@ -40,8 +45,10 @@ namespace Theogony{
             List<weaponItems> weaponList;
             if(isLeft){
                 weaponList = globalInfo.collectedWeaponsL;
+                currentWeapon.sprite = weaponList[globalInfo.currentWeaponL].icon;
             }else{
                 weaponList = globalInfo.collectedWeaponsR;
+                currentWeapon.sprite = weaponList[globalInfo.currentWeaponR].icon;
             }
             weaponListSize = weaponList.Count;
             menuInfo.rowSize = maxCols;

@@ -174,8 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ea67ed0f0e0ac49b3ee95ee0abd222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticleSize: 20
-  reticleTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   player: {fileID: 0}
   cameraTransform: {fileID: 7301024319384058074}
   cameraPivotTransform: {fileID: 7301024319241269635}
@@ -184,8 +182,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+  reticleSize: 20
+  reticleTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   lockOnTarget: {fileID: 0}
-  lockOnIndicator: {fileID: 0}
   lockOnSpeed: 0.1
   stoppedMove: 1
   lockOnRange: 15

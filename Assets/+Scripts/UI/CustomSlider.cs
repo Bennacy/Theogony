@@ -14,7 +14,10 @@ namespace Theogony{
         private Camera mainCam;
         public RectTransform backgroundTransform;
         public RectTransform filledIndicator;
+        private Image filledImage;
+        public Sprite filledSprite;
         public Image sliderBall;
+        public Sprite ballSprite;
         private Button buttonRef;
         private float fractionSize;
         public int fractionCount;
@@ -33,6 +36,7 @@ namespace Theogony{
             mainCam = Camera.main;
             backgroundThreshold.x = backgroundTransform.localPosition.x;
             backgroundThreshold.y = backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x;
+            filledImage = filledIndicator.gameObject.GetComponent<Image>();
             SetValue(sliderValue);
         }
 
@@ -43,6 +47,8 @@ namespace Theogony{
 
         void Update()
         {
+            filledImage.sprite = filledSprite;
+            sliderBall.sprite = ballSprite;
             lastValue = sliderValue;
             if(uiController.sliderChange != 0 && uiController.highlightedBtn == buttonRef){
                 ChangeSlider(uiController.sliderChange);

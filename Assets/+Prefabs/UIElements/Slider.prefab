@@ -55,7 +55,9 @@ MonoBehaviour:
   sliderRange: {x: 0, y: 100}
   backgroundTransform: {fileID: 7110498198901326168}
   filledIndicator: {fileID: 1326834075358737187}
+  filledSprite: {fileID: 0}
   sliderBall: {fileID: 3438262106855207446}
+  ballSprite: {fileID: 0}
   fractionCount: 10
   sliderValue: 0
   mouseOver: 0
@@ -190,7 +192,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -250, y: 0}
-  m_SizeDelta: {x: 500, y: 23.549}
+  m_SizeDelta: {x: 500, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &791284843449848969
 CanvasRenderer:
@@ -382,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249.9999, y: 0.7254971}
-  m_SizeDelta: {x: 250, y: 25}
+  m_AnchoredPosition: {x: -249.9999, y: 0}
+  m_SizeDelta: {x: 202.158, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &949771025761927554
 CanvasRenderer:
@@ -436,5 +438,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1

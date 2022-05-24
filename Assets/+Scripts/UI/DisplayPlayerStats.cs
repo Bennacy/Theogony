@@ -50,7 +50,7 @@ namespace Theogony{
             }
 
             weapon = playerInventory.rightWeapon;
-            healthText.text = "Max Health:\t" + Mathf.Round(playerManager.maxHealth);
+            healthText.text = "Max Health:\t\t" + Mathf.Round(playerManager.maxHealth);
             staminaText.text = "Max Stamina:\t" + Mathf.Round(playerManager.maxStamina);
             int currentDamage = Mathf.RoundToInt(weapon.CalculateDamage(globalInfo, false));
             damageText.text = "Damage:\t" + currentDamage;

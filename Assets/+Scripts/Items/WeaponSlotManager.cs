@@ -65,7 +65,6 @@ namespace Theogony {
         private void LoadRightCollider()
         {
             rightWeaponCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            Debug.Log(rightWeaponCollider);
         }
         private void LoadLeftCollider()
         {
@@ -78,10 +77,6 @@ namespace Theogony {
         #endregion
 
         #region Animation Events
-        public void TestEvent(){
-            Debug.Log("Running Event");
-        }
-
         public void EnableRightCollider()
         {
             rightWeaponCollider.EnableCollider();
@@ -189,7 +184,6 @@ namespace Theogony {
 
         public void IsOccupied()
         {
-            Debug.Log("Occupied");
             animHandler.SetBool("Occupied", true);
         }
         public void IsNotOccupied()

@@ -30,14 +30,14 @@ public class PlayerInventory : MonoBehaviour
 
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.RightArrow)){
-                globalInfo.currentWeaponR++;
-                LoadWeapons();
-            }
-            if(Input.GetKeyDown(KeyCode.LeftArrow)){
-                globalInfo.currentWeaponR--;
-                LoadWeapons();
-            }
+            // if(Input.GetKeyDown(KeyCode.RightArrow)){
+            //     globalInfo.currentWeaponR++;
+            //     LoadWeapons();
+            // }
+            // if(Input.GetKeyDown(KeyCode.LeftArrow)){
+            //     globalInfo.currentWeaponR--;
+            //     LoadWeapons();
+            // }
         }
 
         public void PickUp(weaponItems weapon, bool isLeft){
