@@ -67,15 +67,21 @@ namespace Theogony{
                 lowering = false;
                 transTrans.sizeDelta = frontTrans.sizeDelta;
             }
-            if(oldWidth > currWidth && barType == 1){
-                StartCoroutine(DecreaseBar());
-            }
+
             frontTrans.sizeDelta = new Vector2(currWidth, frontTrans.sizeDelta.y);
+            
+            if(oldWidth > currWidth){
+                if(oldWidth - currWidth > 2){
+                    StartCoroutine(DecreaseBar());
+                }else{
+                    transTrans.sizeDelta = frontTrans.sizeDelta;
+                }
+            }
             oldWidth = currWidth;
         }
 
         private IEnumerator DecreaseBar(){
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(.5f);
             lowering = true;
         }
 

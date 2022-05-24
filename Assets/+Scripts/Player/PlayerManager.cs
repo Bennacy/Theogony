@@ -15,7 +15,12 @@ namespace Theogony{
         public float maxHealth;
         public float maxStamina;
         public float currHealth;
+        private float targetHealth;
+        public float healthRecharge;
         public float currStamina;
+        private float prevStamina;
+        private float staminaCooldown;
+        public bool staminaWait;
         public float staminaRecharge;
         public float blockingRecharge;
         public float normalRecharge;
@@ -41,8 +46,26 @@ namespace Theogony{
         {
             maxHealth = globalInfo.healthIncrease.Evaluate(globalInfo.vit * .01f) * 10000;
             maxStamina = globalInfo.staminaIncrease.Evaluate(globalInfo.end * .01f) * 1000;
-            if(currStamina < maxStamina){
+
+            if(prevStamina - currStamina > 2){
+                staminaWait = true;
+                staminaCooldown = 0;
+            }
+            if(staminaWait){
+                staminaCooldown += Time.deltaTime;
+                if(staminaCooldown >= 1.5f){
+                    staminaWait = false;
+                }
+            }
+            if(currStamina < maxStamina && currStamina >= prevStamina && !staminaWait){
                 currStamina += staminaRecharge * Time.deltaTime;
+            }
+
+            if(targetHealth > currHealth){
+                currHealth += healthRecharge * Time.deltaTime;
+                Debug.Log(targetHealth);
+            }else{
+                targetHealth = -1;
             }
             if(currHealth < 0){
                 Die();
@@ -59,6 +82,8 @@ namespace Theogony{
                 // cameraHandler.ShakePosition(.1f, .1f, .1f, .3f);
                 // cameraHandler.ShakeRotation(1f, 0f, 1f, .3f);
             }
+
+            prevStamina = currStamina;
         }
 
         void LateUpdate()
@@ -140,16 +165,24 @@ namespace Theogony{
 
                     animator.Play(animName);
                     healCharges--;
-                    currHealth += globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
-                    if(currHealth > maxHealth){
-                        currHealth = maxHealth;
+                    if(targetHealth < 0)
+                        targetHealth = currHealth + globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
+                    else
+                        targetHealth = targetHealth + globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
+
+                    if(targetHealth > maxHealth){
+                        targetHealth = maxHealth;
                     }
                 }
             }
         }
 
         public void Damage(float deduction){
-            currHealth -= deduction;
+            if(targetHealth < 0)
+                currHealth -= deduction;
+            else{
+                targetHealth -= deduction;
+            }
         }
 
         public void StaminaDamage(float deduction){

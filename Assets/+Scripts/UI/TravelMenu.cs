@@ -55,12 +55,7 @@ namespace Theogony{
                     newArrayIndex++;
                 }
             }
-            CreateButtons();
             uiController.GetMenuButtons();
-        }
-
-        private void CreateButtons(){
-            
         }
 
         private void CreateButton(Checkpoint checkpointReference, int index){
