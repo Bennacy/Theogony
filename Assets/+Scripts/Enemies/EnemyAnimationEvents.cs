@@ -41,6 +41,12 @@ namespace Theogony{
         }
 
         public void Drop(){
+            List<weaponItems> playerWeapons = GlobalInfo.GetGlobalInfo().collectedWeaponsR;
+            foreach(weaponItems playerWeapon in playerWeapons){
+                if(playerWeapon == weapon.droppedWeapon){
+                    return;
+                }
+            }
             Vector3 dropPos = transform.position;
             dropPos.y = 1;
             Interactable script = Instantiate(dropPrefab, dropPos, Quaternion.identity).GetComponent<Interactable>();

@@ -43,6 +43,7 @@ namespace Theogony{
             MenuInfo menuInfo = itemSlotChildren.gameObject.GetComponent<MenuInfo>();
             int weaponListSize = 0;
             List<weaponItems> weaponList;
+            
             if(isLeft){
                 weaponList = globalInfo.collectedWeaponsL;
                 currentWeapon.sprite = weaponList[globalInfo.currentWeaponL].icon;
@@ -85,6 +86,7 @@ namespace Theogony{
                 globalInfo.currentWeaponR = newIndex;
             }
             playerInventory.LoadWeapons();
+            uIController.OpenMenu(uIController.menuInfo.previousMenu);
         }
     }
 }

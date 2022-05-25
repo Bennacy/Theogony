@@ -15,18 +15,19 @@ namespace Theogony{
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
             uIController = GetComponentInParent<UIController>();
-            buttonsToOverride = GetComponentsInChildren<Button>();
+            // buttonsToOverride = GetComponentsInChildren<Button>();
         }
         
         void LateUpdate()
         {
             foreach(Button button in buttonsToOverride){
-                // button.image.type = Image.Type.Tiled;
+                Image.Type savedType = button.image.type;
                 if(button != uIController.highlightedBtn){
                     button.image.sprite = newSprites[0];
                 }else{
                     button.image.sprite = newSprites[1];
                 }
+                button.image.type = savedType;
             }
         }
     }
