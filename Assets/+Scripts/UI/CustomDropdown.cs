@@ -14,10 +14,7 @@ namespace Theogony{
         public bool dropdownOpen;
         public GameObject optionHolder;
         public Button[] options;
-        public int currentOption;
-        private int previousIndex;
-        public Image arrowImage;
-        public Sprite[] arrowSprites;
+        public int optionIndex;
         public Button parentButton;
 
         void Start()
@@ -25,14 +22,13 @@ namespace Theogony{
             dropdownOpen = false;
             globalInfo = GlobalInfo.GetGlobalInfo();
             options = optionHolder.GetComponentsInChildren<Button>();
-            optionString = options[currentOption].gameObject.name;
+            optionString = options[optionIndex].gameObject.name;
             foreach (Button option in options){
                 option.GetComponentInChildren<TextMeshProUGUI>().text = option.gameObject.name;
             }
             optionText.text = optionString;
             uIController = GetComponentInParent<UIController>();
             parentButton.onClick.AddListener(delegate{ToggleDropdown();});
-            arrowImage.sprite = arrowSprites[0];
         }
 
         void Update()
@@ -41,34 +37,21 @@ namespace Theogony{
         }
 
         public void ToggleDropdown(){
-            dropdownOpen = !optionHolder.activeSelf;
+            dropdownOpen = !dropdownOpen;
             MenuInfo optionMenu = optionHolder.GetComponent<MenuInfo>();
             if(dropdownOpen){
-                arrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
                 uIController.OpenMenu(optionHolder);
-                optionMenu.currIndex = currentOption;
+                optionMenu.currIndex = optionIndex;
             }else{
-                arrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 uIController.OpenMenu(optionMenu.previousMenu);
             }
         }
 
         public void UpdateOption(int newIndex){
-            previousIndex = -1;
-            currentOption = newIndex;
-            optionString = options[currentOption].gameObject.name;
+            optionIndex = newIndex;
+            optionString = options[optionIndex].gameObject.name;
             optionText.text = optionString;
             ToggleDropdown();
         }
-
-        public bool ValueChanged(){
-            bool changed = (previousIndex != currentOption);
-            previousIndex = currentOption;
-            return changed;
-        }
     }
-
-
-
-    
 }
