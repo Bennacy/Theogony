@@ -210,7 +210,7 @@ namespace Theogony
                 cameraPositionGoal = origPos;
             }
 
-            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraPositionGoal, Time.deltaTime * 4);
+            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraPositionGoal, Time.deltaTime * 7.5f);
             
             previouslyPaused = globalInfo.paused;
         }
