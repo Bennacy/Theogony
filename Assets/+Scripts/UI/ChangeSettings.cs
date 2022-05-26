@@ -33,11 +33,6 @@ namespace Theogony{
 
             int audioVolume = Mathf.RoundToInt(audioSlider.GetValue());
             
-            // if(!audioToggle.active){
-            //     audioSlider.SetValue(0);
-            // }else{
-            //     audioSlider.SetValue(savedAudio);
-            // }
             if(audioToggle.active){
                 if(audioVolume > 0 && previouslyToggled){
                     audioToggle.active = false;
@@ -46,16 +41,17 @@ namespace Theogony{
                     savedAudio = audioVolume;
                     audioSlider.SetValue(0);
                     globalInfo.audioVolume = 0;
+                    previouslyToggled = true;
                 }
             }
             if(!audioToggle.active && previouslyToggled){
                 audioSlider.SetValue(savedAudio);
             }
 
-            // if(audioVolume > 0 && audioToggle.active && !previouslyToggled){
-            // }
-
             if(audioSlider.GetValue() <= 0.4f){
+                if(!previouslyToggled){
+                    savedAudio = 10;
+                }
                 audioSlider.SetValue(0);
                 audioToggle.active = true;
             }
@@ -64,11 +60,6 @@ namespace Theogony{
                 globalInfo.audioVolume = audioVolume;
             }
 
-            // globalInfo.audioVolume = audioVolume;
-            // audioToggle.active = (globalInfo.audioVolume == 0);
-            // if(globalInfo.audioVolume > 0){
-            //     savedAudio = globalInfo.audioVolume;
-            // }
             previouslyToggled = audioToggle.active;
         }
     }

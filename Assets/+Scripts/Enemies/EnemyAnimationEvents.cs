@@ -10,12 +10,14 @@ namespace Theogony{
         public Collider weaponCollider;
         private GameObject dropPrefab;
         public EnemyWeapons weapon;
+        private Rigidbody rb;
         public bool animating;
         public bool attacking;
 
         IEnumerator Start()
         {
             yield return new WaitForSeconds(0.01f);
+            rb = GetComponentInParent<Rigidbody>();
             animator = GetComponent<Animator>();
             enemyController = GetComponentInParent<EnemyController>();
             dropPrefab = enemyController.dropPreset;
@@ -53,6 +55,14 @@ namespace Theogony{
             script.itemGiven = weapon.droppedWeapon;
         }
 
+        #region Events
+        public void ResetEvents(){
+            DisableKinematic();
+            ColliderOff();
+            AnimationOver();
+            InvincibleOff();
+        }
+
         public void StartAttack(){
             Debug.Log("Started Attack");
             enemyController.attacking = true;
@@ -61,6 +71,14 @@ namespace Theogony{
         public void EndAttack(){
             Debug.Log("Stopped Attack");
             enemyController.attacking = false;
+        }
+
+        public void EnableKinematic(){
+            rb.isKinematic = true;
+        }
+
+        public void DisableKinematic(){
+            rb.isKinematic = false;
         }
 
         public void ColliderOn(){
@@ -95,5 +113,6 @@ namespace Theogony{
             enemyController.GetComponent<Rigidbody>().isKinematic = false;
             enemyController.invincible = false;
         }
+        #endregion
     }
 }

@@ -178,6 +178,7 @@ namespace Theogony {
 
             playerManager.staminaRecharge = playerManager.normalRecharge;
             rotateAttack = false;
+            resetAttack = true;
             transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
@@ -234,7 +235,7 @@ namespace Theogony {
             }
             else if (resetAttack == true)
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, 25f  * Time.deltaTime);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.identity, 25f  * Time.deltaTime);
 
             }
         }

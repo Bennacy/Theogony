@@ -11375,6 +11375,7 @@ MonoBehaviour:
   dropdown: {fileID: 0}
   audioToggle: {fileID: 0}
   qualityNames: []
+  savedAudio: 0
 --- !u!114 &622909474
 MonoBehaviour:
   m_ObjectHideFlags: 0

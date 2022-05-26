@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.InputSystem;
+
+// using UnityEditor;
 
 namespace Theogony
 {
@@ -382,19 +383,19 @@ namespace Theogony
 
         void OnDrawGizmos()
         {
-            Transform parent = Selection.activeTransform;
-            if(parent){
-                if(parent.parent){
-                    while(parent.parent.parent != null){
-                        parent = parent.parent;
-                    }
-                    if(parent == transform){
-                        Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
-                        Gizmos.DrawSphere(cameraPivotTransform.position, .5f);
-                        Gizmos.DrawSphere(transform.position, .5f);
-                    }
-                }
-            }
+            // Transform parent = Selection.activeTransform;
+            // if(parent){
+            //     if(parent.parent){
+            //         while(parent.parent.parent != null){
+            //             parent = parent.parent;
+            //         }
+            //         if(parent == transform){
+            //             Gizmos.DrawWireSphere(player.transform.position, lockOnRange);
+            //             Gizmos.DrawSphere(cameraPivotTransform.position, .5f);
+            //             Gizmos.DrawSphere(transform.position, .5f);
+            //         }
+            //     }
+            // }
         }
 
         void OnGUI()

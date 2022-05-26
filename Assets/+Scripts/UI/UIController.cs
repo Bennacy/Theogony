@@ -47,10 +47,10 @@ namespace Theogony{
         
         void Start()
         {
-            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-            inputAction = playerControllerScript.gameObject.GetComponent<PlayerInput>();
             mainCam = Camera.main;
             globalInfo = GlobalInfo.GetGlobalInfo();
+            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+            inputAction = playerControllerScript.gameObject.GetComponent<PlayerInput>();
             pauseBackground.SetActive(paused);
         }
 

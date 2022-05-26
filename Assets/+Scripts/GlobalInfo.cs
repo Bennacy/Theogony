@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 namespace Theogony{
     public class GlobalInfo : MonoBehaviour
     {
+        public string firstScene;
+
         [Header("References")]
         public static GlobalInfo self;
         public PlayerControllerScript playerControllerScript;
@@ -77,7 +80,7 @@ namespace Theogony{
         {
             DontDestroyOnLoad(gameObject);
             if(self == null){
-                // gameObject.AddComponent<Interactable>();
+                SceneManager.LoadScene(firstScene);
                 self = this;
             }else{
                 Destroy(gameObject);
@@ -87,6 +90,9 @@ namespace Theogony{
         }
 
         private IEnumerator StartFunctions(float wait){
+            if(!GameObject.FindGameObjectWithTag("Player")){
+                yield break;
+            }
             yield return new WaitForSeconds(wait);
             activeScene = SceneManager.GetActiveScene().name;
             
@@ -259,6 +265,20 @@ namespace Theogony{
             SceneManager.LoadScene(sceneName);
             StartCoroutine(TravelTo(lastCheckpoint, false));
         }
+
+        // [MenuItem("Edit/Play-Stop, But From Prelaunch Scene %0")]
+        // public static void PlayFromPrelaunchScene()
+        // {
+        // if ( EditorApplication.isPlaying == true )
+        //     {
+        //     EditorApplication.isPlaying = false;
+        //     return;
+        //     }
+        
+        // EditorApplication.SaveCurrentModifiedxSceneIfUserWantsTo();
+        // EditorSceneManager.OpenScene("Assets/whatever/YourPrepScene.unity");
+        // EditorApplication.isPlaying = true;
+        // }
     }
 
     public enum InteractionType{PickUp, Open, Sit, RecoverSouls, BossBarrier}

@@ -16,6 +16,7 @@ namespace Theogony{
         public bool unlocked;
         public Vector3 teleportPosition;
         public int sortingOrder;
+        public ParticleSystem lightBurst;
         void Start()
         {
             globalInfo = GlobalInfo.GetGlobalInfo();
@@ -47,15 +48,17 @@ namespace Theogony{
 
         private IEnumerator StartFunctions(){
             yield return new WaitForSeconds(.3f);
-            unlocked = globalInfo.checkpoints[sortingOrder].unlocked;
-            if(unlocked){
-                pillarRenderer.materials[1] = mat[1];
-            }else{
-                pillarRenderer.materials[1] = mat[0];
+            if(GameObject.FindGameObjectWithTag("Player")){
+                unlocked = globalInfo.checkpoints[sortingOrder].unlocked;
+                if(unlocked){
+                    pillarRenderer.materials[1] = mat[1];
+                }else{
+                    pillarRenderer.materials[1] = mat[0];
+                }
+                
+                playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+                uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
             }
-            
-            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
         }
 
         public void Sit(){
@@ -81,6 +84,7 @@ namespace Theogony{
             StartCoroutine(globalInfo.ReloadLevel(sceneName));
         }
         private void UnlockCheckpoint(){
+            lightBurst.Play();
             unlocked = true;
             pillarRenderer.materials[1] = mat[1];
             globalInfo.checkpoints[sortingOrder].unlocked = true;

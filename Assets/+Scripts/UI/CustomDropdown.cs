@@ -75,40 +75,42 @@ namespace Theogony{
 
 
     
-    [CustomEditor(typeof(CustomDropdown))]
-    [CanEditMultipleObjects]
-    [ExecuteInEditMode]
-    public class CustomDropdownEditor : Editor{
-        CustomDropdown dropdown;
-        bool pressedCreate;
+    // [CustomEditor(typeof(CustomDropdown))]
+    // [CanEditMultipleObjects]
+    // [ExecuteInEditMode]
+    // public class CustomDropdownEditor : Editor{
+    //     CustomDropdown dropdown;
+    //     bool pressedCreate;
+    //     string optionName = "Option name";
 
-        public override void OnInspectorGUI()
-        {
-            dropdown = (CustomDropdown)target;
-            string addOptionText = "Add Option";
-            if(pressedCreate){
-                addOptionText = "Close";
-            }
+    //     public override void OnInspectorGUI()
+    //     {
+    //         dropdown = (CustomDropdown)target;
+    //         string addOptionText = "Add Option";
+    //         if(pressedCreate){
+    //             addOptionText = "Close";
+    //         }
 
-            if(GUILayout.Button(addOptionText)){
-                pressedCreate = !pressedCreate;
-            }
+    //         if(GUILayout.Button(addOptionText)){
+    //             pressedCreate = !pressedCreate;
+    //         }
 
-            if(pressedCreate){
-                GUILayout.BeginHorizontal();
-                string optionName = GUILayout.TextField("Option name");
-                if(GUILayout.Button("Create")){
-                    GameObject newOption = Instantiate(dropdown.optionTemplate, dropdown.optionHolder.transform);
-                    newOption.name = optionName;
-                    newOption.GetComponentInChildren<TextMeshProUGUI>().text = newOption.name;
-                    int optionIndex = dropdown.optionHolder.transform.childCount;
-                    newOption.GetComponent<Button>().onClick.AddListener(delegate{dropdown.UpdateOption(optionIndex - 1);});
-                    pressedCreate = false;
-                }
-                GUILayout.EndHorizontal();
-            }
+    //         if(pressedCreate){
+    //             GUILayout.BeginHorizontal();
+    //             optionName = GUILayout.TextField(optionName);
+    //             if(GUILayout.Button("Create")){
+    //                 GameObject newOption = Instantiate(dropdown.optionTemplate, dropdown.optionHolder.transform);
+    //                 newOption.name = optionName;
+    //                 newOption.GetComponentInChildren<TextMeshProUGUI>().text = newOption.name;
+    //                 int optionIndex = dropdown.optionHolder.transform.childCount;
+    //                 newOption.GetComponent<Button>().onClick.AddListener(delegate{dropdown.UpdateOption(optionIndex - 1);});
+    //                 pressedCreate = false;
+    //                 optionName = "Option name";
+    //             }
+    //             GUILayout.EndHorizontal();
+    //         }
 
-            DrawDefaultInspector();
-        }
-    }
+    //         DrawDefaultInspector();
+    //     }
+    // }
 }

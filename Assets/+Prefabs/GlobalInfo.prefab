@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3d501028063e948a487b5e58eda42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstScene: NewStarter
   playerControllerScript: {fileID: 0}
   health: {fileID: 0}
   stamina: {fileID: 0}
@@ -229,8 +230,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   currency: 5000
-  sensitivityX: 20
-  sensitivityY: 20
+  sensitivity: 50
+  audioVolume: 50
   lastCheckpoint: {fileID: 0}
   checkpoints:
   - {fileID: 0}

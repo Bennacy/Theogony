@@ -17,11 +17,13 @@ namespace Theogony{
         
         void Start()
         {
-            gameObject.layer = 7;
-            globalInfo = GlobalInfo.GetGlobalInfo();
-            playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-            playerInventory = playerControllerScript.gameObject.GetComponent<PlayerInventory>();
-            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
+            if(GameObject.FindGameObjectWithTag("Player")){
+                gameObject.layer = 7;
+                globalInfo = GlobalInfo.GetGlobalInfo();
+                playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+                playerInventory = playerControllerScript.gameObject.GetComponent<PlayerInventory>();
+                uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
+            }
         }
 
         public void Interact(){
