@@ -47,8 +47,6 @@ namespace Theogony
         [Range(0,100)]
         public float sensitivity;
         public float followSpeed = 0.1f;
-        [Range(0,100)]
-        public float pivotSensitivity;
         private float mouseXInput;
         private float mouseYInput;
 
@@ -89,10 +87,8 @@ namespace Theogony
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
             globalInfo = GlobalInfo.GetGlobalInfo();
-            sensSlider.SetValue(globalInfo.sensitivityX);
-            pivotSlider.SetValue(globalInfo.sensitivityY);
-            sensitivity = globalInfo.sensitivityX;
-            pivotSensitivity = globalInfo.sensitivityY;
+            sensSlider.SetValue(globalInfo.sensitivity);
+            sensitivity = globalInfo.sensitivity;
             origPos = cameraTransform.localPosition;
             origRot = cameraTransform.localRotation;
         }
@@ -114,13 +110,11 @@ namespace Theogony
             }
             
             if(playerInput.currentControlScheme != "Keyboard"){
-                pivotSensitivity = globalInfo.sensitivityY * 3;
-                sensitivity = globalInfo.sensitivityX * 3;
+                sensitivity = globalInfo.sensitivity * 3;
             }else{
-                sensitivity = globalInfo.sensitivityX;
-                pivotSensitivity = globalInfo.sensitivityY;
+                sensitivity = globalInfo.sensitivity;
             }
-            targetAngleY -= (mouseYInput * (pivotSensitivity / 1000)) / delta;
+            targetAngleY -= (mouseYInput * (sensitivity / 1000)) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
 
@@ -169,10 +163,7 @@ namespace Theogony
         void LateUpdate()
         {
             if(sensSlider.OnValueChanged()){
-                globalInfo.sensitivityX = sensitivity = sensSlider.GetValue();
-            }
-            if(pivotSlider.OnValueChanged()){
-                globalInfo.sensitivityY = pivotSensitivity = pivotSlider.GetValue();
+                globalInfo.sensitivity = sensitivity = sensSlider.GetValue();
             }
             
             if(lockOnTarget != null){
