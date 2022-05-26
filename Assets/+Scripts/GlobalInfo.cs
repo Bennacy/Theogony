@@ -90,9 +90,6 @@ namespace Theogony{
         }
 
         private IEnumerator StartFunctions(float wait){
-            if(!GameObject.FindGameObjectWithTag("Player")){
-                yield break;
-            }
             yield return new WaitForSeconds(wait);
             activeScene = SceneManager.GetActiveScene().name;
             
@@ -138,10 +135,19 @@ namespace Theogony{
             if(refreshedScene){
                 StartCoroutine(StartFunctions(.4f));
             }
-            if(paused && playerControllerScript.playerInput.currentControlScheme == "Keyboard"){
-                Cursor.lockState = CursorLockMode.None;
-            }else{
-                Cursor.lockState = CursorLockMode.Locked;
+            if(playerControllerScript){
+                lostCurrency.updateTimer += Time.deltaTime;
+                if(lostCurrency.updateTimer > lostCurrency.updateCooldown){
+                    lostCurrency.UpdateLastPosition(playerControllerScript.transform.position);
+                }
+
+                if(paused && playerControllerScript.playerInput.currentControlScheme == "Keyboard"){
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }else{
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
             }
         }
 
@@ -257,6 +263,11 @@ namespace Theogony{
             }
         }
 
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawSphere(lostCurrency.positions[0], 1);
+        }
+
         public IEnumerator ReloadLevel(string sceneName){
             reloading = true;
             yield return new WaitForSeconds(.4f);
@@ -285,12 +296,26 @@ namespace Theogony{
     
     [Serializable]
     public class LostCurrency{
-        // [Tooltip("Image order:\n0 - Accept\n1 - Back/Cancel\n2 - Pick up\n3 - Open\n4 - Rest\n5 - Tab left\n6 - Tab right")]
         public GameObject prefab;
         public int amount;
         public string scene;
         public Transform transform;
+        public int delay;
+        public float updateCooldown;
+        public float updateTimer;
+        public int maxListSize;
+        public List<Vector3> positions;
         public bool collected;
+
+        public void UpdateLastPosition(Vector3 newPos){
+            maxListSize = Mathf.FloorToInt(delay / updateCooldown);
+
+            updateTimer = 0;
+            positions.Add(newPos);
+            if(positions.Count > maxListSize){
+                positions.RemoveAt(0);
+            }
+        }
     }
 
     [Serializable]

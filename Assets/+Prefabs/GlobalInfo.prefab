@@ -54,6 +54,11 @@ MonoBehaviour:
     amount: 0
     scene: 
     transform: {fileID: 0}
+    delay: 5
+    updateCooldown: 0.5
+    updateTimer: 0
+    maxListSize: 0
+    positions: []
     collected: 0
   levelCost:
     serializedVersion: 2

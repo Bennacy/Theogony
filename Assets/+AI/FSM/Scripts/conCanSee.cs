@@ -46,15 +46,11 @@ namespace Theogony{
            
 
             fsm.visionCountdown -= Time.deltaTime;
-            if((angle < viewAngle) && (dist < viewDistance)){
-                Debug.Log("InView");
-                
+            if((angle < viewAngle) && (dist < viewDistance)){                
                 if(!VisionBlocked(fsm, target, dist)){
                     fsm.visionCountdown = fsm.visionMemory;
-                    Debug.Log("Sees");
                     return !negation;
                 }else{
-                    Debug.Log("Can't see");
                     if(fsm.visionCountdown <= 0){
                         // Debug.Log("Forgor :skull:");
                         return negation;

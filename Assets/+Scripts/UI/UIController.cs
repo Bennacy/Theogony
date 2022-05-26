@@ -20,6 +20,7 @@ namespace Theogony{
         public MenuInfo[] menus;
         public MenuInfo menuInfo;
         public Button[] menuButtons;
+        private Vector3[] buttonScale;
         public int buttonIndex;
         public LayerMask UILayer;
         [Space]
@@ -67,6 +68,7 @@ namespace Theogony{
         void Update()
         {
             if(paused){
+                int btnIndex = 0;
                 foreach(Button button in menuButtons){
                     TextMeshProUGUI text = null;
                     if(button.GetComponentInChildren<TextMeshProUGUI>()){
@@ -75,17 +77,20 @@ namespace Theogony{
                     
                     Image.Type savedType = button.image.type;
                     if(button != highlightedBtn){
+                        button.transform.localScale = buttonScale[btnIndex];
                         if(text != null){
                             text.color = buttonTextColors[0];
                         }
                         button.image.sprite = buttonSprites[0];
                     }else{
+                        button.transform.localScale = buttonScale[btnIndex] * 1.15f;
                         if(text != null){
                             text.color = buttonTextColors[1];
                         }
                         button.image.sprite = buttonSprites[1];
                     }
                     button.image.type = savedType;
+                    btnIndex++;
                 }
                 overSlider = highlightedBtn.name.Contains("Slider");
                 if(holdingNavigation){
@@ -156,6 +161,8 @@ namespace Theogony{
             menuButtons = menuInfo.buttons;
             buttonIndex = menuInfo.currIndex;
             highlightedBtn = menuButtons[buttonIndex];
+            buttonScale = new Vector3[menuButtons.Length];
+            int btnIndex = 0;
             foreach(Button button in menuButtons){ //Adds an event that highlights buttons that the mouse hovers
                 GameObject current = button.gameObject;
                 if(current.GetComponent<EventTrigger>() == null){
@@ -166,6 +173,8 @@ namespace Theogony{
                     entry.callback.AddListener(delegate{MouseOver(button);});
                     trigger.triggers.Add(entry);
                 }
+                buttonScale[btnIndex] = button.transform.localScale;
+                btnIndex++;
             }
         }
 

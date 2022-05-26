@@ -74,7 +74,8 @@ namespace Theogony{
         }
 
         public void EnableKinematic(){
-            rb.isKinematic = true;
+            if(rb)
+                rb.isKinematic = true;
         }
 
         public void DisableKinematic(){
