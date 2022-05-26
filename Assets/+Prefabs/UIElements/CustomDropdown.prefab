@@ -1434,6 +1434,7 @@ MonoBehaviour:
   arrowSprites:
   - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   parentButton: {fileID: 6008470693903566335}
+  optionTemplate: {fileID: 4812893803674507523}
 --- !u!1 &4812893803674507523
 GameObject:
   m_ObjectHideFlags: 0

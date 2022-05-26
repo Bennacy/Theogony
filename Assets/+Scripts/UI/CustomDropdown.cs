@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 namespace Theogony{
     public class CustomDropdown : MonoBehaviour
@@ -19,6 +20,9 @@ namespace Theogony{
         public Image arrowImage;
         public Sprite[] arrowSprites;
         public Button parentButton;
+
+        [HideInInspector]
+        public GameObject optionTemplate;
 
         void Start()
         {
@@ -71,4 +75,40 @@ namespace Theogony{
 
 
     
+    [CustomEditor(typeof(CustomDropdown))]
+    [CanEditMultipleObjects]
+    [ExecuteInEditMode]
+    public class CustomDropdownEditor : Editor{
+        CustomDropdown dropdown;
+        bool pressedCreate;
+
+        public override void OnInspectorGUI()
+        {
+            dropdown = (CustomDropdown)target;
+            string addOptionText = "Add Option";
+            if(pressedCreate){
+                addOptionText = "Close";
+            }
+
+            if(GUILayout.Button(addOptionText)){
+                pressedCreate = !pressedCreate;
+            }
+
+            if(pressedCreate){
+                GUILayout.BeginHorizontal();
+                string optionName = GUILayout.TextField("Option name");
+                if(GUILayout.Button("Create")){
+                    GameObject newOption = Instantiate(dropdown.optionTemplate, dropdown.optionHolder.transform);
+                    newOption.name = optionName;
+                    newOption.GetComponentInChildren<TextMeshProUGUI>().text = newOption.name;
+                    int optionIndex = dropdown.optionHolder.transform.childCount;
+                    newOption.GetComponent<Button>().onClick.AddListener(delegate{dropdown.UpdateOption(optionIndex - 1);});
+                    pressedCreate = false;
+                }
+                GUILayout.EndHorizontal();
+            }
+
+            DrawDefaultInspector();
+        }
+    }
 }
