@@ -48,6 +48,8 @@ namespace Theogony{
 
 
         private int grav = 0;
+        public float slopeMax;
+        private bool gravActive;
 
         void Start()
         {
@@ -99,8 +101,9 @@ namespace Theogony{
                 vel += camForward * movementVector * moveSpeed;
                 rb.velocity = vel;
                 
-
-                animator.SetFloat("Speed", rb.velocity.magnitude);
+                Vector3 velocityVector = rb.velocity;
+                velocityVector.y = 0;
+                animator.SetFloat("Speed", velocityVector.magnitude);
                 if(canMove && rb.velocity.magnitude > 0.1f){
                     // animator.speed = rb.velocity.magnitude / moveSpeed;
                 }
@@ -121,11 +124,16 @@ namespace Theogony{
 
         public void Move(InputAction.CallbackContext context){
             Vector2 inputVector2 = context.action.ReadValue<Vector2>();
-            movementVector = new Vector3(inputVector2.x, 0, inputVector2.y);
+           
+
+            movementVector = new Vector3(inputVector2.x, grav , inputVector2.y);
+
            
             if(context.canceled){
                 stoppedMove = true;
                 movementVector = Vector3.zero;
+                
+                
             }
         }
 
@@ -134,17 +142,27 @@ namespace Theogony{
             // int layerMask = ~groundLayer;
             RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.1f, groundLayer))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.2f)
         {
+            
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
             grav = 0;
+            
         }else
         {
+            grav =-5;
+          if(slopeMax <= hit.distance)
+          {
             canMove = false;
-            animator.SetFloat("Speed", 0);
-            grav = -5;
+           
+           // animator.SetFloat("Speed", 0);
+          }
+
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.red);
+
+    
             rb.AddForce(0,grav,0);
+            
              
           
         }
