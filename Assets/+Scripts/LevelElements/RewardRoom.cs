@@ -20,6 +20,7 @@ namespace Theogony {
             {
                 Instantiate(StatuePrefab, transform.position, Quaternion.identity);
             }
+            FaceArena("GorgonStatue");
         }
 
         void Update()
@@ -46,5 +47,19 @@ namespace Theogony {
                 Destroy(objects[i]);
             }
         }
+
+        public void FaceArena(string tag)
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+            for (int i = 0; i < objects.Length; i++)
+            {
+                Transform enemy = objects[i].transform;
+                Vector3 direction = (transform.position - enemy.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                enemy.rotation = Quaternion.Slerp(enemy.rotation, lookRotation, Time.deltaTime * 150f);
+            }
+        }
+
+        
     }
 }
