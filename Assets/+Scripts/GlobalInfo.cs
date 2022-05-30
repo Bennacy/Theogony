@@ -78,16 +78,20 @@ namespace Theogony{
         
         void Start()
         {
+            // SendSettings sendSettings = GameObject.Find("SendSettings").GetComponent<SendSettings>();
+            // if(sendSettings.gameObject){
+            //     audioVolume = sendSettings.audioVolume;
+            //     Destroy(sendSettings.gameObject);
+            // }
+
             DontDestroyOnLoad(gameObject);
             if(self == null){
-                Destroy(GameObject.Find("SendSettings"));
                 // SceneManager.LoadScene(firstScene);
                 self = this;
             }else{
                 Destroy(gameObject);
             }
             StartCoroutine(StartFunctions(.4f));
-            
         }
 
         private IEnumerator StartFunctions(float wait){
@@ -133,6 +137,10 @@ namespace Theogony{
 
         void Update()
         {
+            if(activeScene != SceneManager.GetActiveScene().name){
+                activeScene = SceneManager.GetActiveScene().name;
+                refreshedScene = true;
+            }
             if(refreshedScene){
                 StartCoroutine(StartFunctions(.4f));
             }
@@ -277,20 +285,6 @@ namespace Theogony{
             SceneManager.LoadScene(sceneName);
             StartCoroutine(TravelTo(lastCheckpoint, false));
         }
-
-        // [MenuItem("Edit/Play-Stop, But From Prelaunch Scene %0")]
-        // public static void PlayFromPrelaunchScene()
-        // {
-        // if ( EditorApplication.isPlaying == true )
-        //     {
-        //     EditorApplication.isPlaying = false;
-        //     return;
-        //     }
-        
-        // EditorApplication.SaveCurrentModifiedxSceneIfUserWantsTo();
-        // EditorSceneManager.OpenScene("Assets/whatever/YourPrepScene.unity");
-        // EditorApplication.isPlaying = true;
-        // }
     }
 
     public enum InteractionType{PickUp, Open, Sit, RecoverSouls, BossBarrier}

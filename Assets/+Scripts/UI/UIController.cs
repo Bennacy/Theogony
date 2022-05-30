@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace Theogony{
     public class UIController : MonoBehaviour
@@ -77,7 +78,7 @@ namespace Theogony{
                         if(menuInfo.enlargeButtons){
                             button.transform.localScale = buttonScale[btnIndex];
                         }    
-                        
+
                         if(text != null){
                             text.color = buttonTextColors[0];
                         }
@@ -182,13 +183,19 @@ namespace Theogony{
         }
 
         public void Quit(){
-            Application.Quit();
+            globalInfo.paused = false;
+            SceneManager.LoadScene("TitleScreen");
+            // Application.Quit();
         }
 
         #region Menu Navigation
         public void Back(InputAction.CallbackContext context){
             if(context.canceled){
                 if(menuInfo.previousMenu == null){ //If this action returns to the game
+                    for(int i = 0; i < menuInfo.buttons.Length; i++){
+                        menuInfo.buttons[i].transform.localScale = buttonScale[i];
+                    }
+            
                     if(pauseBackground.activeSelf){ //If the pause menu is open
                         menuInfo.currIndex = buttonIndex = 0;
                         pauseBackground.SetActive(false);

@@ -5,10 +5,13 @@ using UnityEngine;
 namespace Theogony{
     public class SendSettings : MonoBehaviour
     {
-        public float audioVolume;
+        public int audioVolume;
 
-        void Start()
+        void Awake()
         {
+            if(GameObject.FindGameObjectWithTag("GlobalInfo")){
+                audioVolume = GlobalInfo.GetGlobalInfo().audioVolume;
+            }
             DontDestroyOnLoad(gameObject);
         }
     }

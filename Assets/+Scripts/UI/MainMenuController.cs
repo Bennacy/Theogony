@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 namespace Theogony{
     public class MainMenuController : MonoBehaviour
     {
+        public GameObject startButtons;
+        private bool startedAccept;
+        private bool started;
         public Button highlightedBtn;
         public int buttonIndex;
         public MenuInfo menuInfo;
@@ -32,10 +35,15 @@ namespace Theogony{
             buttonSprites = menuInfo.buttonSprites;
             buttonTextColors = menuInfo.buttonTextColors;
             GetButtons();
+            started = startedAccept = false;
         }
 
         void Update()
         {
+            if(!started && Input.anyKeyDown){
+                StartButtons();
+            }
+
             int btnIndex = 0;
             foreach(Button button in menuButtons){
                 TextMeshProUGUI text = null;
@@ -66,7 +74,10 @@ namespace Theogony{
                 button.image.type = savedType;
                 btnIndex++;
             }
-            overSlider = highlightedBtn.name.Contains("Slider");
+            if(highlightedBtn){
+                overSlider = highlightedBtn.name.Contains("Slider");
+            }
+
             if(holdingNavigation){
                 holdTimer += Time.deltaTime;
                 if(firstHold){
@@ -126,20 +137,28 @@ namespace Theogony{
 
         #region Menu Navigation
         public void Back(InputAction.CallbackContext context){
-            if(context.canceled && menuInfo.previousMenu){
-                Debug.Log(menuInfo.previousMenu);
-                OpenMenu(menuInfo.previousMenu);
+            if(context.canceled && started){
+                if(!startedAccept){
+                    startedAccept = true;
+                    return;
+                }
+                if(menuInfo.previousMenu)
+                    OpenMenu(menuInfo.previousMenu);
             }
         }
 
         public void Accept(InputAction.CallbackContext context){
-            if(context.performed){
+            if(context.performed && started){
+                if(!startedAccept){
+                    startedAccept = true;
+                    return;
+                }
+                Debug.Log("Accept");
                 highlightedBtn.onClick.Invoke();
             }
         }
 
         public void OpenMenu(GameObject menu){
-            Debug.Log(menu);
             menu.SetActive(true);
             
             for(int i = 0; i < menuInfo.buttons.Length; i++){
@@ -150,6 +169,7 @@ namespace Theogony{
             if(!menu.GetComponent<MenuInfo>().saveIndex){
                 menuInfo.currIndex = 0;
             }
+            Debug.Log("Second");
             menuInfo = menu.GetComponent<MenuInfo>();
             buttonSprites = menuInfo.buttonSprites;
             buttonTextColors = menuInfo.buttonTextColors;
@@ -159,14 +179,8 @@ namespace Theogony{
             GetButtons();
         }
 
-        public void GetMenuButtons(){
-            menuButtons = menuInfo.buttons;
-            buttonIndex = menuInfo.currIndex;
-            highlightedBtn = menuButtons[menuInfo.currIndex];
-        }
-
-        public void NavigateMenu(InputAction.CallbackContext context){
-            if(context.performed){
+        public void NavigateMenu(InputAction.CallbackContext context){            
+            if(context.performed && started){
                 navigationValue = context.ReadValue<Vector2>();
                 ActualNavigation();
                 holdingNavigation = true;
@@ -210,5 +224,10 @@ namespace Theogony{
             highlightedBtn = menuButtons[buttonIndex];
         }
         #endregion
+
+        private void StartButtons(){
+            started = true;
+            OpenMenu(startButtons);
+        }
     }
 }
