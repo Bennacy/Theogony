@@ -26,13 +26,20 @@ namespace Theogony{
         private bool changed;
         private bool held;
         public bool mouseOver;
+        private SendSettings sendSettings;
+        private MainMenuController mainMenuController;
 
         void Start()
         {
-            globalInfo = GlobalInfo.GetGlobalInfo();
-            uiController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
+            sendSettings = GetComponentInParent<ChangeSettings>().sendSettings;
+            if(sendSettings){
+                mainMenuController = GetComponentInParent<MainMenuController>();
+                canvasTransform = mainMenuController.gameObject.GetComponent<RectTransform>();
+            }else{
+                uiController = GetComponentInParent<UIController>();
+                canvasTransform = uiController.gameObject.GetComponent<RectTransform>();
+            }
             buttonRef = GetComponentInChildren<Button>();
-            canvasTransform = uiController.gameObject.GetComponent<RectTransform>();
             mainCam = Camera.main;
             backgroundThreshold.x = backgroundTransform.localPosition.x;
             backgroundThreshold.y = backgroundTransform.localPosition.x + backgroundTransform.sizeDelta.x;
@@ -40,20 +47,23 @@ namespace Theogony{
             SetValue(sliderValue);
         }
 
-        void OnEnable()
-        {
-            globalInfo = GlobalInfo.GetGlobalInfo();
-        }
-
         void Update()
         {
             filledImage.sprite = filledSprite;
             sliderBall.sprite = ballSprite;
             lastValue = sliderValue;
-            if(uiController.sliderChange != 0 && uiController.highlightedBtn == buttonRef){
-                ChangeSlider(uiController.sliderChange);
-                uiController.sliderChange = 0;
-                sliderValue = GetValue();
+            if(sendSettings){
+                if(mainMenuController.sliderChange != 0 && mainMenuController.highlightedBtn == buttonRef){
+                    ChangeSlider(mainMenuController.sliderChange);
+                    mainMenuController.sliderChange = 0;
+                    sliderValue = GetValue();
+                }
+            }else{
+                if(uiController.sliderChange != 0 && uiController.highlightedBtn == buttonRef){
+                    ChangeSlider(uiController.sliderChange);
+                    uiController.sliderChange = 0;
+                    sliderValue = GetValue();
+                }
             }
 
             if(mouseOver && Input.GetMouseButtonDown(0)){

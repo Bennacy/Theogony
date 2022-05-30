@@ -20,21 +20,29 @@ namespace Theogony{
         public Image arrowImage;
         public Sprite[] arrowSprites;
         public Button parentButton;
+        private SendSettings sendSettings;
+        private MainMenuController mainMenuController;
 
         [HideInInspector]
         public GameObject optionTemplate;
 
         void Start()
         {
+            sendSettings = GetComponentInParent<ChangeSettings>().sendSettings;
+
             dropdownOpen = false;
-            globalInfo = GlobalInfo.GetGlobalInfo();
             options = optionHolder.GetComponentsInChildren<Button>();
             optionString = options[currentOption].gameObject.name;
             foreach (Button option in options){
                 option.GetComponentInChildren<TextMeshProUGUI>().text = option.gameObject.name;
             }
             optionText.text = optionString;
-            uIController = GetComponentInParent<UIController>();
+            if(sendSettings){
+                mainMenuController = GetComponentInParent<MainMenuController>();
+            }else{
+                globalInfo = GlobalInfo.GetGlobalInfo();
+                uIController = GetComponentInParent<UIController>();
+            }
             parentButton.onClick.AddListener(delegate{ToggleDropdown();});
             arrowImage.sprite = arrowSprites[0];
         }
@@ -49,11 +57,19 @@ namespace Theogony{
             MenuInfo optionMenu = optionHolder.GetComponent<MenuInfo>();
             if(dropdownOpen){
                 arrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-                uIController.OpenMenu(optionHolder);
+                if(sendSettings){
+                    mainMenuController.OpenMenu(optionHolder);
+                }else{
+                    uIController.OpenMenu(optionHolder);
+                }
                 optionMenu.currIndex = currentOption;
             }else{
                 arrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                uIController.OpenMenu(optionMenu.previousMenu);
+                if(sendSettings){
+                    mainMenuController.OpenMenu(optionMenu.previousMenu);
+                }else{
+                    uIController.OpenMenu(optionMenu.previousMenu);
+                }
             }
         }
 

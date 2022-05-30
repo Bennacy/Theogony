@@ -6,10 +6,10 @@ namespace Theogony{
     public class ChangeSettings : MonoBehaviour
     {
         public GlobalInfo globalInfo;
+        public SendSettings sendSettings;
         public CustomSlider audioSlider;
         public CustomDropdown dropdown;
         public CustomToggle audioToggle;
-        public string[] qualityNames;
         public int savedAudio;
         private bool previouslyToggled;
 
@@ -17,11 +17,17 @@ namespace Theogony{
         {
             dropdown = GetComponentInChildren<CustomDropdown>();
             audioToggle = GetComponentInChildren<CustomToggle>();
-            globalInfo = GlobalInfo.GetGlobalInfo();
-            qualityNames = QualitySettings.names;
-            audioSlider.SetValue(globalInfo.audioVolume);
-            savedAudio = Mathf.RoundToInt(audioSlider.GetValue());
-            audioToggle.active = (globalInfo.audioVolume == 0);
+
+            if(sendSettings){
+                audioSlider.SetValue(sendSettings.audioVolume);
+                savedAudio = Mathf.RoundToInt(audioSlider.GetValue());
+                audioToggle.active = (sendSettings.audioVolume == 0);
+            }else{
+                globalInfo = GlobalInfo.GetGlobalInfo();
+                audioSlider.SetValue(globalInfo.audioVolume);
+                savedAudio = Mathf.RoundToInt(audioSlider.GetValue());
+                audioToggle.active = (globalInfo.audioVolume == 0);
+            }
         }
 
         void Update()
@@ -40,7 +46,11 @@ namespace Theogony{
                 if(!previouslyToggled){
                     savedAudio = audioVolume;
                     audioSlider.SetValue(0);
-                    globalInfo.audioVolume = 0;
+                    if(sendSettings){
+                        sendSettings.audioVolume = 0;
+                    }else{
+                        globalInfo.audioVolume = 0;
+                    }
                     previouslyToggled = true;
                 }
             }
@@ -57,7 +67,11 @@ namespace Theogony{
             }
 
             if(audioVolume > 0 && !audioToggle.active){
-                globalInfo.audioVolume = audioVolume;
+                if(sendSettings){
+                    sendSettings.audioVolume = audioVolume;
+                }else{
+                    globalInfo.audioVolume = audioVolume;
+                }
             }
 
             previouslyToggled = audioToggle.active;

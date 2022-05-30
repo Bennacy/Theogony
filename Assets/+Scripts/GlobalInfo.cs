@@ -80,7 +80,8 @@ namespace Theogony{
         {
             DontDestroyOnLoad(gameObject);
             if(self == null){
-                SceneManager.LoadScene(firstScene);
+                Destroy(GameObject.Find("SendSettings"));
+                // SceneManager.LoadScene(firstScene);
                 self = this;
             }else{
                 Destroy(gameObject);

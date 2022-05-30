@@ -16,5 +16,6 @@ namespace Theogony{
         public int currIndex;
         public Sprite[] buttonSprites;
         public Color[] buttonTextColors;
+        public bool enlargeButtons;
     }
 }

@@ -11,10 +11,14 @@ namespace Theogony{
         public UIController uIController;
         public Sprite[] newSprites;
         public Button[] buttonsToOverride;
+        private MainMenuController mainMenuController;
         void Start()
         {
-            globalInfo = GlobalInfo.GetGlobalInfo();
-            uIController = GetComponentInParent<UIController>();
+            mainMenuController = GetComponentInParent<MainMenuController>();
+            if(!mainMenuController){
+                globalInfo = GlobalInfo.GetGlobalInfo();
+                uIController = GetComponentInParent<UIController>();
+            }
             // buttonsToOverride = GetComponentsInChildren<Button>();
         }
         
@@ -22,10 +26,18 @@ namespace Theogony{
         {
             foreach(Button button in buttonsToOverride){
                 Image.Type savedType = button.image.type;
-                if(button != uIController.highlightedBtn){
-                    button.image.sprite = newSprites[0];
+                if(mainMenuController){
+                    if(button != mainMenuController.highlightedBtn){
+                        button.image.sprite = newSprites[0];
+                    }else{
+                        button.image.sprite = newSprites[1];
+                    }
                 }else{
-                    button.image.sprite = newSprites[1];
+                    if(button != uIController.highlightedBtn){
+                        button.image.sprite = newSprites[0];
+                    }else{
+                        button.image.sprite = newSprites[1];
+                    }
                 }
                 button.image.type = savedType;
             }

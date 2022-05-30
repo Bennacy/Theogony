@@ -1380,6 +1380,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!1 &2631470172222226202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1475,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41fc5bd7ae865a14e9086c4aaeb21f8d, type: 3}
   - {fileID: 21300000, guid: 9f725be5228afbe4d82fdce8fd916970, type: 3}
   buttonTextColors: []
+  enlargeButtons: 0
 --- !u!222 &750058072
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1891,6 +1893,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41fc5bd7ae865a14e9086c4aaeb21f8d, type: 3}
   - {fileID: 21300000, guid: 9f725be5228afbe4d82fdce8fd916970, type: 3}
   buttonTextColors: []
+  enlargeButtons: 0
 --- !u!222 &107122470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7269,6 +7272,7 @@ MonoBehaviour:
   currIndex: 0
   buttonSprites: []
   buttonTextColors: []
+  enlargeButtons: 0
 --- !u!1 &8009718904440454016
 GameObject:
   m_ObjectHideFlags: 0
@@ -8140,8 +8144,6 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
-  unselectedC: {r: 1, g: 1, b: 1, a: 100}
-  selectedC: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 100}
   firstHoldTime: 0.4
   fastHoldTime: 0.1
   holdTimer: 0
@@ -8732,6 +8734,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!1 &8009718904891429016
 GameObject:
   m_ObjectHideFlags: 0
@@ -9871,6 +9874,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!1 &8009718905222834689
 GameObject:
   m_ObjectHideFlags: 0
@@ -10491,6 +10495,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!114 &8009718905473929021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11058,6 +11063,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!1 &8009718905562175073
 GameObject:
   m_ObjectHideFlags: 0
@@ -11304,6 +11310,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!114 &634230318576422322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11473,6 +11480,7 @@ MonoBehaviour:
   buttonTextColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  enlargeButtons: 0
 --- !u!1 &8009718905699615192
 GameObject:
   m_ObjectHideFlags: 0

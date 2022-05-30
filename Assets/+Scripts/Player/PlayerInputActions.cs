@@ -1290,6 +1290,261 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MainMenu"",
+            ""id"": ""c2382df2-8bb1-44ae-88b4-b25b307b96b2"",
+            ""actions"": [
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""a9c62040-fa09-4d31-b0de-3da84e2757ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Accept"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1fa2bff-3e51-43dd-bd18-487f72f12473"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MenuNavigation"",
+                    ""type"": ""Value"",
+                    ""id"": ""a3d148d0-70ed-4c88-99d4-c462a19175c6"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f845f097-17af-416a-80fb-6b71f1015a9e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""797d2747-6c61-4e59-b689-3edd5ee58d6a"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6dc0a5e-83de-4bcb-bb8d-b59f1eeb520c"",
+                    ""path"": ""<DualShockGamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40fca1a1-46a2-4925-9148-4c2f740065a8"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8267e4bf-4597-4c15-886a-74b198dec5af"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e785596-8656-4d5a-a116-8e5d42157a90"",
+                    ""path"": ""<DualShockGamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""3623c9c2-7d58-448c-bb2a-e200d23ad861"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f5b1625e-9b82-4251-99ee-97360688fc20"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""aea00a70-9832-4ca9-8564-78d5ae16ef32"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""3a77b604-97dd-435d-ad4e-2a563abdbc8e"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9e54a8de-a329-482c-865e-a92b202ae19b"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller"",
+                    ""id"": ""63cc8705-75eb-4f41-9dce-baa34e5cc3da"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""cca6469c-5e05-4901-891b-f45235916348"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8a551745-c7fb-47d6-b7ce-4b13ae4d08b5"",
+                    ""path"": ""<DualShockGamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""d67e71de-ae5f-4595-8a22-339b6a32aa8a"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7753b422-1b46-4a2b-937e-896b6f441ed5"",
+                    ""path"": ""<DualShockGamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""75f0192a-8771-4b71-987c-12644fc2ed98"",
+                    ""path"": ""<XInputController>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b396fb8d-813b-4737-ba90-73ddedb83cfd"",
+                    ""path"": ""<DualShockGamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""62ce40bb-9aea-4247-ab37-a36c8067e729"",
+                    ""path"": ""<XInputController>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b9ba7001-f634-416a-ba15-4635a8d06ac2"",
+                    ""path"": ""<DualShockGamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""MenuNavigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1360,6 +1615,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
         m_UI_MenuNavigation = m_UI.FindAction("MenuNavigation", throwIfNotFound: true);
         m_UI_ChangeTab = m_UI.FindAction("ChangeTab", throwIfNotFound: true);
+        // MainMenu
+        m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
+        m_MainMenu_Back = m_MainMenu.FindAction("Back", throwIfNotFound: true);
+        m_MainMenu_Accept = m_MainMenu.FindAction("Accept", throwIfNotFound: true);
+        m_MainMenu_MenuNavigation = m_MainMenu.FindAction("MenuNavigation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1649,6 +1909,55 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // MainMenu
+    private readonly InputActionMap m_MainMenu;
+    private IMainMenuActions m_MainMenuActionsCallbackInterface;
+    private readonly InputAction m_MainMenu_Back;
+    private readonly InputAction m_MainMenu_Accept;
+    private readonly InputAction m_MainMenu_MenuNavigation;
+    public struct MainMenuActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public MainMenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Back => m_Wrapper.m_MainMenu_Back;
+        public InputAction @Accept => m_Wrapper.m_MainMenu_Accept;
+        public InputAction @MenuNavigation => m_Wrapper.m_MainMenu_MenuNavigation;
+        public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMainMenuActions instance)
+        {
+            if (m_Wrapper.m_MainMenuActionsCallbackInterface != null)
+            {
+                @Back.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBack;
+                @Accept.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnAccept;
+                @Accept.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnAccept;
+                @Accept.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnAccept;
+                @MenuNavigation.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnMenuNavigation;
+                @MenuNavigation.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnMenuNavigation;
+                @MenuNavigation.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnMenuNavigation;
+            }
+            m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
+                @Accept.started += instance.OnAccept;
+                @Accept.performed += instance.OnAccept;
+                @Accept.canceled += instance.OnAccept;
+                @MenuNavigation.started += instance.OnMenuNavigation;
+                @MenuNavigation.performed += instance.OnMenuNavigation;
+                @MenuNavigation.canceled += instance.OnMenuNavigation;
+            }
+        }
+    }
+    public MainMenuActions @MainMenu => new MainMenuActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -1704,5 +2013,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnAccept(InputAction.CallbackContext context);
         void OnMenuNavigation(InputAction.CallbackContext context);
         void OnChangeTab(InputAction.CallbackContext context);
+    }
+    public interface IMainMenuActions
+    {
+        void OnBack(InputAction.CallbackContext context);
+        void OnAccept(InputAction.CallbackContext context);
+        void OnMenuNavigation(InputAction.CallbackContext context);
     }
 }

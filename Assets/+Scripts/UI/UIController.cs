@@ -29,13 +29,10 @@ namespace Theogony{
         [Header("Values")]
         public Sprite[] buttonSprites;
         public Color[] buttonTextColors;
-        public Color unselectedC;
-        public Color selectedC;
         public float firstHoldTime;
         public float fastHoldTime;
         public float holdTimer;
-        [SerializeField]
-        private Vector2 navigationValue;
+        public Vector2 navigationValue;
         [Space]
 
         [Space]
@@ -77,13 +74,19 @@ namespace Theogony{
                     
                     Image.Type savedType = button.image.type;
                     if(button != highlightedBtn){
-                        button.transform.localScale = buttonScale[btnIndex];
+                        if(menuInfo.enlargeButtons){
+                            button.transform.localScale = buttonScale[btnIndex];
+                        }    
+                        
                         if(text != null){
                             text.color = buttonTextColors[0];
                         }
                         button.image.sprite = buttonSprites[0];
                     }else{
-                        button.transform.localScale = buttonScale[btnIndex] * 1.15f;
+                        if(menuInfo.enlargeButtons){
+                            button.transform.localScale = buttonScale[btnIndex] * 1.15f;
+                        }
+                        
                         if(text != null){
                             text.color = buttonTextColors[1];
                         }
@@ -214,7 +217,12 @@ namespace Theogony{
 
         public void OpenMenu(GameObject menu){
             menu.SetActive(true);
+            
+            for(int i = 0; i < menuInfo.buttons.Length; i++){
+                menuInfo.buttons[i].transform.localScale = buttonScale[i];
+            }
             menuInfo.gameObject.SetActive(false);
+
             if(!menu.GetComponent<MenuInfo>().saveIndex){
                 menuInfo.currIndex = 0;
             }

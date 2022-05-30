@@ -7,8 +7,6 @@ using TMPro;
 namespace Theogony{
     public class CustomToggle : MonoBehaviour
     {
-        public GlobalInfo globalInfo;
-        public UIController uIController;
         public Button button;
         public bool active;
         public Image toggledImage;
@@ -16,8 +14,6 @@ namespace Theogony{
         
         void Start()
         {
-            globalInfo = GlobalInfo.GetGlobalInfo();
-            uIController = GetComponentInParent<UIController>();
             button = GetComponentInChildren<Button>();
             button.onClick.AddListener(delegate{ChangeValue();});
             toggledImage.sprite = toggledSprite;

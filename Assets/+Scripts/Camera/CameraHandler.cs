@@ -14,7 +14,7 @@ namespace Theogony
         public Transform cameraPivotTransform;
         private Transform myTransform;
         private Vector3 cameraTransformPosition;
-        public LayerMask ignoreLayers;
+        public LayerMask terrainLayers;
         private PlayerInput playerInput;
         private GlobalInfo globalInfo;
         private Camera mainCam;
@@ -83,7 +83,7 @@ namespace Theogony
             mainCam = Camera.main;
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
-            // ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
+            // terrainLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             playerInput = player.gameObject.GetComponent<PlayerInput>();
             lookAngle = targetAngleX = targetAngleY = 0;
@@ -146,7 +146,7 @@ namespace Theogony
             RaycastHit hit;
             Vector3 direction = cameraTransform.position - cameraPivotTransform.position;
             direction.Normalize();
-            if (Physics.SphereCast(cameraPivotTransform.position, cameraSpheresRadius, direction, out hit, Mathf.Abs(targetPosition), ignoreLayers))
+            if (Physics.SphereCast(cameraPivotTransform.position, cameraSpheresRadius, direction, out hit, Mathf.Abs(targetPosition), terrainLayers))
             {
                 float dis = Vector3.Distance(cameraPivotTransform.position, hit.point);
                 targetPosition = -(dis - cameraCollisionOffset);
@@ -193,7 +193,7 @@ namespace Theogony
 
             Vector3 playerToCam = cameraTransform.TransformPoint(cameraTransform.localPosition) - player.transform.position;
             RaycastHit hit;
-            Physics.Raycast(player.transform.position, playerToCam, out hit, 10, ~ignoreLayers);
+            Physics.Raycast(player.transform.position, playerToCam, out hit, 10, terrainLayers);
             if(hit.collider){
                 float desiredZ = Vector3.Distance(player.transform.position, hit.point);
                 cameraPositionGoal = origPos;
