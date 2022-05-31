@@ -179,9 +179,9 @@ MonoBehaviour:
   player: {fileID: 0}
   cameraTransform: {fileID: 7301024319384058074}
   cameraPivotTransform: {fileID: 7301024319241269635}
-  ignoreLayers:
+  terrainLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   sensSlider: {fileID: 0}
   pivotSlider: {fileID: 0}
   maxDistance: 0
@@ -197,12 +197,11 @@ MonoBehaviour:
   previouslyLocked: 0
   colliders: []
   targetAngleX: 0
-  targetAngleY: 0
+  targetAngleY: 30
   mouseSens: 100
   lookSpeed: 0.1
   sensitivity: 10
   followSpeed: 0.1
-  pivotSensitivity: 30
   lookAngle: 0
   minimumPivot: -20
   maximumPivot: 45

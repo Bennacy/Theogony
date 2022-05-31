@@ -57,6 +57,10 @@ PrefabInstance:
       propertyPath: pivotSlider
       value: 
       objectReference: {fileID: 2605162513703166880}
+    - target: {fileID: 7301024319790079576, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
+      propertyPath: terrainLayers.m_Bits
+      value: 1664
+      objectReference: {fileID: 0}
     - target: {fileID: 7301024319790079578, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
       propertyPath: m_Name
       value: CameraHandler
@@ -105,7 +109,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7301024319384058075, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e1a5da9ee3f1584480fee14f36a2899, type: 3}
 --- !u!4 &1235834874110441456 stripped
 Transform:
@@ -330,6 +335,54 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionId
+      value: 8a9b1fc0-cbd9-489b-848b-c61a6163d26b
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionId
+      value: 27d6a467-40cf-4b1f-8670-c630b96d0da3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[24].m_ActionId
+      value: a9c62040-fa09-4d31-b0de-3da84e2757ac
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionId
+      value: f1fa2bff-3e51-43dd-bd18-487f72f12473
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionId
+      value: a3d148d0-70ed-4c88-99d4-c462a19175c6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionName
+      value: InGame/ChangeR[/Keyboard/upArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionName
+      value: InGame/ToggleUI[/XInputControllerWindows/leftStickPress,/Keyboard/tab]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[24].m_ActionName
+      value: MainMenu/Back[/Keyboard/q,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionName
+      value: MainMenu/Accept[/Keyboard/e,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionName
+      value: MainMenu/MenuNavigation[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1235834874110441459}
@@ -373,6 +426,26 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1971696214044776924}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1971696214289698993}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Theogony.UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850904162861747633, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1850904162861747634, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: cam
       value: 
