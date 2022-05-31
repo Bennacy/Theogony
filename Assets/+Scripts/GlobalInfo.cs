@@ -272,7 +272,7 @@ namespace Theogony{
 
         void OnDrawGizmosSelected()
         {
-            Gizmos.DrawSphere(lostCurrency.positions[0], 1);
+            // Gizmos.DrawSphere(lostCurrency.positions[0], 1);
         }
 
         public IEnumerator ReloadLevel(string sceneName){
