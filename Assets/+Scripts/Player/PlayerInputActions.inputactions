@@ -121,6 +121,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleUI",
+                    "type": "Button",
+                    "id": "27d6a467-40cf-4b1f-8670-c630b96d0da3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -594,6 +603,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangeR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91464ded-c544-436a-8525-897d67e364bd",
+                    "path": "<XInputController>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "xBox",
+                    "action": "ToggleUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "848e887d-6429-4a2c-9ff8-feb396dfefbc",
+                    "path": "<DualShockGamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "ToggleUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b255e791-09ec-4a04-bb9b-c8ff1a7192f8",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ToggleUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

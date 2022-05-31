@@ -143,6 +143,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleUI"",
+                    ""type"": ""Button"",
+                    ""id"": ""27d6a467-40cf-4b1f-8670-c630b96d0da3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -616,6 +625,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ChangeR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91464ded-c544-436a-8525-897d67e364bd"",
+                    ""path"": ""<XInputController>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""xBox"",
+                    ""action"": ""ToggleUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""848e887d-6429-4a2c-9ff8-feb396dfefbc"",
+                    ""path"": ""<DualShockGamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""ToggleUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b255e791-09ec-4a04-bb9b-c8ff1a7192f8"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ToggleUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1603,6 +1645,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_InGame_Interact = m_InGame.FindAction("Interact", throwIfNotFound: true);
         m_InGame_ChangeR = m_InGame.FindAction("ChangeR", throwIfNotFound: true);
         m_InGame_Heal = m_InGame.FindAction("Heal", throwIfNotFound: true);
+        m_InGame_ToggleUI = m_InGame.FindAction("ToggleUI", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -1692,6 +1735,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Interact;
     private readonly InputAction m_InGame_ChangeR;
     private readonly InputAction m_InGame_Heal;
+    private readonly InputAction m_InGame_ToggleUI;
     public struct InGameActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1709,6 +1753,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_InGame_Interact;
         public InputAction @ChangeR => m_Wrapper.m_InGame_ChangeR;
         public InputAction @Heal => m_Wrapper.m_InGame_Heal;
+        public InputAction @ToggleUI => m_Wrapper.m_InGame_ToggleUI;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1757,6 +1802,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Heal.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeal;
                 @Heal.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeal;
                 @Heal.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnHeal;
+                @ToggleUI.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnToggleUI;
+                @ToggleUI.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnToggleUI;
+                @ToggleUI.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnToggleUI;
             }
             m_Wrapper.m_InGameActionsCallbackInterface = instance;
             if (instance != null)
@@ -1800,6 +1848,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Heal.started += instance.OnHeal;
                 @Heal.performed += instance.OnHeal;
                 @Heal.canceled += instance.OnHeal;
+                @ToggleUI.started += instance.OnToggleUI;
+                @ToggleUI.performed += instance.OnToggleUI;
+                @ToggleUI.canceled += instance.OnToggleUI;
             }
         }
     }
@@ -2000,6 +2051,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnChangeR(InputAction.CallbackContext context);
         void OnHeal(InputAction.CallbackContext context);
+        void OnToggleUI(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

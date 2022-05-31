@@ -293,5 +293,12 @@ namespace Theogony{
             highlightedBtn = menuButtons[buttonIndex];
         }
         #endregion
+
+        public void ToggleHUD(InputAction.CallbackContext context){
+            if(context.performed){
+                GameObject hud = transform.Find("HUD").gameObject;
+                hud.SetActive(!hud.activeSelf);
+            }
+        }
     }
 }

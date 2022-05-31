@@ -858,6 +858,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1971696214887965210, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1971696214887965211, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_fontStyle
       value: 0
@@ -937,6 +941,78 @@ PrefabInstance:
     - target: {fileID: 5543477770332306320, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionId
+      value: 8a9b1fc0-cbd9-489b-848b-c61a6163d26b
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionId
+      value: 27d6a467-40cf-4b1f-8670-c630b96d0da3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[24].m_ActionId
+      value: a9c62040-fa09-4d31-b0de-3da84e2757ac
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionId
+      value: f1fa2bff-3e51-43dd-bd18-487f72f12473
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionId
+      value: a3d148d0-70ed-4c88-99d4-c462a19175c6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionName
+      value: InGame/ChangeR[/Keyboard/upArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_ActionName
+      value: InGame/ToggleUI[/XInputControllerWindows/leftStickPress,/Keyboard/tab]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[24].m_ActionName
+      value: MainMenu/Back[/Keyboard/q,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[25].m_ActionName
+      value: MainMenu/Accept[/Keyboard/e,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionName
+      value: MainMenu/MenuNavigation[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1158152925}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Theogony.UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109743, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8391582327948383710, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_fontAsset
@@ -2779,6 +2855,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118238509}
   m_CullTransparentMesh: 1
+--- !u!114 &1158152925 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1971696214289698993, guid: ed375999891047845aaded976c6903e6, type: 3}
+  m_PrefabInstance: {fileID: 622909467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533aba280c218a446956873181b18572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1245638358
 GameObject:
   m_ObjectHideFlags: 0
