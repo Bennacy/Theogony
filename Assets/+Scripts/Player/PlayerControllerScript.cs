@@ -47,7 +47,7 @@ namespace Theogony{
         public bool blocking;
 
 
-        private int grav = 0;
+        private float grav = 0;
         public float slopeMax;
         private bool gravActive;
 
@@ -85,6 +85,7 @@ namespace Theogony{
             float camRot = cam.transform.rotation.eulerAngles.y;
             camForward = Quaternion.Euler(0, camRot, 0);
             if((movementVector != Vector3.zero || stoppedMove) && canMove){
+                movementVector.y = grav;
                 stoppedMove = false;
                 Vector3 vel = Vector3.zero;
                 if(running){
@@ -122,12 +123,17 @@ namespace Theogony{
             
         }
 
+        void FixedUpdate()
+        {
+            
+        }
+
         public void Move(InputAction.CallbackContext context){
             Vector2 inputVector2 = context.action.ReadValue<Vector2>();
            
 
             movementVector = new Vector3(inputVector2.x, grav , inputVector2.y);
-
+            Debug.Log(grav);
            
             if(context.canceled){
                 stoppedMove = true;
@@ -142,7 +148,7 @@ namespace Theogony{
             // int layerMask = ~groundLayer;
             RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.2f)
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.1f)
         {
             
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
@@ -150,12 +156,16 @@ namespace Theogony{
             
         }else
         {
-            grav =-5;
+           
           if(slopeMax <= hit.distance)
           {
+            grav = -5;
             canMove = false;
            
            // animator.SetFloat("Speed", 0);
+          }else if(canMove)
+          {
+               grav = -0.2f * hit.distance;
           }
 
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.red);
