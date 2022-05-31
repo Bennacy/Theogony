@@ -42,10 +42,22 @@ public class PlayerInventory : MonoBehaviour
 
         public void PickUp(weaponItems weapon, bool isLeft){
             if(isLeft){
+                foreach(weaponItems testing in globalInfo.collectedWeaponsL){
+                    if(testing.itemName == weapon.itemName){
+                        return;
+                    }
+                }
                 globalInfo.collectedWeaponsL.Add(weapon);
             }else{
+                foreach(weaponItems testing in globalInfo.collectedWeaponsR){
+                    if(testing.itemName == weapon.itemName){
+                        return;
+                    }
+                }
                 globalInfo.collectedWeaponsR.Add(weapon);
             }
+
+            GameObject.FindGameObjectWithTag("Canvas").GetComponentInChildren<ItemFade>().NewItem(weapon);
         }
     }
 }

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334275e7514869d46a3b45b50aea1353, type: 3}
   m_Name: PlayerSytche
   m_EditorClassIdentifier: 
-  itemName: sytche
+  itemName: Sytche
+  twoHanded: 0
   weaponPrefab: {fileID: 4189712685836114373, guid: 27ab2a3693605a447877377454e6bc57, type: 3}
+  icon: {fileID: 0}
   riposteMultiplier: 3
   isUnarmed: 0
   knockback: 3

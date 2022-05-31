@@ -62,7 +62,6 @@ namespace Theogony{
         }
 
         public void Sit(){
-            Debug.Log(playerControllerScript);
             playerControllerScript.animator.Play("SitDown");
             playerControllerScript.cameraHandler.LookAt(transform);
             playerControllerScript.canMove = false;

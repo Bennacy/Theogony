@@ -35,8 +35,8 @@ namespace Theogony
         {
             if (collision.tag == "EnemyWeapon")
             {
-                Debug.Log(transform.position);
-                Debug.Log("Parried");
+                // Debug.Log(transform.position);
+                // Debug.Log("Parried");
                 PlayerManager manager = GetComponentInParent<PlayerManager>();
                 sparkParticles.transform.position = collision.transform.position;
                 sparkParticles.Play();

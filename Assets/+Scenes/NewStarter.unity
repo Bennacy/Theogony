@@ -675,6 +675,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 32451142946939823, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: newSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28d2c62c002549f4a84b427382d055a9, type: 3}
+    - target: {fileID: 32451142946939823, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: newSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fa3f711d0e39664fabfc9e57a7ecb31, type: 3}
+    - target: {fileID: 32451142946939823, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: buttonsToOverride.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -718,6 +726,14 @@ PrefabInstance:
       propertyPath: enlargeButtons
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1558574342710807214, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 1558574342710807214, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1674571168915999280, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons
       value: 0
@@ -726,9 +742,73 @@ PrefabInstance:
       propertyPath: enlargeButtons
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1971696213718741665, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213718741665, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213718741665, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213718741665, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696213718741665, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214131761855, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214131761855, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214131761855, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214131761855, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214131761855, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214222364641, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 005e48534f0865449b8e796a3ce7799f, type: 3}
+    - target: {fileID: 1971696214244340544, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214244340544, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214244340544, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214244340544, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214244340544, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons
@@ -738,9 +818,81 @@ PrefabInstance:
       propertyPath: paused
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1971696214291795428, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214291795428, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214291795428, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214565689416, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214565689416, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214565689416, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 1971696214592594278, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214733180500, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214733180500, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214733180500, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214887965211, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214926361897, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214926361897, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214926361897, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214926361897, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696214926361897, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215140401281, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215140401281, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971696215140401281, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1971696215468911312, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons
@@ -754,9 +906,45 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2317456779180503972, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537507304161486946, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: holdTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537507304161486946, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: fadeSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666123521919457786, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 4666123521919457786, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4739073464959476122, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543477770332306320, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 5543477770332306320, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391582327948383710, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 8391582327948383710, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
@@ -805,6 +993,30 @@ PrefabInstance:
     - target: {fileID: 8391582328164638333, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Name
       value: InputStuff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391582328218815892, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 8391582328218815892, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391582328652998864, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 8391582328652998864, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393521226241486351, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d27e2be70ddb90d4086401cb077f16f3, type: 2}
+    - target: {fileID: 8393521226241486351, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: enlargeButtons

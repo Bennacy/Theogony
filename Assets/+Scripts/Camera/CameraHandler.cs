@@ -216,7 +216,6 @@ namespace Theogony
             Vector2 value = context.ReadValue<Vector2>();
             value *= Time.deltaTime * mouseSens;
             if(!previouslyPaused && globalInfo.paused){
-                Debug.Log("Paused");
                 mouseXInput = 0;
                 mouseYInput = 0;
                 return;

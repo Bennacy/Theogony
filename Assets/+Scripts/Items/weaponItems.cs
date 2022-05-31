@@ -7,6 +7,7 @@ namespace Theogony
     [CreateAssetMenu(menuName = "Items/Weapon Items")]
     public class weaponItems : Items
     {
+        public bool twoHanded;
         public GameObject weaponPrefab;
         public Sprite icon;
         public float riposteMultiplier;

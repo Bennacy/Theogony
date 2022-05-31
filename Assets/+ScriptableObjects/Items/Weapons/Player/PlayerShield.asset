@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: PlayerShield
   m_EditorClassIdentifier: 
   itemName: Shield
+  twoHanded: 0
   weaponPrefab: {fileID: 8365965172047031865, guid: 7bc124a6f4e5c294188055ee76b11720, type: 3}
-  icon: {fileID: 21300000, guid: ef5a26c2cec12f044badbf969bc63385, type: 3}
+  icon: {fileID: 21300000, guid: 6941ad54b6c1a254db0b07f4cbee07d6, type: 3}
   riposteMultiplier: 0
   isUnarmed: 0
   knockback: 0

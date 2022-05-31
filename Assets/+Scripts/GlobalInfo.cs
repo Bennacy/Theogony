@@ -131,6 +131,7 @@ namespace Theogony{
                     lostCurrency.transform.gameObject.SetActive(false);
                 }
             }
+            lostCurrency.positions = new List<Vector3>();
             reloading = false;
             refreshedScene = false;
         }
@@ -172,7 +173,6 @@ namespace Theogony{
         public void AlterVit(int change){
             vit += change;
             health.UpdateBarWidth(healthIncrease.Evaluate(vit * .01f) * 10000);
-            Debug.Log(vit);
             PlayerLevel();
         }
 
@@ -203,8 +203,6 @@ namespace Theogony{
         }
 
         public void PlayerDeath(){
-            Debug.Log("You Died");
-            Debug.Log(playerControllerScript.transform.position);
             reloading = true;
             playerControllerScript.playerInput.enabled = false;
             playerTargetable = false;
@@ -223,8 +221,8 @@ namespace Theogony{
                 GameObject currencyObj = Instantiate(lostCurrency.prefab, transform);
                 Interactable interactable = currencyObj.AddComponent<Interactable>();
                 lostCurrency.transform = currencyObj.transform;
-                lostCurrency.transform.position = playerControllerScript.transform.position;
-                lostCurrency.transform.position = new Vector3(lostCurrency.transform.position.x, lostCurrency.transform.localScale.y, lostCurrency.transform.position.z);
+                lostCurrency.transform.position = lostCurrency.positions[0];
+                // lostCurrency.transform.position = new Vector3(lostCurrency.transform.position.x, lostCurrency.transform.localScale.y, lostCurrency.transform.position.z);
                 lostCurrency.amount = currency;
                 currency = 0;
                 lostCurrency.collected = false;
