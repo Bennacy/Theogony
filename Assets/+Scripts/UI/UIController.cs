@@ -24,6 +24,7 @@ namespace Theogony{
         private Vector3[] buttonScale;
         public int buttonIndex;
         public LayerMask UILayer;
+        private UIAudio uIAudio;
         [Space]
 
         [Space]
@@ -51,6 +52,7 @@ namespace Theogony{
             playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
             inputAction = playerControllerScript.gameObject.GetComponent<PlayerInput>();
             pauseBackground.SetActive(paused);
+            uIAudio = GetComponent<UIAudio>();
         }
 
         public void MouseOver(Button button){
@@ -191,6 +193,8 @@ namespace Theogony{
         #region Menu Navigation
         public void Back(InputAction.CallbackContext context){
             if(context.canceled){
+                uIAudio.source.clip = uIAudio.clips[0];
+                uIAudio.source.Play();
                 if(menuInfo.previousMenu == null){ //If this action returns to the game
                     for(int i = 0; i < menuInfo.buttons.Length; i++){
                         menuInfo.buttons[i].transform.localScale = buttonScale[i];
@@ -218,6 +222,8 @@ namespace Theogony{
 
         public void Accept(InputAction.CallbackContext context){
             if(context.performed){
+                uIAudio.source.clip = uIAudio.clips[0];
+                uIAudio.source.Play();
                 highlightedBtn.onClick.Invoke();
             }
         }
@@ -261,7 +267,10 @@ namespace Theogony{
             }
         }
 
-        private void ActualNavigation(){            
+        private void ActualNavigation(){
+            uIAudio.source.clip = uIAudio.clips[0];
+            uIAudio.source.Play();
+                 
             if(overSlider && navigationValue.x != 0){
                 sliderChange = (int)Mathf.Sign(navigationValue.x);
             }

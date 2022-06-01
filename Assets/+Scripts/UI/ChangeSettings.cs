@@ -74,6 +74,8 @@ namespace Theogony{
                 }
             }
 
+            AudioListener.volume = audioVolume;
+
             previouslyToggled = audioToggle.active;
         }
     }
