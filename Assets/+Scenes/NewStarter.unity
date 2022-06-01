@@ -3486,50 +3486,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[2].time
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[3].time
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[3].inSlope
-      value: -3.8814557
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[4].inSlope
-      value: 46.191387
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[3].outSlope
-      value: -3.8814557
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[4].inWeight
-      value: 0.07561485
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[4].outSlope
-      value: 46.191387
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896460015371666360, guid: 686400567a174374fade2a51d6879b78, type: 3}
-      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[3].outWeight
-      value: 0.45179543
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!1 &1810435512
