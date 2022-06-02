@@ -10,6 +10,7 @@ namespace Theogony
         public Transform parentOverride;
         public bool isLeftHandSlot;
         public bool isRightHandSlot;
+        public weaponItems scriptableObj;
 
         public GameObject currentWeaponModel;
 
@@ -38,6 +39,7 @@ namespace Theogony
                 return;
             }
 
+            scriptableObj = weaponItem;
             GameObject model = Instantiate(weaponItem.weaponPrefab) as GameObject;
             if (model != null)
             {

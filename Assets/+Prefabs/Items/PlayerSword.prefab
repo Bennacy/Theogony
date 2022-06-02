@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hitEnemies: []
+  riposteEnemies: []
 --- !u!4 &7371596217353708703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9151568897826151467, guid: fa013500066237b4a9551e7fc1f33bdf, type: 3}

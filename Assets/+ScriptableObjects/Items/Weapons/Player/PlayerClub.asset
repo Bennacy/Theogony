@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8566638831284201798, guid: df02a915c9fc5c1438f912fe4c46dfac, type: 3}
   icon: {fileID: 21300000, guid: c6916b6ff2de55f4eb83975217c2b4f9, type: 3}
   equipClip: {fileID: 8300000, guid: 790a482c2afa6f24aba76ed3941d5a5c, type: 3}
-  swingClip: {fileID: 0}
+  swingClip: {fileID: 8300000, guid: 790a482c2afa6f24aba76ed3941d5a5c, type: 3}
   riposteMultiplier: 3
   isUnarmed: 0
   knockback: 3

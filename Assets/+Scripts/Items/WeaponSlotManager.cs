@@ -194,6 +194,11 @@ namespace Theogony {
             animHandler.SetBool("Occupied", false);
         }
 
+        public void PlayAudio(){
+            GetComponentInParent<AudioSource>().clip = rightHandSlot.scriptableObj.swingClip;
+            GetComponentInParent<AudioSource>().Play();
+        }
+
         #endregion
 
 
