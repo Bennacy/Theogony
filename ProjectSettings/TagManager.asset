@@ -17,6 +17,7 @@ TagManager:
   - HiddenWall
   - Oceanus
   - BossWeapon
+  - Water
   layers:
   - Default
   - TransparentFX

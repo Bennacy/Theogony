@@ -195,8 +195,8 @@ namespace Theogony {
         }
 
         public void PlayAudio(){
-            GetComponentInParent<AudioSource>().clip = rightHandSlot.scriptableObj.swingClip;
-            GetComponentInParent<AudioSource>().Play();
+            // GetComponentInParent<AudioSource>().clip = rightHandSlot.scriptableObj.swingClip;
+            GetComponentInParent<AudioSource>().PlayOneShot(rightHandSlot.scriptableObj.swingClip);
         }
 
         #endregion
