@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7f06d4f8024811744bfcbb76c3f7d29e
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _GradientMap: {fileID: 2800000, guid: 9ba82c31d8023004cadb1ef7ff28248d, type: 3}
+  - _NoiseTextureA: {instanceID: 0}
+  - _NoiseTextureB: {instanceID: 0}
+  - _DisplacementGuide: {instanceID: 0}
+  - _FoamTexture: {instanceID: 0}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
