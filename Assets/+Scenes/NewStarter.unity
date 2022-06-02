@@ -678,6 +678,102 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1242557823286204631, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1242557823286204631, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1674571168915999280, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: rowSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674571168915999280, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1674571168915999280, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696213661969656, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696213784711913, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696214258703066, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696214592594278, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696214592594278, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696215468911312, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696215468911312, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696215479432700, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 1971696215615183125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 2048144793631519796, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: equipClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99a9756485412b4448ba45d4b91c136c, type: 3}
+    - target: {fileID: 3884595106876370125, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: equipClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99a9756485412b4448ba45d4b91c136c, type: 3}
+    - target: {fileID: 4739073464959476122, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: rowSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739073464959476122, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 4739073464959476122, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
     - target: {fileID: 7523795174989534145, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: clips.Array.size
       value: 1
@@ -758,6 +854,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputStuff
       objectReference: {fileID: 0}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 8568951858317104907, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
     - target: {fileID: 8772686047610490843, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: barrier
       value: 
@@ -3743,6 +3847,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!114 &2050669987 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 826043409, guid: 59d42e9fe344f274086408152c268768, type: 3}

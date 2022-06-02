@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: PlayerSword
   m_EditorClassIdentifier: 
   itemName: Sword
+  twoHanded: 0
   weaponPrefab: {fileID: 4189712685836114373, guid: 8493fe4f5d78f564c88cd711b36af11e, type: 3}
   icon: {fileID: 21300000, guid: 3ce49aa3ce59fcf4788382a3d8c50cca, type: 3}
+  equipClip: {fileID: 8300000, guid: 99a9756485412b4448ba45d4b91c136c, type: 3}
+  swingClip: {fileID: 0}
   riposteMultiplier: 3
   isUnarmed: 0
   knockback: 3

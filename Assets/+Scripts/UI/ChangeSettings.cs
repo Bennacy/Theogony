@@ -74,7 +74,8 @@ namespace Theogony{
                 }
             }
 
-            AudioListener.volume = audioVolume;
+            AudioListener.volume = audioVolume / 100f;
+            Debug.Log(AudioListener.volume);
 
             previouslyToggled = audioToggle.active;
         }

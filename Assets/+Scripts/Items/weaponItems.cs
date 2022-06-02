@@ -10,6 +10,8 @@ namespace Theogony
         public bool twoHanded;
         public GameObject weaponPrefab;
         public Sprite icon;
+        public AudioClip equipClip;
+        public AudioClip swingClip;
         public float riposteMultiplier;
         public bool isUnarmed;
         public float knockback;

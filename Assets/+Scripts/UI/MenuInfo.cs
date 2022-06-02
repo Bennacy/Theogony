@@ -17,5 +17,8 @@ namespace Theogony{
         public Sprite[] buttonSprites;
         public Color[] buttonTextColors;
         public bool enlargeButtons;
+
+        public AudioClip openClip;
+        public AudioClip closeClip;
     }
 }

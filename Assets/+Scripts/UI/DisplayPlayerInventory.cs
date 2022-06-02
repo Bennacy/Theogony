@@ -52,13 +52,14 @@ namespace Theogony{
                 currentWeapon.sprite = weaponList[globalInfo.currentWeaponR].icon;
             }
             weaponListSize = weaponList.Count;
-            menuInfo.rowSize = maxCols;
 
             int rows = ((weaponListSize-1)/maxCols) + 1;
             if(weaponListSize < maxCols){
+                menuInfo.rowSize = weaponListSize;
                 int cols = ((weaponListSize) % maxCols);
                 itemSlotChildren.sizeDelta = new Vector2(cols * 200 + 25, Mathf.Ceil(rows * 200));
             }else{
+                menuInfo.rowSize = maxCols;
                 itemSlotChildren.sizeDelta = new Vector2(maxCols * 200 + 25, Mathf.Ceil(rows * 200));
             }
 
@@ -82,8 +83,10 @@ namespace Theogony{
         private void UpdateWeapons(int newIndex){
             if(isLeft){
                 globalInfo.currentWeaponL = newIndex;
+                uIController.uIAudio.source.clip = globalInfo.collectedWeaponsL[newIndex].equipClip;
             }else{
                 globalInfo.currentWeaponR = newIndex;
+                uIController.uIAudio.source.clip = globalInfo.collectedWeaponsR[newIndex].equipClip;
             }
             playerInventory.LoadWeapons();
             uIController.OpenMenu(uIController.menuInfo.previousMenu);
