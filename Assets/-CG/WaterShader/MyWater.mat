@@ -56,11 +56,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b9fd0d613cc01e5439533784c83ea86b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexA:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b9fd0d613cc01e5439533784c83ea86b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexB:
@@ -95,20 +95,20 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     - _amplitude: 1
-    - _amplitude1: 0
-    - _amplitude2: 0
-    - _height: 1
+    - _amplitude1: 2
+    - _amplitude2: 4
+    - _height: 0.8
     - _height1: 1
     - _height2: 1
     - _waveFrequence: 0.6
-    - _waveFrequency1: 3.4
-    - _waveFrequency2: 1
+    - _waveFrequency1: 5
+    - _waveFrequency2: 5
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepColor: {r: 0.11764707, g: 0.15294118, b: 0.23137257, a: 1}
+    - _DeepColor: {r: 0.37254903, g: 0.59607846, b: 0.67058825, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Shallow: {r: 0, g: 0.10471773, b: 1, a: 1}
-    - _ShallowColor: {r: 0.39607847, g: 0.627451, b: 0.5764706, a: 1}
+    - _ShallowColor: {r: 0.72156864, g: 0.9960785, b: 1, a: 1}
     - _waveFrequency1: {r: 2, g: 1, b: 1, a: 1}
     - _waveFrequency2: {r: 2, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

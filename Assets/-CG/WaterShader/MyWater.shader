@@ -58,10 +58,12 @@ Shader "Custom/MyWater"{
                 VertexToFragment vert(VertexData v) {
                     VertexToFragment v2f;
                     //place to change constants
-                    v.position.y += sin((_Time.y * _waveFrequency1) + (v.position.x * _amplitude1)) * _height;
+                    v.position.y += ((sin((_Time.y * _waveFrequency1) + (v.position.x * _amplitude1)) + 1) / 2) * _height;
+                    v.position.y += ((cos((_Time.y * _waveFrequency2) + (v.position.z * _amplitude2)) + 1) / 2) * _height;
                     // v.position.y += sin((_Time.y * _waveFrequency2) + (v.position.z * _amplitude2)) * _height;
 
                     float noisePattern = tex2D(_NoiseTexA, v.uv).x;
+                    // v.position.y = noisePattern;
                     // v.position.y = lerp(0, 1, noisePattern);
 
 
@@ -83,7 +85,7 @@ Shader "Custom/MyWater"{
                     // clip(noise.rgb - _DissolveThreshold);
 
                     // float3 color = lerp(_ShallowColor, tex2D(_DepthGradient, float2(0,0)), ((v2f.uv.y / _height) + 1) / 2);
-                    float4 color = lerp(_DeepColor, _ShallowColor, ((v2f.uv.y / _height) + 1) / 2);
+                    float4 color = lerp(_DeepColor, _ShallowColor, v2f.uv.y / _height/2);
                     float noisePattern = tex2D(_NoiseTexA, v2f.uv).x;
                     // float3 color = tex2D(_DepthGradient, float2(0,0));
                     // return color * _Color;
