@@ -956,6 +956,7 @@ MonoBehaviour:
   parentOverride: {fileID: 3049100156525368404}
   isLeftHandSlot: 0
   isRightHandSlot: 1
+  scriptableObj: {fileID: 0}
   currentWeaponModel: {fileID: 0}
 --- !u!1 &1803606002751799085
 GameObject:
@@ -1653,6 +1654,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!1 &2631470172222226202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,13 +1744,15 @@ MonoBehaviour:
   closesPrevious: 0
   saveIndex: 1
   buttons: []
-  rowSize: 0
+  rowSize: 1
   currIndex: 0
   buttonSprites:
   - {fileID: 21300000, guid: 41fc5bd7ae865a14e9086c4aaeb21f8d, type: 3}
   - {fileID: 21300000, guid: 9f725be5228afbe4d82fdce8fd916970, type: 3}
   buttonTextColors: []
   enlargeButtons: 0
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!222 &750058072
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2159,13 +2164,15 @@ MonoBehaviour:
   closesPrevious: 0
   saveIndex: 1
   buttons: []
-  rowSize: 0
+  rowSize: 1
   currIndex: 0
   buttonSprites:
   - {fileID: 21300000, guid: 41fc5bd7ae865a14e9086c4aaeb21f8d, type: 3}
   - {fileID: 21300000, guid: 9f725be5228afbe4d82fdce8fd916970, type: 3}
   buttonTextColors: []
   enlargeButtons: 0
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!222 &107122470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7621,6 +7628,8 @@ MonoBehaviour:
   buttonSprites: []
   buttonTextColors: []
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!1 &8009718904440454016
 GameObject:
   m_ObjectHideFlags: 0
@@ -8490,6 +8499,7 @@ MonoBehaviour:
   UILayer:
     serializedVersion: 2
     m_Bits: 0
+  uIAudio: {fileID: 0}
   buttonSprites:
   - {fileID: 21300000, guid: 3844535ab83875744b3db81f49a1d8d1, type: 3}
   - {fileID: 21300000, guid: 35404eb07997d5144a93781ab9172658, type: 3}
@@ -8518,6 +8528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 622909469}
+  clips:
+  - {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!82 &622909469
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8529,7 +8541,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9196,6 +9208,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!1 &8009718904891429016
 GameObject:
   m_ObjectHideFlags: 0
@@ -10336,6 +10350,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!1 &8009718905222834689
 GameObject:
   m_ObjectHideFlags: 0
@@ -10957,6 +10973,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!114 &8009718905473929021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11525,6 +11543,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!1 &8009718905562175073
 GameObject:
   m_ObjectHideFlags: 0
@@ -11772,6 +11792,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 0
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!114 &634230318576422322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11942,6 +11964,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   enlargeButtons: 1
+  openClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+  closeClip: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
 --- !u!1 &8009718905699615192
 GameObject:
   m_ObjectHideFlags: 0
@@ -16437,6 +16461,7 @@ MonoBehaviour:
   parentOverride: {fileID: 920020789889578417}
   isLeftHandSlot: 1
   isRightHandSlot: 0
+  scriptableObj: {fileID: 0}
   currentWeaponModel: {fileID: 0}
 --- !u!1 &9172023535428846944
 GameObject:
@@ -16693,6 +16718,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: QualityDropdown
       objectReference: {fileID: 0}
+    - target: {fileID: 4767034963495875399, guid: 3b8a3168c8534b445902a620eeca2eef, type: 3}
+      propertyPath: openClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
+    - target: {fileID: 4767034963495875399, guid: 3b8a3168c8534b445902a620eeca2eef, type: 3}
+      propertyPath: closeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6220e1ccf11b7ab4692b1b3faf375abd, type: 3}
     - target: {fileID: 4767034963495875399, guid: 3b8a3168c8534b445902a620eeca2eef, type: 3}
       propertyPath: previousMenu
       value: 

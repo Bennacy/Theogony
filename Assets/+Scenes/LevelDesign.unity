@@ -2868,6 +2868,10 @@ PrefabInstance:
       propertyPath: slopeMax
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: killLayer.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: normalRecharge
       value: 50

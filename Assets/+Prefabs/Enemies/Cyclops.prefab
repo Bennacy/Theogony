@@ -424,7 +424,7 @@ MonoBehaviour:
   currencyDrop: 1000
   animator: {fileID: 0}
   patrolWaypoints:
-  - {x: -33.15618, y: 0, z: -27.622864}
+  - {x: -36.324944, y: 0, z: -22.722525}
   waypointIndex: 0
   knockbackResistance: 5
   attacking: 0
@@ -1418,7 +1418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804301688967996, guid: d9162a78a8deb714a9bddd8038021008, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.9999998
       objectReference: {fileID: 0}
     - target: {fileID: 4804301688967996, guid: d9162a78a8deb714a9bddd8038021008, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1630,7 +1630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989090799191106, guid: d9162a78a8deb714a9bddd8038021008, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0006383398
+      value: 0.0006385471
       objectReference: {fileID: 0}
     - target: {fileID: 4989090799191106, guid: d9162a78a8deb714a9bddd8038021008, type: 3}
       propertyPath: m_LocalRotation.w

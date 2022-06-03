@@ -9,6 +9,7 @@ namespace Theogony{
     {
         [Header("References")]
         public LayerMask groundLayer;
+        public LayerMask killLayer;
         // public GlobalInfo globalInfo;
         public PlayerManager playerManager;
         public PlayerInput playerInput;
@@ -21,6 +22,7 @@ namespace Theogony{
         public Animator animator;
         private PlayerAttacker playerAttacker;
         private PlayerInventory playerInventory;
+        public AudioClip rollClip;
         [Space]
         
         [Space]
@@ -133,7 +135,6 @@ namespace Theogony{
            
 
             movementVector = new Vector3(inputVector2.x, grav , inputVector2.y);
-            Debug.Log(grav);
            
             if(context.canceled){
                 stoppedMove = true;
@@ -145,40 +146,25 @@ namespace Theogony{
 
         public void CheckGravity()
         {
-            // int layerMask = ~groundLayer;
             RaycastHit hit;
+            if((Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, killLayer) && hit.distance <= 1.1f)){
+                playerManager.currHealth = -1;
+            }
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.1f)
-        {
-            
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
-            grav = 0;
-            
-        }else
-        {
-           
-          if(slopeMax <= hit.distance)
-          {
-            grav = -5;
-            canMove = false;
-           
-           // animator.SetFloat("Speed", 0);
-          }else if(canMove)
-          {
-               grav = -0.2f * hit.distance;
-          }
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.1f){
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
+                grav = 0;
+            }else{
+                if(slopeMax <= hit.distance){
+                    grav = -5;
+                    canMove = false;
+                }else if(canMove){
+                    grav = -0.2f * hit.distance;
+                }
 
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.red);
-
-    
-            rb.AddForce(0,grav,0);
-            
-             
-          
-        }
-         
-       
-              
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.red);
+                rb.AddForce(0,grav,0);
+            }
         }
 
         public void LightAttack(InputAction.CallbackContext context){
@@ -243,6 +229,7 @@ namespace Theogony{
                     canMove = false;
                     // playerManager.staminaSpent = true;
                 }else if(playerManager.UpdateStamina(rollCost)){ //Roll
+                    GetComponent<AudioSource>().PlayOneShot(rollClip);
                     rb.useGravity = false;
                     damageColl.enabled = false;
                     moveSpeed = rollSpeed;

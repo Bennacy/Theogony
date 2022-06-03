@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 7301024319384058074}
   - component: {fileID: 7301024319384058077}
   - component: {fileID: 7301024319384058076}
-  - component: {fileID: 7301024319384058075}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -117,20 +116,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7301024319384058079}
   m_Enabled: 1
---- !u!114 &7301024319384058075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301024319384058079}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f11ae2f6dbb2f74a945da42ab6ca823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  m: {fileID: 0}
 --- !u!1 &7301024319790079578
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +166,7 @@ MonoBehaviour:
   cameraPivotTransform: {fileID: 7301024319241269635}
   terrainLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1664
   sensSlider: {fileID: 0}
   pivotSlider: {fileID: 0}
   maxDistance: 0

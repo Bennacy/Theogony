@@ -196,7 +196,10 @@ namespace Theogony {
 
         public void PlayAudio(){
             // GetComponentInParent<AudioSource>().clip = rightHandSlot.scriptableObj.swingClip;
-            GetComponentInParent<AudioSource>().PlayOneShot(rightHandSlot.scriptableObj.swingClip);
+            weaponItems weapon = rightHandSlot.scriptableObj;
+
+            int randomIndex = Random.Range(0, weapon.swingClips.Length);
+            GetComponentInParent<AudioSource>().PlayOneShot(rightHandSlot.scriptableObj.swingClips[randomIndex]);
         }
 
         #endregion

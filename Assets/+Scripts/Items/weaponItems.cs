@@ -11,7 +11,7 @@ namespace Theogony
         public GameObject weaponPrefab;
         public Sprite icon;
         public AudioClip equipClip;
-        public AudioClip swingClip;
+        public AudioClip[] swingClips;
         public float riposteMultiplier;
         public bool isUnarmed;
         public float knockback;

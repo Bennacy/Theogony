@@ -67,7 +67,9 @@ namespace Theogony{
             }else{
                 targetHealth = -1;
             }
+
             if(currHealth < 0){
+                Debug.Log("Huh");
                 Die();
             }
 

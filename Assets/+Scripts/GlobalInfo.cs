@@ -119,6 +119,8 @@ namespace Theogony{
             health = uiController.transform.Find("HUD").Find("Health").GetComponent<UpdateBar>();
             stamina = uiController.transform.Find("HUD").Find("Stamina").GetComponent<UpdateBar>();
 
+
+            lostCurrency.positions[0] = playerControllerScript.transform.position;
             playerControllerScript.playerInput.enabled = true;
             if(lastCheckpoint != null){
                 playerControllerScript.transform.position = lastCheckpoint.teleportPosition;
@@ -145,6 +147,7 @@ namespace Theogony{
             if(refreshedScene){
                 StartCoroutine(StartFunctions(.4f));
             }
+            Debug.Log(playerControllerScript);
             if(playerControllerScript){
                 lostCurrency.updateTimer += Time.deltaTime;
                 if(lostCurrency.updateTimer > lostCurrency.updateCooldown){
@@ -222,7 +225,6 @@ namespace Theogony{
                 Interactable interactable = currencyObj.AddComponent<Interactable>();
                 lostCurrency.transform = currencyObj.transform;
                 lostCurrency.transform.position = lostCurrency.positions[0];
-                // lostCurrency.transform.position = new Vector3(lostCurrency.transform.position.x, lostCurrency.transform.localScale.y, lostCurrency.transform.position.z);
                 lostCurrency.amount = currency;
                 currency = 0;
                 lostCurrency.collected = false;

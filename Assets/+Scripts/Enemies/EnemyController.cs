@@ -6,6 +6,11 @@ using UnityEngine.AI;
 namespace Theogony{
     public class EnemyController : MonoBehaviour
     {
+        public AudioClip hitClip;
+        public AudioClip dieClip;
+        public AudioClip walkClip;
+        public AudioSource audioSource;
+
         public float maxHealth;
         public float currHealth;
         public int currencyDrop;
@@ -40,6 +45,7 @@ namespace Theogony{
             animator = GetComponentInChildren<Animator>();
             rb = GetComponent<Rigidbody>();
             currHealth = maxHealth;
+            audioSource = GetComponent<AudioSource>();
             weapon = GetComponent<EnemyWeaponManager>().weaponTemplate;
             dying = false;
         }
@@ -51,8 +57,10 @@ namespace Theogony{
         }
 
         public void Damage(float damageTaken){
-            wasHit = true;
             currHealth -= damageTaken;
+            wasHit = true;
+            if(currHealth > 0)
+                audioSource.PlayOneShot(hitClip);
         }
 
         void OnTriggerEnter(Collider collision){

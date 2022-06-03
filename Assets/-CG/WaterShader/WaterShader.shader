@@ -194,6 +194,7 @@ Shader "Custom/WaterShader"
             //Smoothness
             o.Smoothness = _Smoothness * foamDiff;
  
+            o.Alpha = 1;
             o.Alpha = saturate(lerp(1.0, lerp(0.5, _ShoreColor.a, sandWetness), 1.0 - shoreDiff) * transparencyDiff);
         }
         ENDCG

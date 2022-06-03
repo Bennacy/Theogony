@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 1850904162861747634}
   - component: {fileID: 1850904162861747639}
   - component: {fileID: 1850904162861747638}
+  - component: {fileID: 42867565}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -447,6 +448,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 589b9f41-b868-4ae9-a412-30f47e68c29b
     m_ActionName: InGame/Heal[/XInputControllerWindows/buttonWest,/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a9b1fc0-cbd9-489b-848b-c61a6163d26b
+    m_ActionName: InGame/ChangeR[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Theogony.UIController, Assembly-CSharp
+        m_MethodName: ToggleHUD
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 27d6a467-40cf-4b1f-8670-c630b96d0da3
+    m_ActionName: InGame/ToggleUI[/XInputControllerWindows/leftStickPress,/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a9c62040-fa09-4d31-b0de-3da84e2757ac
+    m_ActionName: MainMenu/Back[/Keyboard/q,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1fa2bff-3e51-43dd-bd18-487f72f12473
+    m_ActionName: MainMenu/Accept[/Keyboard/e,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a3d148d0-70ed-4c88-99d4-c462a19175c6
+    m_ActionName: MainMenu/MenuNavigation[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: xBox
   m_DefaultActionMap: InGame
@@ -525,6 +558,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  killLayer:
+    serializedVersion: 2
+    m_Bits: 16
   playerManager: {fileID: 1850904162861747635}
   playerInput: {fileID: 0}
   damageColl: {fileID: 1850904162861747599}
@@ -534,6 +570,7 @@ MonoBehaviour:
   camForward: {x: 0, y: 0, z: 0, w: 0}
   movementVector: {x: 0, y: 0, z: 0}
   animator: {fileID: 1850904163245296867}
+  rollClip: {fileID: 8300000, guid: 28146e8060de1c84c8e4eccb872dc46b, type: 3}
   walkSpeed: 5
   runSpeed: 10
   backstepSpeed: -15
@@ -549,6 +586,7 @@ MonoBehaviour:
   canMove: 1
   running: 0
   blocking: 0
+  slopeMax: 0
 --- !u!114 &1850904162861747639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +617,102 @@ MonoBehaviour:
   lightAttackCost: 15
   heavyAttackCost: 25
   riposteAttack: 0
+--- !u!82 &42867565
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850904162861747596}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 14.851485
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1850904163065667405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2188,7 @@ MonoBehaviour:
   parentOverride: {fileID: 1850904163065667404}
   isLeftHandSlot: 1
   isRightHandSlot: 0
+  scriptableObj: {fileID: 0}
   currentWeaponModel: {fileID: 0}
 --- !u!1 &1850904163237807341 stripped
 GameObject:
@@ -2075,6 +2210,7 @@ MonoBehaviour:
   parentOverride: {fileID: 1850904163237532497}
   isLeftHandSlot: 0
   isRightHandSlot: 1
+  scriptableObj: {fileID: 0}
   currentWeaponModel: {fileID: 0}
 --- !u!1 &1850904163237810211 stripped
 GameObject:
