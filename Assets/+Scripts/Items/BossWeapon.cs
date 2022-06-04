@@ -8,6 +8,7 @@ namespace Theogony
     public class BossWeapon : Items
     {
         public GameObject weaponPrefab;
+        public AudioClip impactClip;
         public float knockback;
         public string[] phase1Attacks;
         public int[] phase1Weights;

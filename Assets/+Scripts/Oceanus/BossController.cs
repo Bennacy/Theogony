@@ -86,6 +86,7 @@ namespace Theogony
                 collider.hitEnemies.Add(gameObject);
 
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
+                GetComponentInParent<AudioSource>().PlayOneShot(weapon.impactClip);
                 Damage(weapon.CalculateDamage(globalInfo, staggered));
                 blood.transform.position = transform.position;
                 blood.Play();

@@ -38,6 +38,7 @@ namespace Theogony
             if(other.tag == "Player"){
                 BossWeapon weapon = GetComponentInParent<EnemyWeaponManager>().bossweaponTemplate;
                 PlayerManager manager = other.gameObject.GetComponent<PlayerManager>();
+                GetComponentInParent<AudioSource>().PlayOneShot(weapon.impactClip);
                 StartCoroutine(manager.Knockback(transform, weapon.knockback));
                 manager.wasHit = true;
                 manager.Damage(weapon.damageDealt);

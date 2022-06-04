@@ -38,7 +38,7 @@ namespace Theogony{
             if(other.tag == "Player" && !GetComponentInParent<EnemyController>().staggered){
                 EnemyWeapons weapon = GetComponentInParent<EnemyWeaponManager>().weaponTemplate;
                 PlayerManager manager = other.gameObject.GetComponent<PlayerManager>();
-
+                GetComponentInParent<AudioSource>().PlayOneShot(weapon.impactClip);
                 if(playerBlock != null){
                     playerBlock = null;
                     manager.StaminaDamage(weapon.damageDealt / 3);

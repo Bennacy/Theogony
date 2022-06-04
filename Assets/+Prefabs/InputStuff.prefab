@@ -382,6 +382,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1235834874110441459}
     - target: {fileID: 1850904162861747635, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eae6b0f4b43263e49ae9c1c86a9efb8a, type: 3}
+    - target: {fileID: 1850904162861747635, guid: b17f7f035524f6a4f985183ab3d3bd72, type: 3}
       propertyPath: cameraHandler
       value: 
       objectReference: {fileID: 1235834874110441459}

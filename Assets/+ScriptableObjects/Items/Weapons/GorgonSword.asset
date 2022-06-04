@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Gorgon Sword
   weaponPrefab: {fileID: 6750678397991234266, guid: b5799cd626dedfe48aa1bc022d3ec719, type: 3}
+  impactClip: {fileID: 8300000, guid: bb45e94b261ff364a8a2baf157935cfb, type: 3}
   knockback: 0
   possibleAttacks:
   - Attack1
   - Attack2
   attackWeights: 3200000032000000
   damageDealt: 50
-  playerWeapon: {fileID: 0}
+  droppedWeapon: {fileID: 0}

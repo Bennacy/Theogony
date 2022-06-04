@@ -12,6 +12,7 @@ namespace Theogony{
         private Rigidbody rb;
         public CameraHandler cameraHandler;
         public EnemyController riposteEnemy;
+        public AudioClip deathClip;
         public float maxHealth;
         public float maxStamina;
         public float currHealth;
@@ -110,11 +111,13 @@ namespace Theogony{
         }
 
         private void Die(){
-            if(GetComponent<PlayerInput>().enabled)
+            if(GetComponent<PlayerInput>().enabled){ // Only runs once
                 globalInfo.DropCurrency();
-            GetComponent<PlayerInput>().enabled = false;
-            globalInfo.playerTargetable = false;
-            GetComponentInChildren<Animator>().Play("Die");
+                GetComponent<AudioSource>().PlayOneShot(deathClip);
+                GetComponent<PlayerInput>().enabled = false;
+                globalInfo.playerTargetable = false;
+                GetComponentInChildren<Animator>().Play("Die");
+            }
         }
 
         public void Riposte(){

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Trident
   weaponPrefab: {fileID: 1956573029940920979, guid: 79694f60c32997942b5e856f901bce38, type: 3}
+  impactClip: {fileID: 8300000, guid: bb45e94b261ff364a8a2baf157935cfb, type: 3}
   knockback: 5
   phase1Attacks:
   - GrandSlam

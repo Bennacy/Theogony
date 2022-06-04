@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: CyclopsClub
   weaponPrefab: {fileID: 8566638831284201798, guid: bd74fb66a6f6555499f45bf57a265730, type: 3}
+  impactClip: {fileID: 8300000, guid: bb45e94b261ff364a8a2baf157935cfb, type: 3}
   knockback: 10
   possibleAttacks:
   - Attack1

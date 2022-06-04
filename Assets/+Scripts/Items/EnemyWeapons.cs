@@ -7,6 +7,7 @@ namespace Theogony{
     public class EnemyWeapons : Items
     {
         public GameObject weaponPrefab;
+        public AudioClip impactClip;
         public float knockback;
         public string[] possibleAttacks;
         public int[] attackWeights;
