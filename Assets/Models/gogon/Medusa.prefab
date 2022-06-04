@@ -9894,9 +9894,9 @@ GameObject:
   - component: {fileID: 8185697674724220517}
   - component: {fileID: 8185697674724220516}
   - component: {fileID: 8185697674724220519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Medusa
-  m_TagString: Enemy
+  m_TagString: Gorgon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9953,9 +9953,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 3.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!54 &8185697674724220515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10014,7 +10014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5572f6f97c4f77f4c9e04819a5408b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
+  parent: {fileID: 2194316012815064932}
   weaponTemplate: {fileID: 11400000, guid: f593f1662f8445342a578e081af148bc, type: 2}
   bossweaponTemplate: {fileID: 0}
   positionAdjustment: {x: 0, y: 0, z: 0}
@@ -14971,8 +14971,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 0.75}
-  m_Center: {x: 0, y: 0, z: 0.75}
+  m_Size: {x: 1, y: 1.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!1001 &560251768758395052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15060,22 +15060,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a6e8cd80831cb1f43ab3e6a00080b83e, type: 3}
   m_PrefabInstance: {fileID: 560251768758395052}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1714072974919921914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794608059894586877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff25bafb670f0148afc40513ba4daf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponCollider: {fileID: 0}
-  weapon: {fileID: 0}
-  animating: 0
-  attacking: 0
 --- !u!137 &8274543532503007119
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -15129,3 +15113,24 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
+--- !u!114 &1714072974919921914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794608059894586877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff25bafb670f0148afc40513ba4daf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponCollider: {fileID: 0}
+  weapon: {fileID: 0}
+  animating: 0
+  attacking: 0
+--- !u!4 &2194316012815064932 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: a6e8cd80831cb1f43ab3e6a00080b83e, type: 3}
+  m_PrefabInstance: {fileID: 560251768758395052}
+  m_PrefabAsset: {fileID: 0}
