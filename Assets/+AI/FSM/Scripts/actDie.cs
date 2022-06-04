@@ -8,11 +8,14 @@ namespace Theogony
 [CreateAssetMenu(menuName = "AI/FSM/Actions/Die")]
     public class actDie : Action
     {
-        public override void Startup(FSM fsm){
+        public override void Startup(FSM fsm)
+        {
             return;
         }
-        public override void Act(FSM fsm){
-            if (fsm.bossController){
+        public override void Act(FSM fsm)
+        {
+            if (fsm.bossController)
+            {
                 fsm.bossController.dying = true;
                 foreach (MonoBehaviour script in fsm.gameObject.GetComponents<MonoBehaviour>())
                 {
@@ -25,8 +28,7 @@ namespace Theogony
                 {
                     Destroy(collider);
                 }
-                Destroy(fsm.gameObject.GetComponent<NavMeshAgent>());
-                Destroy(fsm.gameObject.GetComponent<Rigidbody>());
+
 
                 fsm.bossController.animator.StopPlayback();
                 fsm.bossController.animator.Play("Die");
@@ -35,14 +37,17 @@ namespace Theogony
                 {
                     GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>().lockOnTarget = null;
                 }
+                Destroy(fsm.gameObject.GetComponent<NavMeshAgent>());
+                Destroy(fsm.gameObject.GetComponentInChildren<Canvas>().gameObject);
+                Destroy(fsm.gameObject.GetComponent<Rigidbody>());
                 Destroy(fsm.bossController);
                 Destroy(fsm);
             }
-
-
-            else if (fsm.enemyController){
+            else if (fsm.enemyController)
+            {
                 fsm.enemyController.dying = true;
-                foreach (MonoBehaviour script in fsm.gameObject.GetComponents<MonoBehaviour>()){
+                foreach (MonoBehaviour script in fsm.gameObject.GetComponents<MonoBehaviour>())
+                {
                     if (script != fsm.enemyController && script != fsm)
                     {
                         Destroy(script);
@@ -57,7 +62,6 @@ namespace Theogony
                 Destroy(fsm.gameObject.GetComponent<Rigidbody>());
 
                 fsm.enemyController.animator.StopPlayback();
-                fsm.enemyController.audioSource.PlayOneShot(fsm.enemyController.dieClip);
                 fsm.enemyController.animator.Play("Die");
                 GlobalInfo.GetGlobalInfo().AlterCurrency(fsm.enemyController.currencyDrop);
                 if (GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>().lockOnTarget == fsm.transform)
