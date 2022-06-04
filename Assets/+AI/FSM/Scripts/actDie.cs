@@ -28,9 +28,7 @@ namespace Theogony
                 {
                     Destroy(collider);
                 }
-                Destroy(fsm.gameObject.GetComponent<NavMeshAgent>());
-                Destroy(fsm.gameObject.GetComponentInChildren<Canvas>().gameObject);
-                Destroy(fsm.gameObject.GetComponent<Rigidbody>());
+
 
                 fsm.bossController.animator.StopPlayback();
                 fsm.bossController.animator.Play("Die");
@@ -39,6 +37,9 @@ namespace Theogony
                 {
                     GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraHandler>().lockOnTarget = null;
                 }
+                Destroy(fsm.gameObject.GetComponent<NavMeshAgent>());
+                Destroy(fsm.gameObject.GetComponentInChildren<Canvas>().gameObject);
+                Destroy(fsm.gameObject.GetComponent<Rigidbody>());
                 Destroy(fsm.bossController);
                 Destroy(fsm);
             }
