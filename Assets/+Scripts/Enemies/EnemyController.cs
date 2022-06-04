@@ -77,7 +77,7 @@ namespace Theogony{
                 collider.hitEnemies.Add(gameObject);
 
                 weaponItems weapon = collision.gameObject.GetComponentInParent<PlayerInventory>().rightWeapon;
-                audioSource.PlayOneShot(weapon.impactClip);
+                audioSource.PlayOneShot(weapon.impactClip); 
                 Damage(weapon.CalculateDamage(globalInfo, collision.GetComponentInParent<PlayerAttacker>().riposteAttack));
                 collision.GetComponentInParent<PlayerAttacker>().riposteAttack = false;
                 riposteCollider.enabled = false;
