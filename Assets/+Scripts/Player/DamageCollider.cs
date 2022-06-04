@@ -66,13 +66,10 @@ namespace Theogony {
                 rootObject.GetComponent<HiddenWall>().fading = true;
             }
 
-            // Debug.Log("");
             if (player.riposteAttack && !collision.gameObject.GetComponentInParent<EnemyController>().invincible){
-                // collision.gameObject.GetComponent<EnemyController>().riposteCollider.enabled = false;
                 player.playerManager.cameraHandler.ShakeRotation(1f, 0f, 1f, .2f);
                 collision.transform.parent.GetComponentInChildren<Animator>().StopPlayback();
                 collision.transform.parent.GetComponentInChildren<Animator>().Play("Riposted");
-                Debug.Log("RIP");
             }
         }
     }

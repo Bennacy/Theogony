@@ -16,6 +16,9 @@ MonoBehaviour:
   twoHanded: 0
   weaponPrefab: {fileID: 4189712685836114373, guid: 27ab2a3693605a447877377454e6bc57, type: 3}
   icon: {fileID: 0}
+  equipClip: {fileID: 0}
+  impactClip: {fileID: 8300000, guid: bb45e94b261ff364a8a2baf157935cfb, type: 3}
+  swingClips: []
   riposteMultiplier: 3
   isUnarmed: 0
   knockback: 3

@@ -7045,6 +7045,7 @@ MonoBehaviour:
   barTrans: {fileID: 7463300734786408296}
   barBackground: {fileID: 8878355110299309212}
   decreaseSpeed: 50
+  activated: 0
 --- !u!1 &7486765721327782848
 GameObject:
   m_ObjectHideFlags: 0
@@ -16730,6 +16731,14 @@ PrefabInstance:
       propertyPath: previousMenu
       value: 
       objectReference: {fileID: 8009718905674061374}
+    - target: {fileID: 4767034963495875399, guid: 3b8a3168c8534b445902a620eeca2eef, type: 3}
+      propertyPath: buttonSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e26a32cc2d9be04182915535a49e4b5, type: 3}
+    - target: {fileID: 4767034963495875399, guid: 3b8a3168c8534b445902a620eeca2eef, type: 3}
+      propertyPath: buttonSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: b3e3c0840f611a34486f4630766a7a4b, type: 3}
     - target: {fileID: 5096018487420281150, guid: 3b8a3168c8534b445902a620eeca2eef, type: 3}
       propertyPath: m_fontAsset
       value: 

@@ -134,6 +134,10 @@ PrefabInstance:
       value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 2825685040823422198, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
+      propertyPath: parryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a6b7d97bf0bb794291094a061d09bbe, type: 3}
+    - target: {fileID: 2825685040823422198, guid: 3f1f69707ce2ec247895a13d85787a9a, type: 3}
       propertyPath: sparkPrefab
       value: 
       objectReference: {fileID: 4178278515322521599, guid: 84a165bde6adcc546afe3de1f9ad73da, type: 3}

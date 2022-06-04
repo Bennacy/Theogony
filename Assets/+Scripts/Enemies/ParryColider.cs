@@ -11,6 +11,7 @@ namespace Theogony
         Collider parryCollider;
         public GameObject sparkPrefab;
         public ParticleSystem sparkParticles;
+        public AudioClip parryClip;
 
         private void Awake()
         {
@@ -45,6 +46,7 @@ namespace Theogony
                     manager.Knockback(collision.transform, -3 * collision.GetComponentInParent<EnemyController>().weapon.knockback);
                 }
                 collision.GetComponentInParent<EnemyController>().GotParried();
+                manager.GetComponent<AudioSource>().PlayOneShot(parryClip);
                 collision.enabled = false;
             }
         }
