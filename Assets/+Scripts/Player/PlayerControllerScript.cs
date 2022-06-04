@@ -22,6 +22,7 @@ namespace Theogony{
         public Animator animator;
         private PlayerAttacker playerAttacker;
         private PlayerInventory playerInventory;
+        public AudioClip[] walkClips;
         public AudioClip rollClip;
         [Space]
         
@@ -47,6 +48,7 @@ namespace Theogony{
         private bool stoppedMove;
         public bool running;
         public bool blocking;
+        private bool playAudio;
 
 
         private float grav = 0;
@@ -64,6 +66,7 @@ namespace Theogony{
             cameraHandler = cam.GetComponent<CameraHandler>();
             cameraHandler = playerManager.cameraHandler;
             playerInput = GetComponent<PlayerInput>();
+            playAudio = true;
         }
 
         // void OnGUI()
@@ -100,6 +103,16 @@ namespace Theogony{
                         // StartCoroutine(playerManager.RechargeStamina());
                     }
                 }
+
+                // if(playAudio){
+                //     int footstepIndex = UnityEngine.Random.Range(0, walkClips.Length);
+                //     GetComponent<AudioSource>().PlayOneShot(walkClips[footstepIndex]);
+                //     if(running){
+                //         StartCoroutine(WaitForAudio(0.4f));
+                //     }else{
+                //         StartCoroutine(WaitForAudio(0.4975f));
+                //     }
+                // }
                 
                 vel += camForward * movementVector * moveSpeed;
                 rb.velocity = vel;
@@ -123,6 +136,12 @@ namespace Theogony{
 
             CheckGravity();
             
+        }
+
+        private IEnumerator WaitForAudio(float wait){
+            playAudio = false;
+            yield return new WaitForSeconds(wait);
+            playAudio = true;
         }
 
         void FixedUpdate()
@@ -221,6 +240,7 @@ namespace Theogony{
         public void Roll(InputAction.CallbackContext context){
             if(context.performed && canMove && !animator.GetBool("Occupied")){ //Backstep
                 if(movementVector == Vector3.zero && playerManager.UpdateStamina(backstepCost)){
+                    GetComponent<AudioSource>().PlayOneShot(rollClip);
                     rb.useGravity = false;
                     damageColl.enabled = false;
                     moveSpeed = backstepSpeed;

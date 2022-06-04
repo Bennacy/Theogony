@@ -202,6 +202,12 @@ namespace Theogony {
             GetComponentInParent<AudioSource>().PlayOneShot(rightHandSlot.scriptableObj.swingClips[randomIndex]);
         }
 
+        public void PlayFootsteps(){
+            PlayerControllerScript playerControllerScript = GetComponentInParent<PlayerControllerScript>();
+            int randomIndex = Random.Range(0, playerControllerScript.walkClips.Length);
+            GetComponentInParent<AudioSource>().PlayOneShot(GetComponentInParent<PlayerControllerScript>().walkClips[randomIndex]);
+        }
+
         #endregion
 
 

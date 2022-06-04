@@ -678,6 +678,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1242557823286204631, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e26a32cc2d9be04182915535a49e4b5, type: 3}
+    - target: {fileID: 1242557823286204631, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: buttonSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: b3e3c0840f611a34486f4630766a7a4b, type: 3}
     - target: {fileID: 2032419989791871111, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -690,6 +698,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -55.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: walkClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: walkClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9afe4391fe4097446b092a803bb34591, type: 3}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: walkClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: af89e79c6e0fe0849bf4417b3b9ce5d5, type: 3}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: walkClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f191898689a3b54793b2b5069b81e83, type: 3}
+    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: walkClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f191898689a3b54793b2b5069b81e83, type: 3}
     - target: {fileID: 8278698900391254183, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_IsActive
       value: 0
