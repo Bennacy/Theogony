@@ -26,7 +26,6 @@ namespace Theogony
                     Destroy(collider);
                 }
                 Destroy(fsm.gameObject.GetComponent<NavMeshAgent>());
-                Destroy(fsm.gameObject.GetComponentInChildren<Canvas>().gameObject);
                 Destroy(fsm.gameObject.GetComponent<Rigidbody>());
 
                 fsm.bossController.animator.StopPlayback();

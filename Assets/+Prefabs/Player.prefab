@@ -536,9 +536,9 @@ MonoBehaviour:
   healthRecharge: 350
   currStamina: 100
   staminaWait: 0
-  staminaRecharge: 15
-  blockingRecharge: 5
-  normalRecharge: 15
+  staminaRecharge: 30
+  blockingRecharge: 15
+  normalRecharge: 50
   levels: 
   staminaSpent: 0
   wasHit: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   canMove: 1
   running: 0
   blocking: 0
-  slopeMax: 0
+  slopeMax: 5
 --- !u!114 &1850904162861747639
 MonoBehaviour:
   m_ObjectHideFlags: 0

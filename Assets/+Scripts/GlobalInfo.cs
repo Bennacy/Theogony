@@ -147,7 +147,6 @@ namespace Theogony{
             if(refreshedScene){
                 StartCoroutine(StartFunctions(.4f));
             }
-            Debug.Log(playerControllerScript);
             if(playerControllerScript){
                 lostCurrency.updateTimer += Time.deltaTime;
                 if(lostCurrency.updateTimer > lostCurrency.updateCooldown){

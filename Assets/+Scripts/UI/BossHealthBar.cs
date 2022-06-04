@@ -20,7 +20,7 @@ namespace Theogony{
         private float currWidth;
         private float oldWidth;
         private bool lowering;
-        private bool activated;
+        public bool activated;
 
         void Awake()
         {            
