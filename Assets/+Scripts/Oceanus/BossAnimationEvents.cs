@@ -131,8 +131,8 @@ namespace Theogony
         }
         public void ChangeSkin()
         {
-            BossPhase2.SetActive(true);
-            oldSkin.SetActive(false);
+          //  BossPhase2.SetActive(true);
+          //  oldSkin.SetActive(false);
         }
     }
 }
