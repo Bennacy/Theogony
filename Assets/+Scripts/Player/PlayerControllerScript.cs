@@ -132,7 +132,7 @@ namespace Theogony{
             }else if((movementVector != Vector3.zero || stoppedMove) && canMove){
                 angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
             }
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
+           transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
 
             CheckGravity();
             
