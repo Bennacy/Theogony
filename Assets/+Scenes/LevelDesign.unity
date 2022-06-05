@@ -16134,15 +16134,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.7
+      value: 29.04
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7
+      value: -9.07
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.3
+      value: -34.42
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: slopeMax
