@@ -10080,7 +10080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8185697674724220518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10106,6 +10106,7 @@ MonoBehaviour:
   initialState: {fileID: 11400000, guid: e21b7184da19c52419c7948a4b0c3556, type: 2}
   currentState: {fileID: 0}
   changedState: 0
+  navMeshAgent: {fileID: 0}
   enemyController: {fileID: 0}
   bossController: {fileID: 0}
   staggerTimer: 0
@@ -10163,6 +10164,7 @@ MonoBehaviour:
   currHealth: 0
   currencyDrop: 500
   animator: {fileID: 0}
+  navMeshAgent: {fileID: 0}
   patrolWaypoints:
   - {x: -80, y: 10, z: -15.776133}
   - {x: -60, y: 10, z: 10}

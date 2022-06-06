@@ -16,7 +16,7 @@ namespace Theogony{
         public int currencyDrop;
         private GlobalInfo globalInfo;
         public Animator animator;
-        private NavMeshAgent navMeshAgent;
+        public NavMeshAgent navMeshAgent;
         private Rigidbody rb;
         private ParticleSystem blood;
         public Vector3[] patrolWaypoints;

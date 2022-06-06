@@ -125,14 +125,19 @@ namespace Theogony{
                 }
             }
             float angle = transform.rotation.eulerAngles.y;
+           
             if(cameraHandler.lockOnTarget != null && canMove){
                 Vector3 direction = cameraHandler.lockOnTarget.position - transform.position;
                 Vector3.Normalize(direction);
                 angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
-            }else if((movementVector != Vector3.zero || stoppedMove) && canMove){
+               
+            }else if((movementVector != Vector3.zero || stoppedMove) && canMove &&  Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up) != 90)
+            {
                 angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
+                Debug.Log(movementVector);
             }
            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
+           //Debug.Log(angle);
 
             CheckGravity();
             
