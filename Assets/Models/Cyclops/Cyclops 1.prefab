@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitClip: {fileID: 8300000, guid: 207547c2d5d3c694b935ff4ec3c09bb3, type: 3}
-  deathClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 58ea495b03bb19344a8df2e7733c78a9, type: 3}
   walkClip: {fileID: 8300000, guid: 95ed924e1b915294cb8f1123a31e3cd6, type: 3}
   audioSource: {fileID: 3532762146545191652}
   maxHealth: 750

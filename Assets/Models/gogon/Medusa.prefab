@@ -10156,9 +10156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7eaef7ecd50774fafe63f6ca24e39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitClip: {fileID: 0}
-  dieClip: {fileID: 0}
-  walkClip: {fileID: 0}
+  hitClip: {fileID: 8300000, guid: c2e2d5a8e8810bb4e84c4536469d31b0, type: 3}
+  deathClip: {fileID: 8300000, guid: 220b40a7f50d5b345ab0e7bc84ca4609, type: 3}
+  walkClip: {fileID: 8300000, guid: 590ce4ebb3b2e154a95a5d6d2afb8e09, type: 3}
   audioSource: {fileID: 0}
   maxHealth: 500
   currHealth: 0

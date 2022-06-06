@@ -48,6 +48,7 @@ namespace Theogony{
         private bool stoppedMove;
         public bool running;
         public bool blocking;
+        private bool falling;
 
 
         private float grav = 0;
@@ -157,11 +158,15 @@ namespace Theogony{
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.2f){
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
                 grav = 0;
-                canMove = true;
+                if(falling){
+                    falling = false;
+                    canMove = true;
+                }
             }else{
                 if(slopeMax <= hit.distance){
                     // animator.SetFloat("Speed", 0);
                     grav = -5;
+                    falling = true;
                     canMove = false;
                 }else if(canMove){
                     grav = -0.2f * hit.distance;
