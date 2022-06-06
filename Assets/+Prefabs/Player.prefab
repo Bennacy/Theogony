@@ -579,10 +579,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d4eecd84ecc34694c96ef1d87da04a89, type: 3}
   - {fileID: 8300000, guid: 2a9f5d2ae08a420499fbdf8455de6e21, type: 3}
   rollClip: {fileID: 8300000, guid: 28146e8060de1c84c8e4eccb872dc46b, type: 3}
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 7.5
+  runSpeed: 15
   backstepSpeed: -15
-  rollSpeed: 9
+  rollSpeed: 13
   drinkSpeed: 0
   moveSpeed: 0
   backstepTime: 0.15
