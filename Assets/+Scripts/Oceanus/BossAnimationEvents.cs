@@ -20,6 +20,11 @@ namespace Theogony
         public GameObject BossPhase2;
         public GameObject oldSkin;
 
+        [Space]
+        public AudioClip phaseTransitionClip;
+        public AudioClip[] swingClips;
+        public AudioClip[] slamClips;
+
         void Start()
         {
             animator = GetComponent<Animator>();
@@ -129,6 +134,21 @@ namespace Theogony
         {
            Instantiate(phase2Atk, transform.position, transform.rotation);            
         }
+
+        public void PhaseAudio(){
+            GetComponentInParent<AudioSource>().PlayOneShot(phaseTransitionClip);
+        }
+
+        public void SwingAudio(){
+            int index = Random.Range(0, swingClips.Length);
+            GetComponentInParent<AudioSource>().PlayOneShot(swingClips[index]);
+        }
+
+        public void SlamAudio(){
+            int index = Random.Range(0, slamClips.Length);
+            GetComponentInParent<AudioSource>().PlayOneShot(slamClips[index]);
+        }
+
         public void ChangeSkin()
         {
           //  BossPhase2.SetActive(true);
