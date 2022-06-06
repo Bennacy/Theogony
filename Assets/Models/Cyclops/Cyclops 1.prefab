@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912349824367960789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.809}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,7 +368,7 @@ Transform:
   m_GameObject: {fileID: 6387489604616102335}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -3.36, y: 2, z: -2.02}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1729620558}
@@ -421,15 +421,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitClip: {fileID: 8300000, guid: 207547c2d5d3c694b935ff4ec3c09bb3, type: 3}
-  dieClip: {fileID: 8300000, guid: 58ea495b03bb19344a8df2e7733c78a9, type: 3}
+  deathClip: {fileID: 0}
   walkClip: {fileID: 8300000, guid: 95ed924e1b915294cb8f1123a31e3cd6, type: 3}
   audioSource: {fileID: 3532762146545191652}
   maxHealth: 750
   currHealth: 0
   currencyDrop: 1000
   animator: {fileID: 0}
+  navMeshAgent: {fileID: 0}
   patrolWaypoints:
-  - {x: -33.15618, y: 0, z: -27.622864}
+  - {x: 157.85532, y: 41.444153, z: -107.65908}
+  - {x: 180.78517, y: 41.444153, z: -99.384445}
+  - {x: 169.75632, y: 41.444153, z: -82.43694}
   waypointIndex: 0
   knockbackResistance: 5
   attacking: 0
@@ -457,6 +460,7 @@ MonoBehaviour:
   initialState: {fileID: 11400000, guid: 69499eacaca64af499baca1c72ed8339, type: 2}
   currentState: {fileID: 0}
   changedState: 1
+  navMeshAgent: {fileID: 0}
   enemyController: {fileID: 0}
   bossController: {fileID: 0}
   staggerTimer: 0
@@ -538,7 +542,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 7.080611
   MaxDistance: 30
   Pan2D: 0
   rolloffMode: 0
