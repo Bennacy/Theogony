@@ -18,8 +18,7 @@ MonoBehaviour:
   knockback: 10
   possibleAttacks:
   - Attack1
-  - Attack2
   - Attack3
-  attackWeights: 280000001e0000001e000000
-  damageDealt: 150
+  attackWeights: 3c00000028000000
+  damageDealt: 125
   droppedWeapon: {fileID: 11400000, guid: 58203f90114d0ab4b90c887dad211850, type: 2}

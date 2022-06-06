@@ -110,11 +110,11 @@ namespace Theogony {
         }
 
         public void FastParry(){
-            GetComponent<Animator>().speed = 2;
+            GetComponent<Animator>().speed = 2.5f;
         }
         
         public void SlowParry(){
-            GetComponent<Animator>().speed = 1;
+            GetComponent<Animator>().speed = 1.5f;
         }
 
         public void DisableCanMove(){

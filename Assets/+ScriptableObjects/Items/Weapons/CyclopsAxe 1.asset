@@ -21,5 +21,5 @@ MonoBehaviour:
   - Attack2
   - Attack3
   attackWeights: 280000001e0000001e000000
-  damageDealt: 150
+  damageDealt: 200
   droppedWeapon: {fileID: 11400000, guid: 9876a65fff3431648b066db7bdf1dc43, type: 2}
