@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 639975393183923551}
   - component: {fileID: 3223961660547769181}
   m_Layer: 0
-  m_Name: Axe
+  m_Name: Axe mini boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,8 +396,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.070486, y: 5.2402854, z: 4.235517}
-  m_Center: {x: 2.0006077, y: -0.1403889, z: 0.016541481}
+  m_Size: {x: 3, y: 3, z: 2}
+  m_Center: {x: 3, y: 0, z: 0}
 --- !u!1 &5669508168777724199
 GameObject:
   m_ObjectHideFlags: 0
