@@ -8,7 +8,7 @@ namespace Theogony{
         public State initialState;
         public State currentState;
         public bool changedState;
-        private MyNavMesh navMeshAgent;
+        public MyNavMesh navMeshAgent;
         public EnemyController enemyController;
         public BossController bossController;
         public float staggerTimer;
