@@ -50,9 +50,10 @@ namespace Theogony{
                 }
             }
             Vector3 dropPos = transform.position;
-            dropPos.y = 1;
-            Interactable script = Instantiate(dropPrefab, dropPos, Quaternion.identity).GetComponent<Interactable>();
+           
+            Interactable script = Instantiate(dropPrefab, new Vector3 (dropPos.x,dropPos.y+2,dropPos.z), Quaternion.identity).GetComponent<Interactable>();
             script.itemGiven = weapon.droppedWeapon;
+            Debug.Log(script);
         }
 
         #region Events
