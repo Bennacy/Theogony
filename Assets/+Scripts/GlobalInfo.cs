@@ -71,6 +71,8 @@ namespace Theogony{
         public bool refreshedScene;
         public bool reloading;
         public bool playerTargetable;
+        private bool infHealth;
+        private bool infStam;
         
         public static GlobalInfo GetGlobalInfo(){
             return(GameObject.FindGameObjectWithTag("GlobalInfo").GetComponent<GlobalInfo>());
@@ -78,12 +80,6 @@ namespace Theogony{
         
         void Start()
         {
-            // SendSettings sendSettings = GameObject.Find("SendSettings").GetComponent<SendSettings>();
-            // if(sendSettings.gameObject){
-            //     audioVolume = sendSettings.audioVolume;
-            //     Destroy(sendSettings.gameObject);
-            // }
-
             DontDestroyOnLoad(gameObject);
             if(self == null){
                 // SceneManager.LoadScene(firstScene);
@@ -97,13 +93,6 @@ namespace Theogony{
         private IEnumerator StartFunctions(float wait){
             yield return new WaitForSeconds(wait);
             activeScene = SceneManager.GetActiveScene().name;
-            
-            // GameObject[] walls = GameObject.FindGameObjectsWithTag("HiddenWall");
-            // hiddenWalls = new HiddenWallInfo[walls.Length];
-            // for(int i = 0; i < walls.Length; i++){
-            //     hiddenWalls[i] = new HiddenWallInfo(walls[i].GetComponent<HiddenWall>());
-            //     hiddenWalls[i].wall.gameObject.SetActive(hiddenWalls[i].active);
-            // }
 
             if(checkpoints.Length > 0){
                 foreach(Checkpoint checkpoint in checkpoints){
@@ -140,6 +129,18 @@ namespace Theogony{
 
         void Update()
         {
+            if(Input.GetKeyDown(KeyCode.F1)){
+                foreach(Checkpoint checkpoint in checkpoints){
+                    checkpoint.unlocked = true;
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.F2)){
+                infHealth = !infHealth;
+            }
+            if(Input.GetKeyDown(KeyCode.F3)){
+                infStam = !infStam;
+            }
+
             if(activeScene != SceneManager.GetActiveScene().name){
                 activeScene = SceneManager.GetActiveScene().name;
                 refreshedScene = true;
@@ -148,6 +149,12 @@ namespace Theogony{
                 StartCoroutine(StartFunctions(.4f));
             }
             if(playerControllerScript){
+                if(infHealth){
+                    playerControllerScript.playerManager.currHealth = playerControllerScript.playerManager.maxHealth;
+                }
+                if(infStam){
+                    playerControllerScript.playerManager.currStamina = playerControllerScript.playerManager.maxStamina;
+                }
                 lostCurrency.updateTimer += Time.deltaTime;
                 if(lostCurrency.updateTimer > lostCurrency.updateCooldown){
                     lostCurrency.UpdateLastPosition(playerControllerScript.transform.position);

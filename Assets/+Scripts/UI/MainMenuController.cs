@@ -128,7 +128,7 @@ namespace Theogony{
         }
 
         public void StartGame(){
-            SceneManager.LoadScene("NewStarter");
+            SceneManager.LoadScene("LevelDesign");
         }
 
         public void Quit(){
