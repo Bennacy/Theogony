@@ -9427,7 +9427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2566491461697283559, guid: 59d42e9fe344f274086408152c268768, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2566491461697283580, guid: 59d42e9fe344f274086408152c268768, type: 3}
       propertyPath: interactRange
@@ -21058,6 +21058,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -304.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -48.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 95.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -23855,6 +23867,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 628010014}
     m_Modifications:
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: phaseTransitionClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5232724521c79a14a92989ce85632b6d, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: slamClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: slamClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f145c4d442500ec409cf04dba3ba3ff3, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: slamClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 664bc4b4e2a62a14e8def425d39bb9db, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f6bde62a29d3b54aa89ab34ac214f2a, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b4de874ed10ebc948886e315e40b3b5a, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 40eee51149186b3499beb207f2b7e301, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d103afe24d9c2cb40b2104dc03d7983d, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0349df4833396e9479b48a3157912580, type: 3}
+    - target: {fileID: 30258461816194009, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
+      propertyPath: swingClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 082b2acadbef7d8479eea968b1315b27, type: 3}
     - target: {fileID: 3576468267768165447, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -23909,7 +23965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6951361820183177520, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6951361820183177522, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
       propertyPath: target
@@ -23925,11 +23981,11 @@ PrefabInstance:
       objectReference: {fileID: 633904092}
     - target: {fileID: 6951361820183177522, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
       propertyPath: maxHealth
-      value: 5000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6951361820183177522, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
       propertyPath: currHealth
-      value: 5000
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a46d88d2556d0d45a3254d782ac8a85, type: 3}
