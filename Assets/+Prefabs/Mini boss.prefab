@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitClip: {fileID: 8300000, guid: 207547c2d5d3c694b935ff4ec3c09bb3, type: 3}
-  dieClip: {fileID: 8300000, guid: 58ea495b03bb19344a8df2e7733c78a9, type: 3}
+  deathClip: {fileID: 0}
   walkClip: {fileID: 8300000, guid: 95ed924e1b915294cb8f1123a31e3cd6, type: 3}
   audioSource: {fileID: 6448478060746788555}
   maxHealth: 1000
@@ -401,14 +401,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336588046684721003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.224, z: 0.103}
-  m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
+  m_LocalRotation: {x: -0.000000066870406, y: -0.00000004346989, z: -1.1391929e-10, w: 1}
+  m_LocalPosition: {x: -0.00025856256, y: 0.16603011, z: 0.19861685}
+  m_LocalScale: {x: 0.05000001, y: 0.049999997, z: 0.049999997}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8103184870044579789}
-  m_Father: {fileID: 7500263764286264726}
-  m_RootOrder: 9
+  m_Father: {fileID: 834310006628562870}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7580248321160188909
 MeshFilter:
@@ -979,6 +979,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5af0f7c2a3b18b34aa92773d3654938b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b6df3f17a8c6f45be29ebc609c34cd, type: 3}
+--- !u!4 &834310006628562870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7208261743932278219, guid: 78b6df3f17a8c6f45be29ebc609c34cd, type: 3}
+  m_PrefabInstance: {fileID: 8042570605380842109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5685025562926710357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2412161367050800168, guid: 78b6df3f17a8c6f45be29ebc609c34cd, type: 3}
