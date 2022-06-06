@@ -111,17 +111,21 @@ namespace Theogony
             }
             
             if(playerInput.currentControlScheme != "Keyboard"){
-                sensitivity = globalInfo.sensitivity * 3;
-            }else{
                 sensitivity = globalInfo.sensitivity;
+            }else{
+                sensitivity = globalInfo.sensitivity / 10;
             }
             targetAngleY -= (mouseYInput * (sensitivity / 1000)) / delta;
             targetAngleY = Mathf.Clamp(targetAngleY, minimumPivot, maximumPivot);
 
 
-            if(lookAngle != targetAngleX){
+            if((lockOnTarget && lookAngle != targetAngleX) || resetCam){
                 lookAngle = Mathf.LerpAngle(lookAngle, targetAngleX, lookSpeed);
-                // lookAngle = targetAngleX;
+                if(Mathf.Abs(targetAngleX - lookAngle) < 7.5f){
+                    resetCam = false;
+                }
+            }else{
+                lookAngle = targetAngleX;
             }
             Vector3 rotation = Vector3.zero;
             rotation.y = lookAngle;
@@ -129,9 +133,10 @@ namespace Theogony
             myTransform.rotation = targetRotation;
 
 
-            if(pivotAngle != targetAngleY){
+            if(lockOnTarget && pivotAngle != targetAngleY){
                 pivotAngle = Mathf.LerpAngle(pivotAngle, targetAngleY, lookSpeed*1.5f);
-                // pivotAngle = targetAngleY;
+            }else{
+                pivotAngle = targetAngleY;
             }
             rotation = Vector3.zero;
             rotation.x = pivotAngle;
@@ -202,7 +207,7 @@ namespace Theogony
                 cameraPositionGoal = origPos;
             }
 
-            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraPositionGoal, Time.deltaTime * 7.5f);
+            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraPositionGoal, Time.fixedDeltaTime * 7.5f);
             
             previouslyPaused = globalInfo.paused;
         }
@@ -214,7 +219,7 @@ namespace Theogony
         #region Camera Controls
         public void MoveCamera(InputAction.CallbackContext context){
             Vector2 value = context.ReadValue<Vector2>();
-            value *= Time.deltaTime * mouseSens;
+            value *= Time.fixedDeltaTime * mouseSens;
             if(!previouslyPaused && globalInfo.paused){
                 mouseXInput = 0;
                 mouseYInput = 0;
@@ -295,6 +300,7 @@ namespace Theogony
                     previouslyLocked = true;
                     lockOnTarget = GetClosestEnemy();
                 }else{
+                    resetCam = true;
                     Quaternion angle = player.rb.rotation;
                     targetAngleX = angle.eulerAngles.y;
                 }
@@ -336,7 +342,7 @@ namespace Theogony
         public void CameraShake(){
             if(posDuration > 0){
                 resetPos = false;
-                posDuration -= Time.deltaTime;
+                posDuration -= Time.fixedDeltaTime;
                 Vector3 random = Random.insideUnitSphere;
                 float newX = random.x * xPos;
                 float newY = random.y * yPos;
@@ -350,7 +356,7 @@ namespace Theogony
 
             if(rotDuration > 0){
                 resetRot = false;
-                rotDuration -= Time.deltaTime;
+                rotDuration -= Time.fixedDeltaTime;
                 Vector3 random = Random.insideUnitSphere;
                 float newX = random.x * xRot;
                 float newY = random.y * yRot;

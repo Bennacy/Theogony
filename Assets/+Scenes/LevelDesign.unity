@@ -16100,6 +16100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
+      propertyPath: mouseSens
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1971696213778844103, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Color.a
       value: 0.39215687
@@ -16138,7 +16142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.07
+      value: -8.68
       objectReference: {fileID: 0}
     - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_LocalPosition.z
