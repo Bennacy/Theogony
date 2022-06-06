@@ -31,6 +31,7 @@ namespace Theogony{
         private void NextWaypoint(FSM fsm){
             if(enemyController.patrolWaypoints.Length > 0){
                 waypointIndex++;
+                Debug.Log(waypointIndex);
                 if(waypointIndex >= enemyController.patrolWaypoints.Length){
                     waypointIndex = 0;
                 }
