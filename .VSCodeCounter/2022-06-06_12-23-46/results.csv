@@ -1,0 +1,188 @@
+"filename", "language", "JSON", "XML", "Log", "ShaderLab", "C#", "HLSL", "Markdown", "comment", "blank", "total"
+"c:\Coding\Unity\Theogony\Assembly-CSharp-Editor.csproj", "XML", 0, 791, 0, 0, 0, 0, 0, 7, 1, 799
+"c:\Coding\Unity\Theogony\Assembly-CSharp.csproj", "XML", 0, 877, 0, 0, 0, 0, 0, 7, 1, 885
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\Bases\Action.cs", "C#", 0, 0, 0, 0, 10, 0, 0, 0, 1, 11
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\Bases\Condition.cs", "C#", 0, 0, 0, 0, 9, 0, 0, 0, 1, 10
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\Bases\FSM.cs", "C#", 0, 0, 0, 0, 79, 0, 0, 0, 6, 85
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\Bases\MyNavMesh.cs", "C#", 0, 0, 0, 0, 52, 0, 0, 0, 6, 58
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\Bases\State.cs", "C#", 0, 0, 0, 0, 25, 0, 0, 0, 5, 30
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\Bases\Transition.cs", "C#", 0, 0, 0, 0, 21, 0, 0, 0, 4, 25
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actChase.cs", "C#", 0, 0, 0, 0, 15, 0, 0, 1, 3, 19
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actDie.cs", "C#", 0, 0, 0, 0, 74, 0, 0, 0, 6, 80
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actFace.cs", "C#", 0, 0, 0, 0, 14, 0, 0, 0, 2, 16
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actMeleeAttack.cs", "C#", 0, 0, 0, 0, 78, 0, 0, 0, 7, 85
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actPatrol.cs", "C#", 0, 0, 0, 0, 52, 0, 0, 0, 4, 56
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actStagger.cs", "C#", 0, 0, 0, 0, 24, 0, 0, 0, 1, 25
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\actStop.cs", "C#", 0, 0, 0, 0, 14, 0, 0, 0, 3, 17
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conCanSee.cs", "C#", 0, 0, 0, 0, 68, 0, 0, 4, 10, 82
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conDie.cs", "C#", 0, 0, 0, 0, 26, 0, 0, 0, 1, 27
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conFacingTarget.cs", "C#", 0, 0, 0, 0, 36, 0, 0, 0, 4, 40
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conInRange.cs", "C#", 0, 0, 0, 0, 45, 0, 0, 0, 9, 54
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conIsHit.cs", "C#", 0, 0, 0, 0, 23, 0, 0, 0, 4, 27
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conPhase2.cs", "C#", 0, 0, 0, 0, 21, 0, 0, 0, 2, 23
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conPhaseChecker.cs", "C#", 0, 0, 0, 0, 28, 0, 0, 0, 6, 34
+"c:\Coding\Unity\Theogony\Assets\+AI\FSM\Scripts\conStagger.cs", "C#", 0, 0, 0, 0, 28, 0, 0, 0, 3, 31
+"c:\Coding\Unity\Theogony\Assets\+AI\Oceanus\Scripts\actPhase2.cs", "C#", 0, 0, 0, 0, 19, 0, 0, 0, 7, 26
+"c:\Coding\Unity\Theogony\Assets\+AI\Oceanus\Scripts\actPhase2Atk.cs", "C#", 0, 0, 0, 0, 52, 0, 0, 0, 10, 62
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Camera\CameraHandler.cs", "C#", 0, 0, 0, 0, 344, 0, 0, 22, 51, 417
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Camera\RotateCamera.cs", "C#", 0, 0, 0, 0, 26, 0, 0, 0, 9, 35
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Editors\BossBarrierEditor.cs", "C#", 0, 0, 0, 0, 0, 0, 0, 31, 5, 36
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Editors\EnemyControllerEditor.cs", "C#", 0, 0, 0, 0, 0, 0, 0, 28, 4, 32
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Enemies\EnemyAnimationEvents.cs", "C#", 0, 0, 0, 0, 101, 0, 0, 0, 19, 120
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Enemies\EnemyController.cs", "C#", 0, 0, 0, 0, 114, 0, 0, 0, 13, 127
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Enemies\EnemyWeaponCollision.cs", "C#", 0, 0, 0, 0, 49, 0, 0, 0, 4, 53
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Enemies\EnemyWeaponManager.cs", "C#", 0, 0, 0, 0, 35, 0, 0, 0, 7, 42
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Enemies\ParryColider.cs", "C#", 0, 0, 0, 0, 45, 0, 0, 2, 9, 56
+"c:\Coding\Unity\Theogony\Assets\+Scripts\GlobalInfo.cs", "C#", 0, 0, 0, 0, 293, 0, 0, 3, 46, 342
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\BossWeapon.cs", "C#", 0, 0, 0, 0, 19, 0, 0, 0, 4, 23
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\EnemyWeapons.cs", "C#", 0, 0, 0, 0, 16, 0, 0, 0, 1, 17
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\Interactable.cs", "C#", 0, 0, 0, 0, 53, 0, 0, 0, 4, 57
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\Items.cs", "C#", 0, 0, 0, 0, 11, 0, 0, 0, 5, 16
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\WeaponHolderSlot.cs", "C#", 0, 0, 0, 0, 54, 0, 0, 0, 13, 67
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\WeaponSlotManager.cs", "C#", 0, 0, 0, 0, 216, 0, 0, 1, 42, 259
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Items\weaponItems.cs", "C#", 0, 0, 0, 0, 41, 0, 0, 0, 5, 46
+"c:\Coding\Unity\Theogony\Assets\+Scripts\LevelElements\BossBarrier.cs", "C#", 0, 0, 0, 0, 98, 0, 0, 0, 14, 112
+"c:\Coding\Unity\Theogony\Assets\+Scripts\LevelElements\Checkpoint.cs", "C#", 0, 0, 0, 0, 91, 0, 0, 0, 14, 105
+"c:\Coding\Unity\Theogony\Assets\+Scripts\LevelElements\HiddenWall.cs", "C#", 0, 0, 0, 0, 59, 0, 0, 6, 5, 70
+"c:\Coding\Unity\Theogony\Assets\+Scripts\LevelElements\UnloadInvisible.cs", "C#", 0, 0, 0, 0, 58, 0, 0, 1, 5, 64
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Oceanus\BossAnimationEvents.cs", "C#", 0, 0, 0, 0, 131, 0, 0, 3, 25, 159
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Oceanus\BossController.cs", "C#", 0, 0, 0, 0, 80, 0, 0, 1, 15, 96
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Oceanus\BossWeaponCollision.cs", "C#", 0, 0, 0, 0, 44, 0, 0, 0, 5, 49
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Oceanus\LaserAttack.cs", "C#", 0, 0, 0, 0, 47, 0, 0, 1, 10, 58
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Oceanus\Phase2Atk.cs", "C#", 0, 0, 0, 0, 53, 0, 0, 0, 16, 69
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Oceanus\SlamAttack.cs", "C#", 0, 0, 0, 0, 25, 0, 0, 1, 5, 31
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\BlockColider.cs", "C#", 0, 0, 0, 0, 26, 0, 0, 1, 9, 36
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\DamageCollider.cs", "C#", 0, 0, 0, 0, 67, 0, 0, 0, 10, 77
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\PlayerAttacker.cs", "C#", 0, 0, 0, 0, 68, 0, 0, 0, 22, 90
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\PlayerControllerScript.cs", "C#", 0, 0, 0, 0, 220, 0, 0, 15, 32, 267
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\PlayerInputActions.cs", "C#", 0, 0, 0, 0, 2044, 0, 0, 16, 16, 2076
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\PlayerInventory.cs", "C#", 0, 0, 0, 0, 48, 0, 0, 8, 9, 65
+"c:\Coding\Unity\Theogony\Assets\+Scripts\Player\PlayerManager.cs", "C#", 0, 0, 0, 0, 190, 0, 0, 10, 26, 226
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\BossHealthBar.cs", "C#", 0, 0, 0, 0, 63, 0, 0, 0, 7, 70
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\ButtonPromptScript.cs", "C#", 0, 0, 0, 0, 105, 0, 0, 0, 13, 118
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\ButtonSpriteOverride.cs", "C#", 0, 0, 0, 0, 42, 0, 0, 1, 3, 46
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\ChangeSettings.cs", "C#", 0, 0, 0, 0, 73, 0, 0, 0, 10, 83
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\CurrencyDisplay.cs", "C#", 0, 0, 0, 0, 68, 0, 0, 1, 12, 81
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\CustomDropdown.cs", "C#", 0, 0, 0, 0, 81, 0, 0, 34, 17, 132
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\CustomSlider.cs", "C#", 0, 0, 0, 0, 130, 0, 0, 0, 14, 144
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\CustomToggle.cs", "C#", 0, 0, 0, 0, 27, 0, 0, 0, 4, 31
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\DisplayPlayerInventory.cs", "C#", 0, 0, 0, 0, 83, 0, 0, 0, 12, 95
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\DisplayPlayerStats.cs", "C#", 0, 0, 0, 0, 54, 0, 0, 0, 5, 59
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\EnemyWorldCanvas.cs", "C#", 0, 0, 0, 0, 47, 0, 0, 0, 6, 53
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\FPSscript.cs", "C#", 0, 0, 0, 0, 10, 0, 0, 0, 2, 12
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\GlobalCanvas.cs", "C#", 0, 0, 0, 0, 55, 0, 0, 2, 4, 61
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\HealDisplay.cs", "C#", 0, 0, 0, 0, 23, 0, 0, 0, 3, 26
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\InventoryActions.cs", "C#", 0, 0, 0, 0, 31, 0, 0, 0, 5, 36
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\ItemFade.cs", "C#", 0, 0, 0, 0, 60, 0, 0, 0, 12, 72
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\LevelUpInfo.cs", "C#", 0, 0, 0, 0, 131, 0, 0, 10, 16, 157
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\LoadoutControl.cs", "C#", 0, 0, 0, 0, 12, 0, 0, 0, 5, 17
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\MainMenuController.cs", "C#", 0, 0, 0, 0, 211, 0, 0, 0, 22, 233
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\MenuInfo.cs", "C#", 0, 0, 0, 0, 22, 0, 0, 0, 2, 24
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\QuitControl.cs", "C#", 0, 0, 0, 0, 23, 0, 0, 0, 7, 30
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\SendSettings.cs", "C#", 0, 0, 0, 0, 16, 0, 0, 0, 2, 18
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\TravelMenu.cs", "C#", 0, 0, 0, 0, 64, 0, 0, 1, 9, 74
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\UIAudio.cs", "C#", 0, 0, 0, 0, 16, 0, 0, 5, 4, 25
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\UIController.cs", "C#", 0, 0, 0, 0, 294, 0, 0, 3, 27, 324
+"c:\Coding\Unity\Theogony\Assets\+Scripts\UI\UpdateBar.cs", "C#", 0, 0, 0, 0, 83, 0, 0, 1, 10, 94
+"c:\Coding\Unity\Theogony\Assets\+VascoThings\Oceanus\Actions\OC_Chace.cs", "C#", 0, 0, 0, 0, 6, 0, 0, 36, 2, 44
+"c:\Coding\Unity\Theogony\Assets\+VascoThings\Oceanus\Actions\OC_Jump.cs", "C#", 0, 0, 0, 0, 6, 0, 0, 22, 2, 30
+"c:\Coding\Unity\Theogony\Assets\+VascoThings\Oceanus\Actions\OC_Swipe.cs", "C#", 0, 0, 0, 0, 6, 0, 0, 33, 2, 41
+"c:\Coding\Unity\Theogony\Assets\+VascoThings\Oceanus\OC_Weapon.cs", "C#", 0, 0, 0, 0, 33, 0, 0, 1, 11, 45
+"c:\Coding\Unity\Theogony\Assets\+VascoThings\Oceanus\OC_animationEvents.cs", "C#", 0, 0, 0, 0, 24, 0, 0, 0, 11, 35
+"c:\Coding\Unity\Theogony\Assets\-CG\FogWall\FogWallShader.shader", "ShaderLab", 0, 0, 0, 76, 0, 0, 0, 1, 10, 87
+"c:\Coding\Unity\Theogony\Assets\-CG\WaterShader\WaterTake2.shader", "ShaderLab", 0, 0, 0, 96, 0, 0, 0, 2, 21, 119
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Binding Composite\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Binding Composite\CustomComposite.cs", "C#", 0, 0, 0, 0, 48, 0, 0, 119, 14, 181
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Binding Composite\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 1, 0, 1, 2
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Device Usages\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Device Usages\CustomDeviceUsages.cs", "C#", 0, 0, 0, 0, 48, 0, 0, 68, 8, 124
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Device Usages\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 2, 0, 2, 4
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Device\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Device\CustomDevice.cs", "C#", 0, 0, 0, 0, 122, 0, 0, 207, 24, 353
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Custom Device\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 1, 0, 1, 2
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Gamepad Mouse Cursor\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Gamepad Mouse Cursor\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 12, 0, 6, 18
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\In-Game Hints\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\In-Game Hints\InGameHintsActions.cs", "C#", 0, 0, 0, 0, 395, 0, 0, 12, 14, 421
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\In-Game Hints\InGameHintsExample.cs", "C#", 0, 0, 0, 0, 169, 0, 0, 33, 34, 236
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Input Recorder\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Input Recorder\InputRecorder.cs", "C#", 0, 0, 0, 0, 300, 0, 0, 105, 68, 473
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Input Recorder\InputRecorderInspector.cs", "C#", 0, 0, 0, 0, 190, 0, 0, 14, 24, 228
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Input Recorder\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 2, 0, 2, 4
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\InputDeviceTester\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\On-Screen Controls\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Rebinding UI\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Rebinding UI\GamepadIconsExample.cs", "C#", 0, 0, 0, 0, 92, 0, 0, 11, 11, 114
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Rebinding UI\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 4, 0, 4, 8
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Rebinding UI\RebindActionUI.cs", "C#", 0, 0, 0, 0, 299, 0, 0, 86, 60, 445
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Rebinding UI\RebindActionUIEditor.cs", "C#", 0, 0, 0, 0, 135, 0, 0, 16, 27, 178
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Rebinding UI\RebindSaveLoad.cs", "C#", 0, 0, 0, 0, 17, 0, 0, 0, 4, 21
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 145, 0, 47, 192
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\SimpleController_UsingActionAsset.cs", "C#", 0, 0, 0, 0, 99, 0, 0, 5, 14, 118
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\SimpleController_UsingActions.cs", "C#", 0, 0, 0, 0, 105, 0, 0, 8, 16, 129
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\SimpleController_UsingPlayerInput.cs", "C#", 0, 0, 0, 0, 95, 0, 0, 5, 14, 114
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\SimpleController_UsingState.cs", "C#", 0, 0, 0, 0, 65, 0, 0, 3, 11, 79
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Demo\SimpleControls.cs", "C#", 0, 0, 0, 0, 253, 0, 0, 12, 14, 279
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Multiplayer\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Multiplayer\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 6, 0, 6, 12
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Simple Multiplayer\SimpleMultiplayerPlayer.cs", "C#", 0, 0, 0, 0, 8, 0, 0, 2, 2, 12
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Touch Samples\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\UI vs. Game Input\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\UI vs. Game Input\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 28, 0, 20, 48
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\UI vs. Game Input\UIvsGameInputHandler.cs", "C#", 0, 0, 0, 0, 330, 0, 0, 51, 95, 476
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Visualizers\.sample.json", "JSON", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Visualizers\InputActionVisualizer.cs", "C#", 0, 0, 0, 0, 252, 0, 0, 22, 49, 323
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Visualizers\InputControlVisualizer.cs", "C#", 0, 0, 0, 0, 278, 0, 0, 38, 44, 360
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Visualizers\InputVisualizer.cs", "C#", 0, 0, 0, 0, 61, 0, 0, 8, 15, 84
+"c:\Coding\Unity\Theogony\Assets\-Samples\Input System\1.3.0\Visualizers\VisualizationHelpers.cs", "C#", 0, 0, 0, 0, 532, 0, 0, 47, 92, 671
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader", "ShaderLab", 0, 0, 0, 109, 0, 0, 0, 2, 33, 144
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader", "ShaderLab", 0, 0, 0, 112, 0, 0, 0, 3, 31, 146
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_Bitmap.shader", "ShaderLab", 0, 0, 0, 109, 0, 0, 0, 2, 33, 144
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF Overlay.shader", "ShaderLab", 0, 0, 0, 243, 0, 0, 0, 4, 71, 318
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF SSD.shader", "ShaderLab", 0, 0, 0, 241, 0, 0, 0, 4, 66, 311
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader", "ShaderLab", 0, 0, 0, 188, 0, 0, 0, 10, 50, 248
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader", "ShaderLab", 0, 0, 0, 183, 0, 0, 0, 8, 50, 241
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader", "ShaderLab", 0, 0, 0, 82, 0, 0, 0, 4, 21, 107
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF-Mobile.shader", "ShaderLab", 0, 0, 0, 183, 0, 0, 0, 8, 50, 241
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader", "ShaderLab", 0, 0, 0, 103, 0, 0, 0, 8, 28, 139
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF-Surface.shader", "ShaderLab", 0, 0, 0, 122, 0, 0, 0, 4, 33, 159
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_SDF.shader", "ShaderLab", 0, 0, 0, 243, 0, 0, 0, 4, 71, 318
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMP_Sprite.shader", "ShaderLab", 0, 0, 0, 97, 0, 0, 0, 0, 20, 117
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMPro.cginc", "HLSL", 0, 0, 0, 0, 0, 63, 0, 2, 20, 85
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMPro_Mobile.cginc", "HLSL", 0, 0, 0, 0, 0, 122, 0, 2, 34, 158
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMPro_Properties.cginc", "HLSL", 0, 0, 0, 0, 0, 62, 0, 10, 14, 86
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Shaders\TMPro_Surface.cginc", "HLSL", 0, 0, 0, 0, 0, 76, 0, 7, 19, 102
+"c:\Coding\Unity\Theogony\Assets\-TextMesh Pro\Sprites\EmojiOne.json", "JSON", 155, 0, 0, 0, 0, 0, 0, 0, 2, 157
+"c:\Coding\Unity\Theogony\Assets\LowPolyWater_Pack\Scripts\Editor\GeneratePlane.cs", "C#", 0, 0, 0, 0, 116, 0, 0, 20, 29, 165
+"c:\Coding\Unity\Theogony\Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs", "C#", 0, 0, 0, 0, 61, 0, 0, 21, 19, 101
+"c:\Coding\Unity\Theogony\Assets\LowPolyWater_Pack\Shaders\WaterShaded.shader", "ShaderLab", 0, 0, 0, 154, 0, 0, 0, 2, 57, 213
+"c:\Coding\Unity\Theogony\Assets\Nicrom\PolyPacks\Wind\Assets\Scripts\Editor\LPVegetation_MaterialInspector.cs", "C#", 0, 0, 0, 0, 114, 0, 0, 2, 26, 142
+"c:\Coding\Unity\Theogony\Assets\Nicrom\PolyPacks\Wind\Assets\Shaders\ASE\LPW_Vegetation.shader", "ShaderLab", 0, 0, 0, 119, 0, 0, 0, 224, 8, 351
+"c:\Coding\Unity\Theogony\InputSystem.Samples.Visualizers.csproj", "XML", 0, 702, 0, 0, 0, 0, 0, 7, 1, 710
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker0-prev.log", "Log", 0, 0, 7726, 0, 0, 0, 0, 0, 125, 7851
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker0.log", "Log", 0, 0, 299, 0, 0, 0, 0, 0, 7, 306
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker1-prev.log", "Log", 0, 0, 1620, 0, 0, 0, 0, 0, 27, 1647
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker1.log", "Log", 0, 0, 275, 0, 0, 0, 0, 0, 7, 282
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker10-prev.log", "Log", 0, 0, 739, 0, 0, 0, 0, 0, 10, 749
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker11-prev.log", "Log", 0, 0, 1831, 0, 0, 0, 0, 0, 29, 1860
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker12-prev.log", "Log", 0, 0, 1209, 0, 0, 0, 0, 0, 20, 1229
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker13-prev.log", "Log", 0, 0, 456, 0, 0, 0, 0, 0, 8, 464
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker14-prev.log", "Log", 0, 0, 165, 0, 0, 0, 0, 0, 2, 167
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker2-prev.log", "Log", 0, 0, 642, 0, 0, 0, 0, 0, 9, 651
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker3-prev.log", "Log", 0, 0, 4524, 0, 0, 0, 0, 0, 77, 4601
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker4-prev.log", "Log", 0, 0, 1974, 0, 0, 0, 0, 0, 31, 2005
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker5-prev.log", "Log", 0, 0, 6496, 0, 0, 0, 0, 0, 109, 6605
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker6-prev.log", "Log", 0, 0, 5269, 0, 0, 0, 0, 0, 90, 5359
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker7-prev.log", "Log", 0, 0, 297, 0, 0, 0, 0, 0, 4, 301
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker8-prev.log", "Log", 0, 0, 621, 0, 0, 0, 0, 0, 8, 629
+"c:\Coding\Unity\Theogony\Logs\AssetImportWorker9-prev.log", "Log", 0, 0, 177, 0, 0, 0, 0, 0, 2, 179
+"c:\Coding\Unity\Theogony\Logs\shadercompiler-AssetImportWorker0.log", "Log", 0, 0, 4, 0, 0, 0, 0, 0, 3, 7
+"c:\Coding\Unity\Theogony\Logs\shadercompiler-UnityShaderCompiler.exe0.log", "Log", 0, 0, 2, 0, 0, 0, 0, 0, 2, 4
+"c:\Coding\Unity\Theogony\Packages\manifest.json", "JSON", 47, 0, 0, 0, 0, 0, 0, 0, 1, 48
+"c:\Coding\Unity\Theogony\Packages\packages-lock.json", "JSON", 427, 0, 0, 0, 0, 0, 0, 0, 1, 428
+"c:\Coding\Unity\Theogony\Unity.InputSystem.InGameHints.csproj", "XML", 0, 700, 0, 0, 0, 0, 0, 7, 1, 708
+"c:\Coding\Unity\Theogony\Unity.InputSystem.RebindingUI.csproj", "XML", 0, 702, 0, 0, 0, 0, 0, 7, 1, 710
+"c:\Coding\Unity\Theogony\Unity.InputSystem.Recorder.csproj", "XML", 0, 700, 0, 0, 0, 0, 0, 7, 1, 708
+"c:\Coding\Unity\Theogony\UnityEngine.InputSystem.Samples.UIvsGameInput.csproj", "XML", 0, 699, 0, 0, 0, 0, 0, 7, 1, 707
+"Total", "-", 685, 5171, 34326, 2460, 11662, 323, 201, 1580, 2997, 59405
