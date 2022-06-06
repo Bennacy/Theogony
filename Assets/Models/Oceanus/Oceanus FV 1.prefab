@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6951361820183177515}
   - component: {fileID: 6951361820183177512}
   - component: {fileID: 6951361820183177513}
+  - component: {fileID: 6951361820183177522}
+  - component: {fileID: 6951361820183177517}
   - component: {fileID: 6951361820183177518}
   - component: {fileID: 6951361820183177519}
   - component: {fileID: 6951361820183177516}
-  - component: {fileID: 6951361820183177517}
-  - component: {fileID: 6951361820183177522}
   - component: {fileID: 6951361820183177523}
   m_Layer: 3
   m_Name: Oceanus FV 1
@@ -91,6 +91,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6951361820183177522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951361820183177520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2aa2ce02cd8304682e5056620fa7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 300
+  currHealth: 0
+  currencyDrop: 20000
+  animator: {fileID: 0}
+  deathClip: {fileID: 0}
+  attacking: 0
+  target: {fileID: 0}
+  playerTargetable: 0
+  staggered: 0
+  weapon: {fileID: 0}
+  invincible: 0
+  dying: 0
+  parryCollider: {fileID: 0}
+  phase2Transition: 0
+--- !u!114 &6951361820183177517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951361820183177520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78602e4ac3f72434c96e525e2f6225f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: {fileID: 11400000, guid: 97adbbd8a9f4ea44683d45f2872d8b18, type: 2}
+  currentState: {fileID: 0}
+  changedState: 1
+  navMeshAgent: {fileID: 0}
+  enemyController: {fileID: 0}
+  bossController: {fileID: 0}
+  staggerTimer: 0
+  stopFacing: 1
+  visionMemory: 0
+  visionCountdown: 0
+  attackTracker: {x: 0, y: 0}
 --- !u!136 &6951361820183177518
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -142,53 +191,6 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   rotationSpeed: 0
---- !u!114 &6951361820183177517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6951361820183177520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78602e4ac3f72434c96e525e2f6225f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialState: {fileID: 11400000, guid: 97adbbd8a9f4ea44683d45f2872d8b18, type: 2}
-  currentState: {fileID: 0}
-  changedState: 1
-  enemyController: {fileID: 0}
-  bossController: {fileID: 0}
-  staggerTimer: 0
-  stopFacing: 1
-  visionMemory: 0
-  visionCountdown: 0
-  attackTracker: {x: 0, y: 0}
---- !u!114 &6951361820183177522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6951361820183177520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2aa2ce02cd8304682e5056620fa7ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 300
-  currHealth: 0
-  currencyDrop: 20000
-  animator: {fileID: 0}
-  attacking: 0
-  target: {fileID: 0}
-  playerTargetable: 0
-  staggered: 0
-  weapon: {fileID: 0}
-  invincible: 0
-  dying: 0
-  parryCollider: {fileID: 0}
-  phase2Transition: 0
 --- !u!114 &6951361820183177523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +318,9 @@ MonoBehaviour:
   parent: {fileID: 2251237882235160472}
   BossPhase2: {fileID: 0}
   oldSkin: {fileID: 0}
+  phaseTransitionClip: {fileID: 0}
+  swingClips: []
+  slamClips: []
 --- !u!4 &5283445954039682331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b09c2db6410dc14a91d350a7de3d4c9, type: 3}

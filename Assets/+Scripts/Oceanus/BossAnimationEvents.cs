@@ -132,11 +132,12 @@ namespace Theogony
 
         public void Phase2Atk()
         {
-           Instantiate(phase2Atk, transform.position, transform.rotation);            
+            Instantiate(phase2Atk, transform.position, transform.rotation).GetComponent<Phase2Atk>().bossController = bossController;
         }
 
         public void PhaseAudio(){
-            GetComponentInParent<AudioSource>().PlayOneShot(phaseTransitionClip);
+            GetComponentInParent<AudioSource>().clip = phaseTransitionClip;
+            GetComponentInParent<AudioSource>().Play();
         }
 
         public void SwingAudio(){

@@ -48,7 +48,6 @@ namespace Theogony{
         private bool stoppedMove;
         public bool running;
         public bool blocking;
-        private bool playAudio;
 
 
         private float grav = 0;
@@ -66,7 +65,6 @@ namespace Theogony{
             cameraHandler = cam.GetComponent<CameraHandler>();
             cameraHandler = playerManager.cameraHandler;
             playerInput = GetComponent<PlayerInput>();
-            playAudio = true;
         }
 
         // void OnGUI()
@@ -103,16 +101,6 @@ namespace Theogony{
                         // StartCoroutine(playerManager.RechargeStamina());
                     }
                 }
-
-                // if(playAudio){
-                //     int footstepIndex = UnityEngine.Random.Range(0, walkClips.Length);
-                //     GetComponent<AudioSource>().PlayOneShot(walkClips[footstepIndex]);
-                //     if(running){
-                //         StartCoroutine(WaitForAudio(0.4f));
-                //     }else{
-                //         StartCoroutine(WaitForAudio(0.4975f));
-                //     }
-                // }
                 
                 vel += camForward * movementVector * moveSpeed;
                 rb.velocity = vel;
@@ -140,13 +128,6 @@ namespace Theogony{
            //Debug.Log(angle);
 
             CheckGravity();
-            
-        }
-
-        private IEnumerator WaitForAudio(float wait){
-            playAudio = false;
-            yield return new WaitForSeconds(wait);
-            playAudio = true;
         }
 
         void FixedUpdate()
@@ -156,31 +137,30 @@ namespace Theogony{
 
         public void Move(InputAction.CallbackContext context){
             Vector2 inputVector2 = context.action.ReadValue<Vector2>();
-           
-
-            movementVector = new Vector3(inputVector2.x, grav , inputVector2.y);
+            
+            if(context.performed && canMove)
+                movementVector = new Vector3(inputVector2.x, grav , inputVector2.y);
            
             if(context.canceled){
                 stoppedMove = true;
                 movementVector = Vector3.zero;
-                
-                
             }
         }
 
         public void CheckGravity()
         {
             RaycastHit hit;
-            if((Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, killLayer) && hit.distance <= 1.1f)){
-                Debug.Log("Ded");
+            if((Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, killLayer) && hit.distance <= 1.2f)){
                 playerManager.currHealth = -1;
             }
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.1f){
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, groundLayer) && hit.distance <= 1.2f){
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
                 grav = 0;
+                canMove = true;
             }else{
                 if(slopeMax <= hit.distance){
+                    // animator.SetFloat("Speed", 0);
                     grav = -5;
                     canMove = false;
                 }else if(canMove){

@@ -170,9 +170,9 @@ namespace Theogony{
                     animator.Play(animName);
                     healCharges--;
                     if(targetHealth < 0)
-                        targetHealth = currHealth + globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
+                        targetHealth = currHealth + maxHealth * 0.25f;
                     else
-                        targetHealth = targetHealth + globalInfo.healBase + (globalInfo.healLevel * globalInfo.healIncrease);
+                        targetHealth = targetHealth + maxHealth * 0.25f;
 
                     if(targetHealth > maxHealth){
                         targetHealth = maxHealth;

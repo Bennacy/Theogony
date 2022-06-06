@@ -13,6 +13,7 @@ namespace Theogony
             fsm.bossController.animator.Play("Phase2");
             return;
         }
+        
         public override void Act(FSM fsm)
         {
 

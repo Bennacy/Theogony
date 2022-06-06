@@ -15,6 +15,7 @@ namespace Theogony
         private NavMeshAgent navMeshAgent;
         private Rigidbody rb;
         private ParticleSystem blood;
+        public AudioClip deathClip;
       
 
         public bool attacking;
@@ -24,7 +25,6 @@ namespace Theogony
         public BossWeapon weapon;
         public bool invincible;
 
-        [HideInInspector]
         public bool dying;
         public Collider parryCollider;
         private MonoBehaviour[] scripts;

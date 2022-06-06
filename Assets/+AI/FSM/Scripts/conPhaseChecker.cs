@@ -12,7 +12,7 @@ namespace Theogony
             if (fsm.bossController)
             {
               
-                if (fsm.bossController.currHealth <= (fsm.bossController.maxHealth / 2))
+                if (fsm.bossController.currHealth <= (fsm.bossController.maxHealth / 2) && fsm.bossController.currencyDrop > 0)
                 {
                     return true;
                 }

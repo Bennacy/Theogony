@@ -9,6 +9,7 @@ namespace Theogony
         private float timer = 3f;
         public Vector3 scaleChange = new Vector3(12f, 0f, 12f);
         public Vector3 explosionChange = new Vector3(0, 100f, 0f);
+        public BossController bossController;
 
         Collider damageCollider;
        
@@ -20,7 +21,9 @@ namespace Theogony
         }
         void Update()
         {
-           
+           if(bossController.dying){
+               Destroy(gameObject);
+           }
 
             timer = timer - Time.deltaTime;
             if (timer < 1.2f)

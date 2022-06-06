@@ -7,7 +7,7 @@ namespace Theogony{
     public class EnemyController : MonoBehaviour
     {
         public AudioClip hitClip;
-        public AudioClip dieClip;
+        public AudioClip deathClip;
         public AudioClip walkClip;
         public AudioSource audioSource;
 
