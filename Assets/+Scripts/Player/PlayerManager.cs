@@ -70,7 +70,6 @@ namespace Theogony{
             }
 
             if(currHealth < 0){
-                Debug.Log("Huh");
                 Die();
             }
 
