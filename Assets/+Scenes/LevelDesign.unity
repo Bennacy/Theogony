@@ -11819,7 +11819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: unlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
@@ -23254,6 +23254,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4539219906503925579, guid: f19b1f2e6324cf04999ccc156707833b, type: 3}
   m_PrefabInstance: {fileID: 400319122}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1733038978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f320fbe086854a4eb70060e73ed4e76, type: 3}
+  m_PrefabInstance: {fileID: 1031021804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1733038979
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733038978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.460966
+  m_Height: 9.71953
+  m_Direction: 1
+  m_Center: {x: 1.49, y: 4.3489523, z: -7.1560993}
 --- !u!65 &1741875219 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 246334514815219926, guid: f19b1f2e6324cf04999ccc156707833b, type: 3}
@@ -27090,6 +27109,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f19b1f2e6324cf04999ccc156707833b, type: 3}
+--- !u!1 &1998322038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f320fbe086854a4eb70060e73ed4e76, type: 3}
+  m_PrefabInstance: {fileID: 756770567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1998322039
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998322038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.460966
+  m_Height: 9.71953
+  m_Direction: 1
+  m_Center: {x: 1.49, y: 4.3489523, z: -7.1560993}
 --- !u!1 &2000729531
 GameObject:
   m_ObjectHideFlags: 0
