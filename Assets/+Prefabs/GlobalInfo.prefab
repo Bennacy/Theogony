@@ -240,6 +240,10 @@ MonoBehaviour:
   lastCheckpoint: {fileID: 0}
   checkpoints:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   healCharges: 3
   healLevel: 1
   healBase: 150

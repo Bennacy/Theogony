@@ -134,7 +134,7 @@ namespace Theogony{
             }else if((movementVector != Vector3.zero || stoppedMove) && canMove &&  Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up) != 90)
             {
                 angle = Vector3.SignedAngle(Vector3.forward, camForward * movementVector, Vector3.up);
-                Debug.Log(movementVector);
+                // Debug.Log(movementVector);
             }
            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, angle, 0), Time.deltaTime * turnTime);
            //Debug.Log(angle);
