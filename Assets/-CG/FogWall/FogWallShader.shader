@@ -27,7 +27,7 @@ Shader "Custom/Fog"
         Tags { "Queue"="Transparent" "RenderType"="Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
-        Cull Off
+        // Cull Off
  
         Pass
         {

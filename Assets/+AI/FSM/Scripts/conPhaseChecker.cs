@@ -14,7 +14,6 @@ namespace Theogony
               
                 if (fsm.bossController.currHealth <= (fsm.bossController.maxHealth / 2))
                 {
-                   
                     return true;
                 }
             }
