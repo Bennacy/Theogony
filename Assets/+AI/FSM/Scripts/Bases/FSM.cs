@@ -26,7 +26,7 @@ namespace Theogony{
 
         void Update()
         {
-            if (bossController && stopFacing )
+            if (bossController)
             {
                 GetNavMesh().FaceTarget(); 
 

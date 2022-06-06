@@ -116,4 +116,4 @@ MonoBehaviour:
   playerInventory: {fileID: 0}
   action: 0
   itemGiven: {fileID: 0}
-  currencyChange: 500000
+  currencyChange: 250
