@@ -4257,7 +4257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Camera x
+  m_text: 'Camera
 
     Sensitivity'
   m_isRightToLeft: 0
@@ -5312,7 +5312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8009718904506505202
 RectTransform:
   m_ObjectHideFlags: 0
