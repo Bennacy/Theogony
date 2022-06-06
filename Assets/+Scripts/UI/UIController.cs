@@ -59,6 +59,7 @@ namespace Theogony{
             highlightedBtn = button;
             for(int i = 0; i < menuButtons.Length; i++){
                 if(menuButtons[i] == highlightedBtn){
+                    menuInfo.currIndex = i;
                     buttonIndex = i;
                     return;
                 }
@@ -131,6 +132,9 @@ namespace Theogony{
                     inputAction.SwitchCurrentActionMap("UI");
                 }else{
                     inputAction.SwitchCurrentActionMap("InGame");
+                    for(int i = 0; i < menuInfo.buttons.Length; i++){
+                        menuInfo.buttons[i].transform.localScale = buttonScale[i];
+                    }
                     while(menuInfo.previousMenu != null){
                         menuInfo.currIndex = buttonIndex = 0;
                         OpenMenu(menuInfo.previousMenu);

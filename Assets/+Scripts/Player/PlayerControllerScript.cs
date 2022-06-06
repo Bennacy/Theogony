@@ -172,6 +172,7 @@ namespace Theogony{
         {
             RaycastHit hit;
             if((Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, killLayer) && hit.distance <= 1.1f)){
+                Debug.Log("Ded");
                 playerManager.currHealth = -1;
             }
 

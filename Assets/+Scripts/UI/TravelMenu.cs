@@ -13,13 +13,13 @@ namespace Theogony{
         private MenuInfo menuInfo;
         private UIController uiController;
         public Transform buttonHolder;
-        private Image destinationImage;
+        public Image destinationImage;
         public Checkpoint[] unlockedCheckpoints;
         public GameObject buttonPrefab;
 
         void Start()
         {
-            destinationImage = GetComponentInChildren<Image>();
+            // destinationImage = GetComponentInChildren<Image>();
             indexOffset = 0;
         }
 
@@ -61,7 +61,7 @@ namespace Theogony{
         private void CreateButton(Checkpoint checkpointReference, int index){
                 GameObject newButton = Instantiate(buttonPrefab, buttonHolder);
                 Vector3 buttonPos = newButton.transform.localPosition;
-                buttonPos.y -= index * 75;
+                buttonPos.y -= index * 140 - 70;
                 newButton.transform.localPosition = buttonPos;
 
                 TextMeshProUGUI text = newButton.transform.GetComponentInChildren<TextMeshProUGUI>();

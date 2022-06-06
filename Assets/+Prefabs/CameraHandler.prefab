@@ -183,7 +183,7 @@ MonoBehaviour:
   colliders: []
   targetAngleX: 0
   targetAngleY: 30
-  mouseSens: 100
+  mouseSens: 50
   lookSpeed: 0.1
   sensitivity: 10
   followSpeed: 0.1

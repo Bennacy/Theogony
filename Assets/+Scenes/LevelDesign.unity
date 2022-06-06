@@ -2561,6 +2561,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: unlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
       value: LevelDesign
       objectReference: {fileID: 0}
@@ -2572,6 +2576,10 @@ PrefabInstance:
       propertyPath: sortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: destinationPreview
+      value: 
+      objectReference: {fileID: 21300000, guid: b90c6bbae754f6b4b967e4fbb99e4953, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!1001 &299386633
@@ -5503,7 +5511,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3d6d3a9c1752954da9ed1ed8b35c748, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7868,6 +7876,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: unlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
       value: LevelDesign
       objectReference: {fileID: 0}
@@ -7879,6 +7891,10 @@ PrefabInstance:
       propertyPath: sortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: destinationPreview
+      value: 
+      objectReference: {fileID: 21300000, guid: 73fa12b684c080b4eabe05b6f1fae907, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!1001 &876878891
@@ -8022,7 +8038,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3d6d3a9c1752954da9ed1ed8b35c748, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8303,6 +8319,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: unlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
       value: LevelDesign
       objectReference: {fileID: 0}
@@ -8310,6 +8330,10 @@ PrefabInstance:
       propertyPath: locationName
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: destinationPreview
+      value: 
+      objectReference: {fileID: 21300000, guid: cc6afdbb6da02f947b60ed413bb7c21e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!65 &887323645 stripped
@@ -10643,6 +10667,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: unlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
       value: LevelDesign
       objectReference: {fileID: 0}
@@ -10654,6 +10682,10 @@ PrefabInstance:
       propertyPath: sortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: destinationPreview
+      value: 
+      objectReference: {fileID: 21300000, guid: f261300fe0053be4d9ad4e7134665512, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!1001 &1156376989
@@ -11806,7 +11838,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3d6d3a9c1752954da9ed1ed8b35c748, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -16794,74 +16826,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1235834874110441459, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: mouseSens
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696213778844103, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696213778844103, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.b
-      value: 0.007843138
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696213778844103, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696213778844103, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696215618512755, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696215618512755, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696215618512755, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.g
-      value: 0.011764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 1971696215618512755, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 7297829242719867651, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109718, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -23.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109740, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: slopeMax
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: normalRecharge
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: staminaRecharge
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916017722255109741, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: blockingRecharge
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8391582328164638332, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -16909,14 +16873,6 @@ PrefabInstance:
     - target: {fileID: 8391582328164638333, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: m_Name
       value: InputStuff
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391582328164638333, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391582328816859315, guid: ed375999891047845aaded976c6903e6, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8772686047610490843, guid: ed375999891047845aaded976c6903e6, type: 3}
       propertyPath: barrier
@@ -17316,7 +17272,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3d6d3a9c1752954da9ed1ed8b35c748, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -17533,6 +17489,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: unlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
       propertyPath: sceneName
       value: LevelDesign
       objectReference: {fileID: 0}
@@ -17544,6 +17504,10 @@ PrefabInstance:
       propertyPath: sortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7772011582584479596, guid: 686400567a174374fade2a51d6879b78, type: 3}
+      propertyPath: destinationPreview
+      value: 
+      objectReference: {fileID: 21300000, guid: ea66d605aef8bcb449f823a2812856e9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 686400567a174374fade2a51d6879b78, type: 3}
 --- !u!1001 &1925944438
@@ -17954,7 +17918,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3d6d3a9c1752954da9ed1ed8b35c748, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

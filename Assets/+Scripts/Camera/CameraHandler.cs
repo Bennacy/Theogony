@@ -94,6 +94,13 @@ namespace Theogony
             origRot = cameraTransform.localRotation;
         }
 
+        void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.B)){
+                ScreenCapture.CaptureScreenshot("ScreenShot");
+            }
+        }
+
         public void FollowTarget(float delta)
         {
             Vector3 targetPosition = Vector3.Lerp(myTransform.position, player.rb.position, delta / followSpeed);
@@ -210,10 +217,6 @@ namespace Theogony
             cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraPositionGoal, Time.fixedDeltaTime * 7.5f);
             
             previouslyPaused = globalInfo.paused;
-        }
-
-        void FixedUpdate()
-        {
         }
 
         #region Camera Controls
